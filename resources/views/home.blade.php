@@ -35,7 +35,7 @@
           </div>
         </div>
 
-        <div class="d-flex justify-content-center mt-4">
+        <div class="d-flex justify-content-center">
           {{ $users->links() }}
         </div>
         <div class="w-100">
@@ -360,7 +360,7 @@
                               {{ $transaction->transaction_id }}
                             @endif
                           </td>
-                          <td>{{ date('d-m-Y', strtotime($transaction->date)) }}</td>
+                          <td>{{ date('m-d-Y', strtotime($transaction->date)) }}</td>
                           <td class="text-end">{{ $transaction->amount }}</td>
                         </tr>
                       @endforeach

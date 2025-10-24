@@ -60,7 +60,8 @@
                     <input type="checkbox" class="form-check-input me-2 blog-checkbox" data-id="{{ $blog->id }}" />
                     <a href="{{ route('blogs.edit', $blog->id) }}">{{ $blog->title }}</a>
                   </td>
-                  <td>{{ date('d-m-Y', strtotime($blog->updated_at)) }}</td>
+                  <!-- <td>{{ date('d-m-Y', strtotime($blog->updated_at)) }}</td> -->
+                  <td>{{ \Carbon\Carbon::parse($blog->updated_at)->format('m/d/y') }}</td>
                   <td>
                     <img src="{{ asset('storage/' . $blog->photo) }}" alt="Blog Image" height="100px" width="100px">
                   </td>

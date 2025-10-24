@@ -9,24 +9,28 @@
           {{ session()->get('message') }}
         </div>
       @endif
-      <div class="table-info-wrap">
-        <div class="row">
-          <div class="col-xl-6">
-            <form action="{{ url()->current() }}" method="GET">
-              <div class="form-group">
-                <!-- <label class="form-label">Search Email</label> -->
-                <div class="d-flex gap-3">
-                  <div class="input-group">
-                    <input type="search" class="email_search" name="task_type" value="{{ request('task_type') }}"
-                      placeholder="Search by Task Type" />
+
+      @if(isset($adminView) && auth()->user()->hasRole('super_admin'))
+        <div class="table-info-wrap">
+          <div class="row">
+            <div class="col-xl-6">
+              <form action="{{ url()->current() }}" method="GET">
+                <div class="form-group">
+                  <!-- <label class="form-label">Search Email</label> -->
+                  <div class="d-flex gap-3">
+                    <div class="input-group">
+                      <input type="search" class="email_search" name="task_type" value="{{ request('task_type') }}"
+                        placeholder="Search by Task Type" />
+                    </div>
+                    <button type="submit" class="btn-search">Search</button>
                   </div>
-                  <button type="submit" class="btn-search">Search</button>
                 </div>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
+      @endif
+
       <div class="w-100">
         <div class="admin-table-wrap">
           <table>

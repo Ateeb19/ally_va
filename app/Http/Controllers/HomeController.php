@@ -90,6 +90,8 @@ class HomeController extends Controller
         if ($superAdmin) {
             // Send admin notification email
             Mail::to($superAdmin->email)->send(new InqueryFormAdminMail($data));
+
+            Mail::to('arupkseth@gmail.com')->send(new InqueryFormAdminMail($data));
         }
 
         return view('contact');
