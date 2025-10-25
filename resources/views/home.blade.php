@@ -268,7 +268,7 @@
       <div class="rounded-3">
         <h2>{{ $data->hours }} HOURS</h2>
         <span>${{ $data->hours_price }}</span><br>
-        <span>{{ $data->discount }}% Discount</span>
+        <span>{{ $data->discount }}% Off</span>
       </div>
     </div>
   @endforeach
@@ -279,7 +279,7 @@
     <div class="rounded-3">
       <h2>30 HOURS</h2>
       <span>$270</span><br>
-        <span>0% Discount</span>
+        <span>0% Off</span>
     </div>
   </div>
 
@@ -288,7 +288,7 @@
     <div class="rounded-3">
       <h2>50 HOURS</h2>
       <span>$450</span><br>
-        <span>0% Discount</span>
+        <span>0% Off</span>
     </div>
   </div>
 
@@ -297,7 +297,7 @@
     <div class="rounded-3">
       <h2>80 HOURS</h2>
       <span>$720</span><br>
-        <span>0% Discount</span>
+        <span>0% Off</span>
     </div>
   </div>
 @endif
