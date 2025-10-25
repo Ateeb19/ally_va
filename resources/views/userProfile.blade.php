@@ -177,17 +177,16 @@
               </div>
               <?php
               // Convert the associative array to a simple indexed array for easier iteration
+              $latestThree = collect($UserMostPurchase)->take(-3);
               $data = [];
-              foreach ($UserMostPurchase as $key => $item) {
+               foreach ($latestThree as $item) {
                   $data[] = [
                         'hours' => $item->hours,
                         'price' => $item->hours_price,
                         'discount' => $item->discount ?? 0, // default 0 if null
                     ];
               }
-
-              // Pad the array with empty entries if fewer than 3 purchases exist
-              $data = array_pad($data, 3, ['hours' => '', 'price' => '', 'discount' => 0]);
+              $data = array_pad($data, 3, ['hours' => '', 'price' => '', 'discount' => '']);
 
               // Assign the values for easier insertion into the HTML
               $hours_1 = $data[0]['hours'];

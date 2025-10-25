@@ -51,6 +51,8 @@ class UserManageProfileController extends Controller
         $user = User::findOrFail($userId);
         $userHours = UserHour::where('user_id', $userId)->first();
         $UserMostPurchase = UserMostPurchase::where('user_id', $userId)
+            // ->orderBy('created_at', 'desc')
+            // ->take(3)
             ->get(['hours', 'hours_price', 'discount']); // fetch discount too
 
         // dd($UserMostPurchase);
@@ -72,37 +74,37 @@ class UserManageProfileController extends Controller
         // dd($request->all());
         $this->validate($request, [
             'full_name' => 'required',
-            'email'     => 'required',
-            'phone'     => 'required',
+            'email' => 'required',
+            'phone' => 'required',
         ]);
 
-        $user               = User::find($userId);
-        $user->name         = $request->full_name;
-        $user->email        = $request->email;
-        $user->phone        = $request->phone;
+        $user = User::find($userId);
+        $user->name = $request->full_name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
         if ($request->password) {
             $user->password = Hash::make($request->password);
         }
-        $user->whatsapp_no  = $request->whatsapp_no;
-        $user->city         = $request->city;
-        $user->country      = $request->country;
+        $user->whatsapp_no = $request->whatsapp_no;
+        $user->city = $request->city;
+        $user->country = $request->country;
         $user->save();
 
         if ($request->has('hours') || $request->has('minutes')) {
             $userHours = UserHour::where('user_id', $user->id)->first();
             if (!$userHours) {
-                $userHours          = new UserHour();
+                $userHours = new UserHour();
             }
-            $userHours->user_id     = $user->id;
-            $userHours->hours       = $request->hours;
-            $userHours->minutes     = $request->minutes;
-            $userHours->hour_price  = $request->hourPrice;
+            $userHours->user_id = $user->id;
+            $userHours->hours = $request->hours;
+            $userHours->minutes = $request->minutes;
+            $userHours->hour_price = $request->hourPrice;
             $userHours->save();
         }
 
         if ($request->has('hours_1') && $request->has('hours_price_1')) {
             $mostPurchase = new UserMostPurchase();
-            $mostPurchase->user_id     = $user->id;
+            $mostPurchase->user_id = $user->id;
             $mostPurchase->hours = $request->hours_1;
             $mostPurchase->hours_price = $request->hours_price_1;
             $mostPurchase->discount = $request->hours_discount_1;
@@ -111,7 +113,7 @@ class UserManageProfileController extends Controller
 
         if ($request->has('hours_2') && $request->has('hours_price_2')) {
             $mostPurchase = new UserMostPurchase();
-            $mostPurchase->user_id     = $user->id;
+            $mostPurchase->user_id = $user->id;
             $mostPurchase->hours = $request->hours_2;
             $mostPurchase->hours_price = $request->hours_price_2;
             $mostPurchase->discount = $request->hours_discount_2;
@@ -120,14 +122,14 @@ class UserManageProfileController extends Controller
 
         if ($request->has('hours_3') && $request->has('hours_price_3')) {
             $mostPurchase = new UserMostPurchase();
-            $mostPurchase->user_id     = $user->id;
+            $mostPurchase->user_id = $user->id;
             $mostPurchase->hours = $request->hours_3;
             $mostPurchase->hours_price = $request->hours_price_3;
             $mostPurchase->discount = $request->hours_discount_3;
             $mostPurchase->save();
         }
 
-        return redirect()->route('users.userprofile.edit',['user' => $userId, 'userprofile' => $userId])->with('message', 'Profile Updated successfully!');
+        return redirect()->route('users.userprofile.edit', ['user' => $userId, 'userprofile' => $userId])->with('message', 'Profile Updated successfully!');
     }
 
     /**

@@ -130,7 +130,7 @@
               <div class="input-group">
                 <span class="input-group-text"><i class="ri-mail-fill"></i></span>
                 <!-- <input id="user_email" type="user_email" class="form-control @error('user_email') is-invalid @enderror"
-                                          name="user_email" value="{{ old('user_email') }}" required placeholder="E-mail"> -->
+                                              name="user_email" value="{{ old('user_email') }}" required placeholder="E-mail"> -->
                 <input id="user_email" type="email" class="form-control @error('user_email') is-invalid @enderror"
                   name="user_email" value="{{ old('user_email') }}" required placeholder="E-mail">
                 @error('user_email')
@@ -254,42 +254,55 @@
             <div class="container">
               <div class="totalhours">
 
-                @forelse($UserMostPurchase as $data)
-                  <div class="totalhours-box js-paypal-box" data-price="{{ $data->hours_price }}"
-                    data-user="{{ $userId ?? '' }}" data-discount="{{ $data->discount ?? 0 }}"> {{-- ✅ Added --}}
-                    <div class="rounded-3">
-                      <h2>{{ $data->hours }} HOURS</h2>
-                      <span>${{ $data->hours_price }}</span>
-                    </div>
-                  </div>
-                @empty
-                  {{-- Default Box 1 --}}
-                  <div class="totalhours-box js-paypal-box" data-price="360" data-user="{{ $userId ?? '' }}"
-                    data-discount="0">
-                    <div class="rounded-3">
-                      <h2>30 HOURS</h2>
-                      <span>$270</span>
-                    </div>
-                  </div>
+                @if(isset($UserMostPurchase) && count($UserMostPurchase) > 0)
+  @php
+    // Get the last 3 records from the collection or array
+    $latestThree = collect($UserMostPurchase)->take(-3);
+  @endphp
 
-                  {{-- Default Box 2 --}}
-                  <div class="totalhours-box js-paypal-box" data-price="1350" data-user="{{ $userId ?? '' }}"
-                    data-discount="0">
-                    <div class="rounded-3">
-                      <h2>50 HOURS</h2>
-                      <span>$450</span>
-                    </div>
-                  </div>
+  @foreach($latestThree as $data)
+    <div class="totalhours-box js-paypal-box" 
+         data-price="{{ $data->hours_price }}"
+         data-user="{{ $userId ?? '' }}" 
+         data-discount="{{ $data->discount ?? 0 }}"         >
+      <div class="rounded-3">
+        <h2>{{ $data->hours }} HOURS</h2>
+        <span>${{ $data->hours_price }}</span><br>
+        <span>{{ $data->discount }}% Discount</span>
+      </div>
+    </div>
+  @endforeach
 
-                  {{-- Default Box 3 --}}
-                  <div class="totalhours-box js-paypal-box" data-price="2520" data-user="{{ $userId ?? '' }}"
-                    data-discount="0">
-                    <div class="rounded-3">
-                      <h2>80 HOURS</h2>
-                      <span>$720</span>
-                    </div>
-                  </div>
-                @endforelse
+@else
+  {{-- Default Box 1 --}}
+  <div class="totalhours-box js-paypal-box" data-price="360" data-user="{{ $userId ?? '' }}" data-discount="0">
+    <div class="rounded-3">
+      <h2>30 HOURS</h2>
+      <span>$270</span><br>
+        <span>0% Discount</span>
+    </div>
+  </div>
+
+  {{-- Default Box 2 --}}
+  <div class="totalhours-box js-paypal-box" data-price="1350" data-user="{{ $userId ?? '' }}" data-discount="0">
+    <div class="rounded-3">
+      <h2>50 HOURS</h2>
+      <span>$450</span><br>
+        <span>0% Discount</span>
+    </div>
+  </div>
+
+  {{-- Default Box 3 --}}
+  <div class="totalhours-box js-paypal-box" data-price="2520" data-user="{{ $userId ?? '' }}" data-discount="0">
+    <div class="rounded-3">
+      <h2>80 HOURS</h2>
+      <span>$720</span><br>
+        <span>0% Discount</span>
+    </div>
+  </div>
+@endif
+
+
 
               </div>
             </div>

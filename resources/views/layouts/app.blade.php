@@ -28,7 +28,7 @@
     @stack('styles')
     <script>
         let inactivityTime = 0;
-        const maxInactivityMinutes = 1;
+        const maxInactivityMinutes = 45;
 
         function resetTimer() {
             inactivityTime = 0;
