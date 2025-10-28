@@ -35,7 +35,7 @@ class HomeController extends Controller
         // Check if the search term is present in the request
         if ($request->filled('email_search')) {
             $searchTerm = $request->input('email_search');
-            
+
             // Filter the users where the email LIKE the search term (for partial matches)
             // Or use an exact match: ->where('email', $searchTerm)
             $query->where('email', 'LIKE', '%' . $searchTerm . '%');
@@ -43,11 +43,13 @@ class HomeController extends Controller
 
         // Paginate the results. The 'appends' method ensures the search term 
         // is kept in the pagination links.
-        $users = $query->paginate(10)->appends($request->query());
+        $perPage = $request->get('per_page', 10);
+        $users = $query->paginate($perPage)->appends($request->query());
+        // $users = $query->paginate(10)->appends($request->query());
         $userHour = UserHour::where('user_id', Auth()->user()->id)->first();
         $transactions = Transaction::where('user_id', Auth()->user()->id)->latest()->get();
         $UserMostPurchase = UserMostPurchase::where('user_id', Auth()->user()->id)->get();
-        return view('home', compact('users','transactions','userHour','UserMostPurchase'));
+        return view('home', compact('users', 'transactions', 'userHour', 'UserMostPurchase'));
     }
 
     public function viewUserDashboard(Request $request)
@@ -58,7 +60,7 @@ class HomeController extends Controller
         // Check if the search term is present in the request
         if ($request->filled('email_search')) {
             $searchTerm = $request->input('email_search');
-            
+
             // Filter the users where the email LIKE the search term (for partial matches)
             // Or use an exact match: ->where('email', $searchTerm)
             $query->where('email', 'LIKE', '%' . $searchTerm . '%');
@@ -71,7 +73,7 @@ class HomeController extends Controller
         $userHour = UserHour::where('user_id', $userId)->first();
         $UserMostPurchase = UserMostPurchase::where('user_id', $userId)->get();
         $transactions = Transaction::where('user_id', $userId)->latest()->get();
-        return view('home', compact('userId','users','transactions','userHour','UserMostPurchase'))->with('adminView', true);
+        return view('home', compact('userId', 'users', 'transactions', 'userHour', 'UserMostPurchase'))->with('adminView', true);
     }
 
     public function InquirySave(Request $request)

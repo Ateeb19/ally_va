@@ -3,16 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\Transaction;
 
 class TransactionController extends Controller
 {
-    /**
+      /**
      * Display a listing of the resource.
      */
     public function index($userId)
     {
-        $transactions = Transaction::where('user_id', $userId)->latest()->get();
+        $transactions = Transaction::where('user_id', $userId)->latest()->paginate(10);
         return view('transactions.index', compact('transactions', 'userId'));
     }
 
@@ -36,13 +37,13 @@ class TransactionController extends Controller
             'amount' => 'required|numeric',
         ]);
 
-        $transaction                    = new Transaction();
-        $transaction->user_id           = $userId;
-        $transaction->transaction_id    = $request->transaction_id;
-        $transaction->date              = $request->transaction_date;
-        $transaction->amount            = $request->amount;
+        $transaction = new Transaction();
+        $transaction->user_id = $userId;
+        $transaction->transaction_id = $request->transaction_id;
+        $transaction->date = $request->transaction_date;
+        $transaction->amount = $request->amount;
         $transaction->save();
-        
+
 
         return back()->with('message', 'Transaction added successfully!');
     }
@@ -75,9 +76,9 @@ class TransactionController extends Controller
         ]);
 
         $transaction = Transaction::find($id);
-        $transaction->transaction_id    = $request->transaction_id;
-        $transaction->date              = $request->transaction_date;
-        $transaction->amount            = $request->amount;
+        $transaction->transaction_id = $request->transaction_id;
+        $transaction->date = $request->transaction_date;
+        $transaction->amount = $request->amount;
         $transaction->save();
 
         return back()->with('message', 'Transaction updated successfully!');

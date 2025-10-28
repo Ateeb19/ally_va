@@ -59,22 +59,7 @@
           </table>
 
           <div class="d-flex flex-wrap justify-content-between align-items-center mt-4 pagination-wrap">
-            <p class="mb-0">Page: 1 of 2</p>
-            <div class="d-flex align-items-center gap-2">
-              <span>Page Size:</span>
-              <select class="form-select form-select-sm w-auto py-2">
-                <option>10</option>
-                <option>25</option>
-                <option>50</option>
-              </select>
-            </div>
-            <div class="d-flex gap-2 last-point-view">
-              <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-double-line"></i></button>
-              <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-s-line"></i></button>
-              <button class="btn btn-sm btn-outline-secondary active">1</button>
-              <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-s-line"></i></button>
-              <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-double-line"></i></button>
-            </div>
+            {{ $tasks->links('vendor.pagination.bootstrap-5') }}
           </div>
         </div>
       </div>

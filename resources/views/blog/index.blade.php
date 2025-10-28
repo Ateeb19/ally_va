@@ -76,24 +76,71 @@
             </tbody>
           </table>
 
-          <div class="d-flex flex-wrap justify-content-between align-items-center mt-4 pagination-wrap">
-            <p class="mb-0">Page: 1 of 2</p>
+          <div class="d-flex flex-wrap justify-content-between align-items-center mt-4 pagination-wrap w-100">
+            <p class="mb-0">
+              Page: {{ $blogs->currentPage() }} of {{ $blogs->lastPage() }}
+            </p>
+
             <div class="d-flex align-items-center gap-2">
               <span>Page Size:</span>
-              <select class="form-select form-select-sm w-auto py-2">
-                <option>10</option>
-                <option>25</option>
-                <option>50</option>
-              </select>
+              <form method="GET" id="pageSizeForm">
+                @foreach(request()->except('page_size', 'page') as $key => $value)
+                  <input type="hidden" name="{{ $key }}" value="{{ $value }}">
+                @endforeach
+                <select name="page_size" class="form-select form-select-sm w-auto py-2"
+                  onchange="document.getElementById('pageSizeForm').submit()">
+                  <option value="10" {{ request('page_size') == 10 ? 'selected' : '' }}>10</option>
+                  <option value="25" {{ request('page_size') == 25 ? 'selected' : '' }}>25</option>
+                  <option value="50" {{ request('page_size') == 50 ? 'selected' : '' }}>50</option>
+                </select>
+              </form>
             </div>
+
             <div class="d-flex gap-2 last-point-view">
-              <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-double-line"></i></button>
-              <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-s-line"></i></button>
-              <button class="btn btn-sm btn-outline-secondary active">1</button>
-              <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-s-line"></i></button>
-              <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-double-line"></i></button>
+              <a href="{{ $blogs->url(1) }}"
+                class="btn btn-sm btn-outline-secondary {{ $blogs->onFirstPage() ? 'disabled' : '' }}">
+                <i class="ri-arrow-left-double-line"></i>
+              </a>
+
+              <a href="{{ $blogs->previousPageUrl() ?? '#' }}"
+                class="btn btn-sm btn-outline-secondary {{ $blogs->onFirstPage() ? 'disabled' : '' }}">
+                <i class="ri-arrow-left-s-line"></i>
+              </a>
+
+              <button class="btn btn-sm btn-outline-secondary active" >
+                {{ $blogs->currentPage() }}
+              </button>
+
+              <a href="{{ $blogs->nextPageUrl() ?? '#' }}"
+                class="btn btn-sm btn-outline-secondary {{ !$blogs->hasMorePages() ? 'disabled' : '' }}">
+                <i class="ri-arrow-right-s-line"></i>
+              </a>
+
+              <a href="{{ $blogs->url($blogs->lastPage()) }}"
+                class="btn btn-sm btn-outline-secondary {{ !$blogs->hasMorePages() ? 'disabled' : '' }}">
+                <i class="ri-arrow-right-double-line"></i>
+              </a>
             </div>
           </div>
+
+          <!-- <div class="d-flex flex-wrap justify-content-between align-items-center mt-4 pagination-wrap">
+              <p class="mb-0">Page: 1 of 2</p>
+              <div class="d-flex align-items-center gap-2">
+                <span>Page Size:</span>
+                <select class="form-select form-select-sm w-auto py-2">
+                  <option>10</option>
+                  <option>25</option>
+                  <option>50</option>
+                </select>
+              </div>
+              <div class="d-flex gap-2 last-point-view">
+                <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-double-line"></i></button>
+                <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-s-line"></i></button>
+                <button class="btn btn-sm btn-outline-secondary active">1</button>
+                <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-s-line"></i></button>
+                <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-double-line"></i></button>
+              </div>
+            </div> -->
         </div>
       </div>
     </div>

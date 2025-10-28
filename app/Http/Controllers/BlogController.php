@@ -24,10 +24,8 @@ class BlogController extends Controller
             // Filter blogs where the 'title' column contains the search term (case-insensitive)
             $query->where('title', 'LIKE', '%' . $searchTerm . '%');
         }
-
-        // Paginate the results and retain filters in pagination
-        $blogs = $query->paginate(10)->appends($request->query());
-
+        $perPage = $request->input('page_size', 10);
+        $blogs = $query->paginate($perPage)->appends($request->query());
         return view('blog.index', compact('blogs'));
     }
 

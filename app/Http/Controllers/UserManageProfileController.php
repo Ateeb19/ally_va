@@ -50,12 +50,15 @@ class UserManageProfileController extends Controller
     {
         $user = User::findOrFail($userId);
         $userHours = UserHour::where('user_id', $userId)->first();
-        $UserMostPurchase = UserMostPurchase::where('user_id', $userId)
-            // ->orderBy('created_at', 'desc')
-            // ->take(3)
-            ->get(['hours', 'hours_price', 'discount']); // fetch discount too
+        // $UserMostPurchase = UserMostPurchase::where('user_id', $userId)
+        // ->orderBy('created_at', 'desc')
+        // ->take(3)
+        // ->get(['hours', 'hours_price', 'discount']); 
+
 
         // dd($UserMostPurchase);
+        $UserMostPurchase = UserMostPurchase::where('user_id', $userId)
+            ->get(['hours', 'hours_price', 'discount']);
 
         return view('userProfile', [
             'user' => $user,
@@ -102,30 +105,45 @@ class UserManageProfileController extends Controller
             $userHours->save();
         }
 
-        if ($request->has('hours_1') && $request->has('hours_price_1')) {
+        if (
+            $request->has('hours_1')
+            // && $request->has('hours_price_1')
+        ) {
             $mostPurchase = new UserMostPurchase();
             $mostPurchase->user_id = $user->id;
             $mostPurchase->hours = $request->hours_1;
-            $mostPurchase->hours_price = $request->hours_price_1;
-            $mostPurchase->discount = $request->hours_discount_1;
+            $mostPurchase->hours_price = $request->hourPrice;
+            // $mostPurchase->hours_price = $request->hours_price_1;
+            $mostPurchase->discount = 0;
+            // $mostPurchase->discount = $request->hours_discount_1;
             $mostPurchase->save();
         }
 
-        if ($request->has('hours_2') && $request->has('hours_price_2')) {
+        if (
+            $request->has('hours_2')
+            // && $request->has('hours_price_2')
+        ) {
             $mostPurchase = new UserMostPurchase();
             $mostPurchase->user_id = $user->id;
             $mostPurchase->hours = $request->hours_2;
-            $mostPurchase->hours_price = $request->hours_price_2;
-            $mostPurchase->discount = $request->hours_discount_2;
+            // $mostPurchase->hours_price = $request->hours_price_2;
+            $mostPurchase->hours_price = $request->hourPrice;
+            // $mostPurchase->discount = $request->hours_discount_2;
+            $mostPurchase->discount = 0;
             $mostPurchase->save();
         }
 
-        if ($request->has('hours_3') && $request->has('hours_price_3')) {
+        if (
+            $request->has('hours_3')
+            // && $request->has('hours_price_3')
+        ) {
             $mostPurchase = new UserMostPurchase();
             $mostPurchase->user_id = $user->id;
             $mostPurchase->hours = $request->hours_3;
-            $mostPurchase->hours_price = $request->hours_price_3;
-            $mostPurchase->discount = $request->hours_discount_3;
+            $mostPurchase->hours_price = $request->hourPrice;
+            // $mostPurchase->hours_price = $request->hours_price_3;
+            $mostPurchase->discount = 0;
+            // $mostPurchase->discount = $request->hours_discount_3;
             $mostPurchase->save();
         }
 

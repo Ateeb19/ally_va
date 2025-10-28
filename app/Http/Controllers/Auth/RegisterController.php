@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\UserHour;
+use App\Models\UserMostPurchase;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -75,8 +77,30 @@ class RegisterController extends Controller
         ]);
 
         // Assign default role
-        $user->assignRole('user'); 
+        $user->assignRole('user');
 
+        UserHour::create([
+            'user_id' => $user->id,
+            'hours' => 0,
+            'minutes' => 0,
+            'hour_price' => 9, 
+        ]);
+
+        $defaultPurchases = [
+            ['hours' => 30, 'hours_price' => 9, 'discount' => 0, 'status' => 'active'],
+            ['hours' => 50, 'hours_price' => 9, 'discount' => 0, 'status' => 'active'],
+            ['hours' => 80, 'hours_price' => 9, 'discount' => 0, 'status' => 'active'],
+        ];
+
+        foreach ($defaultPurchases as $purchase) {
+            UserMostPurchase::create([
+                'user_id' => $user->id,
+                'hours' => $purchase['hours'],
+                'hours_price' => $purchase['hours_price'],
+                'discount' => $purchase['discount'],
+                'status' => $purchase['status'],
+            ]);
+        }
         // Send Welcome email to user
         Mail::to($user->email)->send(new WelcomeMail($user));
 
@@ -87,7 +111,7 @@ class RegisterController extends Controller
             // Send admin notification email
             Mail::to($superAdmin->email)->send(new AdminUserRegisteredMail($user));
         }
-        
+
 
         return $user;
     }

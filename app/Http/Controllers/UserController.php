@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\UserHour;
+use App\Models\UserMostPurchase;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Task;
@@ -44,38 +45,61 @@ class UserController extends Controller
     //     return redirect()->back();
     // }
     public function store(Request $request)
-{
-    $validator = Validator::make($request->all(), [
-        'user_name' => 'required|string|max:255',
-        'user_email' => 'required|email|unique:users,email',
-        'user_phone' => 'required',
-        'user_Password' => 'required|min:6',
-    ]);
+    {
+        $validator = Validator::make($request->all(), [
+            'user_name' => 'required|string|max:255',
+            'user_email' => 'required|email|unique:users,email',
+            'user_phone' => 'required',
+            'user_Password' => 'required|min:6',
+        ]);
 
-    if ($validator->fails()) {
-        if ($request->ajax()) {
-            return response()->json(['errors' => $validator->errors()], 422);
+        if ($validator->fails()) {
+            if ($request->ajax()) {
+                return response()->json(['errors' => $validator->errors()], 422);
+            }
+            // fallback (normal form)
+            return redirect()->back()->withErrors($validator)->withInput();
         }
-        // fallback (normal form)
-        return redirect()->back()->withErrors($validator)->withInput();
+
+        $user = User::create([
+            'name' => $request->user_name,
+            'email' => $request->user_email,
+            'phone' => $request->user_phone,
+            'password' => bcrypt($request->user_Password),
+        ]);
+
+        $user->assignRole('user');
+
+        UserHour::create([
+            'user_id' => $user->id,
+            'hours' => 0,
+            'minutes' => 0,
+            'hour_price' => 9,
+        ]);
+
+        $defaultPurchases = [
+            ['hours' => 30, 'hours_price' => 9, 'discount' => 0, 'status' => 'active'],
+            ['hours' => 50, 'hours_price' => 9, 'discount' => 0, 'status' => 'active'],
+            ['hours' => 80, 'hours_price' => 9, 'discount' => 0, 'status' => 'active'],
+        ];
+
+        foreach ($defaultPurchases as $purchase) {
+            UserMostPurchase::create([
+                'user_id' => $user->id,
+                'hours' => $purchase['hours'],
+                'hours_price' => $purchase['hours_price'],
+                'discount' => $purchase['discount'],
+                'status' => $purchase['status'],
+            ]);
+        }
+
+        if ($request->ajax()) {
+            return response()->json(['success' => true], 200);
+        }
+
+        // Normal redirect fallback
+        return redirect()->back()->with('message', 'User added successfully!');
     }
-
-    $user = User::create([
-        'name' => $request->user_name,
-        'email' => $request->user_email,
-        'phone' => $request->user_phone,
-        'password' => bcrypt($request->user_Password),
-    ]);
-
-    $user->assignRole('user');
-
-    if ($request->ajax()) {
-        return response()->json(['success' => true], 200);
-    }
-
-    // Normal redirect fallback
-    return redirect()->back()->with('message', 'User added successfully!');
-}
 
 
 
@@ -153,21 +177,25 @@ class UserController extends Controller
 
     public function showTaskHistory(Request $request, $user_id)
     {
-        // dd($userId);
+        // Base query
         $query = Task::where('user_id', $user_id);
 
-        // Check for the 'task_type' filter in the request
+        // Filter by task type if provided
         if ($request->filled('task_type')) {
             $searchTerm = $request->input('task_type');
-
-            // Filter tasks where the task_type column CONTAINS the search term
-            // Use a wildcard search (LIKE) for flexible filtering
             $query->where('task_type', 'LIKE', '%' . $searchTerm . '%');
         }
 
-        // Execute the query to retrieve the tasks
-        $tasks = $query->get();
+        // Handle pagination (default: 10 per page)
+        $perPage = $request->input('per_page', 10);
 
-        return view('tasks.userShowTask', compact('tasks'));
+        // Paginate results & retain query params for links
+        $tasks = $query->orderBy('id', 'desc')
+            ->paginate($perPage)
+            ->appends($request->query());
+
+        // Pass data to view
+        return view('tasks.userShowTask', compact('tasks', 'user_id'));
     }
+
 }

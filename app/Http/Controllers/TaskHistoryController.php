@@ -11,25 +11,44 @@ class TaskHistoryController extends Controller
     /**
      * Display a listing of the resource.
      */
+
     public function index(Request $request, $id)
-{
-    $userId = $id;
+    {
+        $userId = $id;
 
-    // Order tasks by newest first (descending)
-    $query = Task::where('user_id', $id)
-                 ->orderBy('id', 'desc'); // Or ->orderBy('created_at', 'desc');
+        $query = Task::where('user_id', $id)->orderBy('id', 'desc');
 
-    // Optional filter by task type
-    if ($request->filled('task_type')) {
-        $searchTerm = $request->input('task_type');
-        $query->where('task_type', 'LIKE', '%' . $searchTerm . '%');
+        if ($request->filled('task_type')) {
+            $query->where('task_type', 'LIKE', '%' . $request->task_type . '%');
+        }
+
+        // ✅ Handle dynamic page size (default = 10)
+        $pageSize = $request->input('page_size', 10);
+
+        $tasks = $query->paginate($pageSize)->appends($request->query());
+
+        return view('tasks.index', compact('tasks', 'userId'))->with('adminView', true);
     }
 
-    // Paginate results
-    $tasks = $query->paginate(10)->appends($request->query());
+    // public function index(Request $request, $id)
+    // {
+    //     $userId = $id;
 
-    return view('tasks.index', compact('tasks', 'userId'))->with('adminView', true);
-}
+    //     // Order tasks by newest first (descending)
+    //     $query = Task::where('user_id', $id)
+    //         ->orderBy('id', 'desc'); // Or ->orderBy('created_at', 'desc');
+
+    //     // Optional filter by task type
+    //     if ($request->filled('task_type')) {
+    //         $searchTerm = $request->input('task_type');
+    //         $query->where('task_type', 'LIKE', '%' . $searchTerm . '%');
+    //     }
+
+    //     // Paginate results
+    //     $tasks = $query->paginate(10)->appends($request->query());
+
+    //     return view('tasks.index', compact('tasks', 'userId'))->with('adminView', true);
+    // }
 
 
     /**
@@ -46,17 +65,17 @@ class TaskHistoryController extends Controller
     public function store(Request $request, $id)
     {
         $this->validate($request, [
-            'task_type'   => 'required',
-            'date'        => 'required',
-            'task_point'  => 'required',
+            'task_type' => 'required',
+            'date' => 'required',
+            'task_point' => 'required',
             'description' => 'required',
         ]);
 
-        $task              = new Task();
-        $task->user_id     = $id;
-        $task->task_type   = $request->task_type;
-        $task->date        = date('Y-m-d', strtotime($request->date));
-        $task->point       = $request->task_point;
+        $task = new Task();
+        $task->user_id = $id;
+        $task->task_type = $request->task_type;
+        $task->date = date('Y-m-d', strtotime($request->date));
+        $task->point = $request->task_point;
         $task->description = $request->description;
         $task->save();
 
@@ -85,17 +104,17 @@ class TaskHistoryController extends Controller
     public function update(Request $request, string $id, string $task)
     {
         $this->validate($request, [
-            'task_type'   => 'required',
-            'date'        => 'required',
-            'task_point'  => 'required',
+            'task_type' => 'required',
+            'date' => 'required',
+            'task_point' => 'required',
             'description' => 'required',
         ]);
 
-        $task              = Task::find($task);
-        $task->user_id     = $request->user_id;
-        $task->task_type   = $request->task_type;
-        $task->date        = date('Y-m-d', strtotime($request->date));
-        $task->point       = $request->task_point;
+        $task = Task::find($task);
+        $task->user_id = $request->user_id;
+        $task->task_type = $request->task_type;
+        $task->date = date('Y-m-d', strtotime($request->date));
+        $task->point = $request->task_point;
         $task->description = $request->description;
         $task->save();
 
