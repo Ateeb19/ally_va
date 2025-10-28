@@ -47,7 +47,12 @@ class HomeController extends Controller
         $users = $query->paginate($perPage)->appends($request->query());
         // $users = $query->paginate(10)->appends($request->query());
         $userHour = UserHour::where('user_id', Auth()->user()->id)->first();
-        $transactions = Transaction::where('user_id', Auth()->user()->id)->latest()->get();
+        // $transactions = Transaction::where('user_id', Auth()->user()->id)->latest()->get();
+        // $perPage = $request->input('per_page', 10);
+        $transactions = Transaction::where('user_id', Auth()->user()->id)
+            ->latest()
+            ->paginate($perPage) // show 10 transactions per page
+            ->appends($request->query());
         $UserMostPurchase = UserMostPurchase::where('user_id', Auth()->user()->id)->get();
         return view('home', compact('users', 'transactions', 'userHour', 'UserMostPurchase'));
     }
@@ -72,7 +77,12 @@ class HomeController extends Controller
         $userId = $request->user;
         $userHour = UserHour::where('user_id', $userId)->first();
         $UserMostPurchase = UserMostPurchase::where('user_id', $userId)->get();
-        $transactions = Transaction::where('user_id', $userId)->latest()->get();
+        // $transactions = Transaction::where('user_id', $userId)->latest()->get();
+        $perPage = $request->input('per_page', 10);
+        $transactions = Transaction::where('user_id', $userId)
+            ->latest()
+            ->paginate($perPage) // show 10 transactions per page
+            ->appends($request->query());
         return view('home', compact('userId', 'users', 'transactions', 'userHour', 'UserMostPurchase'))->with('adminView', true);
     }
 

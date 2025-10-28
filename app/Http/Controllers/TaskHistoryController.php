@@ -23,7 +23,7 @@ class TaskHistoryController extends Controller
         }
 
         // ✅ Handle dynamic page size (default = 10)
-        $pageSize = $request->input('page_size', 10);
+        $pageSize = $request->input('per_page', 10);
 
         $tasks = $query->paginate($pageSize)->appends($request->query());
 

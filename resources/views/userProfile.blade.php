@@ -8,6 +8,11 @@
           {{ session()->get('message') }}
         </div>
       @endif
+      @if(session()->has('error'))
+        <div class="alert alert-danger">
+          {{ session()->get('error') }}
+        </div>
+      @endif
       <form method="POST" action="{{ route('users.userprofile.update', ['user' => $userId, 'userprofile' => $userId])}}">
         @csrf
         @method('PUT')
@@ -32,7 +37,7 @@
                   <div class="input-group">
                     <span class="input-group-text"><i class="ri-mail-fill"></i></span>
                     <input type="email" class="form-control" placeholder="E-mail" name="email" required
-                      value='{{ $user->email }}' />
+                      value='{{ $user->email }}' readonly/>
                   </div>
                 </div>
 
@@ -76,9 +81,21 @@
             <div class="col-xl-6">
               <div class="form-right">
                 <h2>Password Change</h2>
-                <div class="form-group">
-                  <label class="form-label">Password</label>
 
+                <div class="form-group">
+                  <label class="form-label">Update Password</label>
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="ri-key-fill"></i></span>
+                    <input type="password" class="form-control" placeholder="Enter password" id="new_password"
+                      name="password" />
+                    <span class="input-group-text" onclick="togglePassword('new_password', this)" style="cursor: pointer">
+                      <i class="ri-eye-off-fill"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <!-- <div class="form-group">
+                  <label class="form-label">Password</label>
                   <div class="input-group">
                     <span class="input-group-text"><i class="ri-key-fill"></i></span>
                     <input type="password" class="form-control" placeholder="Password" id="password" name="password" />
@@ -93,13 +110,12 @@
                   <div class="input-group">
                     <span class="input-group-text"><i class="ri-key-fill"></i></span>
                     <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" />
-
                     <span class="input-group-text" onclick="togglePassword('confirmPassword', this)"
                       style="cursor: pointer">
                       <i class="ri-eye-fill"></i>
                     </span>
                   </div>
-                </div>
+                </div> -->
 
                 @if(isset($adminView) && auth()->user()->hasRole('super_admin'))
                               <div class="form-group">
@@ -143,7 +159,7 @@
                   $hours_3 = $data[2]['hours'];
                   $hours_price_3 = $data[2]['price'];
                   $hours_discount_3 = $data[2]['discount'];
-                                              ?>
+                                                                              ?>
 
                               <div class="form-group">
                                 <label class="form-label">Most Purchased</label>
@@ -155,35 +171,35 @@
                                   <input type="number" name="hours_3" value="<?php  echo $hours_3; ?>"
                                     class="form-control bg-input w-25 me-2" placeholder="Total Hours" min="0">
                                   <!-- <input type="number" name="hours_price_1" value="<?php  echo $hours_price_1; ?>"
-                                                    class="form-control bg-input w-25 me-2" placeholder="Hour Price">
-                                                  <input type="number" name="hours_discount_1" value="<?php  echo $hours_discount_1; ?>"
-                                                    class="form-control bg-input w-25" placeholder="Discount (%)"> -->
+                                                                                    class="form-control bg-input w-25 me-2" placeholder="Hour Price">
+                                                                                  <input type="number" name="hours_discount_1" value="<?php  echo $hours_discount_1; ?>"
+                                                                                    class="form-control bg-input w-25" placeholder="Discount (%)"> -->
                                 </div>
                               </div>
 
                               <!-- <div class="form-group">
-                                                <label class="form-label">Most Purchased (Box 2)</label>
-                                                <div class="d-flex">
-                                                  <input type="number" name="hours_2" value="<?php  echo $hours_2; ?>"
-                                                    class="form-control bg-input w-25 me-2" placeholder="Total Hours" min="0">
-                                                  <input type="number" name="hours_price_2" value="<?php  echo $hours_price_2; ?>"
-                                                    class="form-control bg-input w-25 me-2" placeholder="Hour Price">
-                                                  <input type="number" name="hours_discount_2" value="<?php  echo $hours_discount_2; ?>"
-                                                    class="form-control bg-input w-25" placeholder="Discount (%)">
-                                                </div>
-                                              </div>
+                                                                                <label class="form-label">Most Purchased (Box 2)</label>
+                                                                                <div class="d-flex">
+                                                                                  <input type="number" name="hours_2" value="<?php  echo $hours_2; ?>"
+                                                                                    class="form-control bg-input w-25 me-2" placeholder="Total Hours" min="0">
+                                                                                  <input type="number" name="hours_price_2" value="<?php  echo $hours_price_2; ?>"
+                                                                                    class="form-control bg-input w-25 me-2" placeholder="Hour Price">
+                                                                                  <input type="number" name="hours_discount_2" value="<?php  echo $hours_discount_2; ?>"
+                                                                                    class="form-control bg-input w-25" placeholder="Discount (%)">
+                                                                                </div>
+                                                                              </div>
 
-                                              <div class="form-group">
-                                                <label class="form-label">Most Purchased (Box 3)</label>
-                                                <div class="d-flex">
-                                                  <input type="number" name="hours_3" value="<?php  echo $hours_3; ?>"
-                                                    class="form-control bg-input w-25 me-2" placeholder="Total Hours" min="0">
-                                                  <input type="number" name="hours_price_3" value="<?php  echo $hours_price_3; ?>"
-                                                    class="form-control bg-input w-25 me-2" placeholder="Hour Price">
-                                                  <input type="number" name="hours_discount_3" value="<?php  echo $hours_discount_3; ?>"
-                                                    class="form-control bg-input w-25" placeholder="Discount (%)">
-                                                </div>
-                                              </div> -->
+                                                                              <div class="form-group">
+                                                                                <label class="form-label">Most Purchased (Box 3)</label>
+                                                                                <div class="d-flex">
+                                                                                  <input type="number" name="hours_3" value="<?php  echo $hours_3; ?>"
+                                                                                    class="form-control bg-input w-25 me-2" placeholder="Total Hours" min="0">
+                                                                                  <input type="number" name="hours_price_3" value="<?php  echo $hours_price_3; ?>"
+                                                                                    class="form-control bg-input w-25 me-2" placeholder="Hour Price">
+                                                                                  <input type="number" name="hours_discount_3" value="<?php  echo $hours_discount_3; ?>"
+                                                                                    class="form-control bg-input w-25" placeholder="Discount (%)">
+                                                                                </div>
+                                                                              </div> -->
 
                 @endif
 

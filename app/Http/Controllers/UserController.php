@@ -138,10 +138,21 @@ class UserController extends Controller
 
         $user = User::find($id);
         $user->name = $request->full_name;
-        $user->email = $request->email;
+        // $user->email = $request->email;
         $user->phone = $request->phone;
-        if ($request->password) {
-            $user->password = Hash::make($request->password);
+        // if ($request->password) {
+        //     $user->password = Hash::make($request->password);
+        // }
+        if ($request->filled('old_password') && $request->filled('new_password')) {
+            if (Hash::check($request->old_password, $user->password)) {
+                $user->password = Hash::make($request->new_password);
+            } else {
+                return redirect()->back()->with('error', 'Old password does not match!');
+            }
+        } elseif ($request->filled('old_password') && !$request->filled('new_password')) {
+            return redirect()->back()->with('error', 'Please enter a new password!');
+        } elseif (!$request->filled('old_password') && $request->filled('new_password')) {
+            return redirect()->back()->with('error', 'Please enter your old password to change it!');
         }
         $user->whatsapp_no = $request->whatsapp_no;
         $user->city = $request->city;
