@@ -83,7 +83,7 @@ class UserManageProfileController extends Controller
 
         $user = User::find($userId);
         $user->name = $request->full_name;
-        // $user->email = $request->email;
+        $user->email = $request->email;
         $user->phone = $request->phone;
         if ($request->password) {
             $user->password = Hash::make($request->password);

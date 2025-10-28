@@ -37,7 +37,7 @@
                   <div class="input-group">
                     <span class="input-group-text"><i class="ri-mail-fill"></i></span>
                     <input type="email" class="form-control" placeholder="E-mail" name="email" required
-                      value='{{ $user->email }}' readonly/>
+                      value='{{ $user->email }}' />
                   </div>
                 </div>
 
