@@ -36,8 +36,8 @@
         </div>
 
         <!-- <div class="d-flex justify-content-center">
-                              {{ $users->links() }}
-                            </div> -->
+                                  {{ $users->links() }}
+                                </div> -->
         <div class="w-100">
           <div class="admin-table-wrap">
             <table>
@@ -80,21 +80,21 @@
             <div class="d-flex flex-wrap justify-content-between align-items-center mt-4 pagination-wrap">
               {{ $users->links('vendor.pagination.bootstrap-5') }}
               <!-- <p class="mb-0">Page: 1 of 2</p>
-                                  <div class="d-flex align-items-center gap-2">
-                                    <span>Page Size:</span>
-                                    <select class="form-select form-select-sm w-auto py-2">
-                                      <option>10</option>
-                                      <option>25</option>
-                                      <option>50</option>
-                                    </select>
-                                  </div>
-                                  <div class="d-flex gap-2 last-point-view">
-                                    <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-double-line"></i></button>
-                                    <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-s-line"></i></button>
-                                    <button class="btn btn-sm btn-outline-secondary active">1</button>
-                                    <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-s-line"></i></button>
-                                    <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-double-line"></i></button>
-                                  </div> -->
+                                      <div class="d-flex align-items-center gap-2">
+                                        <span>Page Size:</span>
+                                        <select class="form-select form-select-sm w-auto py-2">
+                                          <option>10</option>
+                                          <option>25</option>
+                                          <option>50</option>
+                                        </select>
+                                      </div>
+                                      <div class="d-flex gap-2 last-point-view">
+                                        <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-double-line"></i></button>
+                                        <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-s-line"></i></button>
+                                        <button class="btn btn-sm btn-outline-secondary active">1</button>
+                                        <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-s-line"></i></button>
+                                        <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-double-line"></i></button>
+                                      </div> -->
             </div>
           </div>
         </div>
@@ -131,7 +131,7 @@
               <div class="input-group">
                 <span class="input-group-text"><i class="ri-mail-fill"></i></span>
                 <!-- <input id="user_email" type="user_email" class="form-control @error('user_email') is-invalid @enderror"
-                                                                  name="user_email" value="{{ old('user_email') }}" required placeholder="E-mail"> -->
+                                                                      name="user_email" value="{{ old('user_email') }}" required placeholder="E-mail"> -->
                 <input id="user_email" type="email" class="form-control @error('user_email') is-invalid @enderror"
                   name="user_email" value="{{ old('user_email') }}" required placeholder="E-mail">
                 @error('user_email')
@@ -267,7 +267,7 @@
                       <div class="rounded-3">
                         <h2>$ {{ $data->hours * $data->hours_price}}</h2>
                         <!-- <span>${{ $data->hours_price }}</span><br>
-                        <span>{{ $data->discount }}% Off</span> -->
+                                <span>{{ $data->discount }}% Off</span> -->
                       </div>
                     </div>
                   @endforeach
@@ -279,7 +279,7 @@
                     <div class="rounded-3">
                       <h2>$ 270</h2>
                       <!-- <span>$270</span><br>
-                      <span>0% Off</span> -->
+                            <span>0% Off</span> -->
                     </div>
                   </div>
 
@@ -289,7 +289,7 @@
                     <div class="rounded-3">
                       <h2>$ 450</h2>
                       <!-- <span>$450</span><br>
-                      <span>0% Off</span> -->
+                            <span>0% Off</span> -->
                     </div>
                   </div>
 
@@ -299,7 +299,7 @@
                     <div class="rounded-3">
                       <h2>$ 720</h2>
                       <!-- <span>$720</span><br>
-                      <span>0% Off</span> -->
+                            <span>0% Off</span> -->
                     </div>
                   </div>
                 @endif
@@ -385,37 +385,37 @@
 
               </div>
 
-              
+
 
 
               <!-- <div class="d-flex flex-wrap justify-content-between align-items-center mt-2 pagination-wrap">
-                                <p class="mb-0">Page: 1 of 2</p>
-                                <div class="d-flex align-items-center gap-2">
-                                  <span>Page Size:</span>
-                                  <select class="form-select form-select-sm w-auto py-2">
-                                    <option>10</option>
-                                    <option>25</option>
-                                    <option>50</option>
-                                  </select>
-                                </div>
-                                <div class="d-flex gap-2 last-point-view">
-                                  <button class="btn btn-sm btn-outline-secondary">
-                                    <i class="ri-arrow-left-double-line"></i>
-                                  </button>
-                                  <button class="btn btn-sm btn-outline-secondary">
-                                    <i class="ri-arrow-left-s-line"></i>
-                                  </button>
-                                  <button class="btn btn-sm btn-outline-secondary active">
-                                    1
-                                  </button>
-                                  <button class="btn btn-sm btn-outline-secondary">
-                                    <i class="ri-arrow-right-s-line"></i>
-                                  </button>
-                                  <button class="btn btn-sm btn-outline-secondary">
-                                    <i class="ri-arrow-right-double-line"></i>
-                                  </button>
-                                </div>
-                              </div> -->
+                                    <p class="mb-0">Page: 1 of 2</p>
+                                    <div class="d-flex align-items-center gap-2">
+                                      <span>Page Size:</span>
+                                      <select class="form-select form-select-sm w-auto py-2">
+                                        <option>10</option>
+                                        <option>25</option>
+                                        <option>50</option>
+                                      </select>
+                                    </div>
+                                    <div class="d-flex gap-2 last-point-view">
+                                      <button class="btn btn-sm btn-outline-secondary">
+                                        <i class="ri-arrow-left-double-line"></i>
+                                      </button>
+                                      <button class="btn btn-sm btn-outline-secondary">
+                                        <i class="ri-arrow-left-s-line"></i>
+                                      </button>
+                                      <button class="btn btn-sm btn-outline-secondary active">
+                                        1
+                                      </button>
+                                      <button class="btn btn-sm btn-outline-secondary">
+                                        <i class="ri-arrow-right-s-line"></i>
+                                      </button>
+                                      <button class="btn btn-sm btn-outline-secondary">
+                                        <i class="ri-arrow-right-double-line"></i>
+                                      </button>
+                                    </div>
+                                  </div> -->
             </div>
           </div>
         </div>
@@ -429,7 +429,8 @@
             <form id="transactionForm" method="POST">
               @csrf
               <div class="modal-header border-0">
-                <h5 class="modal-title">Add Transaction</h5>
+                <!-- <h5 class="modal-title">Add Transactio</h5> -->
+                <h5 class="modal-title" id="transactionModalLabel">Add Transaction</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
               </div>
               <div class="modal-body">

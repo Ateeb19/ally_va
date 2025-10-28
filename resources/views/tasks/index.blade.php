@@ -83,12 +83,12 @@
           </table>
 
           <div class="d-flex flex-wrap justify-content-between align-items-center mt-4 pagination-wrap ">
-                {{ $tasks->links('vendor.pagination.bootstrap-5') }}
-            </div>
+            {{ $tasks->links('vendor.pagination.bootstrap-5') }}
           </div>
-
         </div>
+
       </div>
+    </div>
     </div>
   </section>
 
@@ -114,29 +114,42 @@
             @csrf
 
             <!-- Task type -->
-            <div class="input-group">
-              <span class="input-group-text"><i class="ri-user-fill"></i></span>
-              <input type="text" class="form-control" name="task_type" value="{{ old('task_type') }}" required
-                placeholder="Task Type">
+            <div class="">
+
+              <label class="form-label">Task Type</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="ri-user-fill"></i></span>
+                <input type="text" class="form-control" name="task_type" value="{{ old('task_type') }}" required
+                  placeholder="Task Type">
+              </div>
             </div>
 
             <!-- Task date -->
-            <div class="input-group">
-              <span class="input-group-text"><i class="ri-mail-fill"></i></span>
-              <input id="date" type="date" class="form-control" name="date" value="{{ old('date') }}" required
-                placeholder="Date">
+            <div class=" ">
+              <label class="form-label">Task Date</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="ri-mail-fill"></i></span>
+                <input id="date" type="date" class="form-control" name="date" value="{{ old('date') }}" required
+                  placeholder="Date">
+              </div>
             </div>
 
             <!-- Task Point -->
-            <div class="input-group">
-              <span class="input-group-text"><i class="ri-phone-fill"></i></span>
-              <input type="number" class="form-control" placeholder="Task Point" name="task_point" required />
+            <div class=" ">
+              <label class="form-label">Task Point</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="ri-phone-fill"></i></span>
+                <input type="number" class="form-control" placeholder="Task Point" name="task_point" required />
+              </div>
             </div>
 
             <!-- Task Description -->
-            <div class="input-group">
-              <span class="input-group-text"><i class="ri-phone-fill"></i></span>
-              <textarea class="form-control" cols="55" rows="5" name="description" required></textarea>
+            <div class="">
+              <label class="form-label">Task Description</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="ri-phone-fill"></i></span>
+                <textarea class="form-control" cols="55" rows="5" name="description" required></textarea>
+              </div>
             </div>
 
             <!-- Submit -->
@@ -167,27 +180,38 @@
             <input type="hidden" id="task_id" name="task_id">
             <input type="hidden" id="user_id" name="user_id">
 
-            <div class="input-group mb-3">
-              <!-- <label class="form-label">Task Type</label> -->
-              <span class="input-group-text"><i class="ri-user-fill"></i></span>
-              <input type="text" id="task_type" class="form-control" name="task_type">
+            <div class="mb-3">
+
+              <label class="form-label">Task Type</label>
+              <div class="input-group ">
+                <span class="input-group-text"><i class="ri-user-fill"></i></span>
+                <input type="text" id="task_type" class="form-control" name="task_type">
+              </div>
             </div>
 
-            <div class="input-group mb-3">
-              <!-- <label class="form-label">Task Date</label> -->
-              <span class="input-group-text"><i class="ri-mail-fill"></i></span>
-              <input type="date" id="task_date" name="date" class="form-control">
+            <div class=" mb-3">
+              <label class="form-label">Task Date</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="ri-mail-fill"></i></span>
+                <input type="date" id="task_date" name="date" class="form-control">
+              </div>
             </div>
 
-            <div class="input-group mb-3">
-              <!-- <label class="form-label">Task Point</label> -->
-              <span class="input-group-text"><i class="ri-phone-fill"></i></span>
-              <input type="number" id="task_point" name="task_point" class="form-control">
+            <div class=" mb-3">
+              <label class="form-label">Task Point</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="ri-phone-fill"></i></span>
+                <input type="number" id="task_point" name="task_point" class="form-control">
+              </div>
             </div>
 
-            <div class="input-group mb-3">
-              <span class="input-group-text"><i class="ri-phone-fill"></i></span>
-              <textarea class="form-control" cols="55" rows="5" name="description" required id="description"></textarea>
+            <div class="mb-3">
+              <label class="form-label">Task Description</label>
+              <div class="input-group ">
+                <span class="input-group-text"><i class="ri-phone-fill"></i></span>
+                <textarea class="form-control" cols="55" rows="5" name="description" required id="description"></textarea>
+              </div>
+
             </div>
 
             <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
