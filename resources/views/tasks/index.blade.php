@@ -115,7 +115,6 @@
 
             <!-- Task type -->
             <div class="">
-
               <label class="form-label">Task Type</label>
               <div class="input-group">
                 <span class="input-group-text"><i class="ri-user-fill"></i></span>

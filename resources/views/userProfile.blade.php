@@ -162,7 +162,7 @@
                                                                               ?>
 
                               <div class="form-group">
-                                <label class="form-label">Most Purchased</label>
+                                <label class="form-label">Most Purchased (A, B, C)</label>
                                 <div class="d-flex">
                                   <input type="number" name="hours_1" value="<?php  echo $hours_1; ?>"
                                     class="form-control bg-input w-25 me-2" placeholder="Total Hours" min="0" required>
