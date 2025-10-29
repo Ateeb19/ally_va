@@ -262,11 +262,11 @@
                   @endphp
 
                   @foreach($latestThree as $data)
-                    <div class="totalhours-box js-paypal-box" data-price="{{ $data->hours_price }}"
+                    <div class="totalhours-box js-paypal-box" data-price="{{ $data->hours_price * $data->hours }}"
                       data-user="{{ $userId ?? '' }}" data-discount="{{ $data->discount ?? 0 }}">
                       <div class="rounded-3">
                         <h2>{{ $data->hours}} Hours</h2>
-                        <span>${{ $data->hours_price }}</span><br>
+                        <span>${{ $data->hours_price * $data->hours }}</span><br>
                         <!-- <span>{{ $data->discount }}% Off</span> -->
                       </div>
                     </div>
@@ -274,31 +274,31 @@
 
                 @else
                   {{-- Default Box 1 --}}
-                  <div class="totalhours-box js-paypal-box" data-price="360" data-user="{{ $userId ?? '' }}"
+                  <div class="totalhours-box js-paypal-box" data-price="270" data-user="{{ $userId ?? '' }}"
                     data-discount="0">
                     <div class="rounded-3">
                       <h2>30 Hours</h2>
-                      <span>$9</span><br>
+                      <span>$270</span><br>
                       <!-- <span>0% Off</span> -->
                     </div>
                   </div>
 
                   {{-- Default Box 2 --}}
-                  <div class="totalhours-box js-paypal-box" data-price="1350" data-user="{{ $userId ?? '' }}"
+                  <div class="totalhours-box js-paypal-box" data-price="450" data-user="{{ $userId ?? '' }}"
                     data-discount="0">
                     <div class="rounded-3">
                       <h2>50 Hours</h2>
-                      <span>$9</span><br>
+                      <span>$450</span><br>
                       <!-- <span>0% Off</span> -->
                     </div>
                   </div>
 
                   {{-- Default Box 3 --}}
-                  <div class="totalhours-box js-paypal-box" data-price="2520" data-user="{{ $userId ?? '' }}"
+                  <div class="totalhours-box js-paypal-box" data-price="630" data-user="{{ $userId ?? '' }}"
                     data-discount="0">
                     <div class="rounded-3">
                       <h2>70 Hours</h2>
-                      <span>$9</span><br>
+                      <span>$630</span><br>
                       <!-- <span>0% Off</span> -->
                     </div>
                   </div>
@@ -446,7 +446,7 @@
                 </div>
                 <div class="mb-3">
                   <label>Amount (USD)</label>
-                  <input type="number" name="amount" id="amount" step="0.01" class="form-control" required>
+                  <input type="text" name="amount" id="amount" step="0.01" class="form-control" required>
                 </div>
               </div>
               <div class="modal-footer">

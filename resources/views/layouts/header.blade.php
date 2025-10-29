@@ -257,7 +257,7 @@
               <li class="nav-item ms-lg-3 d-none d-lg-block">
                 <button type="button" class="btn btn-primary px-4">
                   <a class="text-white px-6" style="text-decoration: none" href="{{ route('logout') }}" onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">Log Out</a>
+                                document.getElementById('logout-form').submit();">Log Out</a>
                 </button>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                   @csrf
@@ -293,8 +293,11 @@
         <div class="container">
           <div class="top-view">
             <h1 class="fw-bold">
-              Remaining Hours: {{ $userRemainHours ? $userRemainHours->hours : '00' }} hr
-              {{ $userRemainHours ? $userRemainHours->minutes : '00' }} min
+              Remaining Hours:
+              {{ ($userRemainHours && $userRemainHours->hours != 0) ? str_pad($userRemainHours->hours, 2, '0', STR_PAD_LEFT) : '00' }}
+              hr
+              {{ ($userRemainHours && $userRemainHours->minutes != 0) ? str_pad($userRemainHours->minutes, 2, '0', STR_PAD_LEFT) : '00' }}
+              min
             </h1>
           </div>
         </div>
@@ -309,8 +312,11 @@
         <div class="container">
           <div class="top-view">
             <h1 class="fw-bold">
-              Remaining Hours: {{ $userRemainHours ? $userRemainHours->hours : '00' }} hr
-              {{ $userRemainHours ? $userRemainHours->minutes : '00' }} min
+               Remaining Hours:
+              {{ ($userRemainHours && $userRemainHours->hours != 0) ? str_pad($userRemainHours->hours, 2, '0', STR_PAD_LEFT) : '00' }}
+              hr
+              {{ ($userRemainHours && $userRemainHours->minutes != 0) ? str_pad($userRemainHours->minutes, 2, '0', STR_PAD_LEFT) : '00' }}
+              min
             </h1>
           </div>
         </div>

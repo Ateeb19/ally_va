@@ -122,16 +122,16 @@
                                 <label class="form-label">Per Hour Price</label>
                                 <div class="input-group">
                                   <input type="number" name="hourPrice" value="{{ $userHours ? $userHours->hour_price : '' }}"
-                                    class="form-control bg-input" placeholder="Hour Price" min="0">
+                                    class="form-control bg-input" placeholder="Hour Price" min="0" required>
                                 </div>
                               </div>
                               <div class="form-group">
                                 <label class="form-label">Remaining (Hours & Minutes)</label>
                                 <div class="d-flex">
                                   <input type="number" name="hours" value="{{ $userHours ? $userHours->hours : 00 }}"
-                                    class="form-control bg-input w-25 me-2" placeholder="Hours" min="0">
+                                    class="form-control bg-input w-25 me-2" placeholder="Hours" min="0" required>
                                   <input type="number" name="minutes" value="{{ $userHours ? $userHours->minutes : 00 }}"
-                                    class="form-control bg-input w-25" placeholder="Minutes" min="0" max="59">
+                                    class="form-control bg-input w-25" placeholder="Minutes" min="0" max="59" required>
                                 </div>
                               </div>
                               <?php
@@ -165,11 +165,11 @@
                                 <label class="form-label">Most Purchased</label>
                                 <div class="d-flex">
                                   <input type="number" name="hours_1" value="<?php  echo $hours_1; ?>"
-                                    class="form-control bg-input w-25 me-2" placeholder="Total Hours" min="0">
+                                    class="form-control bg-input w-25 me-2" placeholder="Total Hours" min="0" required>
                                   <input type="number" name="hours_2" value="<?php  echo $hours_2; ?>"
-                                    class="form-control bg-input w-25 me-2" placeholder="Total Hours" min="0">
+                                    class="form-control bg-input w-25 me-2" placeholder="Total Hours" min="0" required>
                                   <input type="number" name="hours_3" value="<?php  echo $hours_3; ?>"
-                                    class="form-control bg-input w-25 me-2" placeholder="Total Hours" min="0">
+                                    class="form-control bg-input w-25 me-2" placeholder="Total Hours" min="0" required>
                                   <!-- <input type="number" name="hours_price_1" value="<?php  echo $hours_price_1; ?>"
                                                                                     class="form-control bg-input w-25 me-2" placeholder="Hour Price">
                                                                                   <input type="number" name="hours_discount_1" value="<?php  echo $hours_discount_1; ?>"

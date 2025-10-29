@@ -50,7 +50,8 @@ class HomeController extends Controller
         // $transactions = Transaction::where('user_id', Auth()->user()->id)->latest()->get();
         // $perPage = $request->input('per_page', 10);
         $transactions = Transaction::where('user_id', Auth()->user()->id)
-            ->latest()
+            // ->latest()
+            ->orderBy('date', 'desc')
             ->paginate($perPage) // show 10 transactions per page
             ->appends($request->query());
         $UserMostPurchase = UserMostPurchase::where('user_id', Auth()->user()->id)->get();
@@ -80,7 +81,8 @@ class HomeController extends Controller
         // $transactions = Transaction::where('user_id', $userId)->latest()->get();
         $perPage = $request->input('per_page', 10);
         $transactions = Transaction::where('user_id', $userId)
-            ->latest()
+            // ->latest()
+            ->orderBy('date', 'desc')
             ->paginate($perPage) // show 10 transactions per page
             ->appends($request->query());
         return view('home', compact('userId', 'users', 'transactions', 'userHour', 'UserMostPurchase'))->with('adminView', true);

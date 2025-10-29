@@ -34,7 +34,7 @@ class TransactionController extends Controller
         $request->validate([
             'transaction_id' => 'required',
             'transaction_date' => 'required|date',
-            'amount' => 'required|numeric',
+            'amount' => 'required',
         ]);
 
         $transaction = new Transaction();
@@ -72,7 +72,7 @@ class TransactionController extends Controller
         $request->validate([
             'transaction_id' => 'required',
             'transaction_date' => 'required|date',
-            'amount' => 'required|numeric',
+            'amount' => 'required',
         ]);
 
         $transaction = Transaction::find($id);

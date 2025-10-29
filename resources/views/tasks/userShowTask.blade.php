@@ -50,7 +50,7 @@
                 @foreach($tasks as $task)
                   <tr>
                     <td>{{ $task->task_type }}</td>
-                    <td>{{ $task->date }}</td>
+                    <td>{{ date('m-d-Y', strtotime(datetime: $task->date)) }}</td>
                     <td>{{ $task->point }}</td>
                   </tr>
                 @endforeach

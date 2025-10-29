@@ -74,7 +74,7 @@
                         {{ $task->task_type }}
                       </a>
                     </td>
-                    <td>{{ \Carbon\Carbon::parse($task->date)->format('m/d/y') }}</td>
+                    <td>{{ date('m-d-Y', strtotime(datetime: $task->date)) }}</td>
                     <td>{{ $task->point }}</td>
                   </tr>
                 @endforeach
@@ -139,7 +139,7 @@
               <label class="form-label">Task Point</label>
               <div class="input-group">
                 <span class="input-group-text"><i class="ri-phone-fill"></i></span>
-                <input type="number" class="form-control" placeholder="Task Point" name="task_point" required />
+                <input type="text" class="form-control" placeholder="Task Point" name="task_point" required />
               </div>
             </div>
 
@@ -201,7 +201,7 @@
               <label class="form-label">Task Point</label>
               <div class="input-group">
                 <span class="input-group-text"><i class="ri-phone-fill"></i></span>
-                <input type="number" id="task_point" name="task_point" class="form-control">
+                <input type="text" id="task_point" name="task_point" class="form-control">
               </div>
             </div>
 

@@ -16,7 +16,7 @@ class TaskHistoryController extends Controller
     {
         $userId = $id;
 
-        $query = Task::where('user_id', $id)->orderBy('id', 'desc');
+        $query = Task::where('user_id', $id)->orderBy('date', 'desc');
 
         if ($request->filled('task_type')) {
             $query->where('task_type', 'LIKE', '%' . $request->task_type . '%');

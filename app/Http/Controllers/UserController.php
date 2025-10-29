@@ -72,8 +72,8 @@ class UserController extends Controller
 
         UserHour::create([
             'user_id' => $user->id,
-            'hours' => 0,
-            'minutes' => 0,
+            'hours' => 00,
+            'minutes' => 00,
             'hour_price' => 9,
         ]);
 
