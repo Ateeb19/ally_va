@@ -437,24 +437,24 @@
               <div class="modal-body">
                 <input type="hidden" id="transaction_id_hidden">
                 <div class="mb-3">
-                  <label>Transaction ID</label>
+                  <label class="form-label">Transaction ID</label>
                   <div class="input-group">
                     <span class="input-group-text"><i class="ri-user-fill"></i></span>
-                    <input type="text" name="transaction_id" id="transaction_id" class="form-control" required>
+                    <input type="text" name="transaction_id" id="transaction_id" class="form-control" placeholder="Transaction ID" required>
                   </div>
                 </div>
                 <div class="mb-3">
-                  <label>Transaction Date</label>
+                  <label class="form-label">Transaction Date</label>
                   <div class="input-group">
                     <span class="input-group-text"><i class="ri-calendar-fill"></i></span>
                     <input type="date" name="transaction_date" id="transaction_date" class="form-control" required>
                   </div>
                 </div>
                 <div class="mb-3">
-                  <label>Amount (USD)</label>
+                  <label class="form-label">Amount (USD)</label>
                   <div class="input-group">
                     <span class="input-group-text"><i class="ri-money-dollar-box-fill"></i></span>
-                    <input type="text" name="amount" id="amount" step="0.01" class="form-control" required>
+                    <input type="text" name="amount" id="amount" step="0.01" class="form-control" placeholder="Amount (USD)" required>
                   </div>
                 </div>
               </div>
