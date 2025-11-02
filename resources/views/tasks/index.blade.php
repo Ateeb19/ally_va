@@ -146,7 +146,7 @@
             <div class="">
               <label class="form-label">Task Description</label>
               <div class="input-group">
-                <span class="input-group-text"><i class="ri-phone-fill"></i></span>
+                <span class="input-group-text"><i class="ri-file-list-fill"></i></span>
                 <textarea class="form-control" cols="55" rows="5" name="description" required></textarea>
               </div>
             </div>
@@ -207,7 +207,7 @@
             <div class="mb-3">
               <label class="form-label">Task Description</label>
               <div class="input-group ">
-                <span class="input-group-text"><i class="ri-phone-fill"></i></span>
+                <span class="input-group-text"><i class="ri-file-list-fill"></i></span>
                 <textarea class="form-control" cols="55" rows="5" name="description" required id="description"></textarea>
               </div>
 
