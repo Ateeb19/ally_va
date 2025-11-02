@@ -125,7 +125,10 @@ document.addEventListener('DOMContentLoaded', function () {
       link.classList.add('active');
     }
     // Handle Task History links
-    else if (href.includes('tasks') && path.includes('tasks')) {
+    else if (
+      (href.includes('tasks') && path.includes('tasks')) ||
+      (href.includes('taskhistory') && path.includes('taskhistory'))
+    ) {
       link.classList.add('active');
     }
     // Handle Profile links (dynamic user id)
