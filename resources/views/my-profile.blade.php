@@ -28,7 +28,7 @@
                   <div class="input-group">
                     <span class="input-group-text"><i class="ri-user-3-line"></i></span>
                     <input type="text" class="form-control" name="full_name" placeholder="Enter Full Name" required
-                      value='{{ $user->name }}' />
+                      value='{{ $user->name }}' maxlength="100" />
                   </div>
                 </div>
 
@@ -46,7 +46,7 @@
                   <div class="input-group">
                     <span class="input-group-text"><i class="ri-phone-line"></i></span>
                     <input type="text" class="form-control" name="phone" placeholder="Enter Phone Number"
-                      value='{{ $user->phone }}' />
+                      value='{{ $user->phone }}' maxlength="100" />
                   </div>
                 </div>
 
@@ -55,7 +55,7 @@
                   <div class="input-group">
                     <span class="input-group-text"><i class="ri-whatsapp-line"></i></span>
                     <input type="text" class="form-control" name="whatsapp_no" placeholder="Enter WhatsApp Number"
-                      value='{{ $user->whatsapp_no }}' />
+                      value='{{ $user->whatsapp_no }}' maxlength="100" />
                   </div>
                 </div>
 
@@ -64,7 +64,7 @@
                   <div class="input-group">
                     <span class="input-group-text"><i class="ri-building-line"></i></span>
                     <input type="text" name="city" class="form-control" placeholder="Enter City"
-                      value='{{ $user->city }}' />
+                      value='{{ $user->city }}' maxlength="100" />
                   </div>
                 </div>
 
@@ -73,7 +73,7 @@
                   <div class="input-group">
                     <span class="input-group-text"><i class="ri-building-line"></i></span>
                     <input type="text" name="country" class="form-control" placeholder="Enter Country"
-                      value='{{ $user->country }}' />
+                      value='{{ $user->country }}' maxlength="100" />
                   </div>
                 </div>
               </div>
@@ -135,9 +135,9 @@
                     <label class="form-label">Remaining (Hours & Minutes)</label>
                     <div class="d-flex">
                       <input type="number" name="hours" value="{{ $userHours ? $userHours->hours : 00 }}"
-                        class="form-control w-25 me-2" placeholder="Hours" min="0">
+                        class="form-control w-25 me-2" placeholder="Hours" min="0" max="99999999" required>
                       <input type="number" name="minutes" value="{{ $userHours ? $userHours->minutes : 00 }}"
-                        class="form-control w-25" placeholder="Minutes" min="0" max="59">
+                        class="form-control w-25" placeholder="Minutes" min="0" max="99999999" required>
                     </div>
                   </div>
                 @endif

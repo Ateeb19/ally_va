@@ -28,7 +28,7 @@
                   <div class="input-group">
                     <span class="input-group-text"><i class="ri-user-3-line"></i></span>
                     <input type="text" class="form-control" name="full_name" placeholder="Enter Full Name" required
-                      value='{{ $user->name }}' />
+                      value='{{ $user->name }}' maxlength="100" />
                   </div>
                 </div>
 
@@ -37,7 +37,7 @@
                   <div class="input-group">
                     <span class="input-group-text"><i class="ri-mail-fill"></i></span>
                     <input type="email" class="form-control" placeholder="E-mail" name="email" required
-                      value='{{ $user->email }}' />
+                      value='{{ $user->email }}' maxlength="100" />
                   </div>
                 </div>
 
@@ -46,7 +46,7 @@
                   <div class="input-group">
                     <span class="input-group-text"><i class="ri-phone-line"></i></span>
                     <input type="text" class="form-control" name="phone" placeholder="Enter Phone Number"
-                      value='{{ $user->phone }}' />
+                      value='{{ $user->phone }}' maxlength="100" />
                   </div>
                 </div>
 
@@ -55,7 +55,7 @@
                   <div class="input-group">
                     <span class="input-group-text"><i class="ri-whatsapp-line"></i></span>
                     <input type="text" class="form-control" name="whatsapp_no" placeholder="Enter WhatsApp Number"
-                      value='{{ $user->whatsapp_no }}' />
+                      value='{{ $user->whatsapp_no }}' maxlength="100" />
                   </div>
                 </div>
 
@@ -64,7 +64,7 @@
                   <div class="input-group">
                     <span class="input-group-text"><i class="ri-building-line"></i></span>
                     <input type="text" name="city" class="form-control" placeholder="Enter City"
-                      value='{{ $user->city }}' />
+                      value='{{ $user->city }}' maxlength="100" />
                   </div>
                 </div>
 
@@ -73,7 +73,7 @@
                   <div class="input-group">
                     <span class="input-group-text"><i class="ri-building-line"></i></span>
                     <input type="text" name="country" class="form-control" placeholder="Enter Country"
-                      value='{{ $user->country }}' />
+                      value='{{ $user->country }}' maxlength="100" />
                   </div>
                 </div>
               </div>
@@ -122,16 +122,16 @@
                                 <label class="form-label">Per Hour Price</label>
                                 <div class="input-group">
                                   <input type="number" name="hourPrice" value="{{ $userHours ? $userHours->hour_price : '' }}"
-                                    class="form-control bg-input" placeholder="Hour Price" min="0" required>
+                                    class="form-control bg-input" placeholder="Hour Price" min="0" required max="99999999" step="0.01">
                                 </div>
                               </div>
                               <div class="form-group">
                                 <label class="form-label">Remaining (Hours & Minutes)</label>
                                 <div class="d-flex">
                                   <input type="number" name="hours" value="{{ $userHours ? $userHours->hours : 00 }}"
-                                    class="form-control bg-input w-25 me-2" placeholder="Hours" min="0" required>
+                                    class="form-control bg-input w-25 me-2" placeholder="Hours" min="0" required max="99999999">
                                   <input type="number" name="minutes" value="{{ $userHours ? $userHours->minutes : 00 }}"
-                                    class="form-control bg-input w-25" placeholder="Minutes" min="0" max="59" required>
+                                    class="form-control bg-input w-25" placeholder="Minutes" min="0" required max="99999999">
                                 </div>
                               </div>
                               <?php
@@ -165,11 +165,11 @@
                                 <label class="form-label">Most Purchased (A, B, C)</label>
                                 <div class="d-flex">
                                   <input type="number" name="hours_1" value="<?php  echo $hours_1; ?>"
-                                    class="form-control bg-input w-25 me-2" placeholder="Total Hours" min="0" required>
+                                    class="form-control bg-input w-25 me-2" placeholder="Total Hours" min="0" required max="99999999">
                                   <input type="number" name="hours_2" value="<?php  echo $hours_2; ?>"
-                                    class="form-control bg-input w-25 me-2" placeholder="Total Hours" min="0" required>
+                                    class="form-control bg-input w-25 me-2" placeholder="Total Hours" min="0" required max="99999999">
                                   <input type="number" name="hours_3" value="<?php  echo $hours_3; ?>"
-                                    class="form-control bg-input w-25 me-2" placeholder="Total Hours" min="0" required>
+                                    class="form-control bg-input w-25 me-2" placeholder="Total Hours" min="0" required max="99999999">
                                   <!-- <input type="number" name="hours_price_1" value="<?php  echo $hours_price_1; ?>"
                                                                                     class="form-control bg-input w-25 me-2" placeholder="Hour Price">
                                                                                   <input type="number" name="hours_discount_1" value="<?php  echo $hours_discount_1; ?>"

@@ -8,7 +8,7 @@ use App\Models\Transaction;
 
 class TransactionController extends Controller
 {
-      /**
+    /**
      * Display a listing of the resource.
      */
     public function index($userId)

@@ -216,10 +216,6 @@
             <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
             <button type="submit" class="btn btn-primary w-100 btn-task-update">Update Changes</button>
           </div>
-
-
-
-
         </form>
 
       </div>
