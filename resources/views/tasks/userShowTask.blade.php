@@ -105,7 +105,7 @@
               </div>
 
               <div class="d-flex align-items-stretch border rounded bg-white">
-                <span class="input-group-text d-flex align-items-center justify-content-center">
+                <span class="input-group-text border-0 border-end rounded-0 d-flex align-items-center justify-content-center">
                   <i class="ri-phone-fill"></i>
                 </span>
                 <textarea id="view_task_desc" class="form-control border-0 shadow-none" rows="4" readonly></textarea>
