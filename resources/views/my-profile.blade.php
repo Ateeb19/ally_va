@@ -135,9 +135,9 @@
                     <label class="form-label">Remaining (Hours & Minutes)</label>
                     <div class="d-flex">
                       <input type="number" name="hours" value="{{ $userHours ? $userHours->hours : 00 }}"
-                        class="form-control w-25 me-2" placeholder="Hours" min="0" max="99999999" required>
+                        class="form-control w-25 me-2" placeholder="Hours" min="0" max="99999" required>
                       <input type="number" name="minutes" value="{{ $userHours ? $userHours->minutes : 00 }}"
-                        class="form-control w-25" placeholder="Minutes" min="0" max="99999999" required>
+                        class="form-control w-25" placeholder="Minutes" min="0" max="99999" required>
                     </div>
                   </div>
                 @endif

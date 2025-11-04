@@ -37,6 +37,10 @@ Route::get('/', function () {
     return view('welcome'); // or 'home', or whatever your homepage view is
 });
 
+Route::get('/home-page', function () {
+    return view('welcome');
+})->name('public.home');
+
 // ... the rest of your routes
 Route::get('/about-us', function () {
     return view('about');
@@ -61,13 +65,13 @@ Route::post('/inquerySave', [App\Http\Controllers\HomeController::class, 'Inquir
 
 Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function () {
     Route::get('/users/{user}/dashboard', [App\Http\Controllers\HomeController::class, 'viewUserDashboard'])
-         ->name('admin.users.dashboard');
+        ->name('admin.users.dashboard');
     Route::delete('/tasks/delete-multiple', [TaskHistoryController::class, 'deleteMultiple'])
-     ->name('admin.users.task.destroyMultiple');
+        ->name('admin.users.task.destroyMultiple');
     Route::resource('users.tasks', TaskHistoryController::class);
     Route::resource('users.transaction', TransactionController::class);
     Route::delete('/transactions/delete-multiple', [TransactionController::class, 'deleteMultiple'])
-     ->name('admin.users.transaction.destroyMultiple');
+        ->name('admin.users.transaction.destroyMultiple');
     Route::resource('users.userprofile', UserManageProfileController::class);
 });
 
@@ -75,9 +79,9 @@ Route::get('user/taskhistory/{user_id}', [UserController::class, 'showTaskHistor
 Route::resource('user', UserController::class);
 
 Route::delete('/blogs/delete-multiple', [BlogController::class, 'deleteMultiple'])
-     ->name('blogs.destroyMultiple');
+    ->name('blogs.destroyMultiple');
 Route::get('/blogs/show-detail/{blog_id}', [BlogController::class, 'FrontBlogDetailShow'])
-     ->name('blogs.blog-detail');
+    ->name('blogs.blog-detail');
 Route::resource('blogs', BlogController::class);
 
 Route::get('paypal/payment', [PayPalController::class, 'payment'])->name('paypal.payment');

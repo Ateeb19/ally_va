@@ -106,42 +106,58 @@ modal.addEventListener("click", (e) => {
   }
 });
 
-
 document.addEventListener('DOMContentLoaded', function () {
-  const path = window.location.pathname;
+  function normalizePath(p) {
+    try {
+      const url = new URL(p, location.origin);
+      let pathname = url.pathname.replace(/\/+$/, '');
+      return pathname === '' ? '/' : pathname;
+    } catch {
+      return p === '/' ? '/' : p.replace(/\/+$/, '');
+    }
+  }
 
+  const current = normalizePath(window.location.pathname);
   const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
+  navLinks.forEach(link => link.classList.remove('active'));
+
   navLinks.forEach(link => {
-    link.classList.remove('active');
-
     const href = link.getAttribute('href');
+    if (!href || href === '#' || href.startsWith('javascript:')) return;
 
-    // Handle Dashboard links
-    if (href === '/home' && path === '/home') {
+    const linkPath = normalizePath(href);
+
+    if ((current === '/' || current === '/home-page') &&
+      (linkPath === '/' || linkPath === '/home-page')) {
       link.classList.add('active');
+      return;
     }
-    else if (href.includes('dashboard') && path.includes('dashboard')) {
+
+    if (linkPath === '/home' && current === '/home') {
       link.classList.add('active');
+      return;
     }
-    // Handle Task History links
-    else if (
-      (href.includes('tasks') && path.includes('tasks')) ||
-      (href.includes('taskhistory') && path.includes('taskhistory'))
-    ) {
+
+    if (linkPath.includes('blogs') && current.startsWith('/blogs')) {
       link.classList.add('active');
+      return;
     }
-    // Handle Profile links (dynamic user id)
-    else if (href.includes('edit') && path.includes('edit')) {
+
+    if ((linkPath.includes('taskhistory') && current.includes('taskhistory')) ||
+      (linkPath.includes('tasks') && current.includes('tasks'))) {
       link.classList.add('active');
+      return;
     }
-    // Handle Insights (blogs.index)
-    else if (href.includes('blogs') && path.includes('blogs')) {
+
+    if (linkPath.includes('edit') && current.includes('edit')) {
       link.classList.add('active');
+      return;
     }
-    // Handle static pages exact match
-    else if (href === path) {
+
+    if (linkPath !== '/' && (current === linkPath || current.startsWith(linkPath + '/'))) {
       link.classList.add('active');
+      return;
     }
   });
 });

@@ -3,9 +3,22 @@
   <nav class="navbar navbar-expand-lg">
     <div class="container">
       <!-- Logo -->
-      <a class="navbar-brand fw-bold text-primary" href="#">
+      <!-- <a class="navbar-brand fw-bold text-primary" href="#">
         <img src="{{ asset('images/logo.png') }}" alt="Logo" class="me-2" />
-      </a>
+      </a> -->
+
+      @if(Auth::check())
+        {{-- Logged in: open the public home page in new tab --}}
+        <a href="{{ route('public.home') }}" target="_blank" rel="noopener noreferrer">
+          <img src="{{ asset('images/logo.png') }}" alt="Logo">
+        </a>
+      @else
+        {{-- Not logged in: open home page in same tab --}}
+        <a href="{{ route('public.home') }}">
+          <img src="{{ asset('images/logo.png') }}" alt="Logo">
+        </a>
+      @endif
+
 
       <div id="" class="d-block d-lg-none">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#authModal">
@@ -196,7 +209,7 @@
 
       <!-- Menu -->
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
+        <!-- <ul class="navbar-nav ms-auto align-items-lg-center">
           @guest
             <li class="nav-item text-primary">
               <a class="nav-link" href="/">Home</a>
@@ -257,7 +270,7 @@
               <li class="nav-item ms-lg-3 d-none d-lg-block">
                 <button type="button" class="btn btn-primary px-4">
                   <a class="text-white px-6" style="text-decoration: none" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">Log Out</a>
+                                        document.getElementById('logout-form').submit();">Log Out</a>
                 </button>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                   @csrf
@@ -266,7 +279,123 @@
             @endif
           @endguest
           </li>
+        </ul> -->
+
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+
+          @if(
+              request()->is('/') ||
+              request()->is('home-page') ||
+              request()->is('about-us') ||
+              request()->is('services') ||
+              request()->is('insights') ||
+              request()->is('contact')
+            )
+            <li class="nav-item text-primary">
+              <a class="nav-link" href="{{ url('home-page') }}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('/about-us') }}">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('/services') }}">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('/insights') }}">Insights</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
+            </li>
+
+            @guest
+              <li class="nav-item ms-lg-3 d-none d-lg-block">
+                <button type="button" class="btn btn-primary px-4" data-bs-toggle="modal" data-bs-target="#authModal">
+                  Login
+                </button>
+              </li>
+            @endguest
+          @endif
+
+
+          @if(isset($adminView) && $adminView === true && Auth::check() && auth()->user()->hasRole('super_admin'))
+            <li class="nav-item text-primary">
+              <a class="nav-link" href="{{ route('admin.users.dashboard', $userId) }}">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('users.tasks.index', $userId) }}">Task History</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"
+                href="{{ route('users.userprofile.edit', ['user' => $userId, 'userprofile' => $userId]) }}">
+                My Profile
+              </a>
+            </li>
+            <li class="nav-item ms-lg-3 d-none d-lg-block">
+              <button type="button" class="btn btn-primary px-4">
+                <a class="text-white px-6" style="text-decoration: none" href="{{ route('logout') }}"
+                  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                  Log Out
+                </a>
+              </button>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+              </form>
+            </li>
+          @endif
+
+
+          @if(
+              Auth::check() &&
+              !isset($adminView) && (
+                request()->is('home') ||
+                request()->is('user/*') ||
+                request()->is('blogs*') ||
+                request()->is('admin/*')
+              )
+            )
+            @role('user')
+            <li class="nav-item text-primary">
+              <a class="nav-link" href="{{ url('/home') }}">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('user.showTaskHistory', auth()->user()->id) }}">Task History</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('user.edit', auth()->user()->id) }}">My Profile</a>
+            </li>
+            @endrole
+
+            @if(auth()->user()->hasRole('super_admin'))
+              <li class="nav-item text-primary">
+                <a class="nav-link" href="{{ url('/home') }}">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('blogs.index') }}">Insights</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('user.edit', auth()->user()->id) }}">My Profile</a>
+              </li>
+            @endif
+
+            <li class="nav-item ms-lg-3 d-none d-lg-block">
+              <button type="button" class="btn btn-primary px-4">
+                <a class="text-white px-6" style="text-decoration: none" href="{{ route('logout') }}"
+                  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                  Log Out
+                </a>
+              </button>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+              </form>
+            </li>
+          @endif
+
         </ul>
+
+
       </div>
       <!-- </div> -->
     </div>
@@ -312,7 +441,7 @@
         <div class="container">
           <div class="top-view">
             <h1 class="fw-bold">
-               Remaining Hours:
+              Remaining Hours:
               {{ ($userRemainHours && $userRemainHours->hours != 0) ? str_pad($userRemainHours->hours, 2, '0', STR_PAD_LEFT) : '00' }}
               hr
               {{ ($userRemainHours && $userRemainHours->minutes != 0) ? str_pad($userRemainHours->minutes, 2, '0', STR_PAD_LEFT) : '00' }}

@@ -122,16 +122,16 @@
                                 <label class="form-label">Per Hour Price</label>
                                 <div class="input-group">
                                   <input type="number" name="hourPrice" value="{{ $userHours ? $userHours->hour_price : '' }}"
-                                    class="form-control bg-input" placeholder="Hour Price" min="0" required max="99999999" step="0.01">
+                                    class="form-control bg-input" placeholder="Hour Price" min="0" required max="99999" step="0.01">
                                 </div>
                               </div>
                               <div class="form-group">
                                 <label class="form-label">Remaining (Hours & Minutes)</label>
                                 <div class="d-flex">
                                   <input type="number" name="hours" value="{{ $userHours ? $userHours->hours : 00 }}"
-                                    class="form-control bg-input w-25 me-2" placeholder="Hours" min="0" required max="99999999">
+                                    class="form-control bg-input w-25 me-2" placeholder="Hours" min="0" required max="99999">
                                   <input type="number" name="minutes" value="{{ $userHours ? $userHours->minutes : 00 }}"
-                                    class="form-control bg-input w-25" placeholder="Minutes" min="0" required max="99999999">
+                                    class="form-control bg-input w-25" placeholder="Minutes" min="0" required max="99999">
                                 </div>
                               </div>
                               <?php
@@ -165,11 +165,11 @@
                                 <label class="form-label">Most Purchased (A, B, C)</label>
                                 <div class="d-flex">
                                   <input type="number" name="hours_1" value="<?php  echo $hours_1; ?>"
-                                    class="form-control bg-input w-25 me-2" placeholder="Total Hours" min="0" required max="99999999">
+                                    class="form-control bg-input w-25 me-2" placeholder="Total Hours" min="0" required max="99999">
                                   <input type="number" name="hours_2" value="<?php  echo $hours_2; ?>"
-                                    class="form-control bg-input w-25 me-2" placeholder="Total Hours" min="0" required max="99999999">
+                                    class="form-control bg-input w-25 me-2" placeholder="Total Hours" min="0" required max="99999">
                                   <input type="number" name="hours_3" value="<?php  echo $hours_3; ?>"
-                                    class="form-control bg-input w-25 me-2" placeholder="Total Hours" min="0" required max="99999999">
+                                    class="form-control bg-input w-25 me-2" placeholder="Total Hours" min="0" required max="99999">
                                   <!-- <input type="number" name="hours_price_1" value="<?php  echo $hours_price_1; ?>"
                                                                                     class="form-control bg-input w-25 me-2" placeholder="Hour Price">
                                                                                   <input type="number" name="hours_discount_1" value="<?php  echo $hours_discount_1; ?>"

@@ -18,7 +18,7 @@ button,
 
 button:hover,
 .btn:hover {
-  transform: translateY(-3px);
+  /* transform: translateY(-3px); */
 }
 
 .top-banner {
@@ -798,7 +798,7 @@ button:hover,
 
 button:hover,
 .btn:hover {
-  transform: translateY(-3px);
+  /* transform: translateY(-3px); */
 }
 
 .intro-desc .modal-body img {
