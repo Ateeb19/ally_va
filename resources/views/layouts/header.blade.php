@@ -400,7 +400,7 @@
       <!-- </div> -->
     </div>
   </nav>
-  @guest
+  <!-- @guest
 
   @else
     @if(!isset($adminView) && auth()->user()->hasRole('super_admin'))
@@ -451,5 +451,70 @@
         </div>
       </div>
     @endif
+  @endguest -->
+
+
+  @guest
+
+  @else
+    @php
+      // Define the routes where the section should be hidden
+      $hiddenRoutes = ['home-page', 'about-us', 'services', 'pricing', 'insights', 'contact'];
+    @endphp
+
+    {{-- Show this section only if the current route is NOT in the hidden list --}}
+    @if(!in_array(Request::path(), $hiddenRoutes))
+      @if(!isset($adminView) && auth()->user()->hasRole('super_admin'))
+        <div class="inner-page-header">
+          <div class="container">
+            <div class="top-view">
+              <h1 class="fw-bold">Welcome! Admin</h1>
+            </div>
+          </div>
+        </div>
+      @endif
+
+      @role('user')
+      @if(Auth::check())
+        @php
+          $userRemainHours = \App\Models\UserHour::where('user_id', Auth::id())->first();
+        @endphp
+
+        <div class="inner-page-header">
+          <div class="container">
+            <div class="top-view">
+              <h1 class="fw-bold">
+                Remaining Hours:
+                {{ ($userRemainHours && $userRemainHours->hours != 0) ? str_pad($userRemainHours->hours, 2, '0', STR_PAD_LEFT) : '00' }}
+                hr
+                {{ ($userRemainHours && $userRemainHours->minutes != 0) ? str_pad($userRemainHours->minutes, 2, '0', STR_PAD_LEFT) : '00' }}
+                min
+              </h1>
+            </div>
+          </div>
+        </div>
+      @endif
+      @endrole
+
+      @if(isset($adminView) && auth()->user()->hasRole('super_admin') && $adminView === true)
+        @php
+          $userRemainHours = \App\Models\UserHour::where('user_id', $userId)->first();
+        @endphp
+        <div class="inner-page-header">
+          <div class="container">
+            <div class="top-view">
+              <h1 class="fw-bold">
+                Remaining Hours:
+                {{ ($userRemainHours && $userRemainHours->hours != 0) ? str_pad($userRemainHours->hours, 2, '0', STR_PAD_LEFT) : '00' }}
+                hr
+                {{ ($userRemainHours && $userRemainHours->minutes != 0) ? str_pad($userRemainHours->minutes, 2, '0', STR_PAD_LEFT) : '00' }}
+                min
+              </h1>
+            </div>
+          </div>
+        </div>
+      @endif
+    @endif
   @endguest
+
 </section>
