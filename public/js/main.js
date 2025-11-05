@@ -128,13 +128,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const linkPath = normalizePath(href);
 
-    if ((current === '/' || current === '/home-page') &&
-      (linkPath === '/' || linkPath === '/home-page')) {
+    if ((current === '/' || current === '/home') &&
+      (linkPath === '/' || linkPath === '/home')) {
       link.classList.add('active');
       return;
     }
 
-    if (linkPath === '/home' && current === '/home') {
+    if (linkPath === '/dashboard' && current === '/dashboard') {
       link.classList.add('active');
       return;
     }

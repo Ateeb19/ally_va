@@ -61,10 +61,19 @@
         <main>
             @yield('content')
         </main>
-        @guest
-            <!-- Include footer -->
+
+        @if(
+                request()->is('/') ||
+                request()->is('home') ||
+                request()->is('about-us') ||
+                request()->is('services') ||
+                request()->is('pricing') ||
+                request()->is('insights') ||
+                request()->is('contact')
+            )
             @include('layouts.footer')
-        @endguest
+        @endif
+
     </div>
     @stack('script')
     <!-- Bootstrap & Swiper JS -->

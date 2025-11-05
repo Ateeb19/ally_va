@@ -281,7 +281,7 @@
           </li>
         </ul> -->
 
-        <ul class="navbar-nav ms-auto align-items-lg-center">
+        <!-- <ul class="navbar-nav ms-auto align-items-lg-center">
 
           @if(
               request()->is('/') ||
@@ -393,8 +393,128 @@
             </li>
           @endif
 
-        </ul>
+        </ul> -->
 
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+
+          {{-- 🌐 Public Navbar: visible on public pages --}}
+          @if(
+              request()->is('/') ||
+              request()->is('home') ||
+              request()->is('about-us') ||
+              request()->is('services') ||
+              request()->is('pricing') ||
+              request()->is('insights') ||
+              request()->is('contact')
+            )
+            <li class="nav-item text-primary">
+              <a class="nav-link" href="{{ url('/home') }}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('/about-us') }}">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('/services') }}">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('/insights') }}">Insights</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
+            </li>
+
+            @guest
+              <li class="nav-item ms-lg-3 d-none d-lg-block">
+                <button type="button" class="btn btn-primary px-4" data-bs-toggle="modal" data-bs-target="#authModal">
+                  Login
+                </button>
+              </li>
+            @endguest
+          @endif
+
+
+          {{-- 👑 Admin viewing a specific user's dashboard --}}
+          @if(isset($adminView) && $adminView === true && Auth::check() && auth()->user()->hasRole('super_admin'))
+            <li class="nav-item text-primary">
+              <a class="nav-link" href="{{ route('admin.users.dashboard', $userId) }}">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('users.tasks.index', $userId) }}">Task History</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"
+                href="{{ route('users.userprofile.edit', ['user' => $userId, 'userprofile' => $userId]) }}">
+                My Profile
+              </a>
+            </li>
+            <li class="nav-item ms-lg-3 d-none d-lg-block">
+              <button type="button" class="btn btn-primary px-4">
+                <a class="text-white px-6" style="text-decoration: none" href="{{ route('logout') }}"
+                  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                  Log Out
+                </a>
+              </button>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+              </form>
+            </li>
+          @endif
+
+
+          {{-- 🧑‍💼 Logged-in user / admin dashboard navbar --}}
+          @if(
+              Auth::check() &&
+              !isset($adminView) && (
+                request()->is('dashboard') ||
+                request()->is('user/*') ||
+                request()->is('blogs*') ||
+                request()->is('admin/*')
+              )
+            )
+            {{-- Normal user --}}
+            @role('user')
+            <li class="nav-item text-primary">
+              <a class="nav-link" href="{{ url('/dashboard') }}">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('user.showTaskHistory', auth()->user()->id) }}">Task History</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('user.edit', auth()->user()->id) }}">My Profile</a>
+            </li>
+            @endrole
+
+            {{-- Super Admin (own dashboard) --}}
+            @if(auth()->user()->hasRole('super_admin'))
+              <li class="nav-item text-primary">
+                <a class="nav-link" href="{{ url('/dashboard') }}">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('blogs.index') }}">Insights</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('user.edit', auth()->user()->id) }}">My Profile</a>
+              </li>
+            @endif
+
+            {{-- Logout --}}
+            <li class="nav-item ms-lg-3 d-none d-lg-block">
+              <button type="button" class="btn btn-primary px-4">
+                <a class="text-white px-6" style="text-decoration: none" href="{{ route('logout') }}"
+                  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                  Log Out
+                </a>
+              </button>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+              </form>
+            </li>
+          @endif
+
+        </ul>
 
       </div>
       <!-- </div> -->
@@ -459,7 +579,7 @@
   @else
     @php
       // Define the routes where the section should be hidden
-      $hiddenRoutes = ['home-page', 'about-us', 'services', 'pricing', 'insights', 'contact'];
+      $hiddenRoutes = ['home', 'about-us', 'services', 'pricing', 'insights', 'contact'];
     @endphp
 
     {{-- Show this section only if the current route is NOT in the hidden list --}}

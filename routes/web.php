@@ -25,19 +25,28 @@ use App\Http\Controllers\BlogController;
 // });
 // routes/web.php
 
-Route::get('/', function () {
-    // Check if a user is logged in
-    if (Auth::check()) {
-        // If logged in, redirect them directly to the dashboard
-        // using the named route 'home'.
-        return redirect()->route('home');
-    }
+// Route::get('/', function () {
+//     // Check if a user is logged in
+//     if (Auth::check()) {
+//         // If logged in, redirect them directly to the dashboard
+//         // using the named route 'home'.
+//         return redirect()->route('home');
+//     }
 
-    // If not logged in, show the regular website homepage view
-    return view('welcome'); // or 'home', or whatever your homepage view is
+//     // If not logged in, show the regular website homepage view
+//     return view('welcome'); // or 'home', or whatever your homepage view is
+// });
+Route::get('/', function () {
+    if (Auth::check()) {
+        return redirect()->route('dashboard');
+    }
+    return view('welcome');
 });
 
-Route::get('/home-page', function () {
+// Route::get('/home-page', function () {
+//     return view('welcome');
+// })->name('public.home');
+Route::get('/home', function () {
     return view('welcome');
 })->name('public.home');
 
@@ -60,9 +69,13 @@ Route::get('/contact', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+// Route::get('/dashboard', [HomeController::class, 'index'])->middleware('auth')->name('dashboard');
+
+// Inquiry submission
 Route::post('/inquerySave', [App\Http\Controllers\HomeController::class, 'InquirySave'])->name('inquerySave');
 
+// Admin routes
 Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function () {
     Route::get('/users/{user}/dashboard', [App\Http\Controllers\HomeController::class, 'viewUserDashboard'])
         ->name('admin.users.dashboard');
