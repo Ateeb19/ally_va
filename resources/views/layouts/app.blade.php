@@ -84,14 +84,24 @@
     <script src="{{ asset('js/script.js') }}?v={{ time() }}" defer></script>
     {{--
     <script src="https://www.google.com/recaptcha/api.js" async defer></script> --}}
-    <script>
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function () {
             @if ($errors->any())
                 var authModal = new bootstrap.Modal(document.getElementById('authModal'));
                 authModal.show();
             @endif
         });
+    </script> -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+             @if ($errors->any() && !Request::is('dashboard') && !Request::is('admin/users/*/dashboard'))
+                var authModal = new bootstrap.Modal(document.getElementById('authModal'));
+                authModal.show();
+            @endif
+        });
     </script>
+
 
     <script>
         var swiper = new Swiper(".mySwiper", {
