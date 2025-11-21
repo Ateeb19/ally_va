@@ -100,3 +100,14 @@ Route::resource('blogs', BlogController::class);
 Route::get('paypal/payment', [PayPalController::class, 'payment'])->name('paypal.payment');
 Route::get('paypal/success', [PayPalController::class, 'success'])->name('paypal.success');
 Route::get('paypal/cancel', [PayPalController::class, 'cancel'])->name('paypal.cancel');
+
+Route::get('/mail-test', function () {
+    try {
+        \Mail::raw('SMTP Test OK', function ($msg) {
+            $msg->to('ateebhaque1912@gmail.com')->subject('SMTP Testing');
+        });
+        return "Mail sent successfully!";
+    } catch (\Exception $e) {
+        return "Error: " . $e->getMessage();
+    }
+});

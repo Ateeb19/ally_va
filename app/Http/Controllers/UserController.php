@@ -9,6 +9,9 @@ use App\Models\UserMostPurchase;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Task;
+use App\Mail\WelcomeMail;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\AdminUserRegisteredMail;
 class UserController extends Controller
 {
     /**
@@ -92,6 +95,25 @@ class UserController extends Controller
                 'status' => $purchase['status'],
             ]);
         }
+
+        /**
+         * 🚀🚀 NEW — SEND EMAILS 🚀🚀
+         */
+
+        // Send Welcome Mail to the newly created user
+        Mail::to($user->email)->send(new WelcomeMail($user));
+
+        // Notify Super Admin
+        $superAdmin = User::role('super_admin')->first();
+
+        if ($superAdmin) {
+            Mail::to($superAdmin->email)->send(new AdminUserRegisteredMail($user));
+        }
+
+        /**
+         * END EMAIL LOGIC
+         */
+
 
         if ($request->ajax()) {
             return response()->json(['success' => true], 200);
@@ -183,7 +205,7 @@ class UserController extends Controller
         $user = User::find($id);
         $user->delete();
 
-        return redirect()->route('home')->with('message', 'Profile Deleted successfully!');
+        return redirect()->route('dashboard')->with('message', 'Profile Deleted successfully!');
     }
 
     public function showTaskHistory(Request $request, $user_id)
