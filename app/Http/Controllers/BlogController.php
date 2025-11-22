@@ -67,16 +67,16 @@ class BlogController extends Controller
             $filename = time() . '_' . $file->getClientOriginalName();
             $imagePath = $file->storeAs('blogs', $filename, 'public');
 
-            // Copy to public folder since symlink does not work in live server
+            // PATHS
             $source = storage_path('app/public/' . $imagePath);
             $destination = public_path('storage/' . $imagePath);
 
-            // Ensure destination folder exists
+            // Create folder if not exists
             if (!file_exists(public_path('storage/blogs'))) {
-                mkdir(public_path('storage/blogs'), 0755, true);
+                mkdir(public_path('storage/blogs'), 0775, true);
             }
 
-            // Copy file so it becomes publicly accessible
+            // Copy file to public folder
             if (file_exists($source)) {
                 copy($source, $destination);
             }
@@ -138,16 +138,16 @@ class BlogController extends Controller
             $filename = time() . '_' . $file->getClientOriginalName();
             $imagePath = $file->storeAs('blogs', $filename, 'public');
 
-            // Copy to public folder since symlink does not work in live server
+            // PATHS
             $source = storage_path('app/public/' . $imagePath);
             $destination = public_path('storage/' . $imagePath);
 
-            // Ensure destination folder exists
+            // Create folder if not exists
             if (!file_exists(public_path('storage/blogs'))) {
-                mkdir(public_path('storage/blogs'), 0755, true);
+                mkdir(public_path('storage/blogs'), 0775, true);
             }
 
-            // Copy file so it becomes publicly accessible
+            // Copy file to public folder
             if (file_exists($source)) {
                 copy($source, $destination);
             }
