@@ -106,7 +106,7 @@
               </div>
 
               <div class="tab-pane fade" id="signupTab">
-                <form method="POST" action="{{ route('register') }}" class="vstack gap-3" id="signupForm">
+                <form method="POST" action="{{ route('register') }}" class="vstack gap-3" id="signupForm" novalidate>
                   @csrf
                   <!-- Full Name -->
                   <div class="input-group">
@@ -451,18 +451,18 @@
               </a>
             </li>
             <!-- <li class="nav-item ms-lg-3 d-none d-lg-block">
-                  @if(!(Auth::check() && Auth::user()->is_admin && request()->routeIs('admin.users.dashboard')))
-                    <button type="button" class="btn btn-primary px-4">
-                      <a class="text-white px-6" style="text-decoration: none" href="{{ route('logout') }}"
-                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        Log Out
-                      </a>
-                    </button>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                      @csrf
-                    </form>
-                  @endif
-                </li> -->
+                        @if(!(Auth::check() && Auth::user()->is_admin && request()->routeIs('admin.users.dashboard')))
+                          <button type="button" class="btn btn-primary px-4">
+                            <a class="text-white px-6" style="text-decoration: none" href="{{ route('logout') }}"
+                              onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                              Log Out
+                            </a>
+                          </button>
+                          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                          </form>
+                        @endif
+                      </li> -->
             <li class="nav-item ms-lg-3 d-none d-lg-block">
               @if(!((isset($adminView) && $adminView === true) && auth()->user()->hasRole('super_admin')))
                 <button type="button" class="btn btn-primary px-4">
@@ -655,3 +655,27 @@
   @endguest
 
 </section>
+
+<script>
+  document.getElementById("signupForm").addEventListener("submit", function (e) {
+    let password = document.getElementById("signupPassword").value.trim();
+    let confirmPassword = document.getElementById("password-confirm").value.trim();
+
+    // remove previous error if exists
+    let oldError = document.getElementById("passwordError");
+    if (oldError) oldError.remove();
+
+    if (password !== confirmPassword) {
+      e.preventDefault(); // stop submit
+
+      let div = document.createElement("div");
+      div.id = "passwordError";
+      div.classList.add("text-danger", "mt-1"); // Bootstrap style
+      div.innerHTML = "⚠ Password and Confirm Password do not match.";
+
+      document.getElementById("password-confirm")
+        .closest(".input-group")
+        .after(div);
+    }
+  });
+</script>

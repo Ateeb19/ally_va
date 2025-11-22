@@ -85,7 +85,15 @@ class UserManageProfileController extends Controller
         $user->name = $request->full_name;
         $user->email = $request->email;
         $user->phone = $request->phone;
-        if ($request->password) {
+        // if ($request->password) {
+        //     $user->password = Hash::make($request->password);
+        // }
+        if ($request->filled('password')) {
+            if (strlen($request->password) < 6) {
+                return redirect()->back()
+                    ->with('error', 'Password must be at least 6 characters!');
+            }
+
             $user->password = Hash::make($request->password);
         }
         $user->whatsapp_no = $request->whatsapp_no;

@@ -165,17 +165,40 @@ class UserController extends Controller
         // if ($request->password) {
         //     $user->password = Hash::make($request->password);
         // }
-        if ($request->filled('old_password') && $request->filled('new_password')) {
-            if (Hash::check($request->old_password, $user->password)) {
-                $user->password = Hash::make($request->new_password);
-            } else {
+        // if ($request->filled('old_password') && $request->filled('new_password')) {
+        //     if (Hash::check($request->old_password, $user->password)) {
+        //         $user->password = Hash::make($request->new_password);
+        //     } else {
+        //         return redirect()->back()->with('error', 'Old password does not match!');
+        //     }
+        // } 
+        // elseif ($request->filled('old_password') && !$request->filled('new_password')) {
+        //     return redirect()->back()->with('error', 'Please enter a new password!');
+        // } elseif (!$request->filled('old_password') && $request->filled('new_password')) {
+        //     return redirect()->back()->with('error', 'Please enter your old password to change it!');
+        // }
+        // Check if user is trying to change password
+        if ($request->filled('old_password') || $request->filled('new_password')) {
+
+            if (strlen($request->new_password) < 6) {
+                return redirect()->back()->with('error', 'New password must be at least 6 characters long!');
+            }
+
+            if (!$request->filled('old_password') || !$request->filled('new_password')) {
+                return redirect()->back()->with('error', 'To change password, you must enter both old and new passwords!');
+            }
+
+            if (!Hash::check($request->old_password, $user->password)) {
                 return redirect()->back()->with('error', 'Old password does not match!');
             }
-        } elseif ($request->filled('old_password') && !$request->filled('new_password')) {
-            return redirect()->back()->with('error', 'Please enter a new password!');
-        } elseif (!$request->filled('old_password') && $request->filled('new_password')) {
-            return redirect()->back()->with('error', 'Please enter your old password to change it!');
+
+            if ($request->old_password === $request->new_password) {
+                return redirect()->back()->with('error', 'New password cannot be the same as the old password!');
+            }
+
+            $user->password = Hash::make($request->new_password);
         }
+
         $user->whatsapp_no = $request->whatsapp_no;
         $user->city = $request->city;
         $user->country = $request->country;
