@@ -55,12 +55,35 @@ class BlogController extends Controller
         $blog->title = $request->title;
         $blog->sub_title = $request->sub_title;
         $blog->description = $request->description;
+        // if ($request->hasFile('blog_image')) {
+        //     $file = $request->file('blog_image');
+        //     $filename = time() . '_' . $file->getClientOriginalName(); // keep original name
+        //     $imagePath = $file->storeAs('blogs', $filename, 'public');
+        //     $blog->photo = $imagePath;
+        // }
+
         if ($request->hasFile('blog_image')) {
             $file = $request->file('blog_image');
-            $filename = time() . '_' . $file->getClientOriginalName(); // keep original name
+            $filename = time() . '_' . $file->getClientOriginalName();
             $imagePath = $file->storeAs('blogs', $filename, 'public');
+
+            // Copy to public folder since symlink does not work in live server
+            $source = storage_path('app/public/' . $imagePath);
+            $destination = public_path('storage/' . $imagePath);
+
+            // Ensure destination folder exists
+            if (!file_exists(public_path('storage/blogs'))) {
+                mkdir(public_path('storage/blogs'), 0755, true);
+            }
+
+            // Copy file so it becomes publicly accessible
+            if (file_exists($source)) {
+                copy($source, $destination);
+            }
+
             $blog->photo = $imagePath;
         }
+
         $blog->status = $request->status;
         $blog->save();
 
@@ -104,12 +127,34 @@ class BlogController extends Controller
         $blog->title = $request->title;
         $blog->sub_title = $request->sub_title;
         $blog->description = $request->description;
+        // if ($request->hasFile('blog_image')) {
+        //     $file = $request->file('blog_image');
+        //     $filename = time() . '_' . $file->getClientOriginalName(); // keep original name
+        //     $imagePath = $file->storeAs('blogs', $filename, 'public');
+        //     $blog->photo = $imagePath;
+        // }
         if ($request->hasFile('blog_image')) {
             $file = $request->file('blog_image');
-            $filename = time() . '_' . $file->getClientOriginalName(); // keep original name
+            $filename = time() . '_' . $file->getClientOriginalName();
             $imagePath = $file->storeAs('blogs', $filename, 'public');
+
+            // Copy to public folder since symlink does not work in live server
+            $source = storage_path('app/public/' . $imagePath);
+            $destination = public_path('storage/' . $imagePath);
+
+            // Ensure destination folder exists
+            if (!file_exists(public_path('storage/blogs'))) {
+                mkdir(public_path('storage/blogs'), 0755, true);
+            }
+
+            // Copy file so it becomes publicly accessible
+            if (file_exists($source)) {
+                copy($source, $destination);
+            }
+
             $blog->photo = $imagePath;
         }
+
         $blog->status = $request->status;
         $blog->save();
 
