@@ -55,21 +55,21 @@ class BlogController extends Controller
         $blog->title = $request->title;
         $blog->sub_title = $request->sub_title;
         $blog->description = $request->description;
-        // if ($request->hasFile('blog_image')) {
-        //     $file = $request->file('blog_image');
-        //     $filename = time() . '_' . $file->getClientOriginalName(); // keep original name
-        //     $imagePath = $file->storeAs('blogs', $filename, 'public');
-        //     $blog->photo = $imagePath;
-        // }
-
         if ($request->hasFile('blog_image')) {
             $file = $request->file('blog_image');
             $filename = time() . '_' . $file->getClientOriginalName(); // keep original name
-            // $imagePath = $file->move(public_path('storage/blogs'), $filename);
-            // $blog->photo = $imagePath;
-            $file->move(public_path('storage/blogs'), $filename);
-            $blog->photo = 'blogs/' . $filename;
+            $imagePath = $file->storeAs('blogs', $filename, 'public');
+            $blog->photo = $imagePath;
         }
+
+        // if ($request->hasFile('blog_image')) {
+        //     $file = $request->file('blog_image');
+        //     $filename = time() . '_' . $file->getClientOriginalName(); // keep original name
+        //     // $imagePath = $file->move(public_path('storage/blogs'), $filename);
+        //     // $blog->photo = $imagePath;
+        //     $file->move(public_path('storage/blogs'), $filename);
+        //     $blog->photo = 'blogs/' . $filename;
+        // }
 
         // if ($request->hasFile('blog_image')) {
         //     $file = $request->file('blog_image');
@@ -125,20 +125,20 @@ class BlogController extends Controller
         $blog->title = $request->title;
         $blog->sub_title = $request->sub_title;
         $blog->description = $request->description;
-        // if ($request->hasFile('blog_image')) {
-        //     $file = $request->file('blog_image');
-        //     $filename = time() . '_' . $file->getClientOriginalName(); // keep original name
-        //     $imagePath = $file->storeAs('blogs', $filename, 'public');
-        //     $blog->photo = $imagePath;
-        // }
         if ($request->hasFile('blog_image')) {
             $file = $request->file('blog_image');
             $filename = time() . '_' . $file->getClientOriginalName(); // keep original name
-            // $imagePath = $file->move(public_path('storage/blogs'), $filename);
-            // $blog->photo = $imagePath;
-            $file->move(public_path('storage/blogs'), $filename);
-            $blog->photo = 'blogs/' . $filename;
+            $imagePath = $file->storeAs('blogs', $filename, 'public');
+            $blog->photo = $imagePath;
         }
+        // if ($request->hasFile('blog_image')) {
+        //     $file = $request->file('blog_image');
+        //     $filename = time() . '_' . $file->getClientOriginalName(); // keep original name
+        //     // $imagePath = $file->move(public_path('storage/blogs'), $filename);
+        //     // $blog->photo = $imagePath;
+        //     $file->move(public_path('storage/blogs'), $filename);
+        //     $blog->photo = 'blogs/' . $filename;
+        // }
         // if ($request->hasFile('blog_image')) {
         //     $file = $request->file('blog_image');
         //     $filename = time() . '_' . $file->getClientOriginalName();
