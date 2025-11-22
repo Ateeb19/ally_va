@@ -36,8 +36,8 @@
         </div>
 
         <!-- <div class="d-flex justify-content-center">
-                                                                      {{ $users->links() }}
-                                                                    </div> -->
+                                                                          {{ $users->links() }}
+                                                                        </div> -->
         <div class="w-100">
           <div class="admin-table-wrap">
             <table>
@@ -80,21 +80,21 @@
             <div class="d-flex flex-wrap justify-content-between align-items-center mt-4 pagination-wrap">
               {{ $users->links('vendor.pagination.bootstrap-5') }}
               <!-- <p class="mb-0">Page: 1 of 2</p>
-                                                                          <div class="d-flex align-items-center gap-2">
-                                                                            <span>Page Size:</span>
-                                                                            <select class="form-select form-select-sm w-auto py-2">
-                                                                              <option>10</option>
-                                                                              <option>25</option>
-                                                                              <option>50</option>
-                                                                            </select>
-                                                                          </div>
-                                                                          <div class="d-flex gap-2 last-point-view">
-                                                                            <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-double-line"></i></button>
-                                                                            <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-s-line"></i></button>
-                                                                            <button class="btn btn-sm btn-outline-secondary active">1</button>
-                                                                            <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-s-line"></i></button>
-                                                                            <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-double-line"></i></button>
-                                                                          </div> -->
+                                                                              <div class="d-flex align-items-center gap-2">
+                                                                                <span>Page Size:</span>
+                                                                                <select class="form-select form-select-sm w-auto py-2">
+                                                                                  <option>10</option>
+                                                                                  <option>25</option>
+                                                                                  <option>50</option>
+                                                                                </select>
+                                                                              </div>
+                                                                              <div class="d-flex gap-2 last-point-view">
+                                                                                <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-double-line"></i></button>
+                                                                                <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-s-line"></i></button>
+                                                                                <button class="btn btn-sm btn-outline-secondary active">1</button>
+                                                                                <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-s-line"></i></button>
+                                                                                <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-double-line"></i></button>
+                                                                              </div> -->
             </div>
           </div>
         </div>
@@ -141,7 +141,7 @@
               <div class="input-group">
                 <span class="input-group-text"><i class="ri-mail-fill"></i></span>
                 <!-- <input id="user_email" type="user_email" class="form-control @error('user_email') is-invalid @enderror"
-                                                                                                          name="user_email" value="{{ old('user_email') }}" required placeholder="E-mail"> -->
+                                                                                                              name="user_email" value="{{ old('user_email') }}" required placeholder="E-mail"> -->
                 <input id="user_email" type="email" class="form-control @error('user_email') is-invalid @enderror"
                   name="user_email" value="{{ old('user_email') }}" required placeholder="E-mail">
                 @error('user_email')
@@ -401,31 +401,31 @@
               <div class="d-flex flex-wrap justify-content-between align-items-center mt-2 pagination-wrap">
                 {{ $transactions->links('vendor.pagination.bootstrap-5') }}
                 <!-- <p class="mb-0">Page: 1 of 2</p>
-                                            <div class="d-flex align-items-center gap-2">
-                                              <span>Page Size:</span>
-                                              <select class="form-select form-select-sm w-auto py-2">
-                                                <option>10</option>
-                                                <option>25</option>
-                                                <option>50</option>
-                                              </select>
-                                            </div>
-                                            <div class="d-flex gap-2 last-point-view">
-                                              <button class="btn btn-sm btn-outline-secondary">
-                                                <i class="ri-arrow-left-double-line"></i>
-                                              </button>
-                                              <button class="btn btn-sm btn-outline-secondary">
-                                                <i class="ri-arrow-left-s-line"></i>
-                                              </button>
-                                              <button class="btn btn-sm btn-outline-secondary active">
-                                                1
-                                              </button>
-                                              <button class="btn btn-sm btn-outline-secondary">
-                                                <i class="ri-arrow-right-s-line"></i>
-                                              </button>
-                                              <button class="btn btn-sm btn-outline-secondary">
-                                                <i class="ri-arrow-right-double-line"></i>
-                                              </button>
-                                            </div> -->
+                                                <div class="d-flex align-items-center gap-2">
+                                                  <span>Page Size:</span>
+                                                  <select class="form-select form-select-sm w-auto py-2">
+                                                    <option>10</option>
+                                                    <option>25</option>
+                                                    <option>50</option>
+                                                  </select>
+                                                </div>
+                                                <div class="d-flex gap-2 last-point-view">
+                                                  <button class="btn btn-sm btn-outline-secondary">
+                                                    <i class="ri-arrow-left-double-line"></i>
+                                                  </button>
+                                                  <button class="btn btn-sm btn-outline-secondary">
+                                                    <i class="ri-arrow-left-s-line"></i>
+                                                  </button>
+                                                  <button class="btn btn-sm btn-outline-secondary active">
+                                                    1
+                                                  </button>
+                                                  <button class="btn btn-sm btn-outline-secondary">
+                                                    <i class="ri-arrow-right-s-line"></i>
+                                                  </button>
+                                                  <button class="btn btn-sm btn-outline-secondary">
+                                                    <i class="ri-arrow-right-double-line"></i>
+                                                  </button>
+                                                </div> -->
               </div>
             </div>
           </div>
@@ -680,6 +680,31 @@
           }
         });
       });
+    });
+  </script>
+
+  <script>
+    document.getElementById("AddUserForm").addEventListener("submit", function (e) {
+      let password = document.getElementById("user_Password").value;
+      let confirmPassword = document.getElementById("password-confirm-user").value;
+
+      // remove previous error message if exists
+      let existingError = document.getElementById("userPassError");
+      if (existingError) {
+        existingError.remove();
+      }
+
+      if (password !== confirmPassword) {
+        e.preventDefault(); // stop form submission
+
+        let errorDiv = document.createElement("div");
+        errorDiv.id = "userPassError";
+        errorDiv.style.color = "red";
+        errorDiv.style.marginTop = "5px";
+        errorDiv.innerHTML = "⚠ Password and Confirm Password do not match.";
+
+        document.getElementById("password-confirm-user").closest(".input-group").after(errorDiv);
+      }
     });
   </script>
 

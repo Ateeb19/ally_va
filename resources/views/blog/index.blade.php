@@ -40,6 +40,7 @@
           </div>
         </div>
       </div>
+      
       <div class="w-100">
         <div class="admin-table-wrap">
           <table>
@@ -63,7 +64,8 @@
                   <!-- <td>{{ date('d-m-Y', strtotime($blog->updated_at)) }}</td> -->
                   <td>{{ \Carbon\Carbon::parse($blog->updated_at)->format('m/d/y') }}</td>
                   <td>
-                    <img src="{{ asset('storage/' . $blog->photo) }}" alt="Blog Image" height="100px" width="100px">
+                    <img src="{{ asset('storage/' . $blog->photo) }}" alt="Blog Image" height="50px" width="50px">              
+
                   </td>
                 </tr>
               @empty

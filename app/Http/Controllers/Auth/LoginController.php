@@ -76,13 +76,22 @@ class LoginController extends Controller
         return redirect()->route('dashboard');       // user dashboard
     }
 
+    protected function sendFailedLoginResponse(Request $request)
+    {
+        return back()
+            ->withInput($request->only('email', 'remember', 'form_type'))
+            ->withErrors([
+                'email' => trans('auth.failed'),
+            ]);
+    }
+
     /**
      * Clear intended URL after logout.
      */
     public function logout(Request $request)
     {
         $this->guard()->logout();
-        
+
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 

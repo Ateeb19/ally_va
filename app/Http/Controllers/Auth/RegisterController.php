@@ -67,6 +67,19 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
+
+    protected function registered(Request $request, $user)
+    {
+        $request->session()->forget('form_type');
+    }
+    protected function sendFailedResponse($request, $validator)
+    {
+        return back()
+            ->withErrors($validator)
+            ->withInput($request->all() + ['form_type' => 'signup']);
+    }
+
+
     protected function create(array $data)
     {
         $user = User::create([
@@ -83,7 +96,7 @@ class RegisterController extends Controller
             'user_id' => $user->id,
             'hours' => 00,
             'minutes' => 00,
-            'hour_price' => 9, 
+            'hour_price' => 9,
         ]);
 
         $defaultPurchases = [

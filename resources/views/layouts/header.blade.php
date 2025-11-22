@@ -71,6 +71,7 @@
                     </span>
                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
                       name="password" required autocomplete="current-password" placeholder="Password">
+                    <input type="hidden" name="form_type" value="login">
 
                     @error('password')
                       <span class="invalid-feedback" role="alert">
@@ -182,6 +183,7 @@
                       <i class="ri-eye-off-fill"></i>
                     </span>
                   </div>
+                  <input type="hidden" name="form_type" value="signup">
 
                   <!-- Google reCAPTCHA Checkbox -->
                   <!-- reCAPTCHA Wrapper -->
@@ -451,18 +453,18 @@
               </a>
             </li>
             <!-- <li class="nav-item ms-lg-3 d-none d-lg-block">
-                        @if(!(Auth::check() && Auth::user()->is_admin && request()->routeIs('admin.users.dashboard')))
-                          <button type="button" class="btn btn-primary px-4">
-                            <a class="text-white px-6" style="text-decoration: none" href="{{ route('logout') }}"
-                              onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                              Log Out
-                            </a>
-                          </button>
-                          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                          </form>
-                        @endif
-                      </li> -->
+                                    @if(!(Auth::check() && Auth::user()->is_admin && request()->routeIs('admin.users.dashboard')))
+                                      <button type="button" class="btn btn-primary px-4">
+                                        <a class="text-white px-6" style="text-decoration: none" href="{{ route('logout') }}"
+                                          onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                          Log Out
+                                        </a>
+                                      </button>
+                                      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                      </form>
+                                    @endif
+                                  </li> -->
             <li class="nav-item ms-lg-3 d-none d-lg-block">
               @if(!((isset($adminView) && $adminView === true) && auth()->user()->hasRole('super_admin')))
                 <button type="button" class="btn btn-primary px-4">
@@ -678,4 +680,52 @@
         .after(div);
     }
   });
+</script>
+<!-- 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    @if ($errors->has('name') || $errors->has('email') || $errors->has('phone') || $errors->has('password'))
+      // Open modal automatically (if it closes after form)
+      var myModal = new bootstrap.Modal(document.getElementById('authModal'));
+      myModal.show();
+
+      // Switch tab to Sign Up
+      document.getElementById('signup-tab').click();
+    @endif
+});
+</script> -->
+<!-- <script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    @if ($errors->any())
+      var myModal = new bootstrap.Modal(document.getElementById('authModal'));
+      myModal.show();
+
+      // If signup-specific fields have errors → activate signup tab
+      @if ($errors->has('name') || $errors->has('phone') || $errors->has('password_confirmation'))
+        document.getElementById('signup-tab').click();
+      @else
+        // Otherwise assume errors belong to login form → activate login tab
+        document.getElementById('login-tab').click();
+      @endif
+    @endif
+
+});
+</script> -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    @if ($errors->any())
+      var myModal = new bootstrap.Modal(document.getElementById('authModal'));
+      myModal.show();
+
+      let formType = "{{ old('form_type') }}";
+
+      if (formType === "signup") {
+        document.getElementById('signup-tab').click();
+      } else {
+        document.getElementById('login-tab').click();
+      }
+    @endif
+});
 </script>
