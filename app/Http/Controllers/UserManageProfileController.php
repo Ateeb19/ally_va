@@ -89,9 +89,9 @@ class UserManageProfileController extends Controller
         //     $user->password = Hash::make($request->password);
         // }
         if ($request->filled('password')) {
-            if (strlen($request->password) < 6) {
+            if (strlen($request->password) < 8) {
                 return redirect()->back()
-                    ->with('error', 'Password must be at least 6 characters!');
+                    ->with('error', 'Password must be at least 8 characters!');
             }
 
             $user->password = Hash::make($request->password);

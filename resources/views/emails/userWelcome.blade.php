@@ -59,14 +59,13 @@
     <!-- 1. Header & Logo Section (AllyVa Green Accent) -->
     <header class="bg-ally-primary p-6 text-center">
       <!-- Logo Placeholder (Reverted to Placeholder) -->
-      <img src="https://allyva.com/images/logo.png" alt="AllyVa Company Logo" class="mx-auto h-16 rounded-lg shadow-md"
-        onerror="this.onerror=null; this.src='https://placehold.co/180x60/D1FAE5/10B981?text=AllyVa';">
+
     </header>
 
     <!-- 2. Main Welcome Message Content (Updated by Arup) -->
     <main class="p-8 sm:p-10 text-gray-800">
       <p class="text-lg mb-6 text-gray-700">
-        Hello, {{ $user->name }}
+        Welcome, {{ $user->name }}
       </p>
 
       <p class="text-lg mb-6 text-gray-700">
@@ -100,44 +99,44 @@
       </p>
 
       <!-- Secondary Call-to-Action Button to Portal (MOVED to the end of the body) -->
-      <div class="text-center mt-10 mb-2">
+      <!-- <div class="text-center mt-10 mb-2">
         <a href="#"
           class="inline-block px-8 py-3 bg-ally-blue text-white text-lg font-bold rounded-full shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105"
           style="text-decoration: none;">
           Go to AllyVa Portal
         </a>
-      </div>
+      </div> -->
     </main>
 
     <!-- 3. Footer Section (Social Media Links) -->
     <footer class="bg-gray-800 p-6 text-center">
-      <p class="text-sm text-gray-300 mb-4">Connect with us and stay updated:</p>
+      <!-- <p class="text-sm text-gray-300 mb-4">Connect with us and stay updated:</p> -->
 
-      <div class="flex justify-center space-x-4">
-        <!-- Social Link 1: Twitter -->
+      <!-- <div class="flex justify-center space-x-4">
         <a href="#"
           class="inline-flex items-center justify-center h-8 w-8 bg-ally-primary text-white rounded-full hover:opacity-80 transition duration-150"
           aria-label="Twitter">
-          <!-- Icon placeholder (using simple text) -->
           <span class="font-bold text-lg">T</span>
         </a>
 
-        <!-- Social Link 2: LinkedIn -->
         <a href="#"
           class="inline-flex items-center justify-center h-8 w-8 bg-ally-primary text-white rounded-full hover:opacity-80 transition duration-150"
           aria-label="LinkedIn">
-          <!-- Icon placeholder (using simple text) -->
           <span class="font-bold text-lg">L</span>
         </a>
 
-        <!-- Social Link 3: Instagram -->
         <a href="#"
           class="inline-flex items-center justify-center h-8 w-8 bg-ally-primary text-white rounded-full hover:opacity-80 transition duration-150"
           aria-label="Instagram">
-          <!-- Icon placeholder (using simple text) -->
           <span class="font-bold text-lg">I</span>
         </a>
-      </div>
+      </div> -->
+      <a href="https://allyva.com/">
+        <img src="https://allyva.com/images/logo.png" alt="AllyVa Company Logo"
+          class="mx-auto h-12 rounded-lg shadow-md"
+          onerror="this.onerror=null; this.src='https://placehold.co/180x60/D1FAE5/10B981?text=AllyVa';">
+      </a>
+
     </footer>
 
   </div>

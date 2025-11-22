@@ -180,8 +180,8 @@ class UserController extends Controller
         // Check if user is trying to change password
         if ($request->filled('old_password') || $request->filled('new_password')) {
 
-            if (strlen($request->new_password) < 6) {
-                return redirect()->back()->with('error', 'New password must be at least 6 characters long!');
+            if (strlen($request->new_password) < 8) {
+                return redirect()->back()->with('error', 'New password must be at least 8 characters long!');
             }
 
             if (!$request->filled('old_password') || !$request->filled('new_password')) {
