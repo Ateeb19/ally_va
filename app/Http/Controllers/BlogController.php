@@ -65,7 +65,7 @@ class BlogController extends Controller
         if ($request->hasFile('blog_image')) {
             $file = $request->file('blog_image');
             $filename = time() . '_' . $file->getClientOriginalName(); // keep original name
-            $imagePath = $file->storeAs('storage/blogs', $filename);
+            $imagePath = $file->move(public_path('storage/blogs'), $filename);
             $blog->photo = $imagePath;
         }
 
@@ -132,7 +132,7 @@ class BlogController extends Controller
         if ($request->hasFile('blog_image')) {
             $file = $request->file('blog_image');
             $filename = time() . '_' . $file->getClientOriginalName(); // keep original name
-            $imagePath = $file->storeAs('storage/blogs', $filename);
+            $imagePath = $file->move(public_path('storage/blogs'), $filename);
             $blog->photo = $imagePath;
         }
         // if ($request->hasFile('blog_image')) {
