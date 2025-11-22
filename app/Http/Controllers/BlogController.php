@@ -64,13 +64,20 @@ class BlogController extends Controller
 
         if ($request->hasFile('blog_image')) {
             $file = $request->file('blog_image');
-            $filename = time() . '_' . $file->getClientOriginalName();
-
-            // Save directly in public/storage/blogs
-            $file->move(public_path('storage/blogs'), $filename);
-
-            $blog->photo = 'blogs/' . $filename; // just store the relative path
+            $filename = time() . '_' . $file->getClientOriginalName(); // keep original name
+            $imagePath = $file->storeAs('storage/blogs', $filename);
+            $blog->photo = $imagePath;
         }
+
+        // if ($request->hasFile('blog_image')) {
+        //     $file = $request->file('blog_image');
+        //     $filename = time() . '_' . $file->getClientOriginalName();
+
+        //     // Save directly in public/storage/blogs
+        //     $file->move(public_path('storage/blogs'), $filename);
+
+        //     $blog->photo = 'blogs/' . $filename; // just store the relative path
+        // }
 
 
         $blog->status = $request->status;
@@ -124,13 +131,19 @@ class BlogController extends Controller
         // }
         if ($request->hasFile('blog_image')) {
             $file = $request->file('blog_image');
-            $filename = time() . '_' . $file->getClientOriginalName();
-
-            // Save directly in public/storage/blogs
-            $file->move(public_path('storage/blogs'), $filename);
-
-            $blog->photo = 'blogs/' . $filename; // just store the relative path
+            $filename = time() . '_' . $file->getClientOriginalName(); // keep original name
+            $imagePath = $file->storeAs('storage/blogs', $filename);
+            $blog->photo = $imagePath;
         }
+        // if ($request->hasFile('blog_image')) {
+        //     $file = $request->file('blog_image');
+        //     $filename = time() . '_' . $file->getClientOriginalName();
+
+        //     // Save directly in public/storage/blogs
+        //     $file->move(public_path('storage/blogs'), $filename);
+
+        //     $blog->photo = 'blogs/' . $filename; // just store the relative path
+        // }
 
 
         $blog->status = $request->status;
