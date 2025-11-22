@@ -65,24 +65,13 @@ class BlogController extends Controller
         if ($request->hasFile('blog_image')) {
             $file = $request->file('blog_image');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $imagePath = $file->storeAs('blogs', $filename, 'public');
 
-            // PATHS
-            $source = storage_path('app/public/' . $imagePath);
-            $destination = public_path('storage/' . $imagePath);
+            // Save directly in public/storage/blogs
+            $file->move(public_path('storage/blogs'), $filename);
 
-            // Create folder if not exists
-            if (!file_exists(public_path('storage/blogs'))) {
-                mkdir(public_path('storage/blogs'), 0775, true);
-            }
-
-            // Copy file to public folder
-            if (file_exists($source)) {
-                copy($source, $destination);
-            }
-
-            $blog->photo = $imagePath;
+            $blog->photo = 'blogs/' . $filename; // just store the relative path
         }
+
 
         $blog->status = $request->status;
         $blog->save();
@@ -136,24 +125,13 @@ class BlogController extends Controller
         if ($request->hasFile('blog_image')) {
             $file = $request->file('blog_image');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $imagePath = $file->storeAs('blogs', $filename, 'public');
 
-            // PATHS
-            $source = storage_path('app/public/' . $imagePath);
-            $destination = public_path('storage/' . $imagePath);
+            // Save directly in public/storage/blogs
+            $file->move(public_path('storage/blogs'), $filename);
 
-            // Create folder if not exists
-            if (!file_exists(public_path('storage/blogs'))) {
-                mkdir(public_path('storage/blogs'), 0775, true);
-            }
-
-            // Copy file to public folder
-            if (file_exists($source)) {
-                copy($source, $destination);
-            }
-
-            $blog->photo = $imagePath;
+            $blog->photo = 'blogs/' . $filename; // just store the relative path
         }
+
 
         $blog->status = $request->status;
         $blog->save();
