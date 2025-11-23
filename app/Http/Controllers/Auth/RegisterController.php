@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Mail\WelcomeMail;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\AdminUserRegisteredMail;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -115,14 +116,14 @@ class RegisterController extends Controller
             ]);
         }
         // Send Welcome email to user
-        Mail::to($user->email)->send(new WelcomeMail($user));
+        // Mail::to($user->email)->send(new WelcomeMail($user));
 
         //get Super Admin 
         $superAdmin = User::role('super_admin')->first();
 
         if ($superAdmin) {
             // Send admin notification email
-            Mail::to($superAdmin->email)->send(new AdminUserRegisteredMail($user));
+            // Mail::to($superAdmin->email)->send(new AdminUserRegisteredMail($user));
         }
 
 
