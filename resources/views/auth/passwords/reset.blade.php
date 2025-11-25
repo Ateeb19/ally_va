@@ -72,7 +72,7 @@
     </div>
 @endsection
 
-<script>
+<!-- <script>
     if (document.getElementById("signupForm")) {
         document.getElementById("signupForm").addEventListener("submit", function (e) {
             let password = document.getElementById("signupPassword").value.trim();
@@ -106,4 +106,26 @@
         }
     }
 
-</script>
+</script> -->
+
+@if ($errors->any())
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // ⛔ Prevent login/signup modal on Reset Password page
+            if (window.location.pathname.startsWith("/password/reset")) {
+                return; // stop script here
+            }
+
+            var authModal = new bootstrap.Modal(document.getElementById('authModal'));
+            authModal.show();
+
+            let formType = "{{ old('form_type') }}";
+            if (formType === "signup") {
+                document.getElementById('signup-tab').click();
+            } else {
+                document.getElementById('login-tab').click();
+            }
+        });
+    </script>
+@endif
