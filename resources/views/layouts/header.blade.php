@@ -456,18 +456,18 @@
               </a>
             </li>
             <!-- <li class="nav-item ms-lg-3 d-none d-lg-block">
-                                                @if(!(Auth::check() && Auth::user()->is_admin && request()->routeIs('admin.users.dashboard')))
-                                                  <button type="button" class="btn btn-primary px-4">
-                                                    <a class="text-white px-6" style="text-decoration: none" href="{{ route('logout') }}"
-                                                      onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                                      Log Out
-                                                    </a>
-                                                  </button>
-                                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                    @csrf
-                                                  </form>
-                                                @endif
-                                              </li> -->
+                                                  @if(!(Auth::check() && Auth::user()->is_admin && request()->routeIs('admin.users.dashboard')))
+                                                    <button type="button" class="btn btn-primary px-4">
+                                                      <a class="text-white px-6" style="text-decoration: none" href="{{ route('logout') }}"
+                                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                        Log Out
+                                                      </a>
+                                                    </button>
+                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                      @csrf
+                                                    </form>
+                                                  @endif
+                                                </li> -->
             <li class="nav-item ms-lg-3 d-none d-lg-block">
               @if(!((isset($adminView) && $adminView === true) && auth()->user()->hasRole('super_admin')))
                 <button type="button" class="btn btn-primary px-4">
@@ -606,7 +606,7 @@
 
     {{-- Show this section only if the current route is NOT in the hidden list --}}
     @if(!in_array(Request::path(), $hiddenRoutes))
-      @if(!isset($adminView) && auth()->user()->hasRole('super_admin'))
+      @if(!isset($adminView) && auth()->user()->hasRole('super_admin') && !Request::is('blogs/show-detail/*'))
         <div class="inner-page-header">
           <div class="container">
             <div class="top-view">
