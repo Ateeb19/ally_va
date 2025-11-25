@@ -454,18 +454,18 @@
               </a>
             </li>
             <!-- <li class="nav-item ms-lg-3 d-none d-lg-block">
-                                      @if(!(Auth::check() && Auth::user()->is_admin && request()->routeIs('admin.users.dashboard')))
-                                        <button type="button" class="btn btn-primary px-4">
-                                          <a class="text-white px-6" style="text-decoration: none" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                            Log Out
-                                          </a>
-                                        </button>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                          @csrf
-                                        </form>
-                                      @endif
-                                    </li> -->
+                                          @if(!(Auth::check() && Auth::user()->is_admin && request()->routeIs('admin.users.dashboard')))
+                                            <button type="button" class="btn btn-primary px-4">
+                                              <a class="text-white px-6" style="text-decoration: none" href="{{ route('logout') }}"
+                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                Log Out
+                                              </a>
+                                            </button>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                              @csrf
+                                            </form>
+                                          @endif
+                                        </li> -->
             <li class="nav-item ms-lg-3 d-none d-lg-block">
               @if(!((isset($adminView) && $adminView === true) && auth()->user()->hasRole('super_admin')))
                 <button type="button" class="btn btn-primary px-4">
@@ -714,7 +714,7 @@
 });
 </script> -->
 
-<script>
+<!-- <script>
   document.addEventListener("DOMContentLoaded", function () {
     @if ($errors->any())
       var myModal = new bootstrap.Modal(document.getElementById('authModal'));
@@ -729,4 +729,42 @@
       }
     @endif
 });
+</script> -->
+
+<!-- @if ($errors->any())
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    var authModal = new bootstrap.Modal(document.getElementById('authModal'));
+    authModal.show();
+
+    let formType = "{{ old('form_type') }}";
+
+    if (formType === "signup") {
+        document.getElementById('signup-tab').click();
+    } else {
+        document.getElementById('login-tab').click();
+    }
+});
 </script>
+@endif -->
+
+@if ($errors->any())
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      if (window.location.pathname.startsWith("/password/reset")) {
+        return;
+      }
+
+      var authModal = new bootstrap.Modal(document.getElementById('authModal'));
+      authModal.show();
+
+      let formType = "{{ old('form_type') }}";
+      if (formType === "signup") {
+        document.getElementById('signup-tab').click();
+      } else {
+        document.getElementById('login-tab').click();
+      }
+    });
+  </script>
+@endif

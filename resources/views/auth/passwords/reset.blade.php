@@ -73,34 +73,37 @@
 @endsection
 
 <script>
-    document.getElementById("signupForm").addEventListener("submit", function (e) {
-        let password = document.getElementById("signupPassword").value.trim();
-        let confirmPassword = document.getElementById("password-confirm").value.trim();
+    if (document.getElementById("signupForm")) {
+        document.getElementById("signupForm").addEventListener("submit", function (e) {
+            let password = document.getElementById("signupPassword").value.trim();
+            let confirmPassword = document.getElementById("password-confirm").value.trim();
 
-        // remove previous error messages
-        document.querySelectorAll(".passwordErrorMsg").forEach(el => el.remove());
+            // remove previous error messages
+            document.querySelectorAll(".passwordErrorMsg").forEach(el => el.remove());
 
-        // check 8 characters
-        if (password.length < 8) {
-            e.preventDefault();
-            showError("⚠ Password must be minimum 8 characters.");
-            return;
+            // check 8 characters
+            if (password.length < 8) {
+                e.preventDefault();
+                showError("⚠ Password must be minimum 8 characters.");
+                return;
+            }
+
+            // check match
+            if (password !== confirmPassword) {
+                e.preventDefault();
+                showError("⚠ Password and Confirm Password do not match.");
+                return;
+            }
+        });
+
+        function showError(msg) {
+            let div = document.createElement("div");
+            div.classList.add("text-danger", "mt-1", "passwordErrorMsg");
+            div.innerHTML = msg;
+            document.getElementById("password-confirm")
+                .closest(".input-group")
+                .after(div);
         }
-
-        // check match
-        if (password !== confirmPassword) {
-            e.preventDefault();
-            showError("⚠ Password and Confirm Password do not match.");
-            return;
-        }
-    });
-
-    function showError(msg) {
-        let div = document.createElement("div");
-        div.classList.add("text-danger", "mt-1", "passwordErrorMsg");
-        div.innerHTML = msg;
-        document.getElementById("password-confirm")
-            .closest(".input-group")
-            .after(div);
     }
+
 </script>
