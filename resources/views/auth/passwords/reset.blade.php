@@ -107,7 +107,7 @@
     }
 
 </script> -->
-
+<!-- 
 @if ($errors->any())
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -128,4 +128,25 @@
             }
         });
     </script>
-@endif
+@endif -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        if (window.location.pathname.startsWith("/password/reset")) {
+            return;
+        }
+
+        @if ($errors->any())
+            var authModal = new bootstrap.Modal(document.getElementById('authModal'));
+            authModal.show();
+
+            let formType = "{{ old('form_type') }}";
+            if (formType === "signup") {
+                document.getElementById('signup-tab').click();
+            } else {
+                document.getElementById('login-tab').click();
+            }
+        @endif
+});
+</script>
