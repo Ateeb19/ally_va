@@ -150,7 +150,12 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    if (linkPath.includes('edit') && current.includes('edit')) {
+    // if (linkPath.includes('edit') && current.includes('edit')) {
+    //   link.classList.add('active');
+    //   return;
+    // }
+
+    if (linkPath.startsWith('/user') && current.startsWith('/user') && current.includes('/edit')) {
       link.classList.add('active');
       return;
     }

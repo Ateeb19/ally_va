@@ -69,7 +69,8 @@
                 request()->is('services') ||
                 request()->is('pricing') ||
                 request()->is('insights') ||
-                request()->is('contact')
+                request()->is('contact') ||
+                request()->is('blogs/show-detail/*')
             )
             @include('layouts.footer')
         @endif
