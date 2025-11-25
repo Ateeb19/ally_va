@@ -26,7 +26,7 @@ document.getElementById("signupForm").addEventListener("submit", function(e) {
     if (pass !== confirmPass) {
         e.preventDefault();
         alert("❌ Passwords do not match!");
-        return;
+        return; 
     }
 
     // if (!recaptcha) {
