@@ -78,19 +78,40 @@ const openBtnDesktop = document.getElementById("openModalDesktop");
 const openBtnMobile = document.getElementById("openModalMobile");
 const closeBtn = document.getElementById("closeModal");
 
+// if (openBtnDesktop) {
+//   // Desktop button
+//   openBtnDesktop.addEventListener("click", () => {
+//     modal.classList.remove("hidden");
+//   });
+// }
+
+if (!openBtnDesktop && !openBtnMobile) {
+  modal.classList.add("hidden");
+}
+
 if (openBtnDesktop) {
-  // Desktop button
   openBtnDesktop.addEventListener("click", () => {
-    modal.classList.remove("hidden");
+    if (window.location.pathname !== "/password/reset" &&
+      !window.location.pathname.startsWith("/password/reset/")) {
+      modal.classList.remove("hidden");
+    }
   });
 }
 
 if (openBtnMobile) {
-  // Mobile button
   openBtnMobile.addEventListener("click", () => {
-    modal.classList.remove("hidden");
+    if (window.location.pathname !== "/password/reset" &&
+      !window.location.pathname.startsWith("/password/reset/")) {
+      modal.classList.remove("hidden");
+    }
   });
 }
+// if (openBtnMobile) {
+//   // Mobile button
+//   openBtnMobile.addEventListener("click", () => {
+//     modal.classList.remove("hidden");
+//   });
+// }
 
 if (closeBtn) {
   // Close modal
@@ -164,5 +185,5 @@ document.addEventListener('DOMContentLoaded', function () {
       link.classList.add('active');
       return;
     }
-  }); 
+  });
 }); 
