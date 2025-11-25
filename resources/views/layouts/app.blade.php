@@ -71,6 +71,7 @@
                 request()->is('insights') ||
                 request()->is('contact') ||
                 request()->is('blogs/show-detail/*') ||
+                request()->is('password/reset') ||
                 request()->is('password/reset/*')
             )
             @include('layouts.footer')
@@ -113,7 +114,7 @@
                     && !Request::is('password/reset')
                     && !Request::is('password/reset/*')
                 )
-                    var authModal = new bootstrap.Modal(document.getElementById('authModal'));
+                        var authModal = new bootstrap.Modal(document.getElementById('authModal'));
                 authModal.show();
             @endif
 });
