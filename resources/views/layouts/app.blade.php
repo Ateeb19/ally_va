@@ -104,8 +104,7 @@
             @endif
         });
     </script> -->
-
-    <script>
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function () {
             @if (
                     $errors->any()
@@ -114,12 +113,49 @@
                     && !Request::is('password/reset')
                     && !Request::is('password/reset/*')
                 )
-                        var authModal = new bootstrap.Modal(document.getElementById('authModal'));
+                     var authModal = new bootstrap.Modal(document.getElementById('authModal'));
                 authModal.show();
             @endif
-});
+                };
     </script>
+ -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+    @if (
+        $errors->any() &&
+        Auth::guest() && 
+        !Request::is('password/reset') &&
+        !Request::is('password/reset/*') &&
+        !Request::is('dashboard') &&
+        !Request::is('dashboard/*')
+    )
+        let authModal = new bootstrap.Modal(document.getElementById('authModal'));
+        authModal.show();
+    @endif
+
+});
+</script>
+
+
+    <!-- <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    @if (
+        $errors->any() &&
+        !Request::is('dashboard') &&
+        !Request::is('dashboard/*') &&
+        !Request::is('admin/users/*/dashboard') &&
+        !Request::is('user/*') &&
+        !Request::is('password/reset') &&
+        !Request::is('password/reset/*')
+    )
+        var authModal = new bootstrap.Modal(document.getElementById('authModal'));
+        authModal.show();
+    @endif
+
+});
+</script> -->
 
     <script>
         var swiper = new Swiper(".mySwiper", {

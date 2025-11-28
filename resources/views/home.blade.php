@@ -132,9 +132,9 @@
                 <span class="input-group-text"><i class="ri-user-fill"></i></span>
                 <input id="user_name" type="text" class="form-control @error('user_name') is-invalid @enderror"
                   name="user_name" value="{{ old('user_name') }}" required placeholder="Full Name">
-                @error('user_name')
+                <!-- @error('user_name')
                   <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
-                @enderror
+                @enderror -->
               </div>
 
               <!-- Email -->
@@ -144,9 +144,9 @@
                                                                                                               name="user_email" value="{{ old('user_email') }}" required placeholder="E-mail"> -->
                 <input id="user_email" type="email" class="form-control @error('user_email') is-invalid @enderror"
                   name="user_email" value="{{ old('user_email') }}" required placeholder="E-mail">
-                @error('user_email')
+                <!-- @error('user_email')
                   <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
-                @enderror
+                @enderror -->
               </div>
 
               <!-- Phone -->
@@ -154,9 +154,9 @@
                 <span class="input-group-text"><i class="ri-phone-fill"></i></span>
                 <input type="text" class="form-control @error('user_phone') is-invalid @enderror" placeholder="Phone Number"
                   name="user_phone" required />
-                @error('user_phone')
+                <!-- @error('user_phone')
                   <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
-                @enderror
+                @enderror -->
               </div>
 
               <!-- Password -->
@@ -167,9 +167,9 @@
                 <span class="input-group-text" onclick="togglePassword('signupPassword', this)" style="cursor: pointer">
                   <i class="ri-eye-off-fill"></i>
                 </span>
-                @error('user_Password')
+                <!-- @error('user_Password')
                   <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
-                @enderror
+                @enderror -->
               </div>
 
               <!-- Confirm Password -->

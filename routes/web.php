@@ -86,18 +86,18 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function () {
     Route::delete('/transactions/delete-multiple', [TransactionController::class, 'deleteMultiple'])
         ->name('admin.users.transaction.destroyMultiple');
     Route::resource('users.userprofile', UserManageProfileController::class);
+    Route::resource('blogs', BlogController::class);
+    Route::delete('/blogs/delete-multiple', [BlogController::class, 'deleteMultiple'])
+    ->name('blogs.destroyMultiple');
 });
 
 Route::get('user/taskhistory/{user_id}', [UserController::class, 'showTaskHistory'])->name('user.showTaskHistory');
 Route::resource('user', UserController::class);
 
-Route::delete('/blogs/delete-multiple', [BlogController::class, 'deleteMultiple'])
-    ->name('blogs.destroyMultiple');
+
 Route::get('/blogs/show-detail/{blog_id}', [BlogController::class, 'FrontBlogDetailShow'])
     ->name('blogs.blog-detail');
-Route::resource('blogs', BlogController::class);
 
 Route::get('paypal/payment', [PayPalController::class, 'payment'])->name('paypal.payment');
 Route::get('paypal/success', [PayPalController::class, 'success'])->name('paypal.success');
 Route::get('paypal/cancel', [PayPalController::class, 'cancel'])->name('paypal.cancel');
-
