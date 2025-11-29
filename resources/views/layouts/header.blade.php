@@ -408,6 +408,7 @@
               request()->is('pricing') ||
               request()->is('insights') ||
               request()->is('contact') ||
+              request()->is('inquerySave') ||
               request()->is('blogs/show-detail/*') ||
               request()->is('password/reset') ||
               request()->is('password/reset/*')
@@ -601,7 +602,7 @@
   @else
     @php
       // Define the routes where the section should be hidden
-      $hiddenRoutes = ['home', 'about-us', 'services', 'pricing', 'insights', 'contact'];
+      $hiddenRoutes = ['home', 'about-us', 'services', 'pricing', 'insights', 'contact', 'inquerySave'];
     @endphp
 
     {{-- Show this section only if the current route is NOT in the hidden list --}}

@@ -70,6 +70,7 @@
                 request()->is('pricing') ||
                 request()->is('insights') ||
                 request()->is('contact') ||
+                request()->is('inquerySave') ||
                 request()->is('blogs/show-detail/*') ||
                 request()->is('password/reset') ||
                 request()->is('password/reset/*')
@@ -119,23 +120,23 @@
                 };
     </script>
  -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
 
-    @if (
-        $errors->any() &&
-        Auth::guest() && 
-        !Request::is('password/reset') &&
-        !Request::is('password/reset/*') &&
-        !Request::is('dashboard') &&
-        !Request::is('dashboard/*')
-    )
-        let authModal = new bootstrap.Modal(document.getElementById('authModal'));
-        authModal.show();
-    @endif
+            @if (
+                    $errors->any() &&
+                    Auth::guest() &&
+                    !Request::is('password/reset') &&
+                    !Request::is('password/reset/*') &&
+                    !Request::is('dashboard') &&
+                    !Request::is('dashboard/*')
+                )
+                let authModal = new bootstrap.Modal(document.getElementById('authModal'));
+                authModal.show();
+            @endif
 
 });
-</script>
+    </script>
 
 
     <!-- <script>

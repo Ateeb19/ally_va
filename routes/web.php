@@ -87,8 +87,11 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function () {
         ->name('admin.users.transaction.destroyMultiple');
     Route::resource('users.userprofile', UserManageProfileController::class);
     Route::resource('blogs', BlogController::class);
-    Route::delete('/blogs/delete-multiple', [BlogController::class, 'deleteMultiple'])
-    ->name('blogs.destroyMultiple');
+    Route::post('/blogs/delete-multiple', [BlogController::class, 'deleteMultiple'])
+        ->name('blogs.destroyMultiple');
+
+    // Route::delete('/blogs/delete-multiple', [BlogController::class, 'deleteMultiple'])
+    // ->name('blogs.destroyMultiple');
 });
 
 Route::get('user/taskhistory/{user_id}', [UserController::class, 'showTaskHistory'])->name('user.showTaskHistory');
