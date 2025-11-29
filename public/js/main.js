@@ -127,6 +127,20 @@ modal.addEventListener("click", (e) => {
   }
 });
 
+
+// Close login modal when Add User modal closes
+const userCreateModal = document.getElementById("userCreateModal");
+const authModal = document.getElementById("authModal");
+
+if (userCreateModal) {
+  userCreateModal.addEventListener("hidden.bs.modal", function () {
+    if (authModal) {
+      const modalInstance = bootstrap.Modal.getInstance(authModal) || new bootstrap.Modal(authModal);
+      modalInstance.hide();
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   function normalizePath(p) {
     try {
