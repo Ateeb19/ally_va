@@ -36,8 +36,8 @@
         </div>
 
         <!-- <div class="d-flex justify-content-center">
-                                                                          {{ $users->links() }}
-                                                                        </div> -->
+                                                                                  {{ $users->links() }}
+                                                                                </div> -->
         <div class="w-100">
           <div class="admin-table-wrap">
             <table>
@@ -80,21 +80,21 @@
             <div class="d-flex flex-wrap justify-content-between align-items-center mt-4 pagination-wrap">
               {{ $users->links('vendor.pagination.bootstrap-5') }}
               <!-- <p class="mb-0">Page: 1 of 2</p>
-                                                                              <div class="d-flex align-items-center gap-2">
-                                                                                <span>Page Size:</span>
-                                                                                <select class="form-select form-select-sm w-auto py-2">
-                                                                                  <option>10</option>
-                                                                                  <option>25</option>
-                                                                                  <option>50</option>
-                                                                                </select>
-                                                                              </div>
-                                                                              <div class="d-flex gap-2 last-point-view">
-                                                                                <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-double-line"></i></button>
-                                                                                <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-s-line"></i></button>
-                                                                                <button class="btn btn-sm btn-outline-secondary active">1</button>
-                                                                                <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-s-line"></i></button>
-                                                                                <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-double-line"></i></button>
-                                                                              </div> -->
+                                                                                      <div class="d-flex align-items-center gap-2">
+                                                                                        <span>Page Size:</span>
+                                                                                        <select class="form-select form-select-sm w-auto py-2">
+                                                                                          <option>10</option>
+                                                                                          <option>25</option>
+                                                                                          <option>50</option>
+                                                                                        </select>
+                                                                                      </div>
+                                                                                      <div class="d-flex gap-2 last-point-view">
+                                                                                        <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-double-line"></i></button>
+                                                                                        <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-s-line"></i></button>
+                                                                                        <button class="btn btn-sm btn-outline-secondary active">1</button>
+                                                                                        <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-s-line"></i></button>
+                                                                                        <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-double-line"></i></button>
+                                                                                      </div> -->
             </div>
           </div>
         </div>
@@ -133,20 +133,20 @@
                 <input id="user_name" type="text" class="form-control @error('user_name') is-invalid @enderror"
                   name="user_name" value="{{ old('user_name') }}" required placeholder="Full Name">
                 <!-- @error('user_name')
-                  <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
-                @enderror -->
+                          <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                        @enderror -->
               </div>
 
               <!-- Email -->
               <div class="input-group">
                 <span class="input-group-text"><i class="ri-mail-fill"></i></span>
                 <!-- <input id="user_email" type="user_email" class="form-control @error('user_email') is-invalid @enderror"
-                                                                                                              name="user_email" value="{{ old('user_email') }}" required placeholder="E-mail"> -->
+                                                                                                                      name="user_email" value="{{ old('user_email') }}" required placeholder="E-mail"> -->
                 <input id="user_email" type="email" class="form-control @error('user_email') is-invalid @enderror"
                   name="user_email" value="{{ old('user_email') }}" required placeholder="E-mail">
                 <!-- @error('user_email')
-                  <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
-                @enderror -->
+                          <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                        @enderror -->
               </div>
 
               <!-- Phone -->
@@ -155,8 +155,8 @@
                 <input type="text" class="form-control @error('user_phone') is-invalid @enderror" placeholder="Phone Number"
                   name="user_phone" required />
                 <!-- @error('user_phone')
-                  <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
-                @enderror -->
+                          <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                        @enderror -->
               </div>
 
               <!-- Password -->
@@ -168,8 +168,8 @@
                   <i class="ri-eye-off-fill"></i>
                 </span>
                 <!-- @error('user_Password')
-                  <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
-                @enderror -->
+                          <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                        @enderror -->
               </div>
 
               <!-- Confirm Password -->
@@ -355,7 +355,9 @@
                   <thead class="table-primary">
                     <tr>
                       <th scope="col">
-                        <input type="checkbox" class="form-check-input me-2" id="selectAll" />
+                        @if(isset($adminView) && auth()->user()->hasRole('super_admin'))
+                          <input type="checkbox" class="form-check-input me-2" id="selectAll" />
+                        @endif
                         Transaction ID
                       </th>
                       <th scope="col">Transaction Date</th>
@@ -371,8 +373,11 @@
                       @foreach($transactions as $transaction)
                         <tr>
                           <td>
-                            <input type="checkbox" class="form-check-input me-2 transaction-checkbox"
-                              data-id="{{ $transaction->id }}" />
+                            @if(isset($adminView) && auth()->user()->hasRole('super_admin'))
+                              <input type="checkbox" class="form-check-input me-2 transaction-checkbox"
+                                data-id="{{ $transaction->id }}" />
+                            @endif
+                            <!-- {{ $transaction->id }} -->
 
                             @if(isset($adminView) && auth()->user()->hasRole('super_admin'))
                               <a href="javascript:void(0);" class="edit-btn" data-id="{{ $transaction->id }}"
@@ -401,31 +406,31 @@
               <div class="d-flex flex-wrap justify-content-between align-items-center mt-2 pagination-wrap">
                 {{ $transactions->links('vendor.pagination.bootstrap-5') }}
                 <!-- <p class="mb-0">Page: 1 of 2</p>
-                                                <div class="d-flex align-items-center gap-2">
-                                                  <span>Page Size:</span>
-                                                  <select class="form-select form-select-sm w-auto py-2">
-                                                    <option>10</option>
-                                                    <option>25</option>
-                                                    <option>50</option>
-                                                  </select>
-                                                </div>
-                                                <div class="d-flex gap-2 last-point-view">
-                                                  <button class="btn btn-sm btn-outline-secondary">
-                                                    <i class="ri-arrow-left-double-line"></i>
-                                                  </button>
-                                                  <button class="btn btn-sm btn-outline-secondary">
-                                                    <i class="ri-arrow-left-s-line"></i>
-                                                  </button>
-                                                  <button class="btn btn-sm btn-outline-secondary active">
-                                                    1
-                                                  </button>
-                                                  <button class="btn btn-sm btn-outline-secondary">
-                                                    <i class="ri-arrow-right-s-line"></i>
-                                                  </button>
-                                                  <button class="btn btn-sm btn-outline-secondary">
-                                                    <i class="ri-arrow-right-double-line"></i>
-                                                  </button>
-                                                </div> -->
+                                                        <div class="d-flex align-items-center gap-2">
+                                                          <span>Page Size:</span>
+                                                          <select class="form-select form-select-sm w-auto py-2">
+                                                            <option>10</option>
+                                                            <option>25</option>
+                                                            <option>50</option>
+                                                          </select>
+                                                        </div>
+                                                        <div class="d-flex gap-2 last-point-view">
+                                                          <button class="btn btn-sm btn-outline-secondary">
+                                                            <i class="ri-arrow-left-double-line"></i>
+                                                          </button>
+                                                          <button class="btn btn-sm btn-outline-secondary">
+                                                            <i class="ri-arrow-left-s-line"></i>
+                                                          </button>
+                                                          <button class="btn btn-sm btn-outline-secondary active">
+                                                            1
+                                                          </button>
+                                                          <button class="btn btn-sm btn-outline-secondary">
+                                                            <i class="ri-arrow-right-s-line"></i>
+                                                          </button>
+                                                          <button class="btn btn-sm btn-outline-secondary">
+                                                            <i class="ri-arrow-right-double-line"></i>
+                                                          </button>
+                                                        </div> -->
               </div>
             </div>
           </div>
@@ -487,194 +492,194 @@
             document.getElementById('transaction_id').value = btn.dataset.transaction;
             document.getElementById('transaction_date').value = btn.dataset.date;
             document.getElementById('amount').value = btn.dataset.amount;
-//Dont write any code in this file its a temporary file
+            //Dont write any code in this file its a temporary file
 
 
-// ===== Mobile menu toggle =====
-const toggle = document.getElementById("menu-toggle");
-const menu = document.getElementById("mobile-menu");
+            // ===== Mobile menu toggle =====
+            const toggle = document.getElementById("menu-toggle");
+            const menu = document.getElementById("mobile-menu");
 
-if (toggle) {
-  toggle.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
-  });
-}
+            if (toggle) {
+              toggle.addEventListener("click", () => {
+                menu.classList.toggle("hidden");
+              });
+            }
 
-// ===== Active nav link highlight =====
-let currentPage = window.location.pathname.split("/").pop();
+            // ===== Active nav link highlight =====
+            let currentPage = window.location.pathname.split("/").pop();
 
-// Agar homepage root URL hai, to index.html consider karo
-if (currentPage === "" || currentPage === "/") {
-  currentPage = "index.html";
-}
+            // Agar homepage root URL hai, to index.html consider karo
+            if (currentPage === "" || currentPage === "/") {
+              currentPage = "index.html";
+            }
 
-const navLinks = document.querySelectorAll(".nav-link");
+            const navLinks = document.querySelectorAll(".nav-link");
 
-// navLinks.forEach(link => {
-//   const linkPage = link.getAttribute("href");
-//   if (linkPage === currentPage) {
-//     link.style.color = "#2563EB"; // Tailwind blue-600
-//     link.classList.add("font-semibold");
-//   } else {
-//     link.style.color = "#1F2937"; // Tailwind gray-800
-//     link.classList.remove("font-semibold");
-//   }
-// });
-navLinks.forEach(link => {
-  const linkPage = link.getAttribute("href");
-  if (linkPage === currentPage) {
-    link.style.color = "#2563EB"; // Tailwind blue-600
-    link.classList.add("font-semibold");
-    link.style.borderBottom = "2px solid #2563EB"; // ✅ blue border bottom
-    link.style.paddingBottom = "2px"; // thoda space ke liye
-    link.style.width = "fit-content"; // thoda space ke liye
-  } else {
-    link.style.color = "#1F2937"; // Tailwind gray-800
-    link.classList.remove("font-semibold");
-    link.style.borderBottom = "none"; // remove border from non-active
-  }
-});
-
-
-// ===== Sticky Header on scroll =====
-const header = document.querySelector("header");
-if (header) {
-  const stickyOffset = header.offsetTop;
-
-  window.addEventListener("scroll", () => {
-    if (window.pageYOffset > stickyOffset) {
-      header.classList.add("fixed", "top-0", "left-0", "right-0", "z-50", "bg-white", "shadow-lg");
-    } else {
-      header.classList.remove("fixed", "top-0", "left-0", "right-0", "z-50", "bg-white", "shadow-lg");
-    }
-  });
-}
+            // navLinks.forEach(link => {
+            //   const linkPage = link.getAttribute("href");
+            //   if (linkPage === currentPage) {
+            //     link.style.color = "#2563EB"; // Tailwind blue-600
+            //     link.classList.add("font-semibold");
+            //   } else {
+            //     link.style.color = "#1F2937"; // Tailwind gray-800
+            //     link.classList.remove("font-semibold");
+            //   }
+            // });
+            navLinks.forEach(link => {
+              const linkPage = link.getAttribute("href");
+              if (linkPage === currentPage) {
+                link.style.color = "#2563EB"; // Tailwind blue-600
+                link.classList.add("font-semibold");
+                link.style.borderBottom = "2px solid #2563EB"; // ✅ blue border bottom
+                link.style.paddingBottom = "2px"; // thoda space ke liye
+                link.style.width = "fit-content"; // thoda space ke liye
+              } else {
+                link.style.color = "#1F2937"; // Tailwind gray-800
+                link.classList.remove("font-semibold");
+                link.style.borderBottom = "none"; // remove border from non-active
+              }
+            });
 
 
-document.querySelectorAll(".faq-question").forEach((question) => {
-  question.addEventListener("click", () => {
-    const answer = question.nextElementSibling;
+            // ===== Sticky Header on scroll =====
+            const header = document.querySelector("header");
+            if (header) {
+              const stickyOffset = header.offsetTop;
 
-    // Toggle open class
-    answer.classList.toggle("open");
-    question.classList.toggle("active");
-  });
-});
+              window.addEventListener("scroll", () => {
+                if (window.pageYOffset > stickyOffset) {
+                  header.classList.add("fixed", "top-0", "left-0", "right-0", "z-50", "bg-white", "shadow-lg");
+                } else {
+                  header.classList.remove("fixed", "top-0", "left-0", "right-0", "z-50", "bg-white", "shadow-lg");
+                }
+              });
+            }
 
-const modal = document.getElementById("authModal");
-const openBtnDesktop = document.getElementById("openModalDesktop");
-const openBtnMobile = document.getElementById("openModalMobile");
-const closeBtn = document.getElementById("closeModal");
 
-// if (openBtnDesktop) {
-//   // Desktop button
-//   openBtnDesktop.addEventListener("click", () => {
-//     modal.classList.remove("hidden");
-//   });
-// }
+            document.querySelectorAll(".faq-question").forEach((question) => {
+              question.addEventListener("click", () => {
+                const answer = question.nextElementSibling;
 
-if (!openBtnDesktop && !openBtnMobile) {
-  modal.classList.add("hidden");
-}
+                // Toggle open class
+                answer.classList.toggle("open");
+                question.classList.toggle("active");
+              });
+            });
 
-if (openBtnDesktop) {
-  openBtnDesktop.addEventListener("click", () => {
-    if (window.location.pathname !== "/password/reset" &&
-      !window.location.pathname.startsWith("/password/reset/")) {
-      modal.classList.remove("hidden");
-    }
-  });
-}
+            const modal = document.getElementById("authModal");
+            const openBtnDesktop = document.getElementById("openModalDesktop");
+            const openBtnMobile = document.getElementById("openModalMobile");
+            const closeBtn = document.getElementById("closeModal");
 
-if (openBtnMobile) {
-  openBtnMobile.addEventListener("click", () => {
-    if (window.location.pathname !== "/password/reset" &&
-      !window.location.pathname.startsWith("/password/reset/")) {
-      modal.classList.remove("hidden");
-    }
-  });
-}
-// if (openBtnMobile) {
-//   // Mobile button
-//   openBtnMobile.addEventListener("click", () => {
-//     modal.classList.remove("hidden");
-//   });
-// }
+            // if (openBtnDesktop) {
+            //   // Desktop button
+            //   openBtnDesktop.addEventListener("click", () => {
+            //     modal.classList.remove("hidden");
+            //   });
+            // }
 
-if (closeBtn) {
-  // Close modal
-  closeBtn.addEventListener("click", () => {
-    modal.classList.add("hidden");
-  });
-}
+            if (!openBtnDesktop && !openBtnMobile) {
+              modal.classList.add("hidden");
+            }
 
-// Close modal on background click
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.classList.add("hidden");
-  }
-});
+            if (openBtnDesktop) {
+              openBtnDesktop.addEventListener("click", () => {
+                if (window.location.pathname !== "/password/reset" &&
+                  !window.location.pathname.startsWith("/password/reset/")) {
+                  modal.classList.remove("hidden");
+                }
+              });
+            }
 
-document.addEventListener('DOMContentLoaded', function () {
-  function normalizePath(p) {
-    try {
-      const url = new URL(p, location.origin);
-      let pathname = url.pathname.replace(/\/+$/, '');
-      return pathname === '' ? '/' : pathname;
-    } catch {
-      return p === '/' ? '/' : p.replace(/\/+$/, '');
-    }
-  }
+            if (openBtnMobile) {
+              openBtnMobile.addEventListener("click", () => {
+                if (window.location.pathname !== "/password/reset" &&
+                  !window.location.pathname.startsWith("/password/reset/")) {
+                  modal.classList.remove("hidden");
+                }
+              });
+            }
+            // if (openBtnMobile) {
+            //   // Mobile button
+            //   openBtnMobile.addEventListener("click", () => {
+            //     modal.classList.remove("hidden");
+            //   });
+            // }
 
-  const current = normalizePath(window.location.pathname);
-  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            if (closeBtn) {
+              // Close modal
+              closeBtn.addEventListener("click", () => {
+                modal.classList.add("hidden");
+              });
+            }
 
-  navLinks.forEach(link => link.classList.remove('active'));
+            // Close modal on background click
+            modal.addEventListener("click", (e) => {
+              if (e.target === modal) {
+                modal.classList.add("hidden");
+              }
+            });
 
-  navLinks.forEach(link => {
-    const href = link.getAttribute('href');
-    if (!href || href === '#' || href.startsWith('javascript:')) return;
+            document.addEventListener('DOMContentLoaded', function () {
+              function normalizePath(p) {
+                try {
+                  const url = new URL(p, location.origin);
+                  let pathname = url.pathname.replace(/\/+$/, '');
+                  return pathname === '' ? '/' : pathname;
+                } catch {
+                  return p === '/' ? '/' : p.replace(/\/+$/, '');
+                }
+              }
 
-    const linkPath = normalizePath(href);
+              const current = normalizePath(window.location.pathname);
+              const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
-    if ((current === '/' || current === '/home') &&
-      (linkPath === '/' || linkPath === '/home')) {
-      link.classList.add('active');
-      return;
-    }
+              navLinks.forEach(link => link.classList.remove('active'));
 
-    if (linkPath === '/dashboard' && current === '/dashboard') {
-      link.classList.add('active');
-      return;
-    }
+              navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (!href || href === '#' || href.startsWith('javascript:')) return;
 
-    if (linkPath.includes('blogs') && current.startsWith('/blogs')) {
-      link.classList.add('active');
-      return;
-    }
+                const linkPath = normalizePath(href);
 
-    if ((linkPath.includes('taskhistory') && current.includes('taskhistory')) ||
-      (linkPath.includes('tasks') && current.includes('tasks'))) {
-      link.classList.add('active');
-      return;
-    }
+                if ((current === '/' || current === '/home') &&
+                  (linkPath === '/' || linkPath === '/home')) {
+                  link.classList.add('active');
+                  return;
+                }
 
-    // if (linkPath.includes('edit') && current.includes('edit')) {
-    //   link.classList.add('active');
-    //   return;
-    // }
+                if (linkPath === '/dashboard' && current === '/dashboard') {
+                  link.classList.add('active');
+                  return;
+                }
 
-    if (linkPath.startsWith('/user') && current.startsWith('/user') && current.includes('/edit')) {
-      link.classList.add('active');
-      return;
-    }
+                if (linkPath.includes('blogs') && current.startsWith('/blogs')) {
+                  link.classList.add('active');
+                  return;
+                }
 
-    if (linkPath !== '/' && (current === linkPath || current.startsWith(linkPath + '/'))) {
-      link.classList.add('active');
-      return;
-    }
-  });
-}); 
+                if ((linkPath.includes('taskhistory') && current.includes('taskhistory')) ||
+                  (linkPath.includes('tasks') && current.includes('tasks'))) {
+                  link.classList.add('active');
+                  return;
+                }
+
+                // if (linkPath.includes('edit') && current.includes('edit')) {
+                //   link.classList.add('active');
+                //   return;
+                // }
+
+                if (linkPath.startsWith('/user') && current.startsWith('/user') && current.includes('/edit')) {
+                  link.classList.add('active');
+                  return;
+                }
+
+                if (linkPath !== '/' && (current === linkPath || current.startsWith(linkPath + '/'))) {
+                  link.classList.add('active');
+                  return;
+                }
+              });
+            });
 
             form.action = `/admin/users/${userId}/transaction/${id}`;
             form.insertAdjacentHTML('beforeend', '@method("PUT")');
