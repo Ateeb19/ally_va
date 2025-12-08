@@ -21,7 +21,7 @@
 
           <form method="POST" action="{{ route('inquerySave') }}" class="contact-form p-4 contact-form-left h-100">
             @csrf
-            <div class="row g-4">
+            <div class="row g-4 mb-3">
               <div class="col-md-6">
                 <label class="form-label">Full Name</label>
                 <input type="text" name="full_name" class="form-control" placeholder="Enter your full name" required>
