@@ -215,10 +215,10 @@
             <!-- Labels -->
             <div class="label-wrapper d-flex justify-content-between text-muted mt-3 flex-wrap">
               <span class="hours">10 Hours</span>
-              <span class="hourly-plane fw-bold text-dark middle-label" id="hoursLabel">
+              <span class="hourly-plan fw-bold text-dark middle-label" id="hoursLabel">
                 20 Hours Plan @ USD {{ $userHour ? ($userHour->hour_price ? $userHour->hour_price : 9) : 9 }}/hour
               </span>
-              <span class="hours">300 Hours</span>
+              <span class="hours-right">300 Hours</span>
             </div>
 
             <script>

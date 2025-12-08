@@ -1998,7 +1998,11 @@ input[type="range"]::-ms-thumb {
 
   .label-wrapper .hours {
     font-size: 13px;
-    text-align: center;
+  }
+
+  .label-wrapper .hours-right {
+    font-size: 13px;
+    text-align: right;
   }
 
   .label-wrapper .hourly-plan {
@@ -2007,7 +2011,7 @@ input[type="range"]::-ms-thumb {
   }
 
   .navbar-toggler:focus {
-    box-shadow: none;
+    box-shadow: none !important;
   }
 
 

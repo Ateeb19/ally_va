@@ -22,15 +22,17 @@
 
       <div id="" class="d-block d-lg-none">
 
-        @if(
-            Auth::check() &&
-            !isset($adminView) && (
-              request()->is('dashboard') ||
-              request()->is('user/*') ||
-              (request()->is('blogs*') && !request()->is('blogs/show-detail/*')) ||
-              request()->is('admin/*')
-            )
-          )
+@if(
+    Auth::check() &&
+    !isset($adminView) && (
+        request()->is('dashboard') ||
+        request()->is('user/*') ||
+        request()->is('admin') ||
+        request()->is('admin/*') ||
+        request()->is('admin/users/*/dashboard') ||
+        (request()->is('blogs*') && !request()->is('blogs/show-detail/*'))
+    )
+)
           <button type="button" class="btn btn-primary px-4">
             <a class="text-white px-6" style="text-decoration: none" href="{{ route('logout') }}"
               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

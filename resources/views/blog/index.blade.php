@@ -10,7 +10,7 @@
         </div>
       @endif
       <div class="table-info-wrap">
-        <div class="row">
+        <div class="row gy-4">
           <div class="col-xl-6">
             <div class="form-group">
               <form action="{{ url()->current() }}" method="GET">

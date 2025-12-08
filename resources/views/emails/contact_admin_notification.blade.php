@@ -53,7 +53,7 @@
                 submission</h1>
 
               <div
-                style="background-color: ##f6fbff; padding: 20px; border-radius: 5px; border-left: 5px solid #288feb;">
+                style="background-color: #f6fbff; padding: 20px; border-radius: 5px; border-left: 5px solid #288feb;">
                 <p style="font-size: 16px; line-height: 1.6; color: #333333; margin: 0 0 10px 0;">
                   <strong>Full Name:</strong> {{ $data['full_name'] }}
                 </p>
