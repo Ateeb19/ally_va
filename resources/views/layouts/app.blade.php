@@ -70,6 +70,7 @@
                 request()->is('pricing') ||
                 request()->is('insights') ||
                 request()->is('contact') ||
+                request()->is('login') ||
                 request()->is('inquerySave') ||
                 request()->is('blogs/show-detail/*') ||
                 request()->is('password/reset') ||
