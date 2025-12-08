@@ -21,8 +21,29 @@
 
 
       <div id="" class="d-block d-lg-none">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#authModal">
-          Login</button>
+
+        @if(
+            Auth::check() &&
+            !isset($adminView) && (
+              request()->is('dashboard') ||
+              request()->is('user/*') ||
+              (request()->is('blogs*') && !request()->is('blogs/show-detail/*')) ||
+              request()->is('admin/*')
+            )
+          )
+          <button type="button" class="btn btn-primary px-4">
+            <a class="text-white px-6" style="text-decoration: none" href="{{ route('logout') }}"
+              onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+              Log Out
+            </a>
+          </button>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+          </form>
+        @else
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#authModal">
+            Login</button>
+        @endif
       </div>
 
       <!-- Auth Modal -->
@@ -457,18 +478,18 @@
               </a>
             </li>
             <!-- <li class="nav-item ms-lg-3 d-none d-lg-block">
-                                                  @if(!(Auth::check() && Auth::user()->is_admin && request()->routeIs('admin.users.dashboard')))
-                                                    <button type="button" class="btn btn-primary px-4">
-                                                      <a class="text-white px-6" style="text-decoration: none" href="{{ route('logout') }}"
-                                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                                        Log Out
-                                                      </a>
-                                                    </button>
-                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                      @csrf
-                                                    </form>
-                                                  @endif
-                                                </li> -->
+                                                        @if(!(Auth::check() && Auth::user()->is_admin && request()->routeIs('admin.users.dashboard')))
+                                                          <button type="button" class="btn btn-primary px-4">
+                                                            <a class="text-white px-6" style="text-decoration: none" href="{{ route('logout') }}"
+                                                              onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                              Log Out
+                                                            </a>
+                                                          </button>
+                                                          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                            @csrf
+                                                          </form>
+                                                        @endif
+                                                      </li> -->
             <li class="nav-item ms-lg-3 d-none d-lg-block">
               @if(!((isset($adminView) && $adminView === true) && auth()->user()->hasRole('super_admin')))
                 <button type="button" class="btn btn-primary px-4">
@@ -610,8 +631,8 @@
       @if(!isset($adminView) && auth()->user()->hasRole('super_admin') && !Request::is('blogs/show-detail/*'))
         <div class="inner-page-header">
           <div class="container">
-            <div class="top-view">
-              <h1 class="fw-bold">Welcome! Admin</h1>
+            <div class="top-view admin-view">
+              <h1 class="fw-bold">ॐ गं गणपतये नमः</h1>
             </div>
           </div>
         </div>

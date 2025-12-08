@@ -50,7 +50,7 @@ button:hover,
   width: 75%;
 }
 
-.btn-primary {
+.btn.btn-primary {
   background-color: #288feb;
   border: 1px solid #288feb;
   color: #fff;
@@ -59,7 +59,7 @@ button:hover,
   font-size: 16px;
 }
 
-.btn-primary:hover {
+.btn.btn-primary:hover {
   background-color: #288feb;
   border: 1px solid #288feb;
 }
@@ -1234,10 +1234,14 @@ footer {
 
 .admin-table-wrap {
   margin-top: 24px;
+  width: 100%;
+  overflow-x: auto;
 }
 
 .admin-table-wrap table {
   width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
 }
 
 .email_search {
@@ -1268,7 +1272,7 @@ footer {
 }
 
 .top-view {
-  padding: 30px 0px 24px 0px;
+  padding: 30px 10px 24px 10px;
   text-align: center;
   background-color: #288feb;
   border-radius: 3px;
@@ -1597,7 +1601,7 @@ footer {
   height: 500px !important;
 }
 
-.bg-input{
+.bg-input {
   background-color: #ebebeb !important;
 }
 
@@ -1625,12 +1629,47 @@ footer {
   margin-top: 92px;
 }
 
+/* Chrome, Safari, Edge */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: -2px;
+  border-radius: 50%;
+  background: #007bff;
+  cursor: grab;
+  outline: 3px solid #b0ceee;
+}
 
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: -2px;
+  border-radius: 50%;
+  background: #007bff;
+  cursor: grab;
+}
 
+/* IE */
+input[type="range"]::-ms-thumb {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: -2px;
+  border-radius: 50%;
+  background: #007bff;
+  cursor: grab;
+}
 
-
-
-
+.admin-view {
+  padding: 30px 10px 24px 10px;
+  text-align: center;
+  background-color: #04b404;
+  border-radius: 3px;
+}
 
 
 
@@ -1918,4 +1957,58 @@ footer {
   .btn-link {
     margin-top: 10px;
   }
+
+  .admin-table-wrap table td {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .admin-table-wrap table th {
+    padding: 5px 8px;
+    font-size: 14px;
+  }
+
+  .last-point-view {
+    margin: 20px auto;
+  }
+
+  .inner-page-header h1 {
+    font-size: 22px;
+
+  }
+
+  .top-view {
+    padding: 24px 10px 18px 10px;
+  }
+
+  .totalhours {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 20px 0px;
+  }
+
+  .trans-boxes {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 18px;
+  }
+
+  .trans-btn {
+    justify-content: flex-end;
+    gap: 18px;
+  }
+
+  .label-wrapper .hours {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .label-wrapper .hourly-plan {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+
 }

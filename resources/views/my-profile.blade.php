@@ -71,7 +71,7 @@
                 <div class="form-group">
                   <label class="form-label">Country</label>
                   <div class="input-group">
-                    <span class="input-group-text"><i class="ri-building-line"></i></span>
+                    <span class="input-group-text"><i class="ri-global-line"></i></span>
                     <input type="text" name="country" class="form-control" placeholder="Enter Country"
                       value='{{ $user->country }}' maxlength="100" />
                   </div>

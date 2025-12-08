@@ -65,7 +65,7 @@
     <!-- 2. Main Welcome Message Content (Updated by Arup) -->
     <main class="p-8 sm:p-10 text-gray-800">
       <p class="text-lg mb-6 text-gray-700">
-        Welcome, {{ $user->name }}
+        Welcome {{ $user->name }},
       </p>
 
       <p class="text-lg mb-6 text-gray-700">
@@ -82,7 +82,7 @@
       </div>
 
       <p class="text-lg mb-6 text-gray-700">
-        In the meantime, I highly encourage you to **enter your WhatsApp and other contacts in the portal**. Having this
+        In the meantime, I highly encourage you to enter your WhatsApp and other contacts in the portal. Having this
         information ready allows me to serve you faster and ensures better communication.
       </p>
 

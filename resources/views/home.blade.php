@@ -4,7 +4,7 @@
 
   <!-- //Admin data only show here -->
   @if(!isset($adminView) && auth()->user()->hasRole('super_admin'))
-    <section class="admin-table-wrapper mt-5">
+    <section class="admin-table-wrapper my-5">
       <div class="container">
         @if(session()->has('message'))
           <div class="alert alert-success">
@@ -12,8 +12,8 @@
           </div>
         @endif
         <div class="table-info-wrap">
-          <div class="row">
-            <div class="col-xl-6">
+          <div class="row gy-4">
+            <div class="col-xl-6 col-12">
               <form action="{{ url()->current() }}" method="GET">
                 <div class="form-group">
                   <div class="d-flex gap-3">
@@ -27,7 +27,7 @@
               </form>
             </div>
             <!-- Button trigger -->
-            <div class="col-xl-6 d-flex justify-content-end align-items-center">
+            <div class="col-xl-6 col-12 d-flex justify-content-end align-items-center">
               <button class="btn-add" data-bs-toggle="modal" data-bs-target="#userCreateModal">
                 Add New <i class="ri-add-circle-line"></i>
               </button>
@@ -164,7 +164,7 @@
                 <span class="input-group-text"><i class="ri-key-fill"></i></span>
                 <input id="user_Password" type="password" class="form-control @error('user_Password') is-invalid @enderror"
                   name="user_Password" required placeholder="Password">
-                <span class="input-group-text" onclick="togglePassword('signupPassword', this)" style="cursor: pointer">
+                <span class="input-group-text" onclick="togglePassword('user_Password', this)" style="cursor: pointer">
                   <i class="ri-eye-off-fill"></i>
                 </span>
                 <!-- @error('user_Password')
@@ -213,12 +213,12 @@
             </div>
 
             <!-- Labels -->
-            <div class="d-flex justify-content-between text-muted mt-3 flex-wrap">
-              <span>10 Hours</span>
-              <span class="fw-bold text-dark middle-label" id="hoursLabel">
+            <div class="label-wrapper d-flex justify-content-between text-muted mt-3 flex-wrap">
+              <span class="hours">10 Hours</span>
+              <span class="hourly-plane fw-bold text-dark middle-label" id="hoursLabel">
                 20 Hours Plan @ USD {{ $userHour ? ($userHour->hour_price ? $userHour->hour_price : 9) : 9 }}/hour
               </span>
-              <span>300 Hours</span>
+              <span class="hours">300 Hours</span>
             </div>
 
             <script>
