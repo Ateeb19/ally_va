@@ -22,7 +22,7 @@
 
       <div id="" class="d-block d-lg-none">
 
-@if(
+<!-- @if(
     Auth::check() &&
     !isset($adminView) && (
         request()->is('dashboard') ||
@@ -30,6 +30,7 @@
         request()->is('admin') ||
         request()->is('admin/*') ||
         request()->is('admin/users/*/dashboard') ||
+        request()->is('admin/users/*/dashboard*') ||
         (request()->is('blogs*') && !request()->is('blogs/show-detail/*'))
     )
 )
@@ -45,8 +46,42 @@
         @else
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#authModal">
             Login</button>
-        @endif
+        @endif -->
+  {{-- if user/admin logged in AND current page is home, hide button completely --}}
+  
+@if(Auth::check() && request()->is('home'))
+    
+@elseif(
+    Auth::check() &&
+    !request()->is('admin/users/*/dashboard') &&
+    !isset($adminView) && (
+        request()->is('dashboard') ||
+        request()->is('user/*') ||
+        request()->is('admin') ||
+        request()->is('admin/*') ||
+        (request()->is('blogs*') && !request()->is('blogs/show-detail/*'))
+    )
+)
+    <button type="button" class="btn btn-primary px-4">
+        <a class="text-white px-6" style="text-decoration: none" href="{{ route('logout') }}"
+           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            Log Out
+        </a>
+    </button>
+
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+        @csrf
+    </form>
+
+@elseif(!Auth::check())
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#authModal">
+        Login
+    </button>
+@endif
       </div>
+
+
+     
 
       <!-- Auth Modal -->
       <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">

@@ -94,8 +94,13 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function () {
     // ->name('blogs.destroyMultiple');
 });
 
-Route::get('user/taskhistory/{user_id}', [UserController::class, 'showTaskHistory'])->name('user.showTaskHistory');
-Route::resource('user', UserController::class);
+// Route::resource('user', UserController::class);
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('user/taskhistory/{user_id}', [UserController::class, 'showTaskHistory'])->name('user.showTaskHistory');
+
+    Route::resource('user', UserController::class);
+});
 
 
 Route::get('/blogs/show-detail/{blog_id}', [BlogController::class, 'FrontBlogDetailShow'])
