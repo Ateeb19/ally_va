@@ -43,7 +43,7 @@
                 <!-- <img src="https://www.allyva.com/images/logo.png" alt="Company Logo" width="120"
                   style="max-width: 120px; height: auto;"> -->
                 <a href="https://allyva.com/">
-                  <img src="https://allyva.com/images/logo.png" alt="AllyVa Company Logo"
+                  <img src="https://allyva.com/images/logo.png" alt=""
                     class="mx-auto h-12 rounded-lg shadow-md"
                     onerror="this.onerror=null; this.src='https://placehold.co/180x60/D1FAE5/10B981?text=AllyVa';">
                 </a>

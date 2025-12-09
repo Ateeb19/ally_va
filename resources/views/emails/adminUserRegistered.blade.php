@@ -33,7 +33,7 @@
                             <div style="text-align: center; margin-bottom: 25px;">
                                 <!-- <img src="https://allyva.com/images/logo.png" alt="AllyVa Company Logo" width="120" style="max-width: 120px; height: auto;"> -->
                                 <a href="https://allyva.com/">
-                                    <img src="https://allyva.com/images/logo.png" alt="AllyVa Company Logo"
+                                    <img src="https://allyva.com/images/logo.png" alt=""
                                         class="mx-auto h-12 rounded-lg shadow-md"
                                         onerror="this.onerror=null; this.src='https://placehold.co/180x60/D1FAE5/10B981?text=AllyVa';">
                                 </a>
@@ -45,7 +45,7 @@
                             <div
                                 style="background-color: #f6fbff; padding: 20px; border-radius: 5px; border-left: 5px solid #288feb;">
                                 <p style="font-size: 16px; line-height: 1.6; color: #333333; margin: 0 0 10px 0;">
-                                    <strong>Full Name:</strong> {{ $user->name }}
+                                    <strong>New Registeration Name:</strong> {{ $user->name }}
                                 </p>
                                 <p style="font-size: 16px; line-height: 1.6; color: #333333; margin: 0 0 10px 0;">
                                     <strong>Email Address:</strong> <a href="mailto:[SUBMITTED_EMAIL]"
