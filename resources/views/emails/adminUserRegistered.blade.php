@@ -1,22 +1,3 @@
-<!-- <!DOCTYPE html>
-<html>
-
-<body>
-    <h2>A new user has registered</h2>
-    <p><strong>Name:</strong> {{ $user->name }}</p>
-    <p><strong>Email:</strong> {{ $user->email }}</p>
-    <p><strong>Phone:</strong> {{ $user->phone }}</p>
-    <footer class="bg-gray-800 p-6 text-center">
-        <a href="https://allyva.com/">
-            <img src="https://allyva.com/images/logo.png" alt="AllyVa Company Logo"
-                class="mx-auto h-12 rounded-lg shadow-md"
-                onerror="this.onerror=null; this.src='https://placehold.co/180x60/D1FAE5/10B981?text=AllyVa';">
-        </a>
-    </footer>
-</body>
-
-</html> -->
-
 <!DOCTYPE html>
 <html>
 
@@ -31,7 +12,6 @@
                         <td style="padding: 40px 30px;">
 
                             <div style="text-align: center; margin-bottom: 25px;">
-                                <!-- <img src="https://allyva.com/images/logo.png" alt="AllyVa Company Logo" width="120" style="max-width: 120px; height: auto;"> -->
                                 <a href="https://allyva.com/">
                                     <img src="https://allyva.com/images/logo.png" alt=""
                                         class="mx-auto h-12 rounded-lg shadow-md"

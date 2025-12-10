@@ -1,33 +1,6 @@
-<!-- <!DOCTYPE html>
-<html>
-
-<body style="font-family: Arial, sans-serif;">
-  <h2>A site visitor just submitted an Inquiry</h2>
-
-  <p><strong>Name:</strong> {{ $data['full_name'] }}</p>
-  <p><strong>Email:</strong> {{ $data['email'] }}</p>
-  @if(!empty($data['phone']))
-    <p><strong>Phone:</strong> {{ $data['phone'] }}</p>
-  @endif
-  @if(!empty($data['company_name']))
-    <p><strong>Company Name:</strong> {{ $data['company_name'] }}</p>
-  @endif
-
-  <p><strong>Project Description:</strong></p>
-  <p style="white-space: pre-wrap;">{{ $data['project_desc'] }}</p>
- </body>
-
-</html> -->
-
 
 <!DOCTYPE html>
 <html>
-<!-- 
-<head>
-  <title>New Contact Form Submission</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head> -->
 
 <body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4;">
 
@@ -40,8 +13,6 @@
             <td style="padding: 40px 30px;">
 
               <div style="text-align: center; margin-bottom: 25px;">
-                <!-- <img src="https://www.allyva.com/images/logo.png" alt="Company Logo" width="120"
-                  style="max-width: 120px; height: auto;"> -->
                 <a href="https://allyva.com/">
                   <img src="https://allyva.com/images/logo.png" alt=""
                     class="mx-auto h-12 rounded-lg shadow-md"
