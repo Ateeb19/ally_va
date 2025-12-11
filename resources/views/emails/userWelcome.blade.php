@@ -124,7 +124,7 @@
         </a>
       </div> -->
       <a href="https://allyva.com/">
-        <img src="https://allyva.com/images/logo.png" alt=""
+        <img src="https://allyva.com/images/logo.png" alt="Ally VA"
           class="mx-auto h-12 rounded-lg shadow-md"
           onerror="this.onerror=null; this.src='https://placehold.co/180x60/D1FAE5/10B981?text=AllyVa';">
       </a>

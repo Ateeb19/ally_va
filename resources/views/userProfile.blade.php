@@ -128,10 +128,10 @@
                               <div class="form-group">
                                 <label class="form-label">Remaining (Hours & Minutes)</label>
                                 <div class="d-flex">
-                                  <input type="number" name="hours" value="{{ $userHours ? $userHours->hours : 00 }}"
-                                    class="form-control bg-input w-25 me-2" placeholder="Hours" required max="99999">
-                                  <input type="number" name="minutes" value="{{ $userHours ? $userHours->minutes : 00 }}"
-                                    class="form-control bg-input w-25" placeholder="Minutes" required max="99999">
+                                  <input type="text" name="hours" value="{{ $userHours ? $userHours->hours : 00 }}"
+                                    class="form-control bg-input w-25 me-2" placeholder="Hours">
+                                  <input type="text" name="minutes" value="{{ $userHours ? $userHours->minutes : 00 }}"
+                                    class="form-control bg-input w-25" placeholder="Minutes">
                                 </div>
                               </div>
                               <?php
