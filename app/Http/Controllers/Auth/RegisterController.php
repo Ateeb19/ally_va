@@ -95,8 +95,8 @@ class RegisterController extends Controller
 
         UserHour::create([
             'user_id' => $user->id,
-            'hours' => 00,
-            'minutes' => 00,
+            'hours' => '00',
+            'minutes' => '00',
             'hour_price' => 9,
         ]);
 
