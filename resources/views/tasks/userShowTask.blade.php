@@ -83,7 +83,7 @@
               <div class="mb-3">
                 <label class="form-label">Task Type</label>
                 <div class="input-group ">
-                  <span class="input-group-text"><i class="ri-user-fill"></i></span>
+                  <span class="input-group-text"><i class="ri-suitcase-fill"></i></span>
                   <input type="text" id="view_task_type" class="form-control" readonly>
                 </div>
               </div>
@@ -91,7 +91,7 @@
               <div class="mb-3">
                 <label class="form-label">Task Date</label>
                 <div class="input-group ">
-                  <span class="input-group-text"><i class="ri-mail-fill"></i></span>
+                  <span class="input-group-text"><i class="ri-calendar-fill"></i></span>
                   <input type="date" id="view_task_date" class="form-control" readonly>
                 </div>
               </div>
@@ -99,7 +99,7 @@
               <div class="mb-3">
                 <label class="form-label">Task Points</label>
                 <div class="input-group ">
-                  <span class="input-group-text"><i class="ri-phone-fill"></i></span>
+                  <span class="input-group-text"><i class="ri-draft-fill"></i></span>
                   <input type="text" id="view_task_point" class="form-control" readonly>
                 </div>
               </div>
