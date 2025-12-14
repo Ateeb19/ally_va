@@ -685,13 +685,19 @@
         <div class="inner-page-header">
           <div class="container">
             <div class="top-view">
-              <h1 class="fw-bold">
+              <!-- <h1 class="fw-bold">
                 Remaining Hours:
                 {{ ($userRemainHours && $userRemainHours->hours != 0) ? str_pad($userRemainHours->hours, 2, '0', STR_PAD_LEFT) : '00' }}
                 hr
                 {{ ($userRemainHours && $userRemainHours->minutes != 0) ? str_pad($userRemainHours->minutes, 2, '0', STR_PAD_LEFT) : '00' }}
                 min
-              </h1>
+              </h1> -->
+                            <h1 class="fw-bold">
+    Remaining Hours:
+    {{ $userRemainHours->hours ?? 0 }} hr
+    {{ $userRemainHours->minutes ?? 0}} min
+</h1>
+
             </div>
           </div>
         </div>
@@ -705,13 +711,18 @@
         <div class="inner-page-header">
           <div class="container">
             <div class="top-view">
-              <h1 class="fw-bold">
+              <!-- <h1 class="fw-bold">
                 Remaining Hours:
                 {{ ($userRemainHours && $userRemainHours->hours != 0) ? str_pad($userRemainHours->hours, 2, '0', STR_PAD_LEFT) : '00' }}
                 hr
                 {{ ($userRemainHours && $userRemainHours->minutes != 0) ? str_pad($userRemainHours->minutes, 2, '0', STR_PAD_LEFT) : '00' }}
                 min
-              </h1>
+              </h1> -->
+                            <h1 class="fw-bold">
+    Remaining Hours:
+    {{ $userRemainHours->hours ?? 0 }} hr
+    {{ $userRemainHours->minutes ?? 0}} min
+</h1>
             </div>
           </div>
         </div>

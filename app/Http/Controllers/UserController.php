@@ -205,11 +205,38 @@ class UserController extends Controller
         $user->save();
 
         if ($request->has('hours') || $request->has('minutes')) {
+
+            $normalizeTime = function ($value) {
+
+                if ($value === null || $value === '') {
+                    return '00';
+                }
+
+                if ((string) $value === '-0') {
+                    return '-00';
+                }
+
+                if (is_numeric($value)) {
+                    $num = (int) $value;
+                    $abs = abs($num);
+                    $formatted = str_pad($abs, 2, '0', STR_PAD_LEFT);
+
+                    return $num < 0 ? '-' . $formatted : $formatted;
+                }
+
+                return (string) $value;
+            };
+
             $userHours = new UserHour();
             $userHours->user_id = $user->id;
-            $userHours->hours = $request->hours;
-            $userHours->minutes = $request->minutes;
+            $userHours->hours = $normalizeTime($request->hours);
+            $userHours->minutes = $normalizeTime($request->minutes);
             $userHours->save();
+            // $userHours = new UserHour();
+            // $userHours->user_id = $user->id;
+            // $userHours->hours = $request->hours;
+            // $userHours->minutes = $request->minutes;
+            // $userHours->save();
         }
 
         if (auth()->user()->hasRole('super_admin') && auth()->id() != $user->id) {
