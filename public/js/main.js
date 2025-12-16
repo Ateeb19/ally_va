@@ -111,7 +111,6 @@ function closeAuthModalCompletely() {
     document.querySelectorAll('.modal-backdrop').forEach(b => b.remove());
     document.body.classList.remove('modal-open');
     document.body.style.removeProperty('padding-right');
-    reloadOnceAfterModalClose();
   }, 50);
 }
 
@@ -150,32 +149,63 @@ if (openBtnMobile) {
 if (closeBtn) {
   // Close modal
   closeBtn.addEventListener("click", () => {
-    modal.classList.add("hidden");
-    closeAuthModalCompletely();
+    // modal.classList.add("hidden");
+    // closeAuthModalCompletely();
+    const instance = bootstrap.Modal.getInstance(modal);
+    reloadOnceAfterModalClose
+    if (instance) instance.hide();
   });
 }
 
 // Close modal on background click
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.classList.add("hidden");
-    closeAuthModalCompletely();
-  }
-});
+// modal.addEventListener("click", (e) => {
+//   if (e.target === modal) {
+//     modal.classList.add("hidden");
+//     closeAuthModalCompletely();
+//   }
+// });
+// modal.addEventListener("click", (e) => {
+//   if (e.target === modal) {
+//     const instance = bootstrap.Modal.getInstance(modal);
+//     if (instance) instance.hide();
+//   }
+// });
+
 
 if (modal) {
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      closeAuthModalCompletely();
+  modal.addEventListener('hidden.bs.modal', function () {
+
+    document.querySelectorAll('.modal-backdrop').forEach(b => b.remove());
+
+    document.body.classList.remove('modal-open');
+    document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
+
+    if (!sessionStorage.getItem('authModalReloaded')) {
+      sessionStorage.setItem('authModalReloaded', 'true');
+      location.reload();
     }
+    closeAuthModalCompletely();
+
   });
 }
 
-if (modal) {
-  modal.addEventListener('hidden.bs.modal', () => {
-    closeAuthModalCompletely();
-  });
-}
+// if (modal) {
+//   modal.addEventListener('hidden.bs.modal', () => {
+//     closeAuthModalCompletely();
+
+//     if (!sessionStorage.getItem('authModalReloaded')) {
+//       sessionStorage.setItem('authModalReloaded', 'true');
+//       location.reload();
+//     }
+//   });
+// }
+
+// if (modal) {
+//   modal.addEventListener('hidden.bs.modal', () => {
+//     closeAuthModalCompletely();
+//   });
+// }
 
 // Close login modal when Add User modal closes
 const userCreateModal = document.getElementById("userCreateModal");
