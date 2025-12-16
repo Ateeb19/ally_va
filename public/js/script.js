@@ -25,7 +25,7 @@ document.getElementById("signupForm").addEventListener("submit", function(e) {
 
     if (pass !== confirmPass) {
         e.preventDefault();
-        alert("❌ Passwords do not match!");
+        alert("Passwords do not match!");
         return; 
     }
 

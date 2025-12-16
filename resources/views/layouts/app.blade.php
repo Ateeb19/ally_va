@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (pass !== confirmPass) {
                     e.preventDefault();
-                    alert("❌ Passwords do not match!");
+                    alert("Passwords do not match!");
                     return;
                 }
 

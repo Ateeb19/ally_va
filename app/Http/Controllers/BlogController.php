@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Str;
 class BlogController extends Controller
 {
     /**
@@ -176,12 +176,28 @@ class BlogController extends Controller
         return redirect()->route('blogs.index')->with('success', 'Selected blog deleted successfully.');
     }
 
-    public function FrontBlogDetailShow(Request $request, $blog_id)
+    public function FrontBlogDetailShow(Request $request, $blog_id, $slug = null)
     {
-        // dd($blog_id);
+        $blogDetail = Blog::findOrFail($blog_id);
 
-        $blogDetail = Blog::find($blog_id);
+        $correctSlug = Str::slug($blogDetail->title);
+
+        // Redirect if slug is missing or incorrect
+        if ($slug !== $correctSlug) {
+            return redirect()->route('blogs.blog-detail', [
+                $blogDetail->id,
+                $correctSlug
+            ]);
+        }
 
         return view('insights_detail', compact('blogDetail'));
     }
+    // public function FrontBlogDetailShow(Request $request, $blog_id)
+    // {
+    //     // dd($blog_id);
+
+    //     $blogDetail = Blog::find($blog_id);
+
+    //     return view('insights_detail', compact('blogDetail'));
+    // }
 }

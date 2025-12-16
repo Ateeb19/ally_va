@@ -84,6 +84,40 @@ const closeBtn = document.getElementById("closeModal");
 //     modal.classList.remove("hidden");
 //   });
 // }
+function reloadOnceAfterModalClose() {
+  if (!sessionStorage.getItem('authModalReloaded')) {
+    sessionStorage.setItem('authModalReloaded', 'true');
+    location.reload();
+  }
+}
+
+
+function closeAuthModalCompletely() {
+  const modalEl = document.getElementById("authModal");
+
+  if (!modalEl) return;
+
+  // ✅ Close Bootstrap modal properly
+  const instance = bootstrap.Modal.getInstance(modalEl);
+  if (instance) {
+    instance.hide();
+  }
+
+  // ✅ Hide custom modal wrapper
+  modalEl.classList.add("hidden");
+
+  // ✅ FORCE remove backdrop (Bootstrap bug-safe)
+  setTimeout(() => {
+    document.querySelectorAll('.modal-backdrop').forEach(b => b.remove());
+    document.body.classList.remove('modal-open');
+    document.body.style.removeProperty('padding-right');
+    reloadOnceAfterModalClose();
+  }, 50);
+}
+
+
+
+
 
 if (!openBtnDesktop && !openBtnMobile) {
   modal.classList.add("hidden");
@@ -117,6 +151,7 @@ if (closeBtn) {
   // Close modal
   closeBtn.addEventListener("click", () => {
     modal.classList.add("hidden");
+    closeAuthModalCompletely();
   });
 }
 
@@ -124,9 +159,23 @@ if (closeBtn) {
 modal.addEventListener("click", (e) => {
   if (e.target === modal) {
     modal.classList.add("hidden");
+    closeAuthModalCompletely();
   }
 });
 
+if (modal) {
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeAuthModalCompletely();
+    }
+  });
+}
+
+if (modal) {
+  modal.addEventListener('hidden.bs.modal', () => {
+    closeAuthModalCompletely();
+  });
+}
 
 // Close login modal when Add User modal closes
 const userCreateModal = document.getElementById("userCreateModal");
@@ -174,10 +223,19 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
+    if (
+      current.startsWith('/blogs/show-detail') &&
+      (linkPath === '/insights' || linkPath === '/blogs')
+    ) {
+      link.classList.add('active');
+      return;
+    }
+
     if (linkPath.includes('blogs') && current.startsWith('/blogs')) {
       link.classList.add('active');
       return;
     }
+
 
     if ((linkPath.includes('taskhistory') && current.includes('taskhistory')) ||
       (linkPath.includes('tasks') && current.includes('tasks'))) {
