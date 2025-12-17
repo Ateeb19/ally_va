@@ -1671,6 +1671,54 @@ input[type="range"]::-ms-thumb {
   border-radius: 3px;
 }
 
+/* Image wrapper */
+.blog-category-boxes {
+  position: relative;
+  height: 200px; /* SAME height for all images */
+  overflow: hidden;
+}
+
+/* Image fix */
+.blog-category-boxes img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* key property */
+}
+
+/* Category badge */
+.blog-category {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: #000;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+/* Card body alignment */
+.article-card .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Limit title height */
+.article-card .card-title {
+  min-height: 40px;
+}
+
+/* Limit description height */
+.article-card .card-text {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+/* Learn more always at bottom */
+.article-card .learn-more {
+  margin-top: auto;
+}
 
 
 

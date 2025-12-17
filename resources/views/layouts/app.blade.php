@@ -72,7 +72,7 @@
                 request()->is('contact') ||
                 request()->is('login') ||
                 request()->is('inquerySave') ||
-                request()->is('blogs/show-detail/*') ||
+                request()->is('blogs/*') ||
                 request()->is('password/reset') ||
                 request()->is('password/reset/*')
             )

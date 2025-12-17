@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (
-      current.startsWith('/blogs/show-detail') &&
+      current.startsWith('/blogs') &&
       (linkPath === '/insights' || linkPath === '/blogs')
     ) {
       link.classList.add('active');

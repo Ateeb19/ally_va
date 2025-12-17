@@ -468,7 +468,7 @@
               request()->is('contact') ||
               request()->is('login') ||
               request()->is('inquerySave') ||
-              request()->is('blogs/show-detail/*') ||
+              request()->is('blogs/*') ||
               request()->is('password/reset') ||
               request()->is('password/reset/*')
             )
@@ -501,7 +501,6 @@
           @endif
 
 
-          {{-- 👑 Admin viewing a specific user's dashboard --}}
           @if(isset($adminView) && $adminView === true && Auth::check() && auth()->user()->hasRole('super_admin'))
             <li class="nav-item text-primary">
               <a class="nav-link" href="{{ route('admin.users.dashboard', $userId) }}">Dashboard</a>
@@ -552,7 +551,7 @@
               !isset($adminView) && (
                 request()->is('dashboard') ||
                 request()->is('user/*') ||
-                (request()->is('blogs*') && !request()->is('blogs/show-detail/*')) ||
+                (request()->is('blogs*') && !request()->is('blogs/*')) ||
                 request()->is('admin/*')
               )
             )
@@ -666,7 +665,7 @@
 
     {{-- Show this section only if the current route is NOT in the hidden list --}}
     @if(!in_array(Request::path(), $hiddenRoutes))
-      @if(!isset($adminView) && auth()->user()->hasRole('super_admin') && !Request::is('blogs/show-detail/*'))
+      @if(!isset($adminView) && auth()->user()->hasRole('super_admin') && !Request::is('blogs/*'))
         <div class="inner-page-header">
           <div class="container">
             <div class="top-view admin-view">
