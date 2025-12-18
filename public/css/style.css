@@ -1705,9 +1705,9 @@ input[type="range"]::-ms-thumb {
 }
 
 /* Limit title height */
-.article-card .card-title {
+/* .article-card .card-title {
   min-height: 40px;
-}
+} */
 
 /* Limit description height */
 .article-card .card-text {
