@@ -105,10 +105,15 @@ Route::middleware(['auth'])->group(function () {
 
 // Route::get('/blogs/show-detail/{blog_id}', [BlogController::class, 'FrontBlogDetailShow'])
 //     ->name('blogs.blog-detail');
-Route::get('/blogs/{blog_id}/{slug?}', [BlogController::class, 'FrontBlogDetailShow'])
-    ->name('blogs.blog-detail');
+// Route::get('/blogs/{blog_id}/{slug?}', [BlogController::class, 'FrontBlogDetailShow'])
+//     ->name('blogs.blog-detail');
+// Route::get('/blogs/{blog}', [BlogController::class, 'FrontBlogDetailShow'])
+//     ->name('blogs.blog-detail');
 
 
 Route::get('paypal/payment', [PayPalController::class, 'payment'])->name('paypal.payment');
 Route::get('paypal/success', [PayPalController::class, 'success'])->name('paypal.success');
 Route::get('paypal/cancel', [PayPalController::class, 'cancel'])->name('paypal.cancel');
+
+Route::get('/{blog}', [BlogController::class, 'FrontBlogDetailShow'])
+    ->name('blogs.blog-detail');

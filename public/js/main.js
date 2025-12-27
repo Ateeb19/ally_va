@@ -282,7 +282,22 @@ document.addEventListener('DOMContentLoaded', function () {
       link.classList.add('active');
       return;
     }
+    const publicPages = [
+      '/', '/home', '/about-us', '/services', '/pricing',
+      '/contact', '/login', '/insights'
+    ];
 
+    const isSingleSlug =
+      current.split('/').length === 2 && // "/slug"
+      !publicPages.includes(current) &&
+      !current.startsWith('/admin') &&
+      !current.startsWith('/user') &&
+      !current.startsWith('/dashboard');
+
+    if (isSingleSlug && linkPath === '/insights') {
+      link.classList.add('active');
+      return;
+    }
     if (linkPath !== '/' && (current === linkPath || current.startsWith(linkPath + '/'))) {
       link.classList.add('active');
       return;

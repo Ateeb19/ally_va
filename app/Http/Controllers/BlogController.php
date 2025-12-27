@@ -176,22 +176,29 @@ class BlogController extends Controller
         return redirect()->route('blogs.index')->with('success', 'Selected blog deleted successfully.');
     }
 
-    public function FrontBlogDetailShow(Request $request, $blog_id, $slug = null)
+    public function FrontBlogDetailShow(Blog $blog)
     {
-        $blogDetail = Blog::findOrFail($blog_id);
-
-        $correctSlug = Str::slug($blogDetail->title);
-
-        // Redirect if slug is missing or incorrect
-        if ($slug !== $correctSlug) {
-            return redirect()->route('blogs.blog-detail', [
-                $blogDetail->id,
-                $correctSlug
-            ]);
-        }
-
-        return view('insights_detail', compact('blogDetail'));
+        return view('insights_detail', [
+            'blogDetail' => $blog
+        ]);
     }
+
+    // public function FrontBlogDetailShow(Request $request, $blog_id, $slug = null)
+    // {
+    //     $blogDetail = Blog::findOrFail($blog_id);
+
+    //     $correctSlug = Str::slug($blogDetail->title);
+
+    //     // Redirect if slug is missing or incorrect
+    //     if ($slug !== $correctSlug) {
+    //         return redirect()->route('blogs.blog-detail', [
+    //             $blogDetail->id,
+    //             $correctSlug
+    //         ]);
+    //     }
+
+    //     return view('insights_detail', compact('blogDetail'));
+    // }
     // public function FrontBlogDetailShow(Request $request, $blog_id)
     // {
     //     // dd($blog_id);

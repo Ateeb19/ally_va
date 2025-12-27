@@ -454,6 +454,9 @@
           @endif
 
         </ul> -->
+@php
+  use App\Models\Blog;
+@endphp
 
         <ul class="navbar-nav ms-auto align-items-lg-center">
 
@@ -470,8 +473,12 @@
               request()->is('inquerySave') ||
               request()->is('blogs/*') ||
               request()->is('password/reset') ||
-              request()->is('password/reset/*')
-            )
+              request()->is('password/reset/*') ||
+              (
+                 request()->segment(1) &&
+        Blog::where('slug', request()->segment(1))->exists()
+              )
+              )
             <li class="nav-item text-primary">
               <a class="nav-link" href="{{ url('/home') }}">Home</a>
             </li>
@@ -654,7 +661,20 @@
     @endif
   @endguest -->
 
+@php
+  $publicPages = [
+    '', 'home', 'about-us', 'services', 'pricing',
+    'insights', 'contact', 'login', 'inquerySave'
+  ];
 
+  $currentPath = Request::path(); // e.g. "qqqqqq"
+  $isSingleSlugBlog =
+      !in_array($currentPath, $publicPages) &&
+      !Request::is('admin*') &&
+      !Request::is('user*') &&
+      !Request::is('dashboard') &&
+      substr_count($currentPath, '/') === 0;
+@endphp
   @guest
 
   @else
@@ -664,7 +684,7 @@
     @endphp
 
     {{-- Show this section only if the current route is NOT in the hidden list --}}
-    @if(!in_array(Request::path(), $hiddenRoutes))
+     @if(!in_array(Request::path(), $hiddenRoutes) && !$isSingleSlugBlog)
       @if(!isset($adminView) && auth()->user()->hasRole('super_admin') && !Request::is('blogs/*'))
         <div class="inner-page-header">
           <div class="container">

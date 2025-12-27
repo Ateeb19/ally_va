@@ -24,31 +24,38 @@
         @endphp
 
         @forelse($blogs as $blog)
-              <div class="col-md-4 col-sm-6">
-                <div class="card article-card">
-                  <div class="blog-category-boxes">
-                    <img src="{{ asset('storage/' . $blog->photo) }}" class="card-img-top" alt="Article" />
-                    <span class="blog-category">VirtualAssistant</span>
-                  </div>
-                  <div class="card-body">
-                    <h6 class="card-title">
-                      {{ $blog->title }}
-                    </h6>
-                    <p class="card-text">
-                      {{ \Illuminate\Support\Str::limit(strip_tags($blog->description), 100) }}
-                    </p>
-                    <!-- <a href="{{ route('blogs.blog-detail', $blog->id) }}" class="learn-more">
-                                      Learn More <i class="ri-arrow-right-line"></i>
-                                  </a> -->
-                    <a href="{{ route('blogs.blog-detail', [
-            $blog->id,
-            \Illuminate\Support\Str::slug($blog->title)
-          ]) }}" class="learn-more">
-                      Learn More <i class="ri-arrow-right-line"></i>
-                    </a>
-                  </div>
-                </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="card article-card">
+              <div class="blog-category-boxes">
+                <img src="{{ asset('storage/' . $blog->photo) }}" class="card-img-top" alt="Article" />
+                <span class="blog-category">VirtualAssistant</span>
               </div>
+              <div class="card-body">
+                <h6 class="card-title">
+                  {{ $blog->title }}
+                </h6>
+                <p class="card-text">
+                  {{ \Illuminate\Support\Str::limit(strip_tags($blog->description), 100) }}
+                </p>
+                <!-- <a href="{{ route('blogs.blog-detail', $blog->id) }}" class="learn-more">
+                                              Learn More <i class="ri-arrow-right-line"></i>
+                                          </a> -->
+                <!-- <a href="{{ route('blogs.blog-detail', [
+                    $blog->id,
+                    \Illuminate\Support\Str::slug($blog->title)
+                  ]) }}" class="learn-more">
+                              Learn More <i class="ri-arrow-right-line"></i>
+                            </a> -->
+                <!-- <a href="{{ route('blogs.blog-detail', $blog) }}" class="learn-more">
+                      Learn More <i class="ri-arrow-right-line"></i>
+                    </a> -->
+                <a href="{{ route('blogs.blog-detail', $blog) }}" class="learn-more">
+                  Learn More <i class="ri-arrow-right-line"></i>
+                </a>
+
+              </div>
+            </div>
+          </div>
         @empty
           <div class="col-12 text-center py-5">
             <h5 class="text-muted">No blogs available at the moment.</h5>
