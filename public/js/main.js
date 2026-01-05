@@ -231,6 +231,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  document.getElementById("year").textContent = new Date().getFullYear();
+
   const current = normalizePath(window.location.pathname);
   const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 

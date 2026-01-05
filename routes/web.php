@@ -59,6 +59,14 @@ Route::get('/services', function () {
     return view('services');
 });
 
+Route::get('/pricing', function () {
+    return view('pricing');
+});
+
+Route::get('/website-development', function () {
+    return view('website');
+});
+
 Route::get('/insights', function () {
     return view('insights');
 });

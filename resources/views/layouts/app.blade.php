@@ -61,9 +61,9 @@
         <main>
             @yield('content')
         </main>
-@php
-  use App\Models\Blog;
-@endphp
+        @php
+            use App\Models\Blog;
+        @endphp
         @if(
                 request()->is('/') ||
                 request()->is('home') ||
@@ -72,15 +72,16 @@
                 request()->is('pricing') ||
                 request()->is('insights') ||
                 request()->is('contact') ||
+                request()->is('website-development') ||
                 request()->is('login') ||
                 request()->is('inquerySave') ||
                 request()->is('blogs/*') ||
                 request()->is('password/reset') ||
-                request()->is('password/reset/*')||
-              (
-                 request()->segment(1) &&
-        Blog::where('slug', request()->segment(1))->exists()
-              )              
+                request()->is('password/reset/*') ||
+                (
+                    request()->segment(1) &&
+                    Blog::where('slug', request()->segment(1))->exists()
+                )
             )
             @include('layouts.footer')
         @endif

@@ -469,6 +469,7 @@
               request()->is('pricing') ||
               request()->is('insights') ||
               request()->is('contact') ||
+              request()->is('website-development') ||
               request()->is('login') ||
               request()->is('inquerySave') ||
               request()->is('blogs/*') ||
@@ -489,7 +490,7 @@
               <a class="nav-link" href="{{ url('/services') }}">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">Pricing</a>
+              <a class="nav-link" href="{{ url('/pricing') }}">Pricing</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url('/insights') }}">Insights</a>
