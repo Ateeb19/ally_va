@@ -1911,6 +1911,14 @@ input[type="range"]::-ms-thumb {
   text-decoration: none;
 }
 
+.intro-desc .btn-primary:hover {
+  background: transparent;
+}
+
+.more-wrapper h2 span {
+  color: #288feb;
+}
+
 /* Responsive starts from here */
 
 @media (max-width: 1999px) {

@@ -221,88 +221,175 @@ if (userCreateModal) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  function normalizePath(p) {
-    try {
-      const url = new URL(p, location.origin);
-      let pathname = url.pathname.replace(/\/+$/, '');
-      return pathname === '' ? '/' : pathname;
-    } catch {
-      return p === '/' ? '/' : p.replace(/\/+$/, '');
-    }
-  }
 
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  const current = normalizePath(window.location.pathname);
+  const current = window.location.pathname.replace(/\/+$/, '') || '/';
   const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
   navLinks.forEach(link => link.classList.remove('active'));
 
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
-    if (!href || href === '#' || href.startsWith('javascript:')) return;
+    if (!href || href === '#' || href.startsWith('javascript')) return;
 
-    const linkPath = normalizePath(href);
+    const linkPath = new URL(href, location.origin).pathname
+      .replace(/\/+$/, '') || '/';
 
+    /* ---------------- HOME ---------------- */
     if ((current === '/' || current === '/home') &&
       (linkPath === '/' || linkPath === '/home')) {
       link.classList.add('active');
       return;
     }
 
-    if (linkPath === '/dashboard' && current === '/dashboard') {
+    /* ---------------- PUBLIC STATIC PAGES ---------------- */
+    const staticPages = [
+      '/about-us',
+      '/services',
+      '/pricing',
+      '/contact'
+    ];
+
+    if (staticPages.includes(current) && linkPath === current) {
       link.classList.add('active');
       return;
     }
 
+    // /* ---------------- DASHBOARD (USER) ---------------- */
+    // if (
+    //   current.startsWith('/dashboard') &&
+    //   linkPath === '/dashboard'
+    // ) {
+    //   link.classList.add('active');
+    //   return;
+    // }
+
+    // /* ---------------- TASK HISTORY ---------------- */
+    // if (
+    //   (current.includes('/tasks') || current.includes('/taskhistory')) &&
+    //   (linkPath.includes('tasks') || linkPath.includes('taskhistory'))
+    // ) {
+    //   link.classList.add('active');
+    //   return;
+    // }
+
+    // /* ---------------- PROFILE (USER) ---------------- */
+    // if (
+    //   current.startsWith('/user') &&
+    //   linkPath.startsWith('/user')
+    // ) {
+    //   link.classList.add('active');
+    //   return;
+    // }
+
+    /* ---------------- DASHBOARD (USER) ---------------- */
     if (
-      current.startsWith('/blogs') &&
-      (linkPath === '/insights' || linkPath === '/blogs')
+      current === '/dashboard' &&
+      linkPath === '/dashboard'
     ) {
       link.classList.add('active');
       return;
     }
 
-    if (linkPath.includes('blogs') && current.startsWith('/blogs')) {
+    /* ---------------- TASK HISTORY (USER) ---------------- */
+if (
+  /^\/user\/taskhistory\/\d+$/.test(current) &&
+  linkPath.includes('taskhistory')
+) {
+  link.classList.add('active');
+  return;
+}
+
+
+    /* ---------------- PROFILE (USER) ---------------- */
+if (
+  /^\/user\/\d+\/edit$/.test(current) &&
+  linkPath.includes('/user') &&
+  linkPath.includes('edit')
+) {
+  link.classList.add('active');
+  return;
+}
+
+    /* ---------------- INSIGHTS ---------------- */
+    if (
+      (current === '/insights' || current.startsWith('/blogs')) &&
+      linkPath === '/insights'
+    ) {
       link.classList.add('active');
       return;
     }
 
-
-    if ((linkPath.includes('taskhistory') && current.includes('taskhistory')) ||
-      (linkPath.includes('tasks') && current.includes('tasks'))) {
-      link.classList.add('active');
-      return;
-    }
-
-    // if (linkPath.includes('edit') && current.includes('edit')) {
+    // /* ---------------- ADMIN DASHBOARD ---------------- */
+    // if (
+    //   current.startsWith('/admin/users') &&
+    //   linkPath.includes('/dashboard')
+    // ) {
     //   link.classList.add('active');
     //   return;
     // }
 
-    if (linkPath.startsWith('/user') && linkPath.includes('edit') && current.startsWith('/user') && current.includes('/edit')) {
+    // /* ---------------- ADMIN PROFILE ---------------- */
+    // if (
+    //   current.startsWith('/admin/users') &&
+    //   linkPath.includes('userprofile')
+    // ) {
+    //   link.classList.add('active');
+    //   return;
+    // }
+
+    /* ---------------- ADMIN BLOGS (INSIGHTS) ---------------- */
+    if (
+      current.startsWith('/admin/blogs') &&
+      linkPath.includes('blogs')
+    ) {
       link.classList.add('active');
       return;
     }
+
+    /* ---------------- ADMIN USER DASHBOARD ---------------- */
+    if (
+      /^\/admin\/users\/\d+\/dashboard$/.test(current) &&
+      linkPath.endsWith('/dashboard')
+    ) {
+      link.classList.add('active');
+      return;
+    }
+
+    /* ADMIN USER TASKS */
+    if (
+      /^\/admin\/users\/\d+\/tasks$/.test(current) &&
+      linkPath.includes('tasks')
+    ) {
+      link.classList.add('active');
+      return;
+    }
+
+    /* ---------------- ADMIN USER PROFILE ---------------- */
+    if (
+      /^\/admin\/users\/\d+\/userprofile\/\d+\/edit$/.test(current) &&
+      linkPath.includes('userprofile')
+    ) {
+      link.classList.add('active');
+      return;
+    }
+
+
+    /* ---------------- BLOG SLUG PAGE ---------------- */
     const publicPages = [
-      '/', '/home', '/about-us', '/services', '/pricing',
-      '/contact', '/login', '/insights'
+      '/', '/home', '/about-us', '/services',
+      '/pricing', '/contact', '/login', '/insights'
     ];
 
-    const isSingleSlug =
-      current.split('/').length === 2 && // "/slug"
+    const isBlogSlug =
+      current.split('/').length === 2 &&
       !publicPages.includes(current) &&
-      !current.startsWith('/admin') &&
+      !current.startsWith('/dashboard') &&
       !current.startsWith('/user') &&
-      !current.startsWith('/dashboard');
+      !current.startsWith('/admin');
 
-    if (isSingleSlug && linkPath === '/insights') {
-      link.classList.add('active');
-      return;
-    }
-    if (linkPath !== '/' && (current === linkPath || current.startsWith(linkPath + '/'))) {
+    if (isBlogSlug && linkPath === '/insights') {
       link.classList.add('active');
       return;
     }
   });
-}); 
+});
