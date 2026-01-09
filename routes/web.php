@@ -67,6 +67,38 @@ Route::get('/website-development', function () {
     return view('website');
 });
 
+Route::get('/administrative-Support', function () {
+    return view('Administrative_Support');
+});
+
+Route::get('/operations-oversight', function () {
+    return view('Operations_Oversight');
+});
+
+Route::get('/ecommerce-services', function () {
+    return view('eCommerce_Services');
+});
+
+Route::get('/crm-bookkeeping', function () {
+    return view('CRM_Bookkeeping');
+});
+
+Route::get('/social-media-management', function () {
+    return view('Social_Media_Management');
+});
+
+Route::get('/essential-seo', function () {
+    return view('Essential_SEO');
+});
+
+Route::get('/graphic-design', function () {
+    return view('Graphic_Design');
+});
+
+Route::get('/it-solutions', function () {
+    return view('IT_Solutions');
+});
+
 Route::get('/insights', function () {
     return view('insights');
 });

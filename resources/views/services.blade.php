@@ -1,5 +1,9 @@
 @extends('layouts.app')
+@section('title', 'Executive Virtual Assistant: Expert Admin & Business Help')
 
+@section('meta_description', 'Delegate your to‑do list to a professional. We handle admin, marketing, and operations so you can focus on scaling your business.')
+
+@section('meta_keywords', 'Administrative support, marketing assistance, business management, workflow streamlining, executive VA tasks')
 @section('content')
     <section class="top-banner">
         <div class="inner-page-header">

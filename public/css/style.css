@@ -32,7 +32,7 @@ button:hover,
 
 /* Navbar */
 .navbar {
-  padding: 15px 0px;
+  padding: 10px 0px !important;
 }
 
 
@@ -1917,6 +1917,37 @@ input[type="range"]::-ms-thumb {
 
 .more-wrapper h2 span {
   color: #288feb;
+}
+
+.contact-info a {
+  color: #000;
+  text-decoration: none;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  background-color: #25D366;
+  border-radius: 50%;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-float i {
+  font-size: 40px;
+  color: #fff;
 }
 
 /* Responsive starts from here */

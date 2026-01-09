@@ -1,5 +1,9 @@
 @extends('layouts.app')
+@section('title', 'Virtual Assistant Pricing | $9 Per Hour')
 
+@section('meta_description', 'Affordable Virtual Admin Assistant for businesses: $9 per hour, with no monthly contracts or recurring fees. One simple hourly rate covers all your tasks.')
+
+@section('meta_keywords', 'Affordable Virtual Assistant, No contract VA, Hourly VA services')
 @section('content')
     <section class="top-banner">
         <div class="inner-page-header">

@@ -470,6 +470,14 @@
               request()->is('insights') ||
               request()->is('contact') ||
               request()->is('website-development') ||
+              request()->is('administrative-Support') ||
+              request()->is('operations-oversight') ||
+              request()->is('ecommerce-services') ||
+              request()->is('crm-bookkeeping') ||
+              request()->is('social-media-management') ||
+              request()->is('essential-seo') ||
+              request()->is('graphic-design') ||
+              request()->is('it-solutions') ||
               request()->is('login') ||
               request()->is('inquerySave') ||
               request()->is('blogs/*') ||

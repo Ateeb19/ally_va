@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('title', 'Business Insights & VA Tips | Ally VA')
+
+@section('meta_description', 'Explore Ally VA Insights for tips, hacks, and strategies that help entrepreneurs streamline tasks, boost efficiency, and grow confidently.')
+
+@section('meta_keywords', 'Business tips, productivity blog, VA insights, efficiency strategies, scaling a business, administrative advice')
 @section('content')
   <section class="top-banner">
     <div class="inner-page-header">

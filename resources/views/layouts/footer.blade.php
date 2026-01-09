@@ -16,11 +16,11 @@
       <div class="col links">
         <h3 class="title"> Latest Services</h3>
         <ul class="link-list">
-          <li><i class="ri-arrow-left-right-fill"></i> Administrative Support</li>
-          <li><i class="ri-arrow-left-right-fill"></i> Operations Oversight</li>
-          <li><i class="ri-arrow-left-right-fill"></i> eCommerce Services</li>
-          <li><i class="ri-arrow-left-right-fill"></i> CRM & Bookkeeping</li>
-          <li><i class="ri-arrow-left-right-fill"></i> Social Media Management</li>
+          <li><a class="nav-link" href="{{ url('/administrative-Support') }}"><i class="ri-arrow-left-right-fill"></i> Administrative Support</a></li>
+          <li><a class="nav-link" href="{{ url('/operations-oversight') }}"><i class="ri-arrow-left-right-fill"></i> Operations Oversight</a></li>
+          <li><a class="nav-link" href="{{ url('/ecommerce-services') }}"><i class="ri-arrow-left-right-fill"></i> eCommerce Services</a></li>
+          <li><a class="nav-link" href="{{ url('/crm-bookkeeping') }}"><i class="ri-arrow-left-right-fill"></i> CRM & Bookkeeping</a></li>
+          <li><a class="nav-link" href="{{ url('/social-media-management') }}"><i class="ri-arrow-left-right-fill"></i> Social Media Management</a></li>
         </ul>
       </div>
 
@@ -28,11 +28,11 @@
       <div class="col hours">
         <h3 class="title">Quick Links</h3>
         <ul class="hours-list">
-          <li><i class="ri-arrow-left-right-fill"></i> Essential SEO</li>
+          <li><a class="nav-link" href="{{ url('/essential-seo') }}"><i class="ri-arrow-left-right-fill"></i> Essential SEO</a></li>
           <li><a class="nav-link" href="{{ url('/website-development') }}"><i class="ri-arrow-left-right-fill"></i>
               Website Development </a></li>
-          <li><i class="ri-arrow-left-right-fill"></i> Graphic Design</li>
-          <li><i class="ri-arrow-left-right-fill"></i> IT Solutions</li>
+          <li><a class="nav-link" href="{{ url('/graphic-design') }}"><i class="ri-arrow-left-right-fill"></i> Graphic Design</a></li>
+          <li><a class="nav-link" href="{{ url('/it-solutions') }}"><i class="ri-arrow-left-right-fill"></i> IT Solutions</a></li>
         </ul>
       </div>
 

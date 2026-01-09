@@ -1,5 +1,9 @@
 @extends('layouts.app')
+@section('title', 'Contact Ally Virtual Assistant | Get in Touch Today')
 
+@section('meta_description', 'Reach out to Ally VA for reliable virtual assistant support. Connect with us easily to streamline tasks, boost productivity, and grow your business.')
+
+@section('meta_keywords', 'Contact Ally VA, hire a Virtual Assistant, book a VA discovery call, admin support inquiry, business help contact')
 @section('content')
   <section class="top-banner">
     <div class="inner-page-header">
@@ -64,8 +68,13 @@
               <h6 class="fw-bold mb-3">
                 Arup Virtual Services. NH 2, Grand Trunk Rd, Durgapur West Bengal - 713212 | INDIA
               </h6>
-              <p class="mb-2"><i class="ri-whatsapp-fill"></i> +1 (646) 813 9231</p>
-              <p class="mb-2"><i class="ri-mail-fill"></i> arup@allyva.com</p>
+              <p class="mb-2"><a
+                    href="https://wa.me/+919163329207?text=Hello%20Arup!%20I%20am%20interested%20in%20your%20services."
+                    ><i class="ri-whatsapp-fill"></i> (+91) 91633 29207</a
+                  ></p>
+              <p class="mb-2"><a href="mailto: arup@allyva.com"
+                    ><i class="ri-mail-fill"></i> arup@allyva.com</a
+                  ></p>
             </div>
             <div class="map">
               <img src="images/virtual_admin-location.png" alt="map">

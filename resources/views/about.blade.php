@@ -1,5 +1,9 @@
 @extends('layouts.app')
+@section('title', 'About Ally VA | 15 Years of Expert Virtual Support')
 
+@section('meta_description', 'Save 20+ hours a week. Discover how our extensive administrative background provides the efficient support your business needs to grow.')
+
+@section('meta_keywords', 'experienced virtual assistant, virtual admin assistant, ally virtual assistant, About Ally VA')
 @section('content')
   <section class="top-banner">
 
