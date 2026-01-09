@@ -271,11 +271,13 @@ a {
   font-size: 16px;
   line-height: 26px;
   font-weight: 400;
+  padding-bottom: 18px;
 }
 
-.efficiency-wrapper button {
+.efficiency-wrapper a{
   background-color: #fff;
   font-weight: 600;
+  text-decoration: none;
   font-size: 16px;
   color: #2c353b;
   border: none;
@@ -2013,7 +2015,7 @@ input[type="range"]::-ms-thumb {
     width: 100%;
   }
 
-  .efficiency-wrapper button {
+  .efficiency-wrapper a {
     padding: 12px 20px;
   }
 }
@@ -2091,7 +2093,8 @@ input[type="range"]::-ms-thumb {
     text-align: start !important;
   }
 
-  .efficiency-wrapper button {
+  .efficiency-wrapper a {
+    margin-top: 15px;
     margin-left: 0px;
   }
 
