@@ -88,9 +88,31 @@ class HomeController extends Controller
         return view('home', compact('userId', 'users', 'transactions', 'userHour', 'UserMostPurchase'))->with('adminView', true);
     }
 
+    // public function InquirySave(Request $request)
+    // {
+    //     // dd($request->all());
+    //     $data = $request->validate([
+    //         'full_name' => 'required|string|max:255',
+    //         'email' => 'required|email',
+    //         'company_name' => 'nullable|string|max:255',
+    //         'phone' => 'nullable|string|max:20',
+    //         'project_desc' => 'required|string',
+    //     ]);
+
+    //     $superAdmin = User::role('super_admin')->first();
+
+    //     if ($superAdmin) {
+    //         // Send admin notification email
+    //         Mail::to($superAdmin->email)->send(new InqueryFormAdminMail($data));
+
+    //         Mail::to('arupkseth@gmail.com')->send(new InqueryFormAdminMail($data));
+    //     }
+
+    //     return view('contact');
+    // }
+
     public function InquirySave(Request $request)
     {
-        // dd($request->all());
         $data = $request->validate([
             'full_name' => 'required|string|max:255',
             'email' => 'required|email',
@@ -104,10 +126,11 @@ class HomeController extends Controller
         if ($superAdmin) {
             // Send admin notification email
             Mail::to($superAdmin->email)->send(new InqueryFormAdminMail($data));
-
-            Mail::to('arupkseth@gmail.com')->send(new InqueryFormAdminMail($data));
+            // Mail::to('arupkseth@gmail.com')->send(new InqueryFormAdminMail($data));
         }
 
-        return view('contact');
+        // Redirect back to the contact page with a success message
+        return redirect()->back()->with('message', 'Your message has been submitted successfully!');
     }
+
 }

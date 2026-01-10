@@ -7,9 +7,18 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>@yield('title', 'Ally Virtual Assistant | Your Remote Business Partner')</title>
 
-    <title>ALLY VA</title>
+     <meta name="description"
+          content="@yield('meta_description', 'Ally VA is your dedicated virtual assistant, streamlining administrative tasks to boost productivity and improve business efficiency.')">
 
+    <meta name="keywords"
+          content="@yield('meta_keywords', 'Virtual Assistant services, Executive VA, professional admin support, business productivity, outsource tasks')">
+
+    <!-- <title>Ally Virtual Assistant | Your Remote Business Partner</title> -->
+    <link rel="icon" type="image/png" href="images/ally-va-favicon.png" />
+   
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
@@ -28,7 +37,7 @@
     @stack('styles')
     <script>
         let inactivityTime = 0;
-        const maxInactivityMinutes = 45;
+        const maxInactivityMinutes = 20;
 
         function resetTimer() {
             inactivityTime = 0;
@@ -51,6 +60,51 @@
             }
         }, 60000); // every minute
     </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JB7QMCDMDR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-JB7QMCDMDR");
+    </script>
+    <!--End of  Google tag-->
+
+    <!--Start of  Microsoft Clarity-->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] =
+                c[a] ||
+                function () {
+                    (c[a].q = c[a].q || []).push(arguments);
+                };
+            t = l.createElement(r);
+            t.async = 1;
+            t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "ux829rzmaq");
+    </script>
+    <!--End of  Microsoft Clarity-->
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = "https://embed.tawk.to/695d0bc31b9b1e197b60fefd/1je9nbtr1";
+            s1.charset = "UTF-8";
+            s1.setAttribute("crossorigin", "*");
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
 </head>
 
 <body>
@@ -61,11 +115,49 @@
         <main>
             @yield('content')
         </main>
-        @guest
-            <!-- Include footer -->
+        @php
+            use App\Models\Blog;
+        @endphp
+        @if(
+                request()->is('/') ||
+                request()->is('home') ||
+                request()->is('about-us') ||
+                request()->is('services') ||
+                request()->is('pricing') ||
+                request()->is('insights') ||
+                request()->is('contact') ||
+                request()->is('website-development') ||
+              request()->is('administrative-Support') ||
+              request()->is('operations-oversight') ||
+              request()->is('ecommerce-services') ||
+              request()->is('crm-bookkeeping') ||
+              request()->is('social-media-management') ||
+              request()->is('essential-seo') ||
+              request()->is('graphic-design') ||
+              request()->is('it-solutions') ||
+                request()->is('login') ||
+                request()->is('inquerySave') ||
+                request()->is('blogs/*') ||
+                request()->is('password/reset') ||
+                request()->is('password/reset/*') ||
+                (
+                    request()->segment(1) &&
+                    Blog::where('slug', request()->segment(1))->exists()
+                )
+            )
             @include('layouts.footer')
-        @endguest
+        @endif
+
     </div>
+
+    <a
+  href="https://wa.me/+919163329207?text=Hello%20I%20would%20like%20to%20know%20more"
+  class="whatsapp-float"
+  target="_blank"
+  aria-label="Chat on WhatsApp"
+>
+<i class="ri-whatsapp-line"></i>
+</a>
     @stack('script')
     <!-- Bootstrap & Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -75,14 +167,75 @@
     <script src="{{ asset('js/script.js') }}?v={{ time() }}" defer></script>
     {{--
     <script src="https://www.google.com/recaptcha/api.js" async defer></script> --}}
-    <script>
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function () {
             @if ($errors->any())
                 var authModal = new bootstrap.Modal(document.getElementById('authModal'));
                 authModal.show();
             @endif
         });
+    </script> -->
+
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+             @if ($errors->any() && !Request::is('dashboard') && !Request::is('admin/users/*/dashboard'))
+                var authModal = new bootstrap.Modal(document.getElementById('authModal'));
+                authModal.show();
+            @endif
+        });
+    </script> -->
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            @if (
+                    $errors->any()
+                    && !Request::is('dashboard')
+                    && !Request::is('admin/users/*/dashboard')
+                    && !Request::is('password/reset')
+                    && !Request::is('password/reset/*')
+                )
+                     var authModal = new bootstrap.Modal(document.getElementById('authModal'));
+                authModal.show();
+            @endif
+                };
     </script>
+ -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            @if (
+                    $errors->any() &&
+                    Auth::guest() &&
+                    !Request::is('password/reset') &&
+                    !Request::is('password/reset/*') &&
+                    !Request::is('dashboard') &&
+                    !Request::is('dashboard/*')
+                )
+                let authModal = new bootstrap.Modal(document.getElementById('authModal'));
+                authModal.show();
+            @endif
+
+});
+    </script>
+
+
+    <!-- <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    @if (
+        $errors->any() &&
+        !Request::is('dashboard') &&
+        !Request::is('dashboard/*') &&
+        !Request::is('admin/users/*/dashboard') &&
+        !Request::is('user/*') &&
+        !Request::is('password/reset') &&
+        !Request::is('password/reset/*')
+    )
+        var authModal = new bootstrap.Modal(document.getElementById('authModal'));
+        authModal.show();
+    @endif
+
+});
+</script> -->
 
     <script>
         var swiper = new Swiper(".mySwiper", {
@@ -132,7 +285,7 @@
 
                 if (pass !== confirmPass) {
                     e.preventDefault();
-                    alert("❌ Passwords do not match!");
+                    alert("Passwords do not match!");
                     return;
                 }
 

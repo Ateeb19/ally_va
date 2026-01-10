@@ -1,16 +1,15 @@
 @extends('layouts.app')
+@section('title', 'Executive Virtual Assistant: Expert Admin & Business Help')
 
+@section('meta_description', 'Delegate your to‑do list to a professional. We handle admin, marketing, and operations so you can focus on scaling your business.')
+
+@section('meta_keywords', 'Administrative support, marketing assistance, business management, workflow streamlining, executive VA tasks')
 @section('content')
     <section class="top-banner">
         <div class="inner-page-header">
             <div class="container">
                 <h1>Services that power your progress</h1>
-                <p>Explore a full suite of virtual assistant services designed to simplify operations, elevate your
-                    brand,
-                    and drive growth. From admin precision to creative execution, each offering is crafted for clarity,
-                    consistency, and impact. Whether scaling a startup or refining daily workflows, every detail is
-                    handled
-                    with care and strategy.</p>
+                <p>Explore a complete range of virtual assistant services designed to simplify daily operations, strengthen your brand, and support growth. From admin tasks to creative support, every detail is handled with care and focus.</p>
             </div>
         </div>
     </section>
@@ -235,7 +234,7 @@
 
     <div class="d-flex flex-column w-100 align-items-center justify-content-center text-center gap-4 have-ques mt-5">
         <h2>Ready To Reclaim Your Time And Grow Your Business?</h2>
-        <button>Let’s Get Started - Sign Up Now</button>
+        <button  data-bs-toggle="modal" data-bs-target="#authModal">Let’s Get Started - Sign Up Now</button>
     </div>
 
 @endsection

@@ -83,7 +83,7 @@
               <div class="mb-3">
                 <label class="form-label">Task Type</label>
                 <div class="input-group ">
-                  <span class="input-group-text"><i class="ri-user-fill"></i></span>
+                  <span class="input-group-text"><i class="ri-suitcase-fill"></i></span>
                   <input type="text" id="view_task_type" class="form-control" readonly>
                 </div>
               </div>
@@ -91,7 +91,7 @@
               <div class="mb-3">
                 <label class="form-label">Task Date</label>
                 <div class="input-group ">
-                  <span class="input-group-text"><i class="ri-mail-fill"></i></span>
+                  <span class="input-group-text"><i class="ri-calendar-fill"></i></span>
                   <input type="date" id="view_task_date" class="form-control" readonly>
                 </div>
               </div>
@@ -99,25 +99,27 @@
               <div class="mb-3">
                 <label class="form-label">Task Points</label>
                 <div class="input-group ">
-                  <span class="input-group-text"><i class="ri-phone-fill"></i></span>
+                  <span class="input-group-text"><i class="ri-draft-fill"></i></span>
                   <input type="text" id="view_task_point" class="form-control" readonly>
                 </div>
               </div>
 
+              <label class="form-label">Task Description</label>
               <div class="d-flex align-items-stretch border rounded bg-white">
-                <span class="input-group-text d-flex align-items-center justify-content-center">
-                  <i class="ri-phone-fill"></i>
+                <span
+                  class="input-group-text border-0 border-end rounded-0 d-flex align-items-center justify-content-center">
+                  <i class="ri-file-list-fill"></i>
                 </span>
                 <textarea id="view_task_desc" class="form-control border-0 shadow-none" rows="4" readonly></textarea>
               </div>
 
               <!-- <div class="mb-3">
-                  <label class="form-label">Task Description</label>
-                  <div class="d-flex align-items-start border rounded bg-white">
-                    <span class="input-group-text " style="height: 100%;"><i class="ri-phone-fill"></i></span>
-                    <textarea id="view_task_desc" class="form-control border-0 shadow-none" rows="4" readonly></textarea>
-                  </div>
-                </div> -->
+                    <label class="form-label">Task Description</label>
+                    <div class="d-flex align-items-start border rounded bg-white">
+                      <span class="input-group-text " style="height: 100%;"><i class="ri-phone-fill"></i></span>
+                      <textarea id="view_task_desc" class="form-control border-0 shadow-none" rows="4" readonly></textarea>
+                    </div>
+                  </div> -->
             </div>
           </div>
         </div>

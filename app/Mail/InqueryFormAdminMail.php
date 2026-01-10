@@ -28,7 +28,7 @@ class InqueryFormAdminMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Inquery Form Admin Mail',
+            subject: 'New Contact Form Submission',
         );
     }
 

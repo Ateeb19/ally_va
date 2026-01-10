@@ -97,7 +97,7 @@ public function cancel(Request $request)
             ->with('error', 'You canceled the payment.');
     }
 
-    return redirect()->route('home')->with('error', 'You canceled the payment.');
+    return redirect()->route('dashboard')->with('error', 'You canceled the payment.');
 }
 
 

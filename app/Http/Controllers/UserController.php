@@ -9,6 +9,9 @@ use App\Models\UserMostPurchase;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Task;
+use App\Mail\WelcomeMail;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\AdminUserRegisteredMail;
 class UserController extends Controller
 {
     /**
@@ -50,7 +53,7 @@ class UserController extends Controller
             'user_name' => 'required|string|max:255',
             'user_email' => 'required|email|unique:users,email',
             'user_phone' => 'required',
-            'user_Password' => 'required|min:6',
+            'user_Password' => 'required|min:8',
         ]);
 
         if ($validator->fails()) {
@@ -72,8 +75,8 @@ class UserController extends Controller
 
         UserHour::create([
             'user_id' => $user->id,
-            'hours' => 00,
-            'minutes' => 00,
+            'hours' => '00',
+            'minutes' => '00',
             'hour_price' => 9,
         ]);
 
@@ -92,6 +95,25 @@ class UserController extends Controller
                 'status' => $purchase['status'],
             ]);
         }
+
+        /**
+         * 🚀🚀 NEW — SEND EMAILS 🚀🚀
+         */
+
+        // Send Welcome Mail to the newly created user
+        Mail::to($user->email)->send(new WelcomeMail($user));
+
+        // Notify Super Admin
+        $superAdmin = User::role('super_admin')->first();
+
+        if ($superAdmin) {
+            Mail::to($superAdmin->email)->send(new AdminUserRegisteredMail($user));
+        }
+
+        /**
+         * END EMAIL LOGIC
+         */
+
 
         if ($request->ajax()) {
             return response()->json(['success' => true], 200);
@@ -143,28 +165,78 @@ class UserController extends Controller
         // if ($request->password) {
         //     $user->password = Hash::make($request->password);
         // }
-        if ($request->filled('old_password') && $request->filled('new_password')) {
-            if (Hash::check($request->old_password, $user->password)) {
-                $user->password = Hash::make($request->new_password);
-            } else {
+        // if ($request->filled('old_password') && $request->filled('new_password')) {
+        //     if (Hash::check($request->old_password, $user->password)) {
+        //         $user->password = Hash::make($request->new_password);
+        //     } else {
+        //         return redirect()->back()->with('error', 'Old password does not match!');
+        //     }
+        // } 
+        // elseif ($request->filled('old_password') && !$request->filled('new_password')) {
+        //     return redirect()->back()->with('error', 'Please enter a new password!');
+        // } elseif (!$request->filled('old_password') && $request->filled('new_password')) {
+        //     return redirect()->back()->with('error', 'Please enter your old password to change it!');
+        // }
+        // Check if user is trying to change password
+        if ($request->filled('old_password') || $request->filled('new_password')) {
+
+            if (strlen($request->new_password) < 8) {
+                return redirect()->back()->with('error', 'New password must be at least 8 characters long!');
+            }
+
+            if (!$request->filled('old_password') || !$request->filled('new_password')) {
+                return redirect()->back()->with('error', 'To change password, you must enter both old and new passwords!');
+            }
+
+            if (!Hash::check($request->old_password, $user->password)) {
                 return redirect()->back()->with('error', 'Old password does not match!');
             }
-        } elseif ($request->filled('old_password') && !$request->filled('new_password')) {
-            return redirect()->back()->with('error', 'Please enter a new password!');
-        } elseif (!$request->filled('old_password') && $request->filled('new_password')) {
-            return redirect()->back()->with('error', 'Please enter your old password to change it!');
+
+            if ($request->old_password === $request->new_password) {
+                return redirect()->back()->with('error', 'New password cannot be the same as the old password!');
+            }
+
+            $user->password = Hash::make($request->new_password);
         }
+
         $user->whatsapp_no = $request->whatsapp_no;
         $user->city = $request->city;
         $user->country = $request->country;
         $user->save();
 
         if ($request->has('hours') || $request->has('minutes')) {
+
+            $normalizeTime = function ($value) {
+
+                if ($value === null || $value === '') {
+                    return '00';
+                }
+
+                if ((string) $value === '-0') {
+                    return '-00';
+                }
+
+                if (is_numeric($value)) {
+                    $num = (int) $value;
+                    $abs = abs($num);
+                    $formatted = str_pad($abs, 2, '0', STR_PAD_LEFT);
+
+                    return $num < 0 ? '-' . $formatted : $formatted;
+                }
+
+                return (string) $value;
+            };
+
             $userHours = new UserHour();
             $userHours->user_id = $user->id;
-            $userHours->hours = $request->hours;
-            $userHours->minutes = $request->minutes;
+            $userHours->hours = $normalizeTime($request->hours);
+            $userHours->minutes = $normalizeTime($request->minutes);
             $userHours->save();
+            // $userHours = new UserHour();
+            // $userHours->user_id = $user->id;
+            // $userHours->hours = $request->hours;
+            // $userHours->minutes = $request->minutes;
+            // $userHours->save();
         }
 
         if (auth()->user()->hasRole('super_admin') && auth()->id() != $user->id) {
@@ -183,7 +255,7 @@ class UserController extends Controller
         $user = User::find($id);
         $user->delete();
 
-        return redirect()->route('home')->with('message', 'Profile Deleted successfully!');
+        return redirect()->route('dashboard')->with('message', 'Profile Deleted successfully!');
     }
 
     public function showTaskHistory(Request $request, $user_id)
