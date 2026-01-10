@@ -21,8 +21,9 @@
               </p>
               <div
                 class="hero-buttons d-flex flex-wrap gap-3 mt-4 justify-content-lg-start"
+                 
               >
-                <a class="btn btn-primary px-4" href="#"
+                <a class="btn btn-primary px-4" href="#" data-bs-toggle="modal" data-bs-target="#authModal"
                   >Let’s Get Started - Sign Up Now</a
                 >
                 <!-- <a href="#" class="btn btn-outline-primary">Plans & Pricing</a> -->
@@ -300,7 +301,7 @@
             </p>
           </div>
           <div class="col-xl-3 col-12 justify-content-end">
-            <button class="btn-secondary">Explore All Services</button>
+           <a href="/services">Explore All Services</a>
           </div>
         </div>
       </div>
@@ -418,7 +419,7 @@
           <!-- <button>More About Us →</button> -->
           <div class="d-flex align-items-center gap-2">
             <!-- Button -->
-            <button class="">More About Us →</button>
+            <a href="/about-us"><button class="">More About Us →</button></a>
 
             <!-- Customers Info -->
             <div class="d-flex text-black px-2 py-2 rounded-3 gap-3">
@@ -476,7 +477,7 @@
                       aria-expanded="false"
                       aria-controls="flush-collapseOne"
                     >
-                      Who typically benefits from your services?
+                      What Makes Ally VA Unique?
                     </button>
                   </h2>
                   <div
@@ -486,9 +487,10 @@
                     data-bs-parent="#accordionFlushExample"
                   >
                     <div class="accordion-body">
-                      Entrepreneurs, small business owners, and busy
-                      professionals—anyone who needs help with daily operations
-                      but doesn’t want to hire a full-time employee.
+                     Ally VA focuses on quality, not quantity. A limited number
+                      of clients ensures each task gets the attention it
+                      deserves. No generic service. Each task is handled with
+                      care and precision, ensuring satisfaction.
                     </div>
                   </div>
                 </div>
@@ -502,7 +504,7 @@
                       aria-expanded="false"
                       aria-controls="flush-collapseTwo"
                     >
-                      Do I get a dedicated assistant?
+                     Do I get a dedicated assistant?
                     </button>
                   </h2>
                   <div
@@ -512,9 +514,8 @@
                     data-bs-parent="#accordionFlushExample"
                   >
                     <div class="accordion-body">
-                      Entrepreneurs, small business owners, and busy
-                      professionals—anyone who needs help with daily operations
-                      but doesn’t want to hire a full-time employee.
+                      Yes, a single assistant handles all tasks for consistency
+                      and quality every time.
                     </div>
                   </div>
                 </div>
@@ -528,7 +529,7 @@
                       aria-expanded="false"
                       aria-controls="flush-collapseThree"
                     >
-                      Is the $9/hour rate the same for all tasks? 
+                     Who typically benefits from your services?
                     </button>
                   </h2>
                   <div
@@ -539,7 +540,7 @@
                   >
                     <div class="accordion-body">
                       Entrepreneurs, small business owners, and busy
-                      professionals—anyone who needs help with daily operations
+                      professionals anyone who needs help with daily operations
                       but doesn’t want to hire a full-time employee.
                     </div>
                   </div>
@@ -554,7 +555,7 @@
                       aria-expanded="false"
                       aria-controls="flush-collapseseven"
                     >
-                      Do I get a dedicated assistant?
+Is the $9/hour rate the same for all tasks?
                     </button>
                   </h2>
                   <div
@@ -564,9 +565,7 @@
                     data-bs-parent="#accordionFlushExample"
                   >
                     <div class="accordion-body">
-                      Entrepreneurs, small business owners, and busy
-                      professionals—anyone who needs help with daily operations
-                      but doesn’t want to hire a full-time employee.
+                      Absolutely. One flat rate for any task you need.
                     </div>
                   </div>
                 </div>
@@ -592,9 +591,8 @@
                     data-bs-parent="#accordionFlushExample"
                   >
                     <div class="accordion-body">
-                      Entrepreneurs, small business owners, and busy
-                      professionals—anyone who needs help with daily operations
-                      but doesn’t want to hire a full-time employee.
+                      You receive the same high-quality talent at a far more
+                      reasonable price.
                     </div>
                   </div>
                 </div>
@@ -608,7 +606,7 @@
                       aria-expanded="false"
                       aria-controls="flush-collapseFive"
                     >
-                      How long does it take to complete a task? 
+                      How do I communicate with my assistant?
                     </button>
                   </h2>
                   <div
@@ -618,9 +616,8 @@
                     data-bs-parent="#accordionFlushExample"
                   >
                     <div class="accordion-body">
-                      Entrepreneurs, small business owners, and busy
-                      professionals—anyone who needs help with daily operations
-                      but doesn’t want to hire a full-time employee.
+                      You’ll have direct access via email, chat, or whichever
+                      works best for you.
                     </div>
                   </div>
                 </div>
@@ -634,7 +631,7 @@
                       aria-expanded="false"
                       aria-controls="flush-collapseSix"
                     >
-                      How can I track the hours I’ve used? 
+                      How long does it take to complete a task?
                     </button>
                   </h2>
                   <div
@@ -644,9 +641,8 @@
                     data-bs-parent="#accordionFlushExample"
                   >
                     <div class="accordion-body">
-                      Entrepreneurs, small business owners, and busy
-                      professionals—anyone who needs help with daily operations
-                      but doesn’t want to hire a full-time employee.
+                      The response time for a standard task is 4-8 hours, though
+                      clients often receive responses even sooner.
                     </div>
                   </div>
                 </div>
@@ -660,7 +656,7 @@
                       aria-expanded="false"
                       aria-controls="flush-collapseeight"
                     >
-                      Do I get a dedicated assistant?
+                      How can I track the hours I’ve used?
                     </button>
                   </h2>
                   <div
@@ -670,9 +666,8 @@
                     data-bs-parent="#accordionFlushExample"
                   >
                     <div class="accordion-body">
-                      Entrepreneurs, small business owners, and busy
-                      professionals—anyone who needs help with daily operations
-                      but doesn’t want to hire a full-time employee.
+                      You can easily track the hours charged through our portal,
+                      with 1 point representing up to 20 minutes of task time.
                     </div>
                   </div>
                 </div>
@@ -687,6 +682,6 @@
       class="d-flex flex-column w-100 align-items-center justify-content-center text-center gap-4 have-ques"
     >
       <h2>Still Have Questions? Help Is Just a Message Away.</h2>
-      <button>Contact Anytime</button>
+      <a href="/contact"><button>Contact Anytime</button></a>
     </div>
 @endsection

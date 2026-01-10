@@ -117,7 +117,7 @@
             <div class="">
               <label class="form-label">Task Type</label>
               <div class="input-group">
-                <span class="input-group-text"><i class="ri-user-fill"></i></span>
+                <span class="input-group-text"><i class="ri-suitcase-fill"></i></span>
                 <input type="text" class="form-control" name="task_type" value="{{ old('task_type') }}" required
                   placeholder="Task Type">
               </div>
@@ -127,7 +127,7 @@
             <div class=" ">
               <label class="form-label">Task Date</label>
               <div class="input-group">
-                <span class="input-group-text"><i class="ri-mail-fill"></i></span>
+                <span class="input-group-text"><i class="ri-calendar-fill"></i></span>
                 <input id="date" type="date" class="form-control" name="date" value="{{ old('date') }}" required
                   placeholder="Date">
               </div>
@@ -137,7 +137,7 @@
             <div class=" ">
               <label class="form-label">Task Point</label>
               <div class="input-group">
-                <span class="input-group-text"><i class="ri-phone-fill"></i></span>
+                <span class="input-group-text"><i class="ri-draft-fill"></i></span>
                 <input type="text" class="form-control" placeholder="Task Point" name="task_point" required />
               </div>
             </div>
@@ -146,7 +146,7 @@
             <div class="">
               <label class="form-label">Task Description</label>
               <div class="input-group">
-                <span class="input-group-text"><i class="ri-phone-fill"></i></span>
+                <span class="input-group-text"><i class="ri-file-list-fill"></i></span>
                 <textarea class="form-control" cols="55" rows="5" name="description" required></textarea>
               </div>
             </div>
@@ -207,7 +207,7 @@
             <div class="mb-3">
               <label class="form-label">Task Description</label>
               <div class="input-group ">
-                <span class="input-group-text"><i class="ri-phone-fill"></i></span>
+                <span class="input-group-text"><i class="ri-file-list-fill"></i></span>
                 <textarea class="form-control" cols="55" rows="5" name="description" required id="description"></textarea>
               </div>
 

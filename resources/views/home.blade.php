@@ -4,7 +4,7 @@
 
   <!-- //Admin data only show here -->
   @if(!isset($adminView) && auth()->user()->hasRole('super_admin'))
-    <section class="admin-table-wrapper mt-5">
+    <section class="admin-table-wrapper my-5">
       <div class="container">
         @if(session()->has('message'))
           <div class="alert alert-success">
@@ -12,8 +12,8 @@
           </div>
         @endif
         <div class="table-info-wrap">
-          <div class="row">
-            <div class="col-xl-6">
+          <div class="row gy-4">
+            <div class="col-xl-6 col-12">
               <form action="{{ url()->current() }}" method="GET">
                 <div class="form-group">
                   <div class="d-flex gap-3">
@@ -27,7 +27,7 @@
               </form>
             </div>
             <!-- Button trigger -->
-            <div class="col-xl-6 d-flex justify-content-end align-items-center">
+            <div class="col-xl-6 col-12 d-flex justify-content-end align-items-center">
               <button class="btn-add" data-bs-toggle="modal" data-bs-target="#userCreateModal">
                 Add New <i class="ri-add-circle-line"></i>
               </button>
@@ -36,8 +36,8 @@
         </div>
 
         <!-- <div class="d-flex justify-content-center">
-                                                                      {{ $users->links() }}
-                                                                    </div> -->
+                                                                                  {{ $users->links() }}
+                                                                                </div> -->
         <div class="w-100">
           <div class="admin-table-wrap">
             <table>
@@ -80,21 +80,21 @@
             <div class="d-flex flex-wrap justify-content-between align-items-center mt-4 pagination-wrap">
               {{ $users->links('vendor.pagination.bootstrap-5') }}
               <!-- <p class="mb-0">Page: 1 of 2</p>
-                                                                          <div class="d-flex align-items-center gap-2">
-                                                                            <span>Page Size:</span>
-                                                                            <select class="form-select form-select-sm w-auto py-2">
-                                                                              <option>10</option>
-                                                                              <option>25</option>
-                                                                              <option>50</option>
-                                                                            </select>
-                                                                          </div>
-                                                                          <div class="d-flex gap-2 last-point-view">
-                                                                            <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-double-line"></i></button>
-                                                                            <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-s-line"></i></button>
-                                                                            <button class="btn btn-sm btn-outline-secondary active">1</button>
-                                                                            <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-s-line"></i></button>
-                                                                            <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-double-line"></i></button>
-                                                                          </div> -->
+                                                                                      <div class="d-flex align-items-center gap-2">
+                                                                                        <span>Page Size:</span>
+                                                                                        <select class="form-select form-select-sm w-auto py-2">
+                                                                                          <option>10</option>
+                                                                                          <option>25</option>
+                                                                                          <option>50</option>
+                                                                                        </select>
+                                                                                      </div>
+                                                                                      <div class="d-flex gap-2 last-point-view">
+                                                                                        <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-double-line"></i></button>
+                                                                                        <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-s-line"></i></button>
+                                                                                        <button class="btn btn-sm btn-outline-secondary active">1</button>
+                                                                                        <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-s-line"></i></button>
+                                                                                        <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-double-line"></i></button>
+                                                                                      </div> -->
             </div>
           </div>
         </div>
@@ -132,21 +132,21 @@
                 <span class="input-group-text"><i class="ri-user-fill"></i></span>
                 <input id="user_name" type="text" class="form-control @error('user_name') is-invalid @enderror"
                   name="user_name" value="{{ old('user_name') }}" required placeholder="Full Name">
-                @error('user_name')
-                  <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
-                @enderror
+                <!-- @error('user_name')
+                          <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                        @enderror -->
               </div>
 
               <!-- Email -->
               <div class="input-group">
                 <span class="input-group-text"><i class="ri-mail-fill"></i></span>
                 <!-- <input id="user_email" type="user_email" class="form-control @error('user_email') is-invalid @enderror"
-                                                                                                          name="user_email" value="{{ old('user_email') }}" required placeholder="E-mail"> -->
+                                                                                                                      name="user_email" value="{{ old('user_email') }}" required placeholder="E-mail"> -->
                 <input id="user_email" type="email" class="form-control @error('user_email') is-invalid @enderror"
                   name="user_email" value="{{ old('user_email') }}" required placeholder="E-mail">
-                @error('user_email')
-                  <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
-                @enderror
+                <!-- @error('user_email')
+                          <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                        @enderror -->
               </div>
 
               <!-- Phone -->
@@ -154,9 +154,9 @@
                 <span class="input-group-text"><i class="ri-phone-fill"></i></span>
                 <input type="text" class="form-control @error('user_phone') is-invalid @enderror" placeholder="Phone Number"
                   name="user_phone" required />
-                @error('user_phone')
-                  <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
-                @enderror
+                <!-- @error('user_phone')
+                          <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                        @enderror -->
               </div>
 
               <!-- Password -->
@@ -164,12 +164,12 @@
                 <span class="input-group-text"><i class="ri-key-fill"></i></span>
                 <input id="user_Password" type="password" class="form-control @error('user_Password') is-invalid @enderror"
                   name="user_Password" required placeholder="Password">
-                <span class="input-group-text" onclick="togglePassword('signupPassword', this)" style="cursor: pointer">
+                <span class="input-group-text" onclick="togglePassword('user_Password', this)" style="cursor: pointer">
                   <i class="ri-eye-off-fill"></i>
                 </span>
-                @error('user_Password')
-                  <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
-                @enderror
+                <!-- @error('user_Password')
+                          <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                        @enderror -->
               </div>
 
               <!-- Confirm Password -->
@@ -213,12 +213,12 @@
             </div>
 
             <!-- Labels -->
-            <div class="d-flex justify-content-between text-muted mt-3 flex-wrap">
-              <span>10 Hours</span>
-              <span class="fw-bold text-dark middle-label" id="hoursLabel">
+            <div class="label-wrapper d-flex justify-content-between text-muted mt-3 flex-wrap">
+              <span class="hours">10 Hours</span>
+              <span class="hourly-plan fw-bold text-dark middle-label" id="hoursLabel">
                 20 Hours Plan @ USD {{ $userHour ? ($userHour->hour_price ? $userHour->hour_price : 9) : 9 }}/hour
               </span>
-              <span>300 Hours</span>
+              <span class="hours-right">300 Hours</span>
             </div>
 
             <script>
@@ -355,7 +355,9 @@
                   <thead class="table-primary">
                     <tr>
                       <th scope="col">
-                        <input type="checkbox" class="form-check-input me-2" id="selectAll" />
+                        @if(isset($adminView) && auth()->user()->hasRole('super_admin'))
+                          <input type="checkbox" class="form-check-input me-2" id="selectAll" />
+                        @endif
                         Transaction ID
                       </th>
                       <th scope="col">Transaction Date</th>
@@ -371,8 +373,11 @@
                       @foreach($transactions as $transaction)
                         <tr>
                           <td>
-                            <input type="checkbox" class="form-check-input me-2 transaction-checkbox"
-                              data-id="{{ $transaction->id }}" />
+                            @if(isset($adminView) && auth()->user()->hasRole('super_admin'))
+                              <input type="checkbox" class="form-check-input me-2 transaction-checkbox"
+                                data-id="{{ $transaction->id }}" />
+                            @endif
+                            <!-- {{ $transaction->id }} -->
 
                             @if(isset($adminView) && auth()->user()->hasRole('super_admin'))
                               <a href="javascript:void(0);" class="edit-btn" data-id="{{ $transaction->id }}"
@@ -401,31 +406,31 @@
               <div class="d-flex flex-wrap justify-content-between align-items-center mt-2 pagination-wrap">
                 {{ $transactions->links('vendor.pagination.bootstrap-5') }}
                 <!-- <p class="mb-0">Page: 1 of 2</p>
-                                            <div class="d-flex align-items-center gap-2">
-                                              <span>Page Size:</span>
-                                              <select class="form-select form-select-sm w-auto py-2">
-                                                <option>10</option>
-                                                <option>25</option>
-                                                <option>50</option>
-                                              </select>
-                                            </div>
-                                            <div class="d-flex gap-2 last-point-view">
-                                              <button class="btn btn-sm btn-outline-secondary">
-                                                <i class="ri-arrow-left-double-line"></i>
-                                              </button>
-                                              <button class="btn btn-sm btn-outline-secondary">
-                                                <i class="ri-arrow-left-s-line"></i>
-                                              </button>
-                                              <button class="btn btn-sm btn-outline-secondary active">
-                                                1
-                                              </button>
-                                              <button class="btn btn-sm btn-outline-secondary">
-                                                <i class="ri-arrow-right-s-line"></i>
-                                              </button>
-                                              <button class="btn btn-sm btn-outline-secondary">
-                                                <i class="ri-arrow-right-double-line"></i>
-                                              </button>
-                                            </div> -->
+                                                        <div class="d-flex align-items-center gap-2">
+                                                          <span>Page Size:</span>
+                                                          <select class="form-select form-select-sm w-auto py-2">
+                                                            <option>10</option>
+                                                            <option>25</option>
+                                                            <option>50</option>
+                                                          </select>
+                                                        </div>
+                                                        <div class="d-flex gap-2 last-point-view">
+                                                          <button class="btn btn-sm btn-outline-secondary">
+                                                            <i class="ri-arrow-left-double-line"></i>
+                                                          </button>
+                                                          <button class="btn btn-sm btn-outline-secondary">
+                                                            <i class="ri-arrow-left-s-line"></i>
+                                                          </button>
+                                                          <button class="btn btn-sm btn-outline-secondary active">
+                                                            1
+                                                          </button>
+                                                          <button class="btn btn-sm btn-outline-secondary">
+                                                            <i class="ri-arrow-right-s-line"></i>
+                                                          </button>
+                                                          <button class="btn btn-sm btn-outline-secondary">
+                                                            <i class="ri-arrow-right-double-line"></i>
+                                                          </button>
+                                                        </div> -->
               </div>
             </div>
           </div>
@@ -487,6 +492,194 @@
             document.getElementById('transaction_id').value = btn.dataset.transaction;
             document.getElementById('transaction_date').value = btn.dataset.date;
             document.getElementById('amount').value = btn.dataset.amount;
+            //Dont write any code in this file its a temporary file
+
+
+            // ===== Mobile menu toggle =====
+            const toggle = document.getElementById("menu-toggle");
+            const menu = document.getElementById("mobile-menu");
+
+            if (toggle) {
+              toggle.addEventListener("click", () => {
+                menu.classList.toggle("hidden");
+              });
+            }
+
+            // ===== Active nav link highlight =====
+            let currentPage = window.location.pathname.split("/").pop();
+
+            // Agar homepage root URL hai, to index.html consider karo
+            if (currentPage === "" || currentPage === "/") {
+              currentPage = "index.html";
+            }
+
+            const navLinks = document.querySelectorAll(".nav-link");
+
+            // navLinks.forEach(link => {
+            //   const linkPage = link.getAttribute("href");
+            //   if (linkPage === currentPage) {
+            //     link.style.color = "#2563EB"; // Tailwind blue-600
+            //     link.classList.add("font-semibold");
+            //   } else {
+            //     link.style.color = "#1F2937"; // Tailwind gray-800
+            //     link.classList.remove("font-semibold");
+            //   }
+            // });
+            navLinks.forEach(link => {
+              const linkPage = link.getAttribute("href");
+              if (linkPage === currentPage) {
+                link.style.color = "#2563EB"; // Tailwind blue-600
+                link.classList.add("font-semibold");
+                link.style.borderBottom = "2px solid #2563EB"; // ✅ blue border bottom
+                link.style.paddingBottom = "2px"; // thoda space ke liye
+                link.style.width = "fit-content"; // thoda space ke liye
+              } else {
+                link.style.color = "#1F2937"; // Tailwind gray-800
+                link.classList.remove("font-semibold");
+                link.style.borderBottom = "none"; // remove border from non-active
+              }
+            });
+
+
+            // ===== Sticky Header on scroll =====
+            const header = document.querySelector("header");
+            if (header) {
+              const stickyOffset = header.offsetTop;
+
+              window.addEventListener("scroll", () => {
+                if (window.pageYOffset > stickyOffset) {
+                  header.classList.add("fixed", "top-0", "left-0", "right-0", "z-50", "bg-white", "shadow-lg");
+                } else {
+                  header.classList.remove("fixed", "top-0", "left-0", "right-0", "z-50", "bg-white", "shadow-lg");
+                }
+              });
+            }
+
+
+            document.querySelectorAll(".faq-question").forEach((question) => {
+              question.addEventListener("click", () => {
+                const answer = question.nextElementSibling;
+
+                // Toggle open class
+                answer.classList.toggle("open");
+                question.classList.toggle("active");
+              });
+            });
+
+            const modal = document.getElementById("authModal");
+            const openBtnDesktop = document.getElementById("openModalDesktop");
+            const openBtnMobile = document.getElementById("openModalMobile");
+            const closeBtn = document.getElementById("closeModal");
+
+            // if (openBtnDesktop) {
+            //   // Desktop button
+            //   openBtnDesktop.addEventListener("click", () => {
+            //     modal.classList.remove("hidden");
+            //   });
+            // }
+
+            if (!openBtnDesktop && !openBtnMobile) {
+              modal.classList.add("hidden");
+            }
+
+            if (openBtnDesktop) {
+              openBtnDesktop.addEventListener("click", () => {
+                if (window.location.pathname !== "/password/reset" &&
+                  !window.location.pathname.startsWith("/password/reset/")) {
+                  modal.classList.remove("hidden");
+                }
+              });
+            }
+
+            if (openBtnMobile) {
+              openBtnMobile.addEventListener("click", () => {
+                if (window.location.pathname !== "/password/reset" &&
+                  !window.location.pathname.startsWith("/password/reset/")) {
+                  modal.classList.remove("hidden");
+                }
+              });
+            }
+            // if (openBtnMobile) {
+            //   // Mobile button
+            //   openBtnMobile.addEventListener("click", () => {
+            //     modal.classList.remove("hidden");
+            //   });
+            // }
+
+            if (closeBtn) {
+              // Close modal
+              closeBtn.addEventListener("click", () => {
+                modal.classList.add("hidden");
+              });
+            }
+
+            // Close modal on background click
+            modal.addEventListener("click", (e) => {
+              if (e.target === modal) {
+                modal.classList.add("hidden");
+              }
+            });
+
+            document.addEventListener('DOMContentLoaded', function () {
+              function normalizePath(p) {
+                try {
+                  const url = new URL(p, location.origin);
+                  let pathname = url.pathname.replace(/\/+$/, '');
+                  return pathname === '' ? '/' : pathname;
+                } catch {
+                  return p === '/' ? '/' : p.replace(/\/+$/, '');
+                }
+              }
+
+              const current = normalizePath(window.location.pathname);
+              const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+              navLinks.forEach(link => link.classList.remove('active'));
+
+              navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (!href || href === '#' || href.startsWith('javascript:')) return;
+
+                const linkPath = normalizePath(href);
+
+                if ((current === '/' || current === '/home') &&
+                  (linkPath === '/' || linkPath === '/home')) {
+                  link.classList.add('active');
+                  return;
+                }
+
+                if (linkPath === '/dashboard' && current === '/dashboard') {
+                  link.classList.add('active');
+                  return;
+                }
+
+                if (linkPath.includes('blogs') && current.startsWith('/blogs')) {
+                  link.classList.add('active');
+                  return;
+                }
+
+                if ((linkPath.includes('taskhistory') && current.includes('taskhistory')) ||
+                  (linkPath.includes('tasks') && current.includes('tasks'))) {
+                  link.classList.add('active');
+                  return;
+                }
+
+                // if (linkPath.includes('edit') && current.includes('edit')) {
+                //   link.classList.add('active');
+                //   return;
+                // }
+
+                if (linkPath.startsWith('/user') && current.startsWith('/user') && current.includes('/edit')) {
+                  link.classList.add('active');
+                  return;
+                }
+
+                if (linkPath !== '/' && (current === linkPath || current.startsWith(linkPath + '/'))) {
+                  link.classList.add('active');
+                  return;
+                }
+              });
+            });
 
             form.action = `/admin/users/${userId}/transaction/${id}`;
             form.insertAdjacentHTML('beforeend', '@method("PUT")');
@@ -680,6 +873,31 @@
           }
         });
       });
+    });
+  </script>
+
+  <script>
+    document.getElementById("AddUserForm").addEventListener("submit", function (e) {
+      let password = document.getElementById("user_Password").value;
+      let confirmPassword = document.getElementById("password-confirm-user").value;
+
+      // remove previous error message if exists
+      let existingError = document.getElementById("userPassError");
+      if (existingError) {
+        existingError.remove();
+      }
+
+      if (password !== confirmPassword) {
+        e.preventDefault(); // stop form submission
+
+        let errorDiv = document.createElement("div");
+        errorDiv.id = "userPassError";
+        errorDiv.style.color = "red";
+        errorDiv.style.marginTop = "5px";
+        errorDiv.innerHTML = "⚠ Password and Confirm Password do not match.";
+
+        document.getElementById("password-confirm-user").closest(".input-group").after(errorDiv);
+      }
     });
   </script>
 

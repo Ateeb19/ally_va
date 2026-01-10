@@ -10,7 +10,7 @@
         </div>
       @endif
       <div class="table-info-wrap">
-        <div class="row">
+        <div class="row gy-4">
           <div class="col-xl-6">
             <div class="form-group">
               <form action="{{ url()->current() }}" method="GET">
@@ -26,10 +26,16 @@
           </div>
           <!-- Button trigger -->
           <div class="col-xl-6 d-flex justify-content-end align-items-center">
+            <!-- <form id="blogDeleteMultipleForm" action="{{ route('blogs.destroyMultiple') }}" method="POST"
+                style="display: none;">
+                @csrf
+                @method('DELETE')
+                <input type="hidden" name="ids" id="delete_ids">
+              </form> -->
+
             <form id="blogDeleteMultipleForm" action="{{ route('blogs.destroyMultiple') }}" method="POST"
               style="display: none;">
               @csrf
-              @method('DELETE')
               <input type="hidden" name="ids" id="delete_ids">
             </form>
 
@@ -40,6 +46,7 @@
           </div>
         </div>
       </div>
+
       <div class="w-100">
         <div class="admin-table-wrap">
           <table>
@@ -63,7 +70,8 @@
                   <!-- <td>{{ date('d-m-Y', strtotime($blog->updated_at)) }}</td> -->
                   <td>{{ \Carbon\Carbon::parse($blog->updated_at)->format('m/d/y') }}</td>
                   <td>
-                    <img src="{{ asset('storage/' . $blog->photo) }}" alt="Blog Image" height="100px" width="100px">
+                    <img src="{{ asset('storage/' . $blog->photo) }}" alt="Blog Image" height="50px" width="50px">
+
                   </td>
                 </tr>
               @empty
@@ -107,7 +115,7 @@
                 <i class="ri-arrow-left-s-line"></i>
               </a>
 
-              <button class="btn btn-sm btn-outline-secondary active" >
+              <button class="btn btn-sm btn-outline-secondary active">
                 {{ $blogs->currentPage() }}
               </button>
 
@@ -124,23 +132,23 @@
           </div>
 
           <!-- <div class="d-flex flex-wrap justify-content-between align-items-center mt-4 pagination-wrap">
-              <p class="mb-0">Page: 1 of 2</p>
-              <div class="d-flex align-items-center gap-2">
-                <span>Page Size:</span>
-                <select class="form-select form-select-sm w-auto py-2">
-                  <option>10</option>
-                  <option>25</option>
-                  <option>50</option>
-                </select>
-              </div>
-              <div class="d-flex gap-2 last-point-view">
-                <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-double-line"></i></button>
-                <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-s-line"></i></button>
-                <button class="btn btn-sm btn-outline-secondary active">1</button>
-                <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-s-line"></i></button>
-                <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-double-line"></i></button>
-              </div>
-            </div> -->
+                <p class="mb-0">Page: 1 of 2</p>
+                <div class="d-flex align-items-center gap-2">
+                  <span>Page Size:</span>
+                  <select class="form-select form-select-sm w-auto py-2">
+                    <option>10</option>
+                    <option>25</option>
+                    <option>50</option>
+                  </select>
+                </div>
+                <div class="d-flex gap-2 last-point-view">
+                  <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-double-line"></i></button>
+                  <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-s-line"></i></button>
+                  <button class="btn btn-sm btn-outline-secondary active">1</button>
+                  <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-s-line"></i></button>
+                  <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-double-line"></i></button>
+                </div>
+              </div> -->
         </div>
       </div>
     </div>

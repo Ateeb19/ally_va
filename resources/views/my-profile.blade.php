@@ -71,7 +71,7 @@
                 <div class="form-group">
                   <label class="form-label">Country</label>
                   <div class="input-group">
-                    <span class="input-group-text"><i class="ri-building-line"></i></span>
+                    <span class="input-group-text"><i class="ri-global-line"></i></span>
                     <input type="text" name="country" class="form-control" placeholder="Enter Country"
                       value='{{ $user->country }}' maxlength="100" />
                   </div>
@@ -135,9 +135,9 @@
                     <label class="form-label">Remaining (Hours & Minutes)</label>
                     <div class="d-flex">
                       <input type="number" name="hours" value="{{ $userHours ? $userHours->hours : 00 }}"
-                        class="form-control w-25 me-2" placeholder="Hours" min="0" max="99999999" required>
+                        class="form-control w-25 me-2" placeholder="Hours" min="0" max="99999" required>
                       <input type="number" name="minutes" value="{{ $userHours ? $userHours->minutes : 00 }}"
-                        class="form-control w-25" placeholder="Minutes" min="0" max="99999999" required>
+                        class="form-control w-25" placeholder="Minutes" min="0" max="99999" required>
                     </div>
                   </div>
                 @endif

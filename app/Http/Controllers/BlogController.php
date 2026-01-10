@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Str;
 class BlogController extends Controller
 {
     /**
@@ -61,6 +61,27 @@ class BlogController extends Controller
             $imagePath = $file->storeAs('blogs', $filename, 'public');
             $blog->photo = $imagePath;
         }
+
+        // if ($request->hasFile('blog_image')) {
+        //     $file = $request->file('blog_image');
+        //     $filename = time() . '_' . $file->getClientOriginalName(); // keep original name
+        //     // $imagePath = $file->move(public_path('storage/blogs'), $filename);
+        //     // $blog->photo = $imagePath;
+        //     $file->move(public_path('storage/blogs'), $filename);
+        //     $blog->photo = 'blogs/' . $filename;
+        // }
+
+        // if ($request->hasFile('blog_image')) {
+        //     $file = $request->file('blog_image');
+        //     $filename = time() . '_' . $file->getClientOriginalName();
+
+        //     // Save directly in public/storage/blogs
+        //     $file->move(public_path('storage/blogs'), $filename);
+
+        //     $blog->photo = 'blogs/' . $filename; // just store the relative path
+        // }
+
+
         $blog->status = $request->status;
         $blog->save();
 
@@ -110,6 +131,25 @@ class BlogController extends Controller
             $imagePath = $file->storeAs('blogs', $filename, 'public');
             $blog->photo = $imagePath;
         }
+        // if ($request->hasFile('blog_image')) {
+        //     $file = $request->file('blog_image');
+        //     $filename = time() . '_' . $file->getClientOriginalName(); // keep original name
+        //     // $imagePath = $file->move(public_path('storage/blogs'), $filename);
+        //     // $blog->photo = $imagePath;
+        //     $file->move(public_path('storage/blogs'), $filename);
+        //     $blog->photo = 'blogs/' . $filename;
+        // }
+        // if ($request->hasFile('blog_image')) {
+        //     $file = $request->file('blog_image');
+        //     $filename = time() . '_' . $file->getClientOriginalName();
+
+        //     // Save directly in public/storage/blogs
+        //     $file->move(public_path('storage/blogs'), $filename);
+
+        //     $blog->photo = 'blogs/' . $filename; // just store the relative path
+        // }
+
+
         $blog->status = $request->status;
         $blog->save();
 
@@ -136,12 +176,35 @@ class BlogController extends Controller
         return redirect()->route('blogs.index')->with('success', 'Selected blog deleted successfully.');
     }
 
-    public function FrontBlogDetailShow(Request $request, $blog_id)
+    public function FrontBlogDetailShow(Blog $blog)
     {
-        // dd($blog_id);
-
-        $blogDetail = Blog::find($blog_id);
-
-        return view('insights_detail', compact('blogDetail'));
+        return view('insights_detail', [
+            'blogDetail' => $blog
+        ]);
     }
+
+    // public function FrontBlogDetailShow(Request $request, $blog_id, $slug = null)
+    // {
+    //     $blogDetail = Blog::findOrFail($blog_id);
+
+    //     $correctSlug = Str::slug($blogDetail->title);
+
+    //     // Redirect if slug is missing or incorrect
+    //     if ($slug !== $correctSlug) {
+    //         return redirect()->route('blogs.blog-detail', [
+    //             $blogDetail->id,
+    //             $correctSlug
+    //         ]);
+    //     }
+
+    //     return view('insights_detail', compact('blogDetail'));
+    // }
+    // public function FrontBlogDetailShow(Request $request, $blog_id)
+    // {
+    //     // dd($blog_id);
+
+    //     $blogDetail = Blog::find($blog_id);
+
+    //     return view('insights_detail', compact('blogDetail'));
+    // }
 }

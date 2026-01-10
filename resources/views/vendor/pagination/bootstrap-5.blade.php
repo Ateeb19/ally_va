@@ -89,7 +89,7 @@
 
 
 @if (true)
-    <div class="d-flex flex-wrap justify-content-between align-items-center mt-4 pagination-wrap w-100">
+    <div class="d-flex flex-wrap justify-content-between align-items-center pagination-wrap w-100">
 
         <p class="mb-0">
             Page: {{ $paginator->currentPage() }} of {{ $paginator->lastPage() }}

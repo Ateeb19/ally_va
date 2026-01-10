@@ -29,7 +29,8 @@ class AdminUserRegisteredMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Admin User Registered Mail',
+            // subject: 'Admin User Registered Mail',
+            subject: 'A new user has register ' . $this->user->name,
         );
     }
 
