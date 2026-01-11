@@ -16,8 +16,7 @@
               </h1>
               <h2>No Subscriptions or Hidden Fees</h2>
               <p>
-                By managing your daily administrative tasks, your time and
-                energy are freed up to focus on what matters most.
+                Let us handle your daily administrative tasks so you can focus your time and energy on what matters most to you.
               </p>
               <div
                 class="hero-buttons d-flex flex-wrap gap-3 mt-4 justify-content-lg-start"
@@ -34,7 +33,7 @@
             <div class="col-xl-6 text-center text-lg-end">
               <img
                 src="images/Ally_Virtual_Assistant (1).webp"
-                alt="Hero Image"
+                alt="A virtual assistant managing business tasks and streamlining operations on a laptop."
                 class="hero-img"
               />
             </div>
@@ -46,7 +45,7 @@
     <section class="support-wrapper">
       <div class="container">
         <h2 class="support-title text-center">
-          The Support You Need to Thrive
+          The support you need to thrive
         </h2>
         <p class="support-sub text-center">
           A Virtual Administrative Assistant handles your routine tasks and
@@ -74,8 +73,7 @@
               <div>
                 <h5>Admin Services</h5>
                 <p>
-                  Daily tasks are managed, leaving you free to focus on
-                  strategy.
+                  We manage your daily tasks so you’re free to focus on strategy.
                 </p>
               </div>
             </div>
@@ -292,7 +290,7 @@
           class="row d-flex align-items-center justify-content-between"
         >
           <div class="col-xl-9 col-12">
-            <h2>Efficiency Delivered Reclaimed</h2>
+            <h2>Your time, reclaimed</h2>
             <p>
               From admin support to digital execution, every service lightens
               your workload and keeps your business running smoothly. Take a
@@ -309,7 +307,7 @@
 
     <section class="benefits-section">
       <h2 class="support-title text-center">
-        Your Life, Simplified in 3 Steps
+        Your life, simplified in 3 steps
       </h2>
       <div class="row justify-content-center align-items-center mt-5">
         <!-- Step 1 -->
@@ -408,13 +406,9 @@
         <div
           class="col-xl-9 d-flex flex-column align-items-start justify-content-start gap-2"
         >
-          <h2><span>15 Years </span>Since We Help You To Grow Your Business</h2>
+          <h2><span>15 Years </span>since we help you to grow your business</h2>
           <p>
-            For over a decade and a half, we've stood beside entrepreneurs,
-            visionaries, and changemakers — streamlining operations, simplifying
-            systems, and helping businesses scale with confidence. This
-            milestone reflects years of trust, transformation, and goals turned
-            into reality.
+            For over a decade and a half, we've been working with entrepreneurs, professionals, and businesses of all sizes, sorting out operations, simplifying systems, and helping them grow. This milestone is all about the trust we've built, the transformations we've achieved together, and turning big goals into reality.
           </p>
           <!-- <button>More About Us →</button> -->
           <div class="d-flex align-items-center gap-2">
@@ -444,7 +438,7 @@
           <div class="more-wrap">
             <img
               src="images/imageedit_1_8388489819 (1).png"
-              alt="more-wrap-image"
+              alt="A executive VA providing expert support to help scale your business."
             />
           </div>
         </div>
@@ -456,7 +450,7 @@
         class="container d-flex flex-column align-items-center justify-content-start text-center"
       >
         <h2 class="support-title text-center">
-          Frequently Asked Questions
+          Frequently asked questions
         </h2>
         <p class="support-sub text-center">
           Ally VA focuses on quality, not quantity. A limited number of clients
@@ -681,7 +675,7 @@ Is the $9/hour rate the same for all tasks?
     <div
       class="d-flex flex-column w-100 align-items-center justify-content-center text-center gap-4 have-ques"
     >
-      <h2>Still Have Questions? Help Is Just a Message Away.</h2>
+      <h2>Still have questions? Help is just a message away</h2>
       <a href="/contact"><button>Contact Anytime</button></a>
     </div>
 @endsection
