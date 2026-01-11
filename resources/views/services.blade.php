@@ -99,7 +99,7 @@
                            
                             <h5>CRM & Bookkeeping</h5>
                         </div>
-                        <p>Organizing Client Data And Managing Financial Records For Your Business.</p>
+                        <p>Organizing client data and managing financial records for your business.</p>
                         <div class="d-flex gap-2 align-items-center justify-content-center">
 
                             <ul>
@@ -122,7 +122,7 @@
                              
                             <h5>Social Media Management</h5>
                         </div>
-                        <p>Building Your Brand And Engaging Your Audience Across All Digital Platforms.</p>
+                        <p>Building your brand and engaging your audience across all digital platforms.</p>
                         <div class="d-flex gap-2 align-items-center justify-content-center">
 
                             <ul>
@@ -145,7 +145,7 @@
                             
                             <h5>Graphic Design</h5>
                         </div>
-                        <p>Creating Professional, On-brand Visuals For Your Website And Social Media.</p>
+                        <p>Creating professional, on-brand visuals for your website and social media.</p>
                         <div class="d-flex gap-2 align-items-center justify-content-center">
 
                             <ul>
@@ -170,7 +170,7 @@
                               
                             <h5>Essential SEO</h5>
                         </div>
-                        <p>Enhancing Your Content To Improve Search Performance And Audience Engagement.</p>
+                        <p>Enhancing your content to improve search performance and audience engagement.</p>
                         <div class="d-flex gap-2 align-items-center justify-content-center">
 
                             <ul>
@@ -193,7 +193,7 @@
                              
                             <h5>Website Development</h5>
                         </div>
-                        <p>Designing, Building, And Maintaining Websites To Elevate Your Online Presence.</p>
+                        <p>Designing, building, and maintaining websites to elevate your online presence.</p>
                         <div class="d-flex gap-2 align-items-center justify-content-center">
 
                             <ul>
@@ -217,7 +217,7 @@
                             
                             <h5>IT Solutions</h5>
                         </div>
-                        <p>Remote Technical Help To Resolve Issues Fast And Keep Systems Running..</p>
+                        <p>Remote technical help to resolve issues fast and keep systems running.</p>
                         <div class="d-flex gap-2 align-items-center justify-content-center">
 
                             <ul>
@@ -233,7 +233,7 @@
     </section>
 
     <div class="d-flex flex-column w-100 align-items-center justify-content-center text-center gap-4 have-ques mt-5">
-        <h2>Ready To Reclaim Your Time And Grow Your Business?</h2>
+        <h2>Ready to reclaim your time and grow your business?</h2>
         <button  data-bs-toggle="modal" data-bs-target="#authModal">Let’s Get Started - Sign Up Now</button>
     </div>
 
