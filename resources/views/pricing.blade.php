@@ -8,12 +8,8 @@
     <section class="top-banner">
         <div class="inner-page-header">
             <div class="container">
-                <h1>Simple Pricing. Dedicated Service</h1>
-                <p>No subscriptions. No hidden fees. Just one flexible hourly block to
-                    unlock reliable one-on-one virtual assistance. Start with 10
-                    hours—use them anytime within 3 months. Quality over quantity,
-                    always.Only pay for actual working hours—every minute goes toward
-                    getting things done.</p>
+                <h1>Simple pricing. Dedicated service</h1>
+                <p>No subscriptions. No hidden fees. Just one flexible hourly block to unlock reliable one on one virtual assistance. Start with 10 hours, use them anytime within 3 months. Pay only for the time worked.</p>
             </div>
         </div>
     </section>
@@ -168,7 +164,7 @@ Instead of a trial, there’s a low commitment starting point. Just 10 hours, va
 
     <div class="d-flex flex-column w-100 align-items-center justify-content-center text-center gap-4 have-ques mt-5">
         <h2>Need something different? We’re just a message away</h2>
-        <a href='/contact'><button>Talk to Us</button></a>
+        <a href='/contact'><button>Connect with Us</button></a>
     </div>
 
 @endsection
