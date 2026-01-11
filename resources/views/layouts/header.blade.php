@@ -4,7 +4,7 @@
     <div class="container">
       <!-- Logo -->
       <!-- <a class="navbar-brand fw-bold text-primary" href="#">
-        <img src="{{ asset('images/logo.png') }}" alt="Logo" class="me-2" />
+        <img src="{{ asset('images/logo.png') }}" alt="Ally VA - Virtual Assistant Services logo" class="me-2" />
       </a> -->
 
       @if(Auth::check())
