@@ -52,7 +52,7 @@ a {
 }
 
 .navbar img {
-  width: 75%;
+  width: 35%;
 }
 
 .btn.btn-primary {
@@ -1952,6 +1952,9 @@ input[type="range"]::-ms-thumb {
   color: #fff;
 }
 
+.service{
+  text-decoration: none;
+}
 /* Responsive starts from here */
 
 @media (max-width: 1999px) {

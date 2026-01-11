@@ -324,7 +324,7 @@
               </div>
             </div>
 
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
               <div class="card shadow-sm border-0 rounded p-4 text-start">
                 <div class="top-header" style="display: flex; justify-content: space-between; align-items: start;">
                   <div class="d-flex align-items-center mb-3">
@@ -400,7 +400,7 @@
                   Efficiency By 40%.
                 </p>
               </div>
-            </div>
+            </div> -->
 
             <div class="swiper-slide">
               <div class="card shadow-sm border-0 rounded p-4 text-start">
