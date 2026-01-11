@@ -8,7 +8,7 @@
   <section class="top-banner">
     <div class="inner-page-header">
       <div class="container">
-        <h1>Your Message Matters. Let’s Make It Count.</h1>
+        <h1>Your message matters. Let’s make it count.</h1>
         <p>Every great partnership begins with a simple conversation. Feel free to reach out with any questions, comments, or ideas. Our dedicated team is ready to connect and provide the support you need.</p>
       </div>
     </div>
