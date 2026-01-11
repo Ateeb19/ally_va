@@ -9,13 +9,9 @@
 
     <div class="inner-page-header">
       <div class="container">
-        <h1>From Assistant to Ally</h1>
+        <h1>From assistant to ally</h1>
         <p>
-          A unique blend of business acumen, tech fluency, and entrepreneurial
-          insight shapes every client experience. The goal is straightforward:
-          deliver virtual assistant services that go beyond the basics. From
-          daily operations to project coordination, each task is handled with
-          precision and care.
+          We mix sharp business know-how with strong tech skills to give you way more than just basic help. Whether it's day-to-day stuff or bigger projects, we handle every detail carefully so your business can really grow.
         </p>
       </div>
     </div>
@@ -26,7 +22,7 @@
       <div class="row gy-3">
         <div class="col-xl-6 order-2 order-xl-1">
           <div class="about-img-wrapper">
-            <img src="images/Arup-Seth.webp" alt="Profile" />
+            <img src="images/Arup-Seth.webp" alt="Arup Seth working as a virtual assistant on a laptop at a bright, modern desk" />
           </div>
         </div>
         <div class="col-xl-6 order-1 order-xl-2">
@@ -88,11 +84,9 @@
     <div class="container">
       <!-- Section Heading -->
       <div class="mb-5">
-        <h2 class="support-title text-center">Why Ally VA Is Different</h2>
+        <h2 class="support-title text-center">Why ally va is different</h2>
         <p class="support-sub text-center">
-          Ally VA Brings Together Business Sense And Tech Fluency To Deliver
-          Support That's Both Smart And Dependable. It’s Not Just About
-          Tasks—It’s About Making Operations Smoother, Faster, And Easier.
+          Ally VA brings together business sense and tech fluency to deliver support that's both smart and dependable. It’s not just about tasks, it’s about making operations smoother, faster, and easier.
         </p>
       </div>
 
@@ -110,8 +104,7 @@
                   <h5 class="mb-0">Quick Turnaround</h5>
                 </div>
                 <p>
-                  Tasks Are Handled Promptly—Keeping Your Operations Smooth And
-                  Momentum Strong.
+                  Tasks are handled promptly, keeping your operations smooth and momentum strong
                 </p>
               </div>
             </div>
@@ -126,8 +119,7 @@
                   <h5 class="mb-0">Flawless Execution</h5>
                 </div>
                 <p>
-                  Every Detail Matters. Expect Thorough Execution And
-                  High-Quality Results, Every Time.
+                  Every detail matters. Expect thorough execution and high quality results every time.
                 </p>
               </div>
             </div>
@@ -142,8 +134,7 @@
                   <h5 class="mb-0">Anytime Access</h5>
                 </div>
                 <p>
-                  Stay Connected And In Control. Reach Out Anytime - Support Is
-                  Always Within Reach.
+                  Stay connected and in control. Reach out anytime. Support is always within reach.
                 </p>
               </div>
             </div>
@@ -158,8 +149,7 @@
                   <h5 class="mb-0">Proactive Support</h5>
                 </div>
                 <p>
-                  Anticipating Needs, Suggesting Improvements, And Keeping Your
-                  Workflow Ahead.
+                  Anticipating needs, suggesting improvements, and keeping your workflow ahead.
                 </p>
               </div>
             </div>
@@ -168,7 +158,7 @@
 
         <div class="col-xl-6">
           <div class="why-ally-img-wrap">
-            <img src="images/why_Ally_va (1).png" alt="Profile" class="object-fit-cover" />
+            <img src="images/why_Ally_va (1).png" alt="A clean, minimalist home office setup" class="object-fit-cover" />
           </div>
         </div>
 
@@ -182,8 +172,8 @@
 
   <section class="pt-5">
     <div class="container text-center">
-      <h2 class="support-title">Feedback That Fuels Us</h3>
-        <p class="support-sub">Trusted By Industry Leaders Worldwide</p>
+      <h2 class="support-title">Feedback that fuels us</h3>
+        <p class="support-sub">Every review helps us improve and serve you better.</p>
 
         <!-- Swiper Container -->
         <div class="swiper mySwiper">
@@ -194,14 +184,14 @@
               <div class="card shadow-sm border-0 rounded p-4 text-start">
                 <div class="top-header" style="display: flex; justify-content: space-between; align-items: start;">
                   <div class="d-flex align-items-center mb-3">
-                    <img src="images/aboutimages/Ellipse 1 (1).svg" alt="" class="rounded-circle me-3" width="50"
+                    <img src="images/aboutimages/mr.png" alt="Close up portrait of the reviewer" class="rounded-circle me-3" width="50"
                       height="50" />
                     <div>
                       <h6 class="mb-0 fw-semibold">
-                        Sarah Johnson
-                        <img src="https://flagcdn.com/w20/in.png" class="ms-2" alt="India" />
+                        Marina Renaud
+                        <img src="https://flagcdn.com/w20/us.png" class="ms-2" alt="usa" />
                       </h6>
-                      <small class="text-muted">CEO, TechCorp Solutions</small>
+                      <small class="text-muted">CEO, NG Corp</small>
                     </div>
                   </div>
 
@@ -209,9 +199,7 @@
                 </div>
 
                 <p class="mt-2">
-                  The BI Solution Transformed Our Decision-Making Process. We
-                  Now Have Real-Time Insights That Have Improved Our Operational
-                  Efficiency By 40%.
+                  Arup and his team provided excellent, prompt work. They are professional and reliable. Highly recommend them for top tier VA services! 5*
                 </p>
               </div>
             </div>
@@ -220,14 +208,14 @@
               <div class="card shadow-sm border-0 rounded p-4 text-start">
                 <div class="top-header" style="display: flex; justify-content: space-between; align-items: start;">
                   <div class="d-flex align-items-center mb-3">
-                    <img src="images/aboutimages/Ellipse 1 (1).svg" alt="" class="rounded-circle me-3" width="50"
+                    <img src="images/aboutimages/am.png" alt="Verified reviewer profile photo" class="rounded-circle me-3" width="50"
                       height="50" />
                     <div>
                       <h6 class="mb-0 fw-semibold">
-                        Sarah Johnson
-                        <img src="https://flagcdn.com/w20/in.png" class="ms-2" alt="India" />
+                        Angus Munro
+                        <img src="https://flagcdn.com/w20/au.png" class="ms-2" alt="australia" />
                       </h6>
-                      <small class="text-muted">CEO, TechCorp Solutions</small>
+                      <small class="text-muted">Psychologist Sydney</small>
                     </div>
                   </div>
 
@@ -235,9 +223,7 @@
                 </div>
 
                 <p class="mt-2">
-                  The BI Solution Transformed Our Decision-Making Process. We
-                  Now Have Real-Time Insights That Have Improved Our Operational
-                  Efficiency By 40%.
+                  Excellent work. Prompt and perfect. Arup was professional, efficient, and exceeded all expectations. Highly recommended for great service!
                 </p>
               </div>
             </div>
@@ -246,14 +232,14 @@
               <div class="card shadow-sm border-0 rounded p-4 text-start">
                 <div class="top-header" style="display: flex; justify-content: space-between; align-items: start;">
                   <div class="d-flex align-items-center mb-3">
-                    <img src="images/aboutimages/Ellipse 1 (1).svg" alt="" class="rounded-circle me-3" width="50"
+                    <img src="images/aboutimages/rw.png" alt="Smiling business professional headshot" class="rounded-circle me-3" width="50"
                       height="50" />
                     <div>
                       <h6 class="mb-0 fw-semibold">
-                        Sarah Johnson
-                        <img src="https://flagcdn.com/w20/in.png" class="ms-2" alt="India" />
+                        Rebecca Wade
+                        <img src="https://flagcdn.com/w20/gb.png" class="ms-2" alt="uk" />
                       </h6>
-                      <small class="text-muted">CEO, TechCorp Solutions</small>
+                      <small class="text-muted">Founder, Purple Dog</small>
                     </div>
                   </div>
 
@@ -261,9 +247,7 @@
                 </div>
 
                 <p class="mt-2">
-                  The BI Solution Transformed Our Decision-Making Process. We
-                  Now Have Real-Time Insights That Have Improved Our Operational
-                  Efficiency By 40%.
+                  Arup is polite, helpful, and detail oriented. He responds quickly and clarifies everything. We've increased his hours due to his success.
                 </p>
               </div>
             </div>
@@ -272,14 +256,14 @@
               <div class="card shadow-sm border-0 rounded p-4 text-start">
                 <div class="top-header" style="display: flex; justify-content: space-between; align-items: start;">
                   <div class="d-flex align-items-center mb-3">
-                    <img src="images/aboutimages/Ellipse 1 (1).svg" alt="" class="rounded-circle me-3" width="50"
+                    <img src="images/aboutimages/anm.png" alt="Client testimonial profile image" class="rounded-circle me-3" width="50"
                       height="50" />
                     <div>
                       <h6 class="mb-0 fw-semibold">
-                        Sarah Johnson
-                        <img src="https://flagcdn.com/w20/in.png" class="ms-2" alt="India" />
+                        Anika Malone
+                        <img src="https://flagcdn.com/w20/us.png" class="ms-2" alt="usa" />
                       </h6>
-                      <small class="text-muted">CEO, TechCorp Solutions</small>
+                      <small class="text-muted">Founder, Starr Publishing</small>
                     </div>
                   </div>
 
@@ -287,9 +271,7 @@
                 </div>
 
                 <p class="mt-2">
-                  The BI Solution Transformed Our Decision-Making Process. We
-                  Now Have Real-Time Insights That Have Improved Our Operational
-                  Efficiency By 40%.
+                  Arup goes above and beyond, consistently delivering A+ work. He anticipates needs to help my business run smoothly. I'm so glad he’s with us!
                 </p>
               </div>
             </div>
@@ -298,14 +280,14 @@
               <div class="card shadow-sm border-0 rounded p-4 text-start">
                 <div class="top-header" style="display: flex; justify-content: space-between; align-items: start;">
                   <div class="d-flex align-items-center mb-3">
-                    <img src="images/aboutimages/Ellipse 1 (1).svg" alt="" class="rounded-circle me-3" width="50"
+                    <img src="images/aboutimages/ev.png" alt="Professional headshot of a satisfied client" class="rounded-circle me-3" width="50"
                       height="50" />
                     <div>
                       <h6 class="mb-0 fw-semibold">
-                        Sarah Johnson
-                        <img src="https://flagcdn.com/w20/in.png" class="ms-2" alt="India" />
+                        Eric Verdi
+                        <img src="https://flagcdn.com/w20/us.png" class="ms-2" alt="usa" />
                       </h6>
-                      <small class="text-muted">CEO, TechCorp Solutions</small>
+                      <small class="text-muted">CEO, Impact Estate</small>
                     </div>
                   </div>
 
@@ -313,9 +295,7 @@
                 </div>
 
                 <p class="mt-2">
-                  The BI Solution Transformed Our Decision-Making Process. We
-                  Now Have Real-Time Insights That Have Improved Our Operational
-                  Efficiency By 40%.
+                  Arup was always available to answer any questions about the project & delivered top notch service and a great finished product. He is a gem!
                 </p>
               </div>
             </div>
@@ -324,14 +304,14 @@
               <div class="card shadow-sm border-0 rounded p-4 text-start">
                 <div class="top-header" style="display: flex; justify-content: space-between; align-items: start;">
                   <div class="d-flex align-items-center mb-3">
-                    <img src="images/aboutimages/Ellipse 1 (1).svg" alt="" class="rounded-circle me-3" width="50"
+                    <img src="images/aboutimages/kc.png" alt="Professional client photo for service feedback" class="rounded-circle me-3" width="50"
                       height="50" />
                     <div>
                       <h6 class="mb-0 fw-semibold">
-                        Sarah Johnson
-                        <img src="https://flagcdn.com/w20/in.png" class="ms-2" alt="India" />
+                        Kevin Canty
+                        <img src="https://flagcdn.com/w20/us.png" class="ms-2" alt="usa" />
                       </h6>
-                      <small class="text-muted">CEO, TechCorp Solutions</small>
+                      <small class="text-muted">Owner, LT Fintech</small>
                     </div>
                   </div>
 
@@ -339,9 +319,7 @@
                 </div>
 
                 <p class="mt-2">
-                  The BI Solution Transformed Our Decision-Making Process. We
-                  Now Have Real-Time Insights That Have Improved Our Operational
-                  Efficiency By 40%.
+                  Outstanding responsiveness. Arup is very capable & attuned to the specifics of all tasks. One of the best virtual assistants I've worked with
                 </p>
               </div>
             </div>
