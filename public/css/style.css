@@ -52,7 +52,8 @@ a {
 }
 
 .navbar img {
-  width: 35%;
+  height: 48px;
+  width: auto;
 }
 
 .btn.btn-primary {
@@ -274,7 +275,7 @@ a {
   padding-bottom: 18px;
 }
 
-.efficiency-wrapper a{
+.efficiency-wrapper a {
   background-color: #fff;
   font-weight: 600;
   text-decoration: none;
@@ -1952,9 +1953,10 @@ input[type="range"]::-ms-thumb {
   color: #fff;
 }
 
-.service{
+.service {
   text-decoration: none;
 }
+
 /* Responsive starts from here */
 
 @media (max-width: 1999px) {
@@ -2294,6 +2296,11 @@ input[type="range"]::-ms-thumb {
 
   .navbar-toggler:focus {
     box-shadow: none !important;
+  }
+
+  .navbar img {
+    height: 40px;
+    width: auto;
   }
 
 
