@@ -10,10 +10,7 @@
         <div class="container">
           <h1>Insights That Work as Hard as You Do</h1>
           <p>
-            Feeling overwhelmed by your endless to-do list? Your solution is
-            closer than you think. These insights are your playbook for smart
-            delegation—designed to help you reclaim time, simplify your
-            workflow, and unlock the growth you’ve been working so hard for.
+            Feeling overwhelmed by your to do list? The right support is closer than you think. These insights help you delegate smarter, save time, simplify your workflow, and focus on growing your business.
           </p>
         </div>
       </div>
