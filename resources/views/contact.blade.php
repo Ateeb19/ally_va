@@ -9,9 +9,7 @@
     <div class="inner-page-header">
       <div class="container">
         <h1>Your Message Matters. Let’s Make It Count.</h1>
-        <p>Every great partnership begins with a simple conversation. Feel free to reach out with any questions, comments,
-          or ideas—no matter how big or small. A dedicated and friendly team is standing by, ready to connect and provide
-          the assistance you need.</p>
+        <p>Every great partnership begins with a simple conversation. Feel free to reach out with any questions, comments, or ideas. Our dedicated team is ready to connect and provide the support you need.</p>
       </div>
     </div>
   </section>
@@ -69,15 +67,15 @@
                 Arup Virtual Services. NH 2, Grand Trunk Rd, Durgapur West Bengal - 713212 | INDIA
               </h6>
               <p class="mb-2"><a
-                    href="https://wa.me/+919163329207?text=Hello%20Arup!%20I%20am%20interested%20in%20your%20services."
+                    href="https://wa.me/+919163329207?text=Hello%20Arup!%20I%20am%20interested%20in%20your%20services." target="_blank"
                     ><i class="ri-whatsapp-fill"></i> (+91) 91633 29207</a
                   ></p>
-              <p class="mb-2"><a href="mailto: arup@allyva.com"
+              <p class="mb-2"><a href="mailto: arup@allyva.com" target="_blank"
                     ><i class="ri-mail-fill"></i> arup@allyva.com</a
                   ></p>
             </div>
             <div class="map">
-              <img src="images/virtual_admin-location.png" alt="map">
+              <img src="images/virtual_admin-location.png" alt="Global map highlighting India">
             </div>
           </div>
         </div>
