@@ -41,7 +41,7 @@
         <h3 class="title">Get In Touch</h3>
         <ul class="contact-list">
           <li><i class="ri-home-3-line icon"></i> NH 2, Grand Trunk Rd, Durgapur West Bengal - 713212 | INDIA</li>
-          <li><a href="https://wa.me/+919163329207?text=Hello%20Arup!%20I%20am%20interested%20in%20your%20services."><i class="ri-phone-line icon"></i> (+91) 91633 29207</a></li>
+          <li><a href="https://wa.me/+919163329207?text=Hello%20Arup!%20I%20am%20interested%20in%20your%20services." target="_blank"><i class="ri-whatsapp-line"></i> (+91) 91633 29207</a></li>
           <li><i class="ri-printer-line icon"></i> +1 (646) 813 9231</li>
           <li><a href="mailto:arup@allyva.com" target="_blank"><i class="ri-mail-line icon"></i> arup@allyva.com</a></li>
         </ul>
