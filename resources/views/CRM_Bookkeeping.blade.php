@@ -8,7 +8,7 @@
     <section class="top-banner">
         <div class="inner-page-header">
             <div class="container">
-                <h1>Smart CRM & Virtual Assistant Solutions</h1>
+                <h1>Book keeping</h1>
                 <p>Streamline your business with services built for growth and efficiency. From lead tracking and automated
                     onboarding to invoicing, data cleanup, and daily transaction management — every tool is crafted to
                     simplify workflows, boost productivity</p>
