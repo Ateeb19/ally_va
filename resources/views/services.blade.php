@@ -8,7 +8,7 @@
     <section class="top-banner">
         <div class="inner-page-header">
             <div class="container">
-                <h1>Services that power your progress</h1>
+                <h1>Services That Power Your Progress</h1>
                 <p>Explore a complete range of virtual assistant services designed to simplify daily operations, strengthen your brand, and support growth. From admin tasks to creative support, every detail is handled with care and focus.</p>
             </div>
         </div>
