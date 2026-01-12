@@ -39,29 +39,25 @@
 
                     <ul class="features">
                         <li>
-                            <i class="ri-checkbox-circle-fill"></i> Trusted Since 2012
+                            <i class="ri-checkbox-circle-fill"></i> Trusted since 2012
                         </li>
                         <li>
-                            <i class="ri-checkbox-circle-fill"></i> Flat Hourly Rate—Pay
-                            Only for Time Used
+                            <i class="ri-checkbox-circle-fill"></i> Flat hourly rate—pay only for time used
                         </li>
                         <li>
-                            <i class="ri-checkbox-circle-fill"></i> Direct, Hassle-Free
-                            Communication
+                            <i class="ri-checkbox-circle-fill"></i> Direct, hassle free communication
                         </li>
                         <li>
-                            <i class="ri-checkbox-circle-fill"></i> Same-Day Turnaround
+                            <i class="ri-checkbox-circle-fill"></i> Same day turnaround
                         </li>
                         <li>
-                            <i class="ri-checkbox-circle-fill"></i> Scale Without Full-Time
-                            Hiring
+                            <i class="ri-checkbox-circle-fill"></i> Scale without full-time hiring
                         </li>
                         <li>
-                            <i class="ri-checkbox-circle-fill"></i> Track Hours with Your
-                            Private Dashboard
+                            <i class="ri-checkbox-circle-fill"></i> Track hours with your private dashboard
                         </li>
                         <li>
-                            <i class="ri-checkbox-circle-fill"></i> Weekly Task Report
+                            <i class="ri-checkbox-circle-fill"></i> Weekly task report
                         </li>
                     </ul>
 
@@ -124,7 +120,7 @@
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#flush-collapseFour" aria-expanded="false"
                                         aria-controls="flush-collapseFour">
-                                        Do You Offer a Free Trial?
+                                        Do you offer a free trial?
                                     </button>
                                 </h2>
                                 <div id="flush-collapseFour" class="accordion-collapse collapse"
