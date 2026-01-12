@@ -199,7 +199,7 @@
                 </div>
 
                 <p class="mt-2">
-                  Arup and his team provided excellent, prompt work. They are professional and reliable. Highly recommend them for top tier VA services! 5*
+                  Arup and his team provided excellent, prompt work. They are professional and reliable. Highly recommend them for top tier VA services! 5 star always.
                 </p>
               </div>
             </div>
@@ -247,7 +247,7 @@
                 </div>
 
                 <p class="mt-2">
-                  Arup is polite, helpful, and detail oriented. He responds quickly and clarifies everything. We've increased his hours due to his success.
+                  Arup is polite, helpful, detail-oriented, and very responsive. We now have real-time insights that have improved our operational efficiency by 40%.
                 </p>
               </div>
             </div>
@@ -319,7 +319,7 @@
                 </div>
 
                 <p class="mt-2">
-                  Outstanding responsiveness. Arup is very capable & attuned to the specifics of all tasks. One of the best virtual assistants I've worked with
+                  Outstanding responsiveness. Arup is very capable & attuned to the specifics of all tasks. One of the best virtual assistants I've worked with.
                 </p>
               </div>
             </div>
