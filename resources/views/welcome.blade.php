@@ -62,7 +62,7 @@
                 <!-- icon -->
                 <svg viewBox="0 0 24 24" fill="none">
                   <path
-                    d="M4 4h10v16H4zM14 8h6v2h-6zM14 12h6v2h-6zM14 16h6v2h-6z"
+                    d="M4 4h16v16H4zM8 4v16M12 8h4M12 12h4M12 16h4"
                     stroke="#111"
                     stroke-width="1.5"
                     stroke-linecap="round"
@@ -83,7 +83,7 @@
               <div class="support-icon">
                 <svg viewBox="0 0 24 24" fill="none">
                   <path
-                    d="M12 3v3M12 18v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M3 12h3M18 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"
+                    d="M6 8V6a6 6 0 0 1 12 0v2M4 8h16v12H4zM9 12v2M15 12v2"
                     stroke="#111"
                     stroke-width="1.5"
                     stroke-linecap="round"
@@ -111,7 +111,7 @@
               <div class="support-icon">
                 <svg viewBox="0 0 24 24" fill="none">
                   <path
-                    d="M6 6h12l-1 7H7L6 6zM7 16h10l1 2H6l1-2z"
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z"
                     stroke="#111"
                     stroke-width="1.5"
                     stroke-linejoin="round"
@@ -138,7 +138,7 @@
                     stroke-width="1.5"
                   />
                   <path
-                    d="M8 10h8M8 13h5"
+                    d="M12 4l8 4-8 4-8-4 8-4zM4 12l8 4 8-4M4 16l8 4 8-4"
                     stroke="#111"
                     stroke-width="1.5"
                     stroke-linecap="round"
@@ -174,7 +174,7 @@
                     stroke-width="1.5"
                   />
                   <path
-                    d="M12 10v1M12 15v1M9.9 11l.7.7M14.1 15l.7.7M9.9 15l.7-.7M14.1 11l.7-.7"
+                    d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"
                     stroke="#111"
                     stroke-width="1.5"
                     stroke-linecap="round"
@@ -227,12 +227,7 @@
                     stroke-width="1.5"
                     stroke-linejoin="round"
                   />
-                  <path
-                    d="M16 9a3 3 0 0 1 0 6M19 7a6 6 0 0 1 0 10"
-                    stroke="#111"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  />
+                 
                 </svg>
               </div>
               <div>
@@ -471,7 +466,7 @@
                       aria-expanded="false"
                       aria-controls="flush-collapseOne"
                     >
-                      What Makes Ally VA Unique?
+                      What makes Ally VA unique?
                     </button>
                   </h2>
                   <div
@@ -575,7 +570,7 @@ Is the $9/hour rate the same for all tasks?
                       aria-expanded="false"
                       aria-controls="flush-collapseFour"
                     >
-                      Why hiring an Overseas VA is a smart choice?
+                      Why hiring an overseas VA is a smart choice?
                     </button>
                   </h2>
                   <div
