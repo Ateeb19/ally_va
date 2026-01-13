@@ -82,7 +82,7 @@
   </section>
 
   <div class="d-flex flex-column w-100 align-items-center justify-content-center text-center gap-4 have-ques mt-5">
-    <h2>Start Your Journey To More Free Time!</h2>
+    <h2>Start your journey to more free time!</h2>
     <button  data-bs-toggle="modal" data-bs-target="#authModal">Let’s Get Started - Sign Up Now</button>
   </div>
 
