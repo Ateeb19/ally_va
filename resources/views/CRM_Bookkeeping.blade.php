@@ -125,7 +125,7 @@
     </section>
 
     <div class="d-flex flex-column w-100 align-items-center justify-content-center text-center gap-4 have-ques mt-5">
-        <h2>Free up your time and hire your assistant now</h2>
+        <h2>Free up your time and hire your assistant</h2>
         <button>Let’s Get Started - Sign Up Now</button>
     </div>
 
