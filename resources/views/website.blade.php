@@ -1,17 +1,15 @@
 @extends('layouts.app')
-@section('title', 'Executive Virtual Assistant: Expert Admin & Business Help')
+@section('title', 'Website Management & Maintenance')
 
-@section('meta_description', 'Delegate your to‑do list to a professional. We handle admin, marketing, and operations so you can focus on scaling your business.')
+@section('meta_description', 'Ensure your site is fast and secure with professional design updates, hosting management, and daily backups.')
 
-@section('meta_keywords', 'Administrative support, marketing assistance, business management, workflow streamlining, executive VA tasks')
+@section('meta_keywords', 'website management, site maintenance, performance optimization, web design')
 @section('content')
     <section class="top-banner">
         <div class="inner-page-header">
             <div class="container">
-                <h1>Smart CRM & Virtual Assistant Solutions</h1>
-                <p>Streamline your business with services built for growth and efficiency. From lead tracking and automated
-                    onboarding to invoicing, data cleanup, and daily transaction management — every tool is crafted to
-                    simplify workflows, boost productivity</p>
+                <h1>Website design & management</h1>
+                <p>We create beautiful website designs and keep them secure, fast, and fully updated for a great visitor experience. From visual layouts to technical maintenance, we handle it all while you focus on your brand.</p>
             </div>
         </div>
     </section>
@@ -22,113 +20,112 @@
             <!-- Row 1 -->
             <div class="new-feature-box red">
                 <div class="new-feature-icons">
-                    <i class="ri-flow-chart ri-2x"></i>
+                    <i class=" ri-pages-fill"></i>
                 </div>
                 <div class="new-feature-title">
-                    <h3>Lead Tracking & Pipeline Management</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam unde iure magnam officiis.
-                        simplify workflows, boost productivity, and give your brand a competitive</p>
+                    <h3>Website design</h3>
+                    <p>Create a clean, modern layout that reflects your brand and provides a great experience for users.</p>
                 </div>
             </div>
 
             <div class="new-feature-box yellow ">
                 <div class="new-feature-title">
-                    <h3>Automated Client Onboarding</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam unde iure magnam officiis.</p>
+                    <h3>Domain & hosting management</h3>
+                    <p>Handle the technical side of your web address and server to keep your site live 24/7.</p>
                 </div>
                 <div class="new-feature-icons">
-                    <i class="ri-briefcase-3-fill ri-2x"></i>
+                    <i class="ri-global-fill"></i>
                 </div>
             </div>
 
             <!-- Row 2 -->
             <div class="new-feature-box white yellow-border">
                 <div class="new-feature-title">
-                    <h3>Data Cleanup & Custom Reporting</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam unde iure magnam officiis.</p>
+                    <h3>Content updates</h3>
+                    <p>Regularly refresh your text, images, and blog posts to keep your website relevant and engaging.</p>
                 </div>
                 <div class="new-feature-icons">
-                    <i class="ri-money-dollar-circle-line ri-2x"></i>
+                    <i class="ri-article-fill"></i>
                 </div>
             </div>
 
             <div class="new-feature-box green ">
                 <div class="new-feature-icons">
-                    <i class="ri-gemini-fill ri-2x"></i>
+                    <i class="ri-news-fill"></i>
                 </div>
                 <div class="new-feature-title">
-                    <h3>CRM Setup & Custom Reporting</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam unde iure magnam officiis.</p>
+                    <h3>Form creation</h3>
+                    <p>Build contact or lead-capture forms to make it easy for potential clients to get in touch with you.</p>
                 </div>
             </div>
 
             <!-- Row 3 -->
             <div class="new-feature-box blue-light">
                 <div class="new-feature-icons">
-                    <i class="ri-file-list-3-line ri-2x"></i>
+                    <i class="ri-seo-fill"></i>
                 </div>
                 <div class="new-feature-title">
-                    <h3>Invoices Creation & Payment Tracking</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam unde iure magnam officiis.</p>
+                    <h3>Performance optimization</h3>
+                    <p>Improve your site's loading speed to reduce bounce rates and keep your visitors happy.</p>
                 </div>
             </div>
 
             <div class="new-feature-box blue-dark ">
                 <div class="new-feature-title">
-                    <h3>Daily Transaction Recording</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam unde iure magnam officiis.</p>
+                    <h3>Basic bug fixing</h3>
+                    <p>Quickly resolve minor technical glitches and display issues to maintain a professional site.</p>
                 </div>
                 <div class="new-feature-icons">
-                    <i class="ri-notification-3-fill ri-2x"></i>
+                    <i class="ri-bug-fill"></i>
                 </div>
             </div>
 
             <!-- Row 4 -->
             <div class="new-feature-box white yellow-border">
                 <div class="new-feature-title">
-                    <h3>Data Cleanup & Custom Reporting</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam unde iure magnam officiis.</p>
+                    <h3>Backup management</h3>
+                    <p>Schedule regular saves of your website data to ensure you can recover quickly if an error occurs.</p>
                 </div>
                 <div class="new-feature-icons">
-                    <i class="ri-money-dollar-circle-line ri-2x"></i>
+                    <i class="ri-save-2-fill"></i>
                 </div>
             </div>
 
             <div class="new-feature-box green ">
                 <div class="new-feature-icons green">
-                    <i class="ri-gemini-fill ri-2x"></i>
+                    <i class="ri-file-chart-fill"></i>
                 </div>
                 <div class="new-feature-title">
-                    <h3>CRM Setup & Custom Reporting</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam unde iure magnam officiis.</p>
+                    <h3>Analytics setup</h3>
+                    <p>Install tracking tools to see how many people visit your site and which pages they view most.</p>
                 </div>
             </div>
 
             <!-- Row 5 -->
             <div class="new-feature-box ">
                 <div class="new-feature-icons red">
-                    <i class="ri-flow-chart ri-2x"></i>
+                    <i class="ri-html5-fill"></i>
                 </div>
                 <div class="new-feature-title">
-                    <h3>Lead Tracking & Pipeline Management</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam unde iure magnam officiis.</p>
+                    <h3>Landing page creation</h3>
+                    <p>Design specific pages for your marketing campaigns to increase your lead and sale conversions.</p>
                 </div>
             </div>
 
             <div class="new-feature-box yellow ">
                 <div class="new-feature-title">
-                    <h3>Automated Client Onboarding</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam unde iure magnam officiis.</p>
+                    <h3>Link checking</h3>
+                    <p>Regularly test all buttons and menus to ensure every part of your website works exactly as intended.</p>
                 </div>
                 <div class="new-feature-icons">
-                    <i class="ri-briefcase-3-fill ri-2x"></i>
+                    <i class="ri-svelte-fill"></i>
                 </div>
             </div>
         </div>
     </section>
 
     <div class="d-flex flex-column w-100 align-items-center justify-content-center text-center gap-4 have-ques mt-5">
-        <h2>Ready To Reclaim Your Time And Grow Your Business?</h2>
+        <h2>Free up your time and hire your assistant</h2>
         <button>Let’s Get Started - Sign Up Now</button>
     </div>
 
