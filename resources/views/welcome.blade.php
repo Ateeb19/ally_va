@@ -62,7 +62,7 @@
                 <!-- icon -->
                 <svg viewBox="0 0 24 24" fill="none">
                   <path
-                    d="M4 4h16v16H4zM8 4v16M12 8h4M12 12h4M12 16h4"
+                    d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zM8 22h8M12 16v6"
                     stroke="#111"
                     stroke-width="1.5"
                     stroke-linecap="round"
@@ -138,7 +138,7 @@
                     stroke-width="1.5"
                   />
                   <path
-                    d="M12 4l8 4-8 4-8-4 8-4zM4 12l8 4 8-4M4 16l8 4 8-4"
+                    d="M12 19l7-7 3 3-7 7-3-3zM18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5zM2 2l5 5"
                     stroke="#111"
                     stroke-width="1.5"
                     stroke-linecap="round"
@@ -174,7 +174,7 @@
                     stroke-width="1.5"
                   />
                   <path
-                    d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"
+                    d="M12 3a9 9 0 1 1 0 18 9 9 0 0 1 0-18M12 3v9l6 6M12 12h9"
                     stroke="#111"
                     stroke-width="1.5"
                     stroke-linecap="round"
@@ -222,7 +222,7 @@
               <div class="support-icon">
                 <svg viewBox="0 0 24 24" fill="none">
                   <path
-                    d="M3 10v4h4l5 3V7L7 10H3z"
+                    d="M3 10h4l7-5v14l-7-5H3zM18 8c1.5 1.5 1.5 6.5 0 8"
                     stroke="#111"
                     stroke-width="1.5"
                     stroke-linejoin="round"

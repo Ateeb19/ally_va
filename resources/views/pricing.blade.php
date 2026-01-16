@@ -75,7 +75,7 @@
                 Common Questions
             </h2>
             <p class="support-sub text-center">
-                We’ve answered the most frequently asked questions below to help you feel confident choosing the right support for your business.
+                Here are the most frequently asked questions below to help you feel confident choosing the right support for your business.
             </p>
             <div class="faq-div w-100 d-flex flex-column gap-5">
                 <div class="accordion accordion-flush" id="accordionFlushExample">
