@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* ---------------- PUBLIC STATIC PAGES ---------------- */
     const staticPages = [
-      '/about-us',
+      '/about',
       '/services',
       '/pricing',
       '/contact'
@@ -337,7 +337,8 @@ document.addEventListener('DOMContentLoaded', function () {
       '/social-media-management',
       '/essential-seo',
       '/graphic-design',
-      '/it-solutions'
+      '/it-solutions',
+      '/privacy-policy'
     ];
 
     // If on a service page, DO NOT activate Insights
@@ -348,7 +349,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* ---------------- BLOG SLUG PAGE ---------------- */
     const publicPages = [
-      '/', '/home', '/about-us', '/services',
+      '/', '/home', '/about', '/services',
       '/pricing', '/contact', '/login', '/insights'
     ];
 

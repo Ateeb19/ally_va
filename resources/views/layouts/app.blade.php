@@ -9,16 +9,16 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Ally Virtual Assistant | Your Remote Business Partner')</title>
 
-     <meta name="description"
-          content="@yield('meta_description', 'Ally VA is your dedicated virtual assistant, streamlining administrative tasks to boost productivity and improve business efficiency.')">
+    <meta name="description"
+        content="@yield('meta_description', 'Ally VA is your dedicated virtual assistant, streamlining administrative tasks to boost productivity and improve business efficiency.')">
 
     <meta name="keywords"
-          content="@yield('meta_keywords', 'Virtual Assistant services, Executive VA, professional admin support, business productivity, outsource tasks')">
+        content="@yield('meta_keywords', 'Virtual Assistant services, Executive VA, professional admin support, business productivity, outsource tasks')">
 
     <!-- <title>Ally Virtual Assistant | Your Remote Business Partner</title> -->
-    <link rel="icon" type="image/png" href="images/ally-va-favicon.png" />
-   
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- <link rel="icon" type="image/png" href="images/ally-va-favicon.png" /> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
@@ -31,6 +31,8 @@
 
     <!-- Your CSS -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <!-- <link rel="icon" type="image/png" href="images/ally-va-favicon.png" /> -->
+    <link rel="icon" type="image/png" href="{{ asset('images/ally-va-favicon.png') }}">
     <!-- Bootstrap & Swiper (optional) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -121,20 +123,21 @@
         @if(
                 request()->is('/') ||
                 request()->is('home') ||
-                request()->is('about-us') ||
+                request()->is('about') ||
                 request()->is('services') ||
                 request()->is('pricing') ||
                 request()->is('insights') ||
                 request()->is('contact') ||
                 request()->is('website-development') ||
-              request()->is('administrative-Support') ||
-              request()->is('operations-oversight') ||
-              request()->is('ecommerce-services') ||
-              request()->is('crm-bookkeeping') ||
-              request()->is('social-media-management') ||
-              request()->is('essential-seo') ||
-              request()->is('graphic-design') ||
-              request()->is('it-solutions') ||
+                request()->is('administrative-Support') ||
+                request()->is('operations-oversight') ||
+                request()->is('ecommerce-services') ||
+                request()->is('crm-bookkeeping') ||
+                request()->is('social-media-management') ||
+                request()->is('essential-seo') ||
+                request()->is('graphic-design') ||
+                request()->is('it-solutions') ||
+                request()->is('privacy-policy') ||
                 request()->is('login') ||
                 request()->is('inquerySave') ||
                 request()->is('blogs/*') ||
@@ -150,14 +153,10 @@
 
     </div>
 
-    <a
-  href="https://wa.me/+919163329207?text=Hello%20Arup!%20I%20am%20interested%20in%20your%20services"
-  class="whatsapp-float"
-  target="_blank"
-  aria-label="Chat on WhatsApp"
->
-<i class="ri-whatsapp-line"></i>
-</a>
+    <a href="https://wa.me/+919163329207?text=Hello%20Arup!%20I%20am%20interested%20in%20your%20services"
+        class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="ri-whatsapp-line"></i>
+    </a>
     @stack('script')
     <!-- Bootstrap & Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

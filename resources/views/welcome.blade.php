@@ -128,7 +128,7 @@
               <span class="marker"></span>
               <div class="support-icon">
                 <svg viewBox="0 0 24 24" fill="none">
-                  <rect
+                  <!-- <rect
                     x="4"
                     y="6"
                     width="16"
@@ -136,7 +136,7 @@
                     rx="2"
                     stroke="#111"
                     stroke-width="1.5"
-                  />
+                  /> -->
                   <path
                     d="M12 19l7-7 3 3-7 7-3-3zM18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5zM2 2l5 5"
                     stroke="#111"
@@ -161,11 +161,11 @@
               <span class="marker"></span>
               <div class="support-icon">
                 <svg viewBox="0 0 24 24" fill="none">
-                  <path
+                  <!-- <path
                     d="M9 2h6v2h3a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2z"
                     stroke="#111"
                     stroke-width="1.5"
-                  />
+                  /> -->
                   <circle
                     cx="12"
                     cy="13"

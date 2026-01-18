@@ -15,58 +15,61 @@
     </section>
 
 
-    <section class="service-div mt-5 pt-5">
-        <div class="container d-flex justify-content-center align-items-center">
-            <!-- <div class="row w-100 d-flex align-items-center justify-content-center"> -->
-            <div class="pricing-content d-flex align-items-center gap-5">
-                <div class="pricing-left-text">
-                    <span class="vertical-line"></span>
-                    <h3>
-                        One Price,<br />
-                        no surprises.
-                    </h3>
-                </div>
+    <section class="service-div pt-4 pt-md-5 mt-3 mt-md-5">
+      <div class="container">
+        <div class="row align-items-center justify-content-center gy-5">
+          <!-- Left Text -->
+          <div class="col-lg-5 col-md-5 col-12 text-md-start">
+            <div class="pricing-left-text">
+              <span class="vertical-line"></span>
+              <h3 class="mb-0">
+                One Price,<br />
+                no surprises.
+              </h3>
             </div>
+          </div>
 
-            <!-- Pricing Card -->
+          <!-- Pricing Card -->
+          <div class="col-lg-5 col-md-6 col-12">
             <div class="pricing-card-wrapper">
-                <div class="pricing-card-back"></div>
+              <div class="pricing-card-back"></div>
 
-                <div class="pricing-card">
-                    <p class="plan-title">THE ALLYVA PLAN</p>
+              <div class="pricing-card">
+                <p class="plan-title">THE ALLYVA PLAN</p>
+                <h2 class="price">$9 <span>/hour</span></h2>
 
-                    <h2 class="price">$9 <span>/hour</span></h2>
+                <ul class="features">
+                  <li>
+                    <i class="ri-checkbox-circle-fill"></i> Trusted since 2012
+                  </li>
+                  <li>
+                    <i class="ri-checkbox-circle-fill"></i> Flat hourly rate—pay only for time used
+                  </li>
+                  <li>
+                    <i class="ri-checkbox-circle-fill"></i> Direct, hassle free communication
+                  </li>
+                  <li>
+                    <i class="ri-checkbox-circle-fill"></i> Same day turnaround
+                  </li>
+                  <li>
+                    <i class="ri-checkbox-circle-fill"></i> Scale without full-time hiring
+                  </li>
+                  <li>
+                    <i class="ri-checkbox-circle-fill"></i> Track hours with your private dashboard
+                  </li>
+                  <li>
+                    <i class="ri-checkbox-circle-fill"></i> Weekly task report
+                  </li>
+                </ul>
 
-                    <ul class="features">
-                        <li>
-                            <i class="ri-checkbox-circle-fill"></i> Trusted since 2012
-                        </li>
-                        <li>
-                            <i class="ri-checkbox-circle-fill"></i> Flat hourly rate—pay only for time used
-                        </li>
-                        <li>
-                            <i class="ri-checkbox-circle-fill"></i> Direct, hassle free communication
-                        </li>
-                        <li>
-                            <i class="ri-checkbox-circle-fill"></i> Same day turnaround
-                        </li>
-                        <li>
-                            <i class="ri-checkbox-circle-fill"></i> Scale without full-time hiring
-                        </li>
-                        <li>
-                            <i class="ri-checkbox-circle-fill"></i> Track hours with your private dashboard
-                        </li>
-                        <li>
-                            <i class="ri-checkbox-circle-fill"></i> Weekly task report
-                        </li>
-                    </ul>
-
-                    <button class="btn-price" data-bs-toggle="modal" data-bs-target="#authModal">Let’s Get Started - Sign Up Now</button>
-                </div>
+                <button class="btn-price w-100">
+                  Let’s Get Started - Sign Up Now
+                </button>
+              </div>
             </div>
-
-            <!-- </div> -->
+          </div>
         </div>
+      </div>
     </section>
 
     <section class="faq-wrapper w-100 mt-5 pt-4 mb-5">

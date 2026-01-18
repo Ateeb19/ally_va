@@ -8,20 +8,20 @@
 	<div class="container">
 		<div class="table-info-wrap">
 		    <div class="row">
-		        <form method="POST" action="{{ route('blogs.store') }}" class="vstack gap-3" id="AddBlogForm" enctype="multipart/form-data">
+		        <form method="POST" action="{{ route('blogs.store') }}" class="vstack gap-3 mb-3" id="AddBlogForm" enctype="multipart/form-data">
 		            @csrf
 		            <div class="input-group">
-		                <span class="input-group-text"><i class="ri-user-fill"></i></span>
+		                <span class="input-group-text"><i class="ri-edit-box-line"></i></span>
 		                <input type="text" class="form-control" placeholder="Blog Title" name="title" required />
 		            </div>
 
 		            <div class="input-group">
-		                <span class="input-group-text"><i class="ri-mail-fill"></i></span>
+		                <span class="input-group-text"><i class="ri-edit-box-line"></i></span>
 		                <input type="text" class="form-control" placeholder="Blog Sub-Title" name="sub_title" required />
 		            </div>
 
 		            <div class="input-group">
-		                <span class="input-group-text"><i class="ri-phone-fill"></i></span>
+		                <span class="input-group-text"><i class="ri-file-line"></i></span>
 		                <input type="file" class="form-control" placeholder="Blog Image" name="blog_image" required accept="image/*" />
 		            </div>
 
@@ -34,7 +34,7 @@
 		            <input type="hidden" name="description" id="description">
 
 		            <div class="input-group">
-		            	<span class="input-group-text"><i class="ri-phone-fill"></i></span>
+		            	<span class="input-group-text"><i class="ri-pencil-line"></i></span>
 		                <select class="form-select" name="status">
 		                	<option value="active">Active</option>
 		                	<option value="inactive">Inactive</option>

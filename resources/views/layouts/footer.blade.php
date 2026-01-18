@@ -57,7 +57,7 @@
       <div class="row mt-3">
         <div class="col-xl-6">
           <div class="copyright-text">
-            <span>Privacy Policy | © <span id="year"></span> Ally VA</span>
+           <a class='copyright-text-a' href="/privacy-policy">Privacy Policy</a> | © <span id="year"></span> Ally VA
           </div>
         </div>
         <div class="col-xl-6 d-flex justify-content-end">

@@ -480,6 +480,7 @@ a {
 }
 
 .service-box p {
+  margin-top: 15px;
   font-size: 16px;
   line-height: 26px;
   font-weight: 400;
@@ -547,7 +548,7 @@ a {
 }
 
 .inner-page-header {
-  padding: 28px 0px 45px 0px;
+  padding: 8px 0px 34px 0px;
   text-align: center;
 }
 
@@ -1756,25 +1757,23 @@ input[type="range"]::-ms-thumb {
 
 /* Pricing Card */
 .pricing-card-wrapper {
-  width: 420px;
+  width: 100%;
+  max-width: 420px;
   position: relative;
 }
 
 .pricing-card-back {
   position: absolute;
-  top: -3px;
-  right: -3px;
-  width: 420px;
-  height: 554px;
+  inset: 0;
   background: #288feb;
   border-radius: 24px;
-  transform: rotate(-4deg);
+  transform: rotate(-5deg) translate(-2px, 1px);
   z-index: 1;
 }
 
 .pricing-card {
   position: relative;
-  width: 420px;
+  width: 100%;
   background: #ffffff;
   border-radius: 24px;
   padding: 32px 28px;
@@ -1955,6 +1954,30 @@ input[type="range"]::-ms-thumb {
 
 .service {
   text-decoration: none;
+}
+
+
+.copyright-text-a {
+  text-decoration: none;
+  color: #000;
+}
+
+.privacy-wrapper h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #2c353b;
+  margin-top: 20px;
+}
+
+.privacy-wrapper p {
+  margin: 0;
+  color: #666;
+}
+
+.privacy-wrapper ul li {
+  list-style: none;
+  margin-bottom: 10px;
+  color: #666;
 }
 
 /* Responsive starts from here */
@@ -2303,5 +2326,68 @@ input[type="range"]::-ms-thumb {
     width: auto;
   }
 
+  .new-feature-boxes {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .new-feature-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .new-feature-icons {
+    min-width: 100%;
+    order: -1;
+    padding: 18px 0 10px;
+  }
+
+  .new-feature-title {
+    padding: 12px;
+  }
+
+  .new-feature-title h3 {
+    font-size: 17px;
+
+  }
+
+  .new-feature-icons i {
+    font-size: 36px;
+
+  }
+
+  .pricing-card-back {
+    transform: rotate(-2deg) translate(0px, 0px);
+  }
+
+  .pricing-card-wrapper {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .pricing-card {
+    padding: 32px 15px;
+  }
+
+  .pricing-card ul li {
+    font-size: 15px;
+  }
+
+  .price {
+    font-size: 42px;
+  }
+
+  .pricing-left-text h3 {
+    font-size: 36px;
+  }
+
+  .pricing-left-text {
+    justify-content: flex-start;
+    margin-right: 0;
+  }
+
+  .vertical-line {
+    height: 96px;
+  }
 
 }
