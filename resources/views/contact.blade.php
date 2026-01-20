@@ -16,7 +16,7 @@
 
 
   <section class="contact-wrapper">
-    <div class="container d-flex flex-column align-items-center justify-content-center w-100 gap-2 p-0">
+    <div class="container d-flex flex-column align-items-center justify-content-center w-100 gap-2">
       <div class="row g-4 align-items-stretch">
         <!-- Form -->
         <div class="col-lg-8 col-md-12">

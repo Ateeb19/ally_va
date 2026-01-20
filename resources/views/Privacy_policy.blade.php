@@ -1,9 +1,9 @@
 @extends('layouts.app')
-@section('title', 'Executive Virtual Assistant: Expert Admin & Business Help')
+@section('title', 'Privacy Policy & Terms | AllyVA')
 
-@section('meta_description', 'Delegate your to‑do list to a professional. We handle admin, marketing, and operations so you can focus on scaling your business.')
+@section('meta_description', 'Read AllyVA’s privacy policy and service terms. Learn how we protect your data, handle secure payments, and manage our site usage policies.')
 
-@section('meta_keywords', 'Administrative support, marketing assistance, business management, workflow streamlining, executive VA tasks')
+@section('meta_keywords', 'AllyVA privacy policy, virtual assistant terms, data security, refund policy, secure payment, service agreement')
 @section('content')
     <section class="top-banner">
         <div class="inner-page-header">
@@ -21,55 +21,55 @@
             <div class="privacy-wrapper">
                 <div class="row ">
                     <div class="col-xl-12 ">
-                        <h2>1. Information We Collect</h2>
+                        <h4>1. Information We Collect</h4>
                         <ul>
-                            <li>Personal information such as name, email address, and phone number when you contact or
+                            <li><i class="ri-checkbox-circle-fill text-primary"></i> Personal information such as name, email address, and phone number when you contact or
                                 register.</li>
-                            <li>Usage data including pages visited, browser type, and device information.</li>
-                            <li>Cookies and tracking technologies to enhance user experience.</li>
+                            <li><i class="ri-checkbox-circle-fill text-primary"></i> Usage data including pages visited, browser type, and device information.</li>
+                            <li><i class="ri-checkbox-circle-fill text-primary"></i> Cookies and tracking technologies to enhance user experience.</li>
                         </ul>
 
-                        <h2>2. How We Use Your Information</h2>
+                        <h4>2. How We Use Your Information</h4>
                         <ul>
-                            <li>To provide and improve our services.</li>
-                            <li>To communicate important updates or respond to inquiries.</li>
-                            <li>To analyze website performance and user behavior.</li>
-                            <li>To maintain security and prevent fraud.</li>
+                            <li><i class="ri-checkbox-circle-fill text-primary"></i> To provide and improve our services.</li>
+                            <li><i class="ri-checkbox-circle-fill text-primary"></i> To communicate important updates or respond to inquiries.</li>
+                            <li><i class="ri-checkbox-circle-fill text-primary"></i> To analyze website performance and user behavior.</li>
+                            <li><i class="ri-checkbox-circle-fill text-primary"></i> To maintain security and prevent fraud.</li>
                         </ul>
 
-                        <h2>3. Cookies</h2>
+                        <h4>3. Cookies</h4>
                         <p>
                             We use cookies to personalize your experience, analyze traffic, and improve functionality. You
                             can disable cookies through your browser settings at any time.
                         </p>
 
-                        <h2>4. Data Protection</h2>
+                        <h4>4. Data Protection</h4>
                         <p>
                             We implement strict security measures to protect your data from unauthorized access, alteration,
                             or disclosure. However, no method of transmission over the internet is 100% secure.
                         </p>
 
-                        <h2>5. Third-Party Services</h2>
+                        <h4>5. Third-Party Services</h4>
                         <p>
                             We may use third-party tools such as analytics or payment gateways that collect limited
                             information necessary for their functionality. These services operate under their own privacy
                             policies.
                         </p>
 
-                        <h2>6. Your Rights</h2>
+                        <h4>6. Your Rights</h4>
                         <ul>
-                            <li>You may request access to your personal data.</li>
-                            <li>You may request correction or deletion of your data.</li>
-                            <li>You may opt out of marketing communications at any time.</li>
+                            <li><i class="ri-checkbox-circle-fill text-primary"></i> You may request access to your personal data.</li>
+                            <li><i class="ri-checkbox-circle-fill text-primary"></i> You may request correction or deletion of your data.</li>
+                            <li><i class="ri-checkbox-circle-fill text-primary"></i> You may opt out of marketing communications at any time.</li>
                         </ul>
 
-                        <h2>7. Changes to This Policy</h2>
+                        <h4>7. Changes to This Policy</h4>
                         <p>
                             We may update this Privacy Policy periodically. Any changes will be posted on this page with an
                             updated revision date.
                         </p>
 
-                        <h2>8. Contact Us</h2>
+                        <h4>8. Contact Us</h4>
                         <p>
                             If you have any questions regarding this Privacy Policy, please contact us through our website.
                         </p>

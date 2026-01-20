@@ -9,7 +9,9 @@
         <div class="inner-page-header">
             <div class="container">
                 <h1>Online tech support</h1>
-                <p>Protect your digital assets and keep your tech running smoothly. From software setup and email configuration to virus removal and system audits, we provide the technical expertise needed to minimize downtime and risk.</p>
+                <p>Protect your digital assets and keep your tech running smoothly. From software setup and email
+                    configuration to virus removal and system audits, we provide the technical expertise needed to minimize
+                    downtime and risk.</p>
             </div>
         </div>
     </section>
@@ -71,7 +73,7 @@
             </div>
 
             <div class="new-feature-box blue-dark ">
-                <div class="new-feature-icons">
+                <div class="new-feature-title">
                     <h3>Software assistance</h3>
                     <p>Provide guidance on how to use specific programs to help your team work faster and smarter.</p>
                 </div>
@@ -84,7 +86,8 @@
             <div class="new-feature-box white yellow-border">
                 <div class="new-feature-title">
                     <h3>User training</h3>
-                    <p>Teach your staff how to use new technology and follow security protocols to stay safe and productive.</p>
+                    <p>Teach your staff how to use new technology and follow security protocols to stay safe and productive.
+                    </p>
                 </div>
                 <div class="new-feature-icons">
                     <i class="ri-presentation-fill"></i>
@@ -108,7 +111,8 @@
                 </div>
                 <div class="new-feature-title">
                     <h3>System audits</h3>
-                    <p>Review your hardware and software performance to identify any necessary upgrades or security gaps.</p>
+                    <p>Review your hardware and software performance to identify any necessary upgrades or security gaps.
+                    </p>
                 </div>
             </div>
 

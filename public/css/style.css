@@ -1962,8 +1962,8 @@ input[type="range"]::-ms-thumb {
   color: #000;
 }
 
-.privacy-wrapper h2 {
-  font-size: 28px;
+.privacy-wrapper h4 {
+  font-size: 24px;
   font-weight: 600;
   color: #2c353b;
   margin-top: 20px;

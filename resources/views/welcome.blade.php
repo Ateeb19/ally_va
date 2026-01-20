@@ -53,7 +53,7 @@
           you can concentrate on growing your business and reaching your goals.
         </p>
 
-        <div class="row g-6">
+        <div class="row">
           <!-- LEFT COLUMN -->
           <div class="col-md-6 support-col left">
             <div class="support-item">

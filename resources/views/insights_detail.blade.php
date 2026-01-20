@@ -18,7 +18,7 @@
     <section class="blog-details-wrapper mt-5">
       <div class="container">
           <div class="featured-article-blog-details">
-            <div class="row g-5">
+            <div class="row">
               <div class="col-md-6">
                 <img src="{{ asset('storage/' . $blogDetail->photo) }}" class="img-fluid" alt="Featured">
               </div>
