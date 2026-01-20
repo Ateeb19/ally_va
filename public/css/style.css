@@ -1986,8 +1986,8 @@ input[type="range"]::-ms-thumb {
   .hor-line {
     position: absolute;
     top: 21%;
-    left: 284px;
-    width: 400px;
+    left: 188px;
+    width: 290px;
   }
 }
 
@@ -2170,7 +2170,7 @@ input[type="range"]::-ms-thumb {
   }
 
   .more-wrapper button {
-    padding: 12px 14px;
+    padding: 12px 12px;
     font-size: 15px;
   }
 
