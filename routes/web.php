@@ -99,7 +99,7 @@ Route::get('/it-solutions', function () {
     return view('IT_Solutions');
 });
 
-Route::get('/privacy-policy', function () {
+Route::get('/privacy', function () {
     return view('Privacy_policy');
 });
 

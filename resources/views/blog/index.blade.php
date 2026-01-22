@@ -56,7 +56,7 @@
                   <input type="checkbox" class="form-check-input me-2" id="selectAll" /> Title
                 </th>
                 <th scope="col">Last Update Date</th>
-                <th scope="col">Image</th>
+                <th scope="col">Preview</th>
               </tr>
             </thead>
 

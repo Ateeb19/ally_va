@@ -478,7 +478,7 @@
               request()->is('essential-seo') ||
               request()->is('graphic-design') ||
               request()->is('it-solutions') ||
-              request()->is('privacy-policy') ||
+              request()->is('privacy') ||
               request()->is('login') ||
               request()->is('inquerySave') ||
               request()->is('blogs/*') ||

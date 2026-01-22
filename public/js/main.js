@@ -338,7 +338,7 @@ document.addEventListener('DOMContentLoaded', function () {
       '/essential-seo',
       '/graphic-design',
       '/it-solutions',
-      '/privacy-policy'
+      '/privacy'
     ];
 
     // If on a service page, DO NOT activate Insights

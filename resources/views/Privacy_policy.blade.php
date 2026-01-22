@@ -21,58 +21,37 @@
             <div class="privacy-wrapper">
                 <div class="row ">
                     <div class="col-xl-12 ">
-                        <h4>1. Information We Collect</h4>
+                        <h4> <i class="ri-news-fill"></i> Information Collection</h4>
+                        <p>We collect information from you when you register on our site or fill out a form. This may
+                            include your name, email address, or mobile number.
+                        </p>
+
+                        <h4> <i class="ri-file-info-fill"></i> Use of Information</h4>
+                        <p class="pb-3">We use your data to:</p>
                         <ul>
-                            <li><i class="ri-checkbox-circle-fill text-primary"></i> Personal information such as name, email address, and phone number when you contact or
-                                register.</li>
-                            <li><i class="ri-checkbox-circle-fill text-primary"></i> Usage data including pages visited, browser type, and device information.</li>
-                            <li><i class="ri-checkbox-circle-fill text-primary"></i> Cookies and tracking technologies to enhance user experience.</li>
+                            <li><i class="ri-checkbox-circle-fill text-primary"></i> Personalize your experience and respond to individual needs.
+
+                            </li>
+                            <li><i class="ri-checkbox-circle-fill text-primary"></i> Improve our website based on your feedback.</li>
+                            <li><i class="ri-checkbox-circle-fill text-primary"></i> Enhance customer service and support.</li>
+                            <li><i class="ri-checkbox-circle-fill text-primary"></i> Process transactions: Your information will not be sold or shared with third parties without your consent, except to deliver the requested product or service.</li>
+                            <li><i class="ri-checkbox-circle-fill text-primary"></i> Send periodic emails: We use your email to provide updates and respond to inquiries.</li>
                         </ul>
 
-                        <h4>2. How We Use Your Information</h4>
+                        <h4> <i class="ri-hard-drive-2-fill"></i> Data Protection</h4>
+                        <p class="pb-3">We implement various security measures, including a secure server, to protect your personal data.</p>
                         <ul>
-                            <li><i class="ri-checkbox-circle-fill text-primary"></i> To provide and improve our services.</li>
-                            <li><i class="ri-checkbox-circle-fill text-primary"></i> To communicate important updates or respond to inquiries.</li>
-                            <li><i class="ri-checkbox-circle-fill text-primary"></i> To analyze website performance and user behavior.</li>
-                            <li><i class="ri-checkbox-circle-fill text-primary"></i> To maintain security and prevent fraud.</li>
+                            <li><i class="ri-checkbox-circle-fill text-primary"></i> Payment Security: We do not store credit card information; all transactions are processed securely via PayPal.</li>
+                            <li><i class="ri-checkbox-circle-fill text-primary"></i> Third-Party Disclosure: We do not sell or trade your personally identifiable information. We may release data only to comply with the law, enforce site policies, or protect rights and safety.</li>
                         </ul>
-
-                        <h4>3. Cookies</h4>
-                        <p>
-                            We use cookies to personalize your experience, analyze traffic, and improve functionality. You
-                            can disable cookies through your browser settings at any time.
-                        </p>
-
-                        <h4>4. Data Protection</h4>
-                        <p>
-                            We implement strict security measures to protect your data from unauthorized access, alteration,
-                            or disclosure. However, no method of transmission over the internet is 100% secure.
-                        </p>
-
-                        <h4>5. Third-Party Services</h4>
-                        <p>
-                            We may use third-party tools such as analytics or payment gateways that collect limited
-                            information necessary for their functionality. These services operate under their own privacy
-                            policies.
-                        </p>
-
-                        <h4>6. Your Rights</h4>
-                        <ul>
-                            <li><i class="ri-checkbox-circle-fill text-primary"></i> You may request access to your personal data.</li>
-                            <li><i class="ri-checkbox-circle-fill text-primary"></i> You may request correction or deletion of your data.</li>
-                            <li><i class="ri-checkbox-circle-fill text-primary"></i> You may opt out of marketing communications at any time.</li>
+                        
+                        <h4> <i class="ri-survey-fill"></i> Terms & Conditions</h4>
+                       <ul>
+                            <li><i class="ri-checkbox-circle-fill text-primary"></i> Refunds: You may request a full refund (minus transaction fees) for unused hours within the first 5 days of your initial purchase.</li>
+                            <li><i class="ri-checkbox-circle-fill text-primary"></i> Expiration: Unused hours expire after 90 days of inactivity.</li>
+                            <li><i class="ri-checkbox-circle-fill text-primary"></i> Consent: By using our site, you consent to this policy.</li>
+                            <li><i class="ri-checkbox-circle-fill text-primary"></i> Updates: Any changes to this policy will be posted on this page.</li>
                         </ul>
-
-                        <h4>7. Changes to This Policy</h4>
-                        <p>
-                            We may update this Privacy Policy periodically. Any changes will be posted on this page with an
-                            updated revision date.
-                        </p>
-
-                        <h4>8. Contact Us</h4>
-                        <p>
-                            If you have any questions regarding this Privacy Policy, please contact us through our website.
-                        </p>
 
                         <p class="footer-note">
                             This document is provided for general informational purposes and may be customized according to
