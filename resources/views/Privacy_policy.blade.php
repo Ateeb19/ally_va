@@ -21,12 +21,12 @@
             <div class="privacy-wrapper">
                 <div class="row ">
                     <div class="col-xl-12 ">
-                        <h4> <i class="ri-news-fill"></i> Information Collection</h4>
+                        <h4> <i class="ri-survey-line"></i> Information Collection</h4>
                         <p>We collect information from you when you register on our site or fill out a form. This may
                             include your name, email address, or mobile number.
                         </p>
 
-                        <h4> <i class="ri-file-info-fill"></i> Use of Information</h4>
+                        <h4> <i class="ri-service-line"></i> Use of Information</h4>
                         <p class="pb-3">We use your data to:</p>
                         <ul>
                             <li><i class="ri-checkbox-circle-fill text-primary"></i> Personalize your experience and respond to individual needs.
@@ -38,25 +38,25 @@
                             <li><i class="ri-checkbox-circle-fill text-primary"></i> Send periodic emails: We use your email to provide updates and respond to inquiries.</li>
                         </ul>
 
-                        <h4> <i class="ri-hard-drive-2-fill"></i> Data Protection</h4>
+                        <h4> <i class="ri-shield-user-line"></i> Data Protection</h4>
                         <p class="pb-3">We implement various security measures, including a secure server, to protect your personal data.</p>
                         <ul>
                             <li><i class="ri-checkbox-circle-fill text-primary"></i> Payment Security: We do not store credit card information; all transactions are processed securely via PayPal.</li>
                             <li><i class="ri-checkbox-circle-fill text-primary"></i> Third-Party Disclosure: We do not sell or trade your personally identifiable information. We may release data only to comply with the law, enforce site policies, or protect rights and safety.</li>
                         </ul>
                         
-                        <h4> <i class="ri-survey-fill"></i> Terms & Conditions</h4>
+                        <h4> <i class="ri-mastercard-line"></i> Terms & Conditions</h4>
                        <ul>
                             <li><i class="ri-checkbox-circle-fill text-primary"></i> Refunds: You may request a full refund (minus transaction fees) for unused hours within the first 5 days of your initial purchase.</li>
                             <li><i class="ri-checkbox-circle-fill text-primary"></i> Expiration: Unused hours expire after 90 days of inactivity.</li>
                             <li><i class="ri-checkbox-circle-fill text-primary"></i> Consent: By using our site, you consent to this policy.</li>
                             <li><i class="ri-checkbox-circle-fill text-primary"></i> Updates: Any changes to this policy will be posted on this page.</li>
                         </ul>
-
+<!-- 
                         <p class="footer-note">
                             This document is provided for general informational purposes and may be customized according to
                             specific legal requirements.
-                        </p>
+                        </p> -->
                     </div>
                 </div>
             </div>
