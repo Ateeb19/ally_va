@@ -67,7 +67,7 @@
 	                ["blockquote", "code-block"],
 	                [{ list: "ordered" }, { list: "bullet" }],
 	                [{ align: [] }],
-	                ["link", "image"],
+	                ["link", "image", "video"],
 	                ["clean"]
 	            ]
 	        }
