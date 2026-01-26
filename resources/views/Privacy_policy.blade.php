@@ -1,22 +1,22 @@
 @extends('layouts.app')
-@section('title', 'Privacy Policy & Terms | AllyVA')
+@section('title', 'Privacy Policy & Terms | Ally VA')
 
-@section('meta_description', 'Read AllyVA’s privacy policy and service terms. Learn how we protect your data, handle secure payments, and manage our site usage policies.')
+@section('meta_description', 'Read Ally VA’s privacy policy and service terms. Learn how we protect your data, handle secure payments, and manage our site usage policies.')
 
-@section('meta_keywords', 'AllyVA privacy policy, virtual assistant terms, data security, refund policy, secure payment, service agreement')
+@section('meta_keywords', 'Ally VA privacy policy, virtual assistant terms, data security, refund policy, secure payment, service agreement')
 @section('content')
     <section class="top-banner">
         <div class="inner-page-header">
             <div class="container">
                 <h1>Privacy Policy & Service Terms</h1>
-                <p>At AllyVA, we prioritize your privacy. This policy outlines how we protect your data and details our
+                <p>At Ally VA, we prioritize your privacy. This policy outlines how we protect your data and details our
                     refund and usage terms to ensure a secure, reliable experience.</p>
             </div>
         </div>
     </section>
 
 
-    <section class="service-div mt-5">
+    <section class="service-div mt-3 mt-sm-5">
         <div class="container">
             <div class="privacy-wrapper">
                 <div class="row ">
@@ -64,7 +64,7 @@
         </div>
     </section>
 
-    <div class="d-flex flex-column w-100 align-items-center justify-content-center text-center gap-4 have-ques mt-5">
+    <div class="d-flex flex-column w-100 align-items-center justify-content-center text-center gap-4 have-ques mt-3 mt-sm-5">
         <h2>Ready to reclaim your time and grow your business?</h2>
         <button data-bs-toggle="modal" data-bs-target="#authModal">Let’s Get Started - Sign Up Now</button>
     </div>
