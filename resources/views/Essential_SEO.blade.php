@@ -34,33 +34,7 @@
                     <p>Craft search-friendly headlines for your web pages to improve visibility and click-through rates.</p>
                 </div>
                 <div class="new-feature-icons">
-                    <i class="ri-bookmark-2-fill"></i>
-                </div>
-            </div>
 
-            <!-- Row 2 -->
-            <div class="new-feature-box white yellow-border">
-                <div class="new-feature-title">
-                    <h3>Meta description writing</h3>
-                    <p>Summarize your pages in a way that entices users to click when they see your link in search results.</p>
-                </div>
-                <div class="new-feature-icons">
-                    <i class="ri-pen-nib-fill"></i>
-                </div>
-            </div>
-
-            <div class="new-feature-box green ">
-                <div class="new-feature-icons">
-                    <i class="ri-image-2-fill"></i>
-                </div>
-                <div class="new-feature-title">
-                    <h3>Image alt text addition</h3>
-                    <p>Describe your visuals with text to help search engines understand them and improve accessibility.</p>
-                </div>
-            </div>
-
-            <!-- Row 3 -->
-            <div class="new-feature-box blue-light">
                 <div class="new-feature-icons">
                     <i class="ri-link"></i>
                 </div>
@@ -126,7 +100,8 @@
 
     <div class="d-flex flex-column w-100 align-items-center justify-content-center text-center gap-4 have-ques mt-5">
         <h2>Free up your time and hire your assistant</h2>
-        <button data-bs-toggle="modal" data-bs-target="#authModal">Let’s Get Started - Sign Up Now</button>
+        <button data-bs-toggle="modal" data-bs-target="#authModal"
+>Let’s Get Started - Sign Up Now</button>
     </div>
 
 @endsection
