@@ -2115,6 +2115,13 @@ input[type="range"]::-ms-thumb {
   color: #fff;
 }
 
+.grecaptcha-badge {
+    left: 0px !important;
+    width: 70px !important;
+    right: 0px !important;
+    visibility: hidden !important;
+}
+
 /* Responsive starts from here */
 
 @media (max-width: 1999px) {
