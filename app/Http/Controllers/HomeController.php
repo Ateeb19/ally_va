@@ -9,6 +9,7 @@ use App\Models\UserMostPurchase;
 use App\Models\Transaction;
 use App\Mail\InqueryFormAdminMail;
 use Illuminate\Support\Facades\Mail;
+use App\Services\RecaptchaService;
 
 class HomeController extends Controller
 {
@@ -113,6 +114,19 @@ class HomeController extends Controller
 
     public function InquirySave(Request $request)
     {
+        $verified = RecaptchaService::verify(
+            $request->input('g-recaptcha-response'),
+            'contact',
+            $request->ip(),
+            0.5
+        );
+
+        if (!$verified) {
+            return back()
+                ->withErrors(['captcha' => 'Bot detected. Please try again.'])
+                ->withInput();
+        }
+
         $data = $request->validate([
             'full_name' => 'required|string|max:255',
             'email' => 'required|email',
@@ -124,13 +138,32 @@ class HomeController extends Controller
         $superAdmin = User::role('super_admin')->first();
 
         if ($superAdmin) {
-            // Send admin notification email
             Mail::to($superAdmin->email)->send(new InqueryFormAdminMail($data));
-            // Mail::to('arupkseth@gmail.com')->send(new InqueryFormAdminMail($data));
         }
-
-        // Redirect back to the contact page with a success message
         return redirect()->back()->with('message', 'Your message has been submitted successfully!');
     }
+
+
+    // public function InquirySave(Request $request)
+    // {
+    //     $data = $request->validate([
+    //         'full_name' => 'required|string|max:255',
+    //         'email' => 'required|email',
+    //         'company_name' => 'nullable|string|max:255',
+    //         'phone' => 'nullable|string|max:20',
+    //         'project_desc' => 'required|string',
+    //     ]);
+
+    //     $superAdmin = User::role('super_admin')->first();
+
+    //     if ($superAdmin) {
+    //         // Send admin notification email
+    //         Mail::to($superAdmin->email)->send(new InqueryFormAdminMail($data));
+    //         // Mail::to('arupkseth@gmail.com')->send(new InqueryFormAdminMail($data));
+    //     }
+
+    //     // Redirect back to the contact page with a success message
+    //     return redirect()->back()->with('message', 'Your message has been submitted successfully!');
+    // }
 
 }

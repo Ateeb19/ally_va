@@ -46,6 +46,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use App\Services\RecaptchaService;
 
 class LoginController extends Controller
 {
@@ -55,6 +56,29 @@ class LoginController extends Controller
      * Default redirect path.
      */
     protected $redirectTo = '/dashboard';
+
+    protected function validateLogin(Request $request)
+    {
+        // First do Laravel's normal validation
+        $request->validate([
+            $this->username() => 'required|string',
+            'password' => 'required|string',
+        ]);
+
+        // Then verify reCAPTCHA
+        $verified = RecaptchaService::verify(
+            $request->input('g-recaptcha-response'),
+            'login',
+            $request->ip(),
+            0.7
+        );
+
+        if (!$verified) {
+            throw \Illuminate\Validation\ValidationException::withMessages([
+                'captcha' => ['Suspicious login attempt. Please try again.'],
+            ]);
+        }
+    }
 
     public function __construct()
     {

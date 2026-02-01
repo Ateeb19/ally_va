@@ -154,10 +154,10 @@
 
     </div>
 
-    <a href="https://wa.me/+919163329207?text=Hello%20Arup!%20I%20am%20interested%20in%20your%20services"
+    <!-- <a href="https://wa.me/+919163329207?text=Hello%20Arup!%20I%20am%20interested%20in%20your%20services"
         class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
         <i class="ri-whatsapp-line"></i>
-    </a>
+    </a> -->
     @stack('script')
     <!-- Bootstrap & Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -330,6 +330,8 @@ document.addEventListener("DOMContentLoaded", function () {
             updateRangeBackground();
         }
     </script>
+
+    <script src="https://www.google.com/recaptcha/api.js?render={{ config('recaptcha.site_key') }}"></script>
 </body>
 
 </html>

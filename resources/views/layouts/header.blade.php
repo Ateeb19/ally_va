@@ -108,7 +108,7 @@
             <div class="tab-content">
               <!-- Login Form -->
               <div class="tab-pane fade show active" id="loginTab">
-                <form method="POST" action="{{ route('login') }}" class="vstack gap-3">
+                <form method="POST" action="{{ route('login') }}" class="vstack gap-3" id="loginForm">
                   @csrf
                   <div class="input-group">
                     <span class="input-group-text">
@@ -156,12 +156,25 @@
                       @endif
                     </div>
 
+                    <input type="hidden" name="g-recaptcha-response" id="login-recaptcha">
 
                   </div>
                   <button type="submit" class="btn btn-dark w-100">
                     Sign In
                   </button>
                 </form>
+
+                <script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    grecaptcha.execute("{{ config('recaptcha.site_key') }}", { action: 'login' })
+        .then(function(token) {
+            document.getElementById("login-recaptcha").value = token;
+            e.target.submit();
+        });
+});
+</script>
               </div>
 
               <div class="tab-pane fade" id="signupTab">

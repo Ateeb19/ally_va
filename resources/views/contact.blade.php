@@ -9,7 +9,8 @@
     <div class="inner-page-header">
       <div class="container">
         <h1>Your message matters. Let’s make it count.</h1>
-        <p>Every great partnership begins with a simple conversation. Feel free to reach out with any questions, comments, or ideas. Our dedicated team is ready to connect and provide the support you need.</p>
+        <p>Every great partnership begins with a simple conversation. Feel free to reach out with any questions, comments,
+          or ideas. Our dedicated team is ready to connect and provide the support you need.</p>
       </div>
     </div>
   </section>
@@ -21,7 +22,8 @@
         <!-- Form -->
         <div class="col-lg-8 col-md-12">
 
-          <form method="POST" action="{{ route('inquerySave') }}" class="contact-form p-4 contact-form-left h-100">
+          <form method="POST" action="{{ route('inquerySave') }}" class="contact-form p-4 contact-form-left h-100"
+            id="contactForm">
             @csrf
             <div class="row g-4 mb-3">
               <div class="col-md-6">
@@ -47,6 +49,7 @@
                   placeholder="Write a description" required></textarea>
                 <small class="text-muted">0/500 Characters</small>
               </div>
+              <input type="hidden" name="g-recaptcha-response" id="contact-recaptcha">
               <div class="col-12">
                 <button type="submit" class="btn btn-primary w-100">Send Message</button>
               </div>
@@ -57,6 +60,17 @@
               </div>
             @endif
           </form>
+          <script>
+            document.getElementById("contactForm").addEventListener("submit", function (e) {
+              e.preventDefault();
+
+              grecaptcha.execute("{{ config('recaptcha.site_key') }}", { action: 'contact' })
+                .then(function (token) {
+                  document.getElementById("contact-recaptcha").value = token;
+                  e.target.submit();
+                });
+            });
+          </script>
         </div>
 
         <!-- Address & Map -->
@@ -67,12 +81,10 @@
                 Arup Virtual Services. NH 2, Grand Trunk Rd, Durgapur West Bengal - 713212 | INDIA
               </h6>
               <p class="mb-2"><a
-                    href="https://wa.me/+919163329207?text=Hello%20Arup!%20I%20am%20interested%20in%20your%20services." target="_blank"
-                    ><i class="ri-whatsapp-fill"></i> (+91) 91633 29207</a
-                  ></p>
-              <p class="mb-2"><a href="mailto: arup@allyva.com" target="_blank"
-                    ><i class="ri-mail-fill"></i> arup@allyva.com</a
-                  ></p>
+                  href="https://wa.me/+919163329207?text=Hello%20Arup!%20I%20am%20interested%20in%20your%20services."
+                  target="_blank"><i class="ri-whatsapp-fill"></i> (+91) 91633 29207</a></p>
+              <p class="mb-2"><a href="mailto: arup@allyva.com" target="_blank"><i class="ri-mail-fill"></i>
+                  arup@allyva.com</a></p>
             </div>
             <div class="map">
               <img src="images/virtual_admin-location.png" alt="Global map highlighting India">
