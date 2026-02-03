@@ -8,7 +8,7 @@
 	<section class="top-banner">
       <div class="inner-page-header">
         <div class="container">
-          <h1>Insights that work as hard as you do</h1>
+          <h1>Work. Life. Delegated</h1>
           <p>
             Feeling overwhelmed by your to do list? The right support is closer than you think. These insights help you delegate smarter, save time, simplify your workflow, and focus on growing your business.
           </p>

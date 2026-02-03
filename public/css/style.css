@@ -2116,10 +2116,10 @@ input[type="range"]::-ms-thumb {
 }
 
 .grecaptcha-badge {
-    left: 0px !important;
-    width: 70px !important;
-    right: 0px !important;
-    visibility: hidden !important;
+  left: 0px !important;
+  width: 70px !important;
+  right: 0px !important;
+  visibility: hidden !important;
 }
 
 /* Responsive starts from here */
@@ -2549,4 +2549,7 @@ input[type="range"]::-ms-thumb {
     font-size: 15px;
   }
 
+  .privacy-wrapper {
+    margin-top: 25px;
+  }
 }
