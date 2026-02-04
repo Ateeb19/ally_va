@@ -3,4 +3,4 @@ Disallow: /dashboard
 Disallow: /admin/blogs
 Disallow: /admin/users/
 Disallow: /user/
-Disallow: /password
+Disallow: /password/
