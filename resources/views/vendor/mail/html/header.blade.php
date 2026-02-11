@@ -14,7 +14,7 @@
 <tr>
     <td class="header" style="text-align: center; padding: 25px;">
         <a href="{{ config('app.url') }}">
-            <img src="https://allyva.com/logo.png" alt="Allyva" style="height: 50px;">
+            <img src="https://allyva.com/images/logo.png" alt="Allyva" style="height: 50px;">
         </a>
     </td>
 </tr>
