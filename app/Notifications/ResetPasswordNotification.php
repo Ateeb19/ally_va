@@ -15,12 +15,12 @@ class ResetPasswordNotification extends BaseResetPassword
         ], false));
 
         return (new MailMessage)
-            ->subject('Reset Your Allyva Password')
+            ->subject('Reset your Ally Va password')
             ->greeting('Hello!')
-            ->line('You requested a password reset for your Allyva account.')
+            ->line('You requested a password reset for your Ally Va account.')
             ->action('Reset Password', $url)
-            ->line('This link will expire in 60 minutes.')
-            ->salutation('— Allyva Team');
+            ->line('This link will expire in 60 minutes.');
+            // ->salutation('');
     }
 }
 

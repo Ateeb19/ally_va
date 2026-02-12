@@ -12,8 +12,8 @@
 
 <tr>
 <td class="footer" style="text-align: center; padding: 20px;">
-<p style="font-size: 12px; color: #6c757d;">
+<!-- <p style="font-size: 12px; color: #6c757d;">
 © {{ date('Y') }} Allyva. All rights reserved.
-</p>
+</p> -->
 </td>
 </tr>
