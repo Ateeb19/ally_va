@@ -10,12 +10,12 @@
       @if(Auth::check())
         {{-- Logged in: open the public home page in new tab --}}
         <a href="{{ route('public.home') }}" target="_blank" rel="noopener noreferrer">
-          <img src="{{ asset('images/Ally-VA.png') }}" alt="Ally VA - Virtual Assistant Services logo">
+          <img src="{{ asset('images/logo.png') }}" alt="Ally VA - Virtual Assistant Services logo">
         </a>
       @else
         {{-- Not logged in: open home page in same tab --}}
         <a href="{{ route('public.home') }}">
-          <img src="{{ asset('images/Ally-VA.png') }}" alt="Ally VA - Virtual Assistant Services logo">
+          <img src="{{ asset('images/logo.png') }}" alt="Ally VA - Virtual Assistant Services logo">
         </a>
       @endif
 
@@ -108,7 +108,7 @@
             <div class="tab-content">
               <!-- Login Form -->
               <div class="tab-pane fade show active" id="loginTab">
-                <form method="POST" action="{{ route('login') }}" class="vstack gap-3">
+                <form method="POST" action="{{ route('login') }}" class="vstack gap-3" id="loginForm">
                   @csrf
                   <div class="input-group">
                     <span class="input-group-text">
@@ -156,12 +156,25 @@
                       @endif
                     </div>
 
+                    <input type="hidden" name="g-recaptcha-response" id="login-recaptcha">
 
                   </div>
                   <button type="submit" class="btn btn-dark w-100">
                     Sign In
                   </button>
                 </form>
+
+                <script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    grecaptcha.execute("{{ config('recaptcha.site_key') }}", { action: 'login' })
+        .then(function(token) {
+            document.getElementById("login-recaptcha").value = token;
+            e.target.submit();
+        });
+});
+</script>
               </div>
 
               <div class="tab-pane fade" id="signupTab">
@@ -464,7 +477,7 @@
           @if(
               request()->is('/') ||
               request()->is('home') ||
-              request()->is('about-us') ||
+              request()->is('about') ||
               request()->is('services') ||
               request()->is('pricing') ||
               request()->is('insights') ||
@@ -478,6 +491,7 @@
               request()->is('essential-seo') ||
               request()->is('graphic-design') ||
               request()->is('it-solutions') ||
+              request()->is('privacy') ||
               request()->is('login') ||
               request()->is('inquerySave') ||
               request()->is('blogs/*') ||
@@ -492,7 +506,7 @@
               <a class="nav-link" href="{{ url('/home') }}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('/about-us') }}">About</a>
+              <a class="nav-link" href="{{ url('/about') }}">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url('/services') }}">Services</a>
@@ -672,7 +686,7 @@
 
 @php
   $publicPages = [
-    '', 'home', 'about-us', 'services', 'pricing',
+    '', 'home', 'about', 'services', 'pricing',
     'insights', 'contact', 'login', 'inquerySave'
   ];
 
@@ -689,7 +703,7 @@
   @else
     @php
       // Define the routes where the section should be hidden
-      $hiddenRoutes = ['home', 'about-us', 'services', 'pricing', 'insights', 'contact', 'inquerySave'];
+      $hiddenRoutes = ['home', 'about', 'services', 'pricing', 'insights', 'contact', 'inquerySave'];
     @endphp
 
     {{-- Show this section only if the current route is NOT in the hidden list --}}

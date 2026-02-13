@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Social Media & Marketing')
 
-@section('meta_description', 'Boost your brand's online presence with strategic content scheduling, caption writing, and active engagement.')
+@section('meta_description', 'Boost your brands online presence with strategic content scheduling, caption writing, and active engagement.')
 
 @section('meta_keywords', 'social media marketing, content scheduling, digital marketing, brand growth')
 @section('content')
@@ -34,7 +34,7 @@
                     <p>Craft engaging and persuasive text for your posts that encourages followers to like and comment.</p>
                 </div>
                 <div class="new-feature-icons">
-                    <i class="ri-pencil-fil"></i>
+                    <i class="ri-pencil-fill"></i>
                 </div>
             </div>
 
@@ -126,7 +126,7 @@
 
     <div class="d-flex flex-column w-100 align-items-center justify-content-center text-center gap-4 have-ques mt-5">
         <h2>Free up your time and hire your assistant</h2>
-        <button>Let’s Get Started - Sign Up Now</button>
+        <button data-bs-toggle="modal" data-bs-target="#authModal">Let’s Get Started - Sign Up Now</button>
     </div>
 
 @endsection

@@ -8,21 +8,21 @@
 	<div class="container">
 		<div class="table-info-wrap">
 		    <div class="row">
-		        <form method="POST" action="{{ route('blogs.update', $blog->id) }}" class="vstack gap-3" id="AddBlogForm" enctype="multipart/form-data">
+		        <form method="POST" action="{{ route('blogs.update', $blog->id) }}" class="vstack gap-3 mb-3" id="AddBlogForm" enctype="multipart/form-data">
 		            @csrf
 		            @method('PUT')
 		            <div class="input-group">
-		                <span class="input-group-text"><i class="ri-user-fill"></i></span>
+		                <span class="input-group-text"><i class="ri-edit-box-line"></i></span>
 		                <input type="text" class="form-control" placeholder="Blog Title" name="title" required value="{{ $blog->title }}" />
 		            </div>
 
 		            <div class="input-group">
-		                <span class="input-group-text"><i class="ri-mail-fill"></i></span>
+		                <span class="input-group-text"><i class="ri-edit-box-line"></i></span>
 		                <input type="text" class="form-control" placeholder="Blog Sub-Title" name="sub_title" required value="{{ $blog->sub_title }}" />
 		            </div>
 
 		            <div class="input-group">
-		                <span class="input-group-text"><i class="ri-phone-fill"></i></span>
+		                <span class="input-group-text"><i class="ri-file-line"></i></span>
 		                <input type="file" class="form-control" placeholder="Blog Image" name="blog_image" accept="image/*" />
 		            </div>
 
@@ -35,13 +35,13 @@
 		            <input type="hidden" name="description" id="description">
 
 		            <div class="input-group">
-		            	<span class="input-group-text"><i class="ri-phone-fill"></i></span>
+		            	<span class="input-group-text"><i class="ri-pencil-line"></i></span>
 		                <select class="form-select" name="status">
 		                	<option value="active" {{ $blog->status == 'active' ? 'selected' : '' }}>Active</option>
 		                	<option value="inactive"  {{ $blog->status == 'inactive' ? 'selected' : '' }}>Inactive</option>
 		                </select>
 		            </div>
-		            <button type="submit" class="btn btn-primary w-100">
+		            <button type="submit" class="btn btn-primary w-100 mb-3">
 		                Save
 		            </button>
 		        </form>
@@ -61,12 +61,13 @@
 	        placeholder: "Write your blog description here...",
 	        modules: {
 	            toolbar: [
-	                [{ header: [1, 2, 3, false] }],
+	                [{ header: [1, 2, 3, 4, 5, 6, false] }],
+					[{ color: [] }, { background: [] }],
 	                ["bold", "italic", "underline", "strike"],
 	                ["blockquote", "code-block"],
 	                [{ list: "ordered" }, { list: "bullet" }],
 	                [{ align: [] }],
-	                ["link", "image"],
+	                ["link", "image", "video"],
 	                ["clean"]
 	            ]
 	        }

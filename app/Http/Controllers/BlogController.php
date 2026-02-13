@@ -45,9 +45,9 @@ class BlogController extends Controller
     {
         // dd($request->all());
         $request->validate([
-            'title' => 'required|string|max:255',
-            'sub_title' => 'required|string|max:255',
-            'blog_image' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'title' => 'required|string|max:16777215',
+            'sub_title' => 'required|string|max:16777215',
+            'blog_image' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:10240',
             'description' => 'required|string',
         ]);
 
@@ -113,8 +113,8 @@ class BlogController extends Controller
     {
         // dd($request->all());
         $request->validate([
-            'title' => 'required|string|max:255',
-            'sub_title' => 'required|string|max:255',
+            'title' => 'required|string|max:16777215',
+            'sub_title' => 'required|string|max:16777215',
             // 'blog_image' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
             'description' => 'required|string',
         ]);

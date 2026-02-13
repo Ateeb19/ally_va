@@ -29,11 +29,11 @@
           <div class="intro-desc">
             <h2 class="support-title">Meet Arup: the journey</h2>
             <p>
-              Hi, I’m Arup Seth, a
+              Hello, I’m Arup Seth, a
 
               <!-- Button trigger modal -->
               <button type="button" class=" btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Microsoft Certified Professional
+                Microsoft Certified 
               </button>
 
               <!-- Modal -->
@@ -55,7 +55,7 @@
 
 
             <!-- <button type="button" id="certificate_btn">Microsoft Certified Professional</button> with over 15 years in the IT -->
-            with over 15 years of experience as a Virtual Assistant. Over the years, I’ve worked with entrepreneurs,
+            professional with over 15 years of experience as a Virtual Assistant. Over the years, I’ve worked with entrepreneurs,
             professionals, and small to mid sized companies across a wide range of industries, helping them manage their
             businesses more efficiently and with greater clarity.
             </p>
@@ -402,7 +402,7 @@
               </div>
             </div> -->
 
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
               <div class="card shadow-sm border-0 rounded p-4 text-start">
                 <div class="top-header" style="display: flex; justify-content: space-between; align-items: start;">
                   <div class="d-flex align-items-center mb-3">
@@ -426,7 +426,7 @@
                   Efficiency By 40%.
                 </p>
               </div>
-            </div>
+            </div> -->
 
 
           </div>

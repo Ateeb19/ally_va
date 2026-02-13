@@ -51,7 +51,7 @@ Route::get('/home', function () {
 })->name('public.home');
 
 // ... the rest of your routes
-Route::get('/about-us', function () {
+Route::get('/about', function () {
     return view('about');
 });
 
@@ -97,6 +97,10 @@ Route::get('/graphic-design', function () {
 
 Route::get('/it-solutions', function () {
     return view('IT_Solutions');
+});
+
+Route::get('/privacy', function () {
+    return view('Privacy_policy');
 });
 
 Route::get('/insights', function () {

@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* ---------------- PUBLIC STATIC PAGES ---------------- */
     const staticPages = [
-      '/about-us',
+      '/about',
       '/services',
       '/pricing',
       '/contact'
@@ -253,33 +253,6 @@ document.addEventListener('DOMContentLoaded', function () {
       link.classList.add('active');
       return;
     }
-
-    // /* ---------------- DASHBOARD (USER) ---------------- */
-    // if (
-    //   current.startsWith('/dashboard') &&
-    //   linkPath === '/dashboard'
-    // ) {
-    //   link.classList.add('active');
-    //   return;
-    // }
-
-    // /* ---------------- TASK HISTORY ---------------- */
-    // if (
-    //   (current.includes('/tasks') || current.includes('/taskhistory')) &&
-    //   (linkPath.includes('tasks') || linkPath.includes('taskhistory'))
-    // ) {
-    //   link.classList.add('active');
-    //   return;
-    // }
-
-    // /* ---------------- PROFILE (USER) ---------------- */
-    // if (
-    //   current.startsWith('/user') &&
-    //   linkPath.startsWith('/user')
-    // ) {
-    //   link.classList.add('active');
-    //   return;
-    // }
 
     /* ---------------- DASHBOARD (USER) ---------------- */
     if (
@@ -291,24 +264,24 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /* ---------------- TASK HISTORY (USER) ---------------- */
-if (
-  /^\/user\/taskhistory\/\d+$/.test(current) &&
-  linkPath.includes('taskhistory')
-) {
-  link.classList.add('active');
-  return;
-}
+    if (
+      /^\/user\/taskhistory\/\d+$/.test(current) &&
+      linkPath.includes('taskhistory')
+    ) {
+      link.classList.add('active');
+      return;
+    }
 
 
     /* ---------------- PROFILE (USER) ---------------- */
-if (
-  /^\/user\/\d+\/edit$/.test(current) &&
-  linkPath.includes('/user') &&
-  linkPath.includes('edit')
-) {
-  link.classList.add('active');
-  return;
-}
+    if (
+      /^\/user\/\d+\/edit$/.test(current) &&
+      linkPath.includes('/user') &&
+      linkPath.includes('edit')
+    ) {
+      link.classList.add('active');
+      return;
+    }
 
     /* ---------------- INSIGHTS ---------------- */
     if (
@@ -318,24 +291,6 @@ if (
       link.classList.add('active');
       return;
     }
-
-    // /* ---------------- ADMIN DASHBOARD ---------------- */
-    // if (
-    //   current.startsWith('/admin/users') &&
-    //   linkPath.includes('/dashboard')
-    // ) {
-    //   link.classList.add('active');
-    //   return;
-    // }
-
-    // /* ---------------- ADMIN PROFILE ---------------- */
-    // if (
-    //   current.startsWith('/admin/users') &&
-    //   linkPath.includes('userprofile')
-    // ) {
-    //   link.classList.add('active');
-    //   return;
-    // }
 
     /* ---------------- ADMIN BLOGS (INSIGHTS) ---------------- */
     if (
@@ -373,16 +328,35 @@ if (
       return;
     }
 
+    /* ---------------- SERVICE DETAIL PAGES ---------------- */
+    const servicePages = [
+      '/website-development',
+      '/operations-oversight',
+      '/ecommerce-services',
+      '/crm-bookkeeping',
+      '/social-media-management',
+      '/essential-seo',
+      '/graphic-design',
+      '/it-solutions',
+      '/privacy'
+    ];
+
+    // If on a service page, DO NOT activate Insights
+    if (servicePages.includes(current)) {
+      return;
+    }
+
 
     /* ---------------- BLOG SLUG PAGE ---------------- */
     const publicPages = [
-      '/', '/home', '/about-us', '/services',
+      '/', '/home', '/about', '/services',
       '/pricing', '/contact', '/login', '/insights'
     ];
 
     const isBlogSlug =
       current.split('/').length === 2 &&
       !publicPages.includes(current) &&
+      !servicePages.includes(current) &&
       !current.startsWith('/dashboard') &&
       !current.startsWith('/user') &&
       !current.startsWith('/admin');
@@ -397,4 +371,4 @@ if (
 
 
 //Copyright year update
-      document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();

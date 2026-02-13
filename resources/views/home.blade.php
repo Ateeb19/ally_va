@@ -454,7 +454,7 @@
                 <div class="mb-3">
                   <label class="form-label">Transaction ID</label>
                   <div class="input-group">
-                    <span class="input-group-text"><i class="ri-user-fill"></i></span>
+                    <span class="input-group-text"><i class="ri-news-fill"></i></span>
                     <input type="text" name="transaction_id" id="transaction_id" class="form-control"
                       placeholder="Transaction ID" required>
                   </div>
