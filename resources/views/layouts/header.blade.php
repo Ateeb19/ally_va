@@ -703,7 +703,7 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
   @else
     @php
       // Define the routes where the section should be hidden
-      $hiddenRoutes = ['home', 'about', 'services', 'pricing', 'insights', 'contact', 'inquerySave'];
+      $hiddenRoutes = ['home', 'about', 'services', 'pricing', 'insights', 'contact', 'inquerySave', 'administrative-support'];
     @endphp
 
     {{-- Show this section only if the current route is NOT in the hidden list --}}

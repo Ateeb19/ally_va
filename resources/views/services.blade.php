@@ -23,7 +23,7 @@
                 <!-- Service Box 1 -->
                 <div class="col-12 col-md-6 col-lg-4 d-flex flex-coloumn align-items-center justify-content-center">
                     <div class="d-flex flex-column align-items-start justify-content-start service-box gap-2 shadow">
-                        <a href="/administrative-Support" class="service">
+                        <a href="/administrative-support" class="service">
                             <div class="d-flex flex-column align-items-start justify-content-start">
                                 <div class="d-flex gap-2 align-items-center justify-content-center">
                                     <div class="services-box-img-bg">
