@@ -67,7 +67,7 @@ Route::get('/website-development', function () {
     return view('website');
 });
 
-Route::get('/administrative-Support', function () {
+Route::get('/administrative-support', function () {
     return view('Administrative_Support');
 });
 

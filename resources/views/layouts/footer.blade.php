@@ -16,7 +16,7 @@
       <div class="col links">
         <h3 class="title"> Latest Services</h3>
         <ul class="link-list">
-          <li><a class="nav-link" href="{{ url('/administrative-Support') }}"><i class="ri-arrow-left-right-fill"></i> Administrative Support</a></li>
+          <li><a class="nav-link" href="{{ url('/administrative-support') }}"><i class="ri-arrow-left-right-fill"></i> Administrative Support</a></li>
           <li><a class="nav-link" href="{{ url('/operations-oversight') }}"><i class="ri-arrow-left-right-fill"></i> Operations Oversight</a></li>
           <li><a class="nav-link" href="{{ url('/ecommerce-services') }}"><i class="ri-arrow-left-right-fill"></i> eCommerce Services</a></li>
           <li><a class="nav-link" href="{{ url('/crm-bookkeeping') }}"><i class="ri-arrow-left-right-fill"></i> CRM & Bookkeeping</a></li>

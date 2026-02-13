@@ -45,7 +45,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    <img src="images/Credentials - ArupSeth _ Microsoft.jpg"
+                    <img src="images/Credentials-ArupSeth-Microsoft.webp"
                       alt="Microsoft Certified Professional Credential - Arup Seth" class="img-fluid" />
                   </div>
 
@@ -158,7 +158,7 @@
 
         <div class="col-xl-6">
           <div class="why-ally-img-wrap">
-            <img src="images/why_Ally_va (1).png" alt="A clean, minimalist home office setup" class="object-fit-cover" />
+            <img src="images/why_ally_va.webp" alt="A clean, minimalist home office setup" class="object-fit-cover" />
           </div>
         </div>
 

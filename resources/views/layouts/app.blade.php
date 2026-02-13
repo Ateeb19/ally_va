@@ -130,7 +130,7 @@
                 request()->is('insights') ||
                 request()->is('contact') ||
                 request()->is('website-development') ||
-                request()->is('administrative-Support') ||
+                request()->is('administrative-support') ||
                 request()->is('operations-oversight') ||
                 request()->is('ecommerce-services') ||
                 request()->is('crm-bookkeeping') ||

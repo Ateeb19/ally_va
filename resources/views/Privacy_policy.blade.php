@@ -43,6 +43,7 @@
                         <ul>
                             <li><i class="ri-checkbox-circle-fill text-primary"></i> Payment Security: We do not store credit card information; all transactions are processed securely via PayPal.</li>
                             <li><i class="ri-checkbox-circle-fill text-primary"></i> Third-Party Disclosure: We do not sell or trade your personally identifiable information. We may release data only to comply with the law, enforce site policies, or protect rights and safety.</li>
+                            <li><i class="ri-checkbox-circle-fill text-primary"></i> Protected by reCAPTCHA: We use advanced bot detection to keep our service secure.</li>
                         </ul>
                         
                         <h4> <i class="ri-mastercard-line"></i> Terms & Conditions</h4>

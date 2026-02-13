@@ -4,18 +4,18 @@
     <div class="container">
       <!-- Logo -->
       <!-- <a class="navbar-brand fw-bold text-primary" href="#">
-        <img src="{{ asset('images/logo.png') }}" alt="Ally VA - Virtual Assistant Services logo" class="me-2" />
+        <img src="{{ asset('images/Ally-VA.png') }}" alt="Ally VA - Virtual Assistant Services logo" class="me-2" />
       </a> -->
 
       @if(Auth::check())
         {{-- Logged in: open the public home page in new tab --}}
         <a href="{{ route('public.home') }}" target="_blank" rel="noopener noreferrer">
-          <img src="{{ asset('images/logo.png') }}" alt="Ally VA - Virtual Assistant Services logo">
+          <img src="{{ asset('images/Ally-VA.png') }}" alt="Ally VA - Virtual Assistant Services logo">
         </a>
       @else
         {{-- Not logged in: open home page in same tab --}}
         <a href="{{ route('public.home') }}">
-          <img src="{{ asset('images/logo.png') }}" alt="Ally VA - Virtual Assistant Services logo">
+          <img src="{{ asset('images/Ally-VA.png') }}" alt="Ally VA - Virtual Assistant Services logo">
         </a>
       @endif
 
@@ -483,7 +483,7 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
               request()->is('insights') ||
               request()->is('contact') ||
               request()->is('website-development') ||
-              request()->is('administrative-Support') ||
+              request()->is('administrative-support') ||
               request()->is('operations-oversight') ||
               request()->is('ecommerce-services') ||
               request()->is('crm-bookkeeping') ||

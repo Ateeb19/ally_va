@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
   <section class="top-banner">
     <!-- Hero Section -->
@@ -28,7 +27,7 @@
 
           <!-- Right Image -->
           <div class="col-xl-6 text-center text-lg-end">
-            <img src="images/Ally_Virtual_Assistant (1).webp"
+            <img src="images/Ally-Virtual-Assistant.webp"
               alt="A virtual assistant managing business tasks and streamlining operations on a laptop."
               class="hero-img" />
           </div>
@@ -311,7 +310,7 @@
         <!-- <button>More About Us →</button> -->
         <div class="d-flex align-items-center gap-2">
           <!-- Button -->
-          <a href="/about-us"><button class="">More About Us →</button></a>
+          <a href="/about"><button class="">More About Us →</button></a>
 
           <!-- Customers Info -->
           <div class="d-flex text-black px-2 py-2 rounded-3 gap-3">
@@ -334,7 +333,7 @@
       </div>
       <div class="col-xl-3">
         <div class="more-wrap">
-          <img src="images/imageedit_1_8388489819 (1).png"
+          <img src="images/Executive-VA.webp"
             alt="A executive VA providing expert support to help scale your business." />
         </div>
       </div>

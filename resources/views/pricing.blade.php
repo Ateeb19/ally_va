@@ -162,7 +162,7 @@ Instead of a trial, there’s a low commitment starting point. Just 10 hours, va
     </section>
 
     <div class="d-flex flex-column w-100 align-items-center justify-content-center text-center gap-4 have-ques mt-5">
-        <h2>Need something different? We’re just a message away</h2>
+        <h2>Need something different or a custom plan?</h2>
         <a href='/contact'><button>Connect with Us</button></a>
     </div>
 
