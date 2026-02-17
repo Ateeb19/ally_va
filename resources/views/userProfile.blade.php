@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Ally VA')
 
 @section('content')
   <section class="admin-profile-wrapper mt-5 mb-5">

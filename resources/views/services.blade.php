@@ -1,9 +1,141 @@
 @extends('layouts.app')
 @section('title', 'Executive Virtual Assistant: Expert Admin & Business Help')
+@section('canonical', 'https://allyva.com/services')
 
 @section('meta_description', 'Delegate your to‑do list to a professional. We handle admin, marketing, and operations so you can focus on scaling your business.')
 
 @section('meta_keywords', 'Administrative support, marketing assistance, business management, workflow streamlining, executive VA tasks')
+
+@section('og_url', 'https://allyva.com/services')
+@section('og_title', 'Professional Virtual Assistant Services | Ally VA')
+@section('og_description', 'Expert admin support, eCommerce management, and CRM solutions for $9/hr. Microsoft Certified with 15+ years of experience helping businesses grow.')
+@section('og_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('og_type', 'website')
+
+@section('twitter_card', 'summary_large_image')
+@section('twitter_title', 'Professional Virtual Assistant Services | Ally VA')
+@section('twitter_description', 'Expert admin support, eCommerce management, and CRM solutions for $9/hr. Microsoft Certified with 15+ years of experience helping businesses grow.')
+@section('twitter_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('schema')
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Ally VA Service Directory",
+  "description": "Explore a complete range of virtual assistant services designed to simplify daily operations, strengthen your brand, and support growth.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Ally VA",
+    "logo": "https://allyva.com/Ally-VA.png",
+    "image": "https://allyva.com/Ally-Virtual-Assistant.png",
+    "telephone": "+91-9163329207",
+    "url": "https://allyva.com/services",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    }
+  },
+  "areaServed": [
+    "United States",
+    "Australia",
+    "United Kingdom",
+    "Canada",
+    "New Zealand",
+    "Singapore",
+    "Worldwide"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Virtual Assistant Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "position": 1,
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Administrative Support",
+          "description": "Expert support to handle essential tasks and free up your time."
+        }
+      },
+      {
+        "@type": "Offer",
+        "position": 2,
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Operations Oversight",
+          "description": "Streamlining workflows and coordinating key processes for seamless execution."
+        }
+      },
+      {
+        "@type": "Offer",
+        "position": 3,
+        "itemOffered": {
+          "@type": "Service",
+          "name": "eCommerce Services",
+          "description": "Handling the details of your online store so you can focus on growth."
+        }
+      },
+      {
+        "@type": "Offer",
+        "position": 4,
+        "itemOffered": {
+          "@type": "Service",
+          "name": "CRM & Bookkeeping",
+          "description": "Organizing client data and managing financial records for your business."
+        }
+      },
+      {
+        "@type": "Offer",
+        "position": 5,
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Social Media Management",
+          "description": "Building your brand and engaging your audience across all digital platforms."
+        }
+      },
+      {
+        "@type": "Offer",
+        "position": 6,
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Graphic Design",
+          "description": "Creating professional, on-brand visuals for your website and social media."
+        }
+      },
+      {
+        "@type": "Offer",
+        "position": 7,
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Essential SEO",
+          "description": "Enhancing your content to improve search performance and audience engagement."
+        }
+      },
+      {
+        "@type": "Offer",
+        "position": 8,
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Website Development",
+          "description": "Designing, building, and maintaining websites to elevate your online presence."
+        }
+      },
+      {
+        "@type": "Offer",
+        "position": 9,
+        "itemOffered": {
+          "@type": "Service",
+          "name": "IT Solutions",
+          "description": "Remote technical help to resolve issues fast and keep systems running."
+        }
+      }
+    ]
+  }
+}
+</script>
+
+@endsection
+
 @section('content')
     <section class="top-banner">
         <div class="inner-page-header">

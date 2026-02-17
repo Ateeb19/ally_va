@@ -1,15 +1,134 @@
 @extends('layouts.app')
 @section('title', 'Website Management & Maintenance')
+@section('canonical', 'https://allyva.com/website-development')
 
 @section('meta_description', 'Ensure your site is fast and secure with professional design updates, hosting management, and daily backups.')
 
 @section('meta_keywords', 'website management, site maintenance, performance optimization, web design')
+
+@section('og_url', 'https://allyva.com/website-development')
+@section('og_title', 'Expert Website Development Services | Ally VA')
+@section('og_description', 'Professional web development and maintenance for $9/hr. Microsoft Certified expertise in building and optimizing functional, responsive business websites.')
+@section('og_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('og_type', 'website')
+
+@section('twitter_card', 'summary_large_image')
+@section('twitter_title', 'Expert Website Development Services | Ally VA')
+@section('twitter_description', 'Professional web development and maintenance for $9/hr. Microsoft Certified expertise in building and optimizing functional, responsive business websites.')
+@section('twitter_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('schema')
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Website Design & Management",
+  "description": "Professional website design and technical management by Ally VA. We build modern layouts and handle ongoing maintenance, including security backups, performance optimization, and content updates.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Ally VA",
+    "url": "https://allyva.com",
+    "areaServed": ["US", "AU", "GB", "CA", "NZ", "SG", "DE", "NL", "AE", "Worldwide"]
+  },
+  "url": "https://allyva.com/website-development",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Website Development Service List",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Website design",
+          "description": "Create a clean, modern layout that reflects your brand and provides a great experience for users."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Domain & hosting management",
+          "description": "Handle the technical side of your web address and server to keep your site live 24/7."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Content updates",
+          "description": "Regularly refresh your text, images, and blog posts to keep your website relevant and engaging."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Form creation",
+          "description": "Build contact or lead-capture forms to make it easy for potential clients to get in touch with you."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance optimization",
+          "description": "Improve your site's loading speed to reduce bounce rates and keep your visitors happy."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Basic bug fixing",
+          "description": "Quickly resolve minor technical glitches and display issues to maintain a professional site."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Backup management",
+          "description": "Schedule regular saves of your website data to ensure you can recover quickly if an error occurs."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Analytics setup",
+          "description": "Install tracking tools to see how many people visit your site and which pages they view most."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Landing page creation",
+          "description": "Design specific pages for your marketing campaigns to increase your lead and sale conversions."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Link checking",
+          "description": "Regularly test all buttons and menus to ensure every part of your website works exactly as intended."
+        }
+      }
+    ]
+  }
+}
+</script>
+
+@endsection
+
 @section('content')
     <section class="top-banner">
         <div class="inner-page-header">
             <div class="container">
                 <h1>Website design & management</h1>
-                <p>We create beautiful website designs and keep them secure, fast, and fully updated for a great visitor experience. From visual layouts to technical maintenance, we handle it all while you focus on your brand.</p>
+                <p>We create beautiful website designs and keep them secure, fast, and fully updated for a great visitor
+                    experience. From visual layouts to technical maintenance, we handle it all while you focus on your
+                    brand.</p>
             </div>
         </div>
     </section>
@@ -55,7 +174,8 @@
                 </div>
                 <div class="new-feature-title">
                     <h3>Form creation</h3>
-                    <p>Build contact or lead-capture forms to make it easy for potential clients to get in touch with you.</p>
+                    <p>Build contact or lead-capture forms to make it easy for potential clients to get in touch with you.
+                    </p>
                 </div>
             </div>
 
@@ -115,7 +235,8 @@
             <div class="new-feature-box yellow ">
                 <div class="new-feature-title">
                     <h3>Link checking</h3>
-                    <p>Regularly test all buttons and menus to ensure every part of your website works exactly as intended.</p>
+                    <p>Regularly test all buttons and menus to ensure every part of your website works exactly as intended.
+                    </p>
                 </div>
                 <div class="new-feature-icons">
                     <i class="ri-svelte-fill"></i>

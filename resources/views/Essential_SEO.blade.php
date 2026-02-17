@@ -1,9 +1,110 @@
 @extends('layouts.app')
 @section('title', 'Website Management & Maintenance')
+@section('canonical', 'https://allyva.com/essential-seo')
 
 @section('meta_description', 'Ensure your site is fast and secure with professional design updates, hosting management, and daily backups.')
 
 @section('meta_keywords', 'website management, site maintenance, performance optimization, web design')
+
+@section('og_url', 'https://allyva.com/essential-seo')
+@section('og_title', 'Essential SEO Services | Ally VA')
+@section('og_description', 'Optimize your online presence with professional SEO support for $9/hr. Microsoft Certified expertise in keywords, visibility, and search ranking.')
+@section('og_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('og_type', 'website')
+
+@section('twitter_card', 'summary_large_image')
+@section('twitter_title', 'Essential SEO Services | Ally VA')
+@section('twitter_description', 'Optimize your online presence with professional SEO support for $9/hr. Microsoft Certified expertise in keywords, visibility, and search ranking.')
+@section('twitter_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('schema')
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Essential SEO Services",
+  "description": "Comprehensive search engine optimization support by Ally VA. We improve your visibility through professional keyword research, on-page optimization, and local SEO updates to drive organic traffic.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Ally VA",
+    "url": "https://allyva.com",
+    "areaServed": ["US", "AU", "GB", "CA", "NZ", "SG", "DE", "NL", "AE", "Worldwide"]
+  },
+  "url": "https://allyva.com/essential-seo",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "SEO Service List",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Keyword research",
+          "description": "Identify the specific terms your customers search for to help your site rank higher on Google."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Title tag optimization",
+          "description": "Craft search-friendly headlines for your web pages to improve visibility and click-through rates."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Internal link building",
+          "description": "Connect your related pages together to help visitors navigate and boost your overall SEO score."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Broken link finding",
+          "description": "Scan your website for dead links to ensure a smooth user experience and maintain search rankings."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "URL clean-up",
+          "description": "Create short, descriptive web addresses that are easy for both users and search engines to understand."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Search volume analysis",
+          "description": "Measure how often specific terms are searched to prioritize the most valuable content ideas."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Content readability checks",
+          "description": "Ensure your text is easy to scan and understand, which keeps visitors on your site much longer."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Google My Business updates",
+          "description": "Keep your local listing current with new photos, hours, and posts to attract nearby clients."
+        }
+      }
+    ]
+  }
+}
+</script>
+
+@endsection
+
 @section('content')
     <section class="top-banner">
         <div class="inner-page-header">
@@ -38,7 +139,7 @@
                     </p>
                 </div>
                 <div class="new-feature-icons">
-                    <i class="ri-link-unlink-m"></i>
+                    <i class="ri-bookmark-2-fill"></i>
                 </div>
             </div>
 

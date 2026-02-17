@@ -1,16 +1,95 @@
 @extends('layouts.app')
 
 @section('title', 'Business Insights & VA Tips | Ally VA')
+@section('canonical', 'https://allyva.com/insights')
 
 @section('meta_description', 'Explore Ally VA Insights for tips, hacks, and strategies that help entrepreneurs streamline tasks, boost efficiency, and grow confidently.')
 
 @section('meta_keywords', 'Business tips, productivity blog, VA insights, efficiency strategies, scaling a business, administrative advice')
+
+@section('og_url', 'https://allyva.com/insights')
+@section('og_title', 'Insights & Resources | Ally VA')
+@section('og_description', 'Expert tips and resources on administrative support, CRM management, and business efficiency from a Microsoft Certified Virtual Assistant.')
+@section('og_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('og_type', 'website')
+
+@section('twitter_card', 'summary_large_image')
+@section('twitter_title', 'Insights & Resources | Ally VA')
+@section('twitter_description', 'Expert tips and resources on administrative support, CRM management, and business efficiency from a Microsoft Certified Virtual Assistant.')
+@section('twitter_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('schema')
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Business Insights & VA Tips",
+  "description": "Expert advice on delegation, business growth, and workflow simplification. Explore our latest articles to learn how a virtual assistant can help you save time and scale your business.",
+  "url": "https://allyva.com/insights",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Ally VA",
+    "logo": "https://allyva.com/images/Ally-VA.png",
+    "areaServed": ["US", "AU", "GB", "CA", "NZ", "SG", "DE", "NL", "AE", "Worldwide"]
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Article",
+          "headline": "Virtual assistants vs. full-time employees",
+          "description": "An exploration of how businesses are evolving and why VAs are becoming a popular alternative to full-time staff.",
+          "author": {
+            "@type": "Person",
+            "name": "Arup Seth"
+          },
+          "url": "https://allyva.com/virtual-assistants-vs-full-time-employees"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Article",
+          "headline": "Who can benefit from a virtual assistant?",
+          "description": "Discussing how entrepreneurs and busy professionals can reclaim their time in today's fast-paced world.",
+          "author": {
+            "@type": "Person",
+            "name": "Arup Seth"
+          },
+          "url": "https://allyva.com/who-can-benefit-from-a-virtual-assistant"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Article",
+          "headline": "How VA help grow your business",
+          "description": "A look at how skilled remote professionals support startups and entrepreneurs in scaling their operations.",
+          "author": {
+            "@type": "Person",
+            "name": "Arup Seth"
+          },
+          "url": "https://allyva.com/how-va-help-grow-your-business"
+        }
+      }
+    ]
+  }
+}
+</script>
+
+@endsection
+
 @section('content')
   <section class="top-banner">
     <div class="inner-page-header">
       <div class="container">
         <h1>Work. Life. Delegated</h1>
-        <p>Feeling overwhelmed by your to do list? The right support is closer than you think. These insights help you delegate smarter, save time, simplify your workflow, and focus on growing your business.
+        <p>Feeling overwhelmed by your to do list? The right support is closer than you think. These insights help you
+          delegate smarter, save time, simplify your workflow, and focus on growing your business.
         </p>
       </div>
     </div>
@@ -39,17 +118,17 @@
                   {{ \Illuminate\Support\Str::limit(strip_tags($blog->description), 100) }}
                 </p>
                 <!-- <a href="{{ route('blogs.blog-detail', $blog->id) }}" class="learn-more">
-                                              Learn More <i class="ri-arrow-right-line"></i>
-                                          </a> -->
+                                                  Learn More <i class="ri-arrow-right-line"></i>
+                                              </a> -->
                 <!-- <a href="{{ route('blogs.blog-detail', [
-                    $blog->id,
-                    \Illuminate\Support\Str::slug($blog->title)
-                  ]) }}" class="learn-more">
-                              Learn More <i class="ri-arrow-right-line"></i>
-                            </a> -->
+                        $blog->id,
+                        \Illuminate\Support\Str::slug($blog->title)
+                      ]) }}" class="learn-more">
+                                  Learn More <i class="ri-arrow-right-line"></i>
+                                </a> -->
                 <!-- <a href="{{ route('blogs.blog-detail', $blog) }}" class="learn-more">
-                      Learn More <i class="ri-arrow-right-line"></i>
-                    </a> -->
+                          Learn More <i class="ri-arrow-right-line"></i>
+                        </a> -->
                 <a href="{{ route('blogs.blog-detail', $blog) }}" class="learn-more">
                   Learn More <i class="ri-arrow-right-line"></i>
                 </a>
@@ -83,7 +162,7 @@
 
   <div class="d-flex flex-column w-100 align-items-center justify-content-center text-center gap-4 have-ques mt-5">
     <h2>Start your journey to more free time!</h2>
-    <button  data-bs-toggle="modal" data-bs-target="#authModal">Let’s Get Started - Sign Up Now</button>
+    <button data-bs-toggle="modal" data-bs-target="#authModal">Let’s Get Started - Sign Up Now</button>
   </div>
 
 @endsection

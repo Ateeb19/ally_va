@@ -1,9 +1,126 @@
 @extends('layouts.app')
 @section('title', 'Social Media & Marketing')
+@section('canonical', 'https://allyva.com/social-media-management')
 
 @section('meta_description', 'Boost your brands online presence with strategic content scheduling, caption writing, and active engagement.')
 
 @section('meta_keywords', 'social media marketing, content scheduling, digital marketing, brand growth')
+
+@section('og_url', 'https://allyva.com/social-media-management')
+@section('og_title', 'Expert Social Media Management Services | Ally VA')
+@section('og_description', 'Enhance your online presence with professional social media support for $9/hr. Microsoft Certified expertise in scheduling, engagement, and content management.')
+@section('og_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('og_type', 'website')
+
+@section('twitter_card', 'summary_large_image')
+@section('twitter_title', 'Expert Social Media Management Services | Ally VA')
+@section('twitter_description', 'Enhance your online presence with professional social media support for $9/hr. Microsoft Certified expertise in scheduling, engagement, and content management.')
+@section('twitter_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('schema')
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Social Media & Digital Marketing",
+  "description": "Strategic social media management and digital marketing by Ally VA. We grow your online presence through consistent content scheduling, engaging caption writing, and active community moderation.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Ally VA",
+    "url": "https://allyva.com",
+    "areaServed": ["US", "AU", "GB", "CA", "NZ", "SG", "DE", "NL", "AE", "Worldwide"]
+  },
+  "url": "https://allyva.com/social-media-management",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Social Media Service List",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Content Scheduling",
+          "description": "Plan and automate your social posts across platforms to maintain a consistent online presence."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Caption Writing",
+          "description": "Craft engaging and persuasive text for your posts that encourages followers to like and comment."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Image Sourcing",
+          "description": "Find high-quality, relevant photos and graphics that align perfectly with your brand's visual style."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Comment Moderation",
+          "description": "Monitor and respond to public feedback to build a community and keep your pages professional."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Direct Message Replies",
+          "description": "Answer private inquiries quickly to provide great service and capture potential sales leads."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Profile Optimization",
+          "description": "Update bios and links to ensure your social pages are searchable and look highly professional."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Hashtag Research",
+          "description": "Find the best trending tags to increase your content's reach and attract a wider target audience."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Basic Ad Setup",
+          "description": "Launch simple social media advertisements to promote specific products or increase brand awareness."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance Reporting",
+          "description": "Analyze likes, shares, and clicks to show you which types of content your audience loves most."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Email Marketing",
+          "description": "Design and send newsletters to your subscriber list to keep them engaged with your latest news."
+        }
+      }
+    ]
+  }
+}
+</script>
+
+@endsection
+
 @section('content')
     <section class="top-banner">
         <div class="inner-page-header">

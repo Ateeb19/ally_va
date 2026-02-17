@@ -1,9 +1,82 @@
 @extends('layouts.app')
+
 @section('title', 'About Ally VA | 15 Years of Expert Virtual Support')
+@section('canonical', 'https://allyva.com/about')
 
 @section('meta_description', 'Save 20+ hours a week. Discover how our extensive administrative background provides the efficient support your business needs to grow.')
 
 @section('meta_keywords', 'experienced virtual assistant, virtual admin assistant, ally virtual assistant, About Ally VA')
+
+@section('og_url', 'https://allyva.com/about')
+@section('og_title', 'About Ally VA | Expert Microsoft Certified Virtual Assistant')
+@section('og_description', 'Meet Arup Seth, founder of Ally VA. Microsoft Certified with 15+ years of experience providing smart, dependable admin support for $9/hr.')
+@section('og_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('og_type', 'profile')
+
+@section('twitter_card', 'summary_large_image')
+@section('twitter_title', 'About Ally VA | Expert Microsoft Certified Virtual Assistant')
+@section('twitter_description', 'Meet Arup Seth, founder of Ally VA. Microsoft Certified with 15+ years of experience providing smart, dependable admin support for $9/hr.')
+@section('twitter_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+
+@section('schema')
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Arup Seth",
+    "jobTitle": "Virtual Assistant & Microsoft Certified Professional",
+    "description": "Arup Seth is a Microsoft Certified professional with over 15 years of experience as a Virtual Assistant, helping entrepreneurs and small businesses worldwide manage operations with clarity and efficiency.",
+    "url": "https://allyva.com/about",
+    "image": "https://allyva.com/images/Arup-Seth.webp",
+    "sameAs": [
+      "https://www.linkedin.com/in/arupseth"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Ally VA",
+      "logo": "https://allyva.com/images/Ally-VA.png",
+      "url": "https://allyva.com",
+      "areaServed": ["US", "AU", "GB", "CA", "NZ", "SG", "DE", "NL", "AE", "Worldwide"]
+    },
+    "knowsAbout": [
+      "Virtual Administrative Support",
+      "Operations Oversight",
+      "eCommerce Management",
+      "CRM Management",
+      "Project Coordination",
+      "Business Process Management"
+    ],
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Microsoft Certified Professional",
+      "credentialCategory": "Certification",
+      "image": "https://allyva.com/images/Credentials-ArupSeth-Microsoft.webp"
+    }
+  },
+  "description": "Meet Arup Seth, the founder of Ally VA. With 15+ years of experience and Microsoft Certification, Arup provides smart, dependable virtual assistant support to help businesses grow.",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://allyva.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://allyva.com/about"
+      }
+    ]
+  }
+}
+</script>
+
+@endsection
 @section('content')
   <section class="top-banner">
 

@@ -15,9 +15,24 @@
     <meta name="keywords"
         content="@yield('meta_keywords', 'Virtual Assistant services, Executive VA, professional admin support, business productivity, outsource tasks')">
 
+
+    {{-- Open Graph --}}
+    <meta property="og:url" content="@yield('og_url', url()->current())">
+    <meta property="og:title" content="@yield('og_title', config('app.name'))">
+    <meta property="og:description" content="@yield('og_description', 'Default description')">
+    <meta property="og:image" content="@yield('og_image', asset('default-og.png'))">
+    <meta property="og:type" content="@yield('og_type', 'website')">
+
+    {{-- Twitter --}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('og_title', config('app.name'))">
+    <meta name="twitter:description" content="@yield('og_description', 'Default description')">
+    <meta name="twitter:image" content="@yield('og_image', asset('default-og.png'))">
     <!-- <title>Ally Virtual Assistant | Your Remote Business Partner</title> -->
     <!-- <link rel="icon" type="image/png" href="images/ally-va-favicon.png" /> -->
 
+    {{-- Schema --}}
+    @yield('schema')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -108,6 +123,20 @@
         })();
     </script>
     <!--End of Tawk.to Script-->
+
+    <!--Start of  Agile CRM-->
+    <script id="_agile_min_js" async type="text/javascript"
+        src="https://callarup.agilecrm.com/stats/min/agile-min.js"> </script>
+    <script type="text/javascript">
+        var Agile_API = Agile_API || {}; Agile_API.on_after_load = function () {
+            _agile.set_account('q7vjc8ot4legj09a43un6m2fhi', 'callarup', false);
+            _agile.track_page_view();
+            _agile_execute_web_rules();
+        };
+    </script>
+    <!--End of  Agile CRM-->
+
+
 </head>
 
 <body>

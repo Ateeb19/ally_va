@@ -4,3 +4,5 @@ Disallow: /admin/blogs
 Disallow: /admin/users/
 Disallow: /user/
 Disallow: /password/
+
+Sitemap: https://www.allyva.com/sitemap.xml

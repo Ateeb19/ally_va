@@ -1,9 +1,126 @@
 @extends('layouts.app')
 @section('title', 'IT Support & Tech Assistance')
+@section('canonical', 'https://allyva.com/it-solutions')
 
 @section('meta_description', 'Keep your tech running smoothly with email setup, software troubleshooting, and secure cloud backup solutions.')
 
 @section('meta_keywords', 'IT support, technical assistance, software setup, system security')
+
+@section('og_url', 'https://allyva.com/it-solutions')
+@section('og_title', 'Expert IT Solutions & Support | Ally VA')
+@section('og_description', 'Professional IT support and technical solutions for $9/hr. Microsoft Certified expertise in troubleshooting, software setup, and systems optimization.')
+@section('og_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('og_type', 'website')
+
+@section('twitter_card', 'summary_large_image')
+@section('twitter_title', 'Expert IT Solutions & Support | Ally VA')
+@section('twitter_description', 'Professional IT support and technical solutions for $9/hr. Microsoft Certified expertise in troubleshooting, software setup, and systems optimization.')
+@section('twitter_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('schema')
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "IT Solutions & Technical Support",
+  "description": "Comprehensive IT solutions by Ally VA. We provide remote technical assistance, including software installation, troubleshooting, cybersecurity audits, and cloud management to keep your business systems running smoothly.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Ally VA",
+    "url": "https://allyva.com",
+    "areaServed": ["US", "AU", "GB", "CA", "NZ", "SG", "DE", "NL", "AE", "Worldwide"]
+  },
+  "url": "https://allyva.com/it-solutions",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "IT Solutions Service List",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Software installation",
+          "description": "Remotely set up and configure essential business tools and applications to ensure they are ready for immediate use."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Basic troubleshooting",
+          "description": "Identify and resolve common technical glitches and errors to minimize downtime and maintain productivity."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Email account setup",
+          "description": "Configure professional email addresses and sync them across all your devices for seamless communication."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "System updates",
+          "description": "Regularly manage software patches and operating system updates to keep your devices secure and efficient."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Password management",
+          "description": "Help implement secure password storage solutions and recovery processes to protect your business accounts."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cloud storage management",
+          "description": "Organize and monitor files on platforms like Google Drive or Dropbox to ensure data is accessible and backed up."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Antivirus monitoring",
+          "description": "Oversee security software to detect and remove threats before they can impact your critical business data."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Device synchronization",
+          "description": "Ensure your files and apps are updated in real-time across your laptop, tablet, and mobile phone."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "App integration help",
+          "description": "Connect your different business tools (like CRM and Email) so they share data and work together perfectly."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cybersecurity audits",
+          "description": "Review your digital habits and software settings to identify risks and suggest ways to strengthen your security."
+        }
+      }
+    ]
+  }
+}
+</script>
+
+@endsection
+
 @section('content')
     <section class="top-banner">
         <div class="inner-page-header">

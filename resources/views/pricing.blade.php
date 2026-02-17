@@ -1,9 +1,97 @@
 @extends('layouts.app')
 @section('title', 'Virtual Assistant Pricing | $9 Per Hour')
+@section('canonical', 'https://allyva.com/pricing')
 
 @section('meta_description', 'Affordable Virtual Admin Assistant for businesses: $9 per hour, with no monthly contracts or recurring fees. One simple hourly rate covers all your tasks.')
 
 @section('meta_keywords', 'Affordable Virtual Assistant, No contract VA, Hourly VA services')
+
+@section('og_url', 'https://allyva.com/pricing')
+@section('og_title', 'Affordable Virtual Assistant Pricing | Ally VA')
+@section('og_description', 'Get expert Microsoft Certified support for just $9/hr. Transparent, affordable pricing for professional admin, CRM, and eCommerce management.')
+@section('og_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('og_type', 'website')
+
+@section('twitter_card', 'summary_large_image')
+@section('twitter_title', 'Affordable Virtual Assistant Pricing | Ally VA')
+@section('twitter_description', 'Get expert Microsoft Certified support for just $9/hr. Transparent, affordable pricing for professional admin, CRM, and eCommerce management.')
+@section('twitter_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('schema')
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Pricing | Ally VA",
+  "url": "https://allyva.com/pricing",
+  "mainEntity": [
+    {
+      "@type": "Service",
+      "name": "Ally VA Virtual Assistant Services",
+      "description": "Premium virtual assistant support starting with a 10-hour block.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Ally VA",
+        "url": "https://allyva.com",
+        "areaServed": ["US", "AU", "GB", "CA", "NZ", "SG", "DE", "NL", "AE", "Worldwide"]
+      },
+      "offers": {
+        "@type": "Offer",
+        "name": "Ally VA Hourly Plan",
+        "description": "Flat hourly rate of $9. Start with a 10-hour block valid for 3 months.",
+        "price": "9.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "9.00",
+          "priceCurrency": "USD",
+          "unitText": "hour"
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the hourly plan work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start with a 10-hour block. Use your hours whenever you need them—they won’t expire for 90 days. Only pay for the time spent working on tasks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are your payment options?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Payments are processed securely through PayPal, ensuring ease and reliability."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer a free trial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Instead of a trial, we offer a low-commitment starting point of just 10 hours, valid for 3 months. This allows you to experience the true value of a partnership without the pressure of a subscription."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a refund policy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, unused hours can be refunded within 5 days of purchase if you’re not satisfied."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+@endsection
+
 @section('content')
     <section class="top-banner">
         <div class="inner-page-header">

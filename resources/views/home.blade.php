@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Ally VA')
 @section('content')
 
   <!-- //Admin data only show here -->

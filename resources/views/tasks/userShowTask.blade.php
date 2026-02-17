@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Ally VA')
 
 @section('content')
   <!-- Add Task Listing Table -->

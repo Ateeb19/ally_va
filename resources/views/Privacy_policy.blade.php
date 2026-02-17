@@ -1,9 +1,58 @@
 @extends('layouts.app')
 @section('title', 'Privacy Policy & Terms | Ally VA')
+@section('canonical', 'https://allyva.com/privacy')
 
 @section('meta_description', 'Read Ally VA’s privacy policy and service terms. Learn how we protect your data, handle secure payments, and manage our site usage policies.')
 
 @section('meta_keywords', 'Ally VA privacy policy, virtual assistant terms, data security, refund policy, secure payment, service agreement')
+
+@section('og_url', 'https://allyva.com/privacy')
+@section('og_title', 'Privacy Policy | Ally VA')
+@section('og_description', 'Learn how Ally VA protects your data. Transparent information on how we handle and secure your personal and business information.')
+@section('og_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('og_type', 'website')
+
+@section('twitter_card', 'summary_large_image')
+@section('twitter_title', 'Privacy Policy | Ally VA')
+@section('twitter_description', 'Learn how Ally VA protects your data. Transparent information on how we handle and secure your personal and business information.')
+@section('twitter_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('schema')
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Privacy Policy | Ally VA",
+  "description": "The official privacy policy for Ally VA. This document outlines how we collect, use, and protect your personal data in compliance with global standards.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Ally VA",
+    "url": "https://allyva.com",
+    "logo": "https://allyva.com/images/Ally-VA.png",
+    "areaServed": ["US", "AU", "GB", "CA", "NZ", "SG", "DE", "NL", "AE", "Worldwide"]
+  },
+  "url": "https://allyva.com/privacy-policy",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://allyva.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Privacy Policy",
+        "item": "https://allyva.com/privacy-policy"
+      }
+    ]
+  }
+}
+</script>
+
+@endsection
+
 @section('content')
     <section class="top-banner">
         <div class="inner-page-header">

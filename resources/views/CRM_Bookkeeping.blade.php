@@ -1,9 +1,126 @@
 @extends('layouts.app')
 @section('title', 'CRM & Bookkeeping Services')
+@section('canonical', 'https://allyva.com/crm-bookkeeping')
 
 @section('meta_description', 'Keep your finances and client data organized with precise expense tracking, invoicing, and CRM data entry.')
 
 @section('meta_keywords', 'bookkeeping services, CRM management, invoice generation, expense tracking')
+
+@section('og_url', 'https://allyva.com/crm-bookkeeping')
+@section('og_title', 'CRM Management & Bookkeeping Services | Ally VA')
+@section('og_description', 'Professional CRM and bookkeeping support for $9/hr. Microsoft Certified expert helping you maintain organized records and customer relationships.')
+@section('og_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('og_type', 'website')
+
+@section('twitter_card', 'summary_large_image')
+@section('twitter_title', 'CRM Management & Bookkeeping Services | Ally VA')
+@section('twitter_description', 'Professional CRM and bookkeeping support for $9/hr. Microsoft Certified expert helping you maintain organized records and customer relationships.')
+@section('twitter_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('schema')
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "CRM & Bookkeeping Services",
+  "description": "Professional CRM and bookkeeping support by Ally VA. We keep your finances accurate and your client records organized with detailed invoicing, expense tracking, and financial reporting.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Ally VA",
+    "url": "https://allyva.com",
+    "areaServed": ["US", "AU", "GB", "CA", "NZ", "SG", "DE", "NL", "AE", "Worldwide"]
+  },
+  "url": "https://allyva.com/crm-bookkeeping",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "CRM and Bookkeeping Service List",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "CRM Data Entry",
+          "description": "Update client profiles and interaction history to ensure your sales team has the latest information."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Expense Categorization",
+          "description": "Sort your business spending into the correct tax categories for easier financial management."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Invoice Generation",
+          "description": "Create and send professional billing statements to your clients to ensure you get paid on time."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Client Profile Updates",
+          "description": "Keep track of address changes and preferences to provide a personalized service experience."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Receipt Organization",
+          "description": "Digitally archive your proofs of purchase to make tax season stress-free and fully compliant."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Sales Report Preparation",
+          "description": "Compile transaction data into clear summaries to show your monthly growth and revenue trends."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Payment Follow-ups",
+          "description": "Send polite reminders to clients with overdue balances to maintain a healthy business cash flow."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Vendor Bill Recording",
+          "description": "Log every supplier invoice into your system to track liabilities and manage your budget well."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Budget Tracking",
+          "description": "Compare actual spending against your financial goals to help you stay profitable and controlled."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Financial Reporting",
+          "description": "Generate balance sheets and P&L statements to give you a clear view of your company's finances."
+        }
+      }
+    ]
+  }
+}
+</script>
+
+@endsection
+
 @section('content')
     <section class="top-banner">
         <div class="inner-page-header">

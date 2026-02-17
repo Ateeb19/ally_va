@@ -1,4 +1,89 @@
 @extends('layouts.app')
+@section('canonical', 'https://allyva.com/')
+@section('og_url', 'https://www.allyva.com/')
+@section('og_title', 'Ally VA | Your Remote Business Partner')
+@section('og_description', 'Microsoft Certified Virtual Assistant with 15+ years of experience. Simplify your life with expert admin support for just $9/hr.')
+@section('og_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('og_type', 'website')
+
+@section('twitter_card', 'summary_large_image')
+@section('twitter_title', 'Ally VA | Your Remote Business Partner')
+@section('twitter_description', 'Microsoft Certified Virtual Assistant with 15+ years of experience. Simplify your life with expert admin support for just $9/hr.')
+@section('twitter_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+
+@section('schema')
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Virtual Assistant Services",
+  "description": "Professional virtual assistant services by Arup Seth, a Microsoft Certified Professional with over 15 years of experience.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Ally VA",
+    "logo": "https://www.allyva.com/Ally-VA.png",
+    "image": "https://www.allyva.com/Ally-Virtual-Assistant.png",
+    "telephone": "+91-9163329207",
+    "url": "https://www.allyva.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    }
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "United States" },
+    { "@type": "Country", "name": "Australia" },
+        { "@type": "Country", "name": "United Kingdom" },
+    { "@type": "Country", "name": "Canada" },
+    { "@type": "Country", "name": "New Zealand" },
+    { "@type": "Country", "name": "Singapore" },
+    { "@type": "Country", "name": "Germany" },
+    { "@type": "Country", "name": "Netherlands" },
+    { "@type": "Country", "name": "United Arab Emirates" },
+    { "@type": "Place", "name": "Worldwide" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Ally VA Service Portfolio",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Email & Inbox Management" }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Calendar & Appointment Scheduling" }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "eCommerce & Store Management" }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "CRM Management & Data Entry" }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Day-to-Day Business Operations" }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Administrative Support" }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Social Media Scheduling & Management" }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Lead Generation & Internet Research" }
+      }
+    ]
+  }
+}
+</script>
+@endsection
+
 @section('content')
   <section class="top-banner">
     <!-- Hero Section -->

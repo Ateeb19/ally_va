@@ -1,9 +1,126 @@
 @extends('layouts.app')
 @section('title', 'Business Operations Solutions')
+@section('canonical', 'https://allyva.com/operations-oversight')
 
 @section('meta_description', 'Optimize your business with professional workflow documentation, vendor coordination, and daily task management.')
 
 @section('meta_keywords', 'business operations, workflow optimization, vendor management, task tracking')
+
+@section('og_url', 'https://allyva.com/operations-oversight')
+@section('og_title', 'Expert Operations Oversight & Management | Ally VA')
+@section('og_description', 'Streamline your workflows and scale your business with professional operations management for $9/hr. Microsoft Certified expertise in project tracking and process auditing.')
+@section('og_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('og_type', 'website')
+
+@section('twitter_card', 'summary_large_image')
+@section('twitter_title', 'Expert Operations Oversight & Management | Ally VA')
+@section('twitter_description', 'Streamline your workflows and scale your business with professional operations management for $9/hr. Microsoft Certified expertise in project tracking and process auditing.')
+@section('twitter_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('schema')
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Operations & Management Services",
+  "description": "Streamlining business workflows and overseeing projects to ensure maximum efficiency. From strategic planning to resource management, we provide the leadership needed to scale operations smoothly.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Ally VA",
+    "url": "https://allyva.com",
+    "areaServed": ["US", "AU", "GB", "CA", "NZ", "SG", "DE", "NL", "AE", "Worldwide"]
+  },
+  "url": "https://allyva.com/operations-oversight",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Operations Service List",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Workflow Documentation",
+          "description": "Create step-by-step guides for your business processes to ensure team consistency and easy onboarding."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Vendor Communication",
+          "description": "Act as the primary point of contact for suppliers to manage orders and resolve delivery issues."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Inventory Tracking",
+          "description": "Monitor stock levels and usage patterns to prevent shortages and optimize your storage space."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Day to Day Tasks",
+          "description": "Handle the small, recurring chores that keep your business running smoothly so you can focus on growth."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Project Tracking",
+          "description": "Monitor deadlines and milestones to ensure your team stays on schedule and goals are met on time."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Supplies Ordering",
+          "description": "Maintain office or production inventory by purchasing necessary materials before they run out."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Team Communication",
+          "description": "Facilitate clear messaging across departments to keep everyone aligned on goals and daily updates."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Process Auditing",
+          "description": "Review current operations to identify bottlenecks and suggest improvements for better efficiency."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Task Delegation",
+          "description": "Assign specific duties to the right team members to maximize productivity and meet project deadlines."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Training Coordination",
+          "description": "Organize workshops and educational sessions to help your staff develop new skills and knowledge."
+        }
+      }
+    ]
+  }
+}
+</script>
+
+@endsection
+
 @section('content')
     <section class="top-banner">
         <div class="inner-page-header">

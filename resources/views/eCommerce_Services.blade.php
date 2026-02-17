@@ -1,9 +1,126 @@
 @extends('layouts.app')
 @section('title', 'eCommerce & Store Support')
+@section('canonical', 'https://allyva.com/ecommerce-services')
 
 @section('meta_description', 'Grow your online store with expert product listing updates, order processing, and responsive customer support.')
 
 @section('meta_keywords', 'ecommerce support, product listing, order processing, inventory management')
+
+@section('og_url', 'https://allyva.com/ecommerce-services')
+@section('og_title', 'Expert eCommerce Management Services | Ally VA')
+@section('og_description', 'Boost your online store with professional eCommerce support for $9/hr. Microsoft Certified expertise in product listing, inventory, and order management.')
+@section('og_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('og_type', 'website')
+
+@section('twitter_card', 'summary_large_image')
+@section('twitter_title', 'Expert eCommerce Management Services | Ally VA')
+@section('twitter_description', 'Boost your online store with professional eCommerce support for $9/hr. Microsoft Certified expertise in product listing, inventory, and order management.')
+@section('twitter_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('schema')
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "eCommerce & Store Support",
+  "description": "Full-service eCommerce support by Ally VA. We optimize product listings, manage inventory, and handle order processing to boost sales and buyer loyalty.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Ally VA",
+    "url": "https://allyva.com",
+    "areaServed": ["US", "AU", "GB", "CA", "NZ", "SG", "DE", "NL", "AE", "Worldwide"]
+  },
+  "url": "https://allyva.com/ecommerce-services",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "eCommerce Service List",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Product listing updates",
+          "description": "Edit descriptions and images to keep your online store looking professional and attracting customers."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Inventory checks",
+          "description": "Cross-reference physical stock with digital counts to ensure your website displays accurate totals."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Order processing",
+          "description": "Manage the workflow from purchase to shipping to ensure customers receive their items on time."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Customer inquiries",
+          "description": "Provide fast, helpful answers to buyer questions to increase trust and boost your sales conversion."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Sales data input",
+          "description": "Record daily transaction details to help track your revenue and identify your best-selling items."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Basic storefront maintenance",
+          "description": "Fix small site errors and update banners to keep your shopping experience smooth and modern."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Feedback handling",
+          "description": "Respond to customer reviews and ratings to maintain a positive brand reputation and build loyalty."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Price monitoring",
+          "description": "Keep an eye on competitor pricing to ensure your products remain attractive in the current market."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Stock level updates",
+          "description": "Adjust availability in real-time to prevent overselling and manage customer expectations well."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Discount campaigns",
+          "description": "Set up and monitor promotional codes or seasonal sales to drive traffic and increase total orders."
+        }
+      }
+    ]
+  }
+}
+</script>
+
+@endsection
+
 @section('content')
     <section class="top-banner">
         <div class="inner-page-header">

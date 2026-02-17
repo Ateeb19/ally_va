@@ -19,8 +19,8 @@ class ResetPasswordNotification extends BaseResetPassword
             ->greeting('Hello!')
             ->line('You requested a password reset for your Ally Va account.')
             ->action('Reset Password', $url)
-            ->line('This link will expire in 60 minutes.');
-            // ->salutation('');
+            ->line('This link will expire in 60 minutes.')
+            ->salutation('');
     }
 }
 

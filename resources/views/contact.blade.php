@@ -1,9 +1,60 @@
 @extends('layouts.app')
 @section('title', 'Contact Ally Virtual Assistant | Get in Touch Today')
+@section('canonical', 'https://allyva.com/contact')
+
+@section('og_url', 'https://allyva.com/contact')
+@section('og_title', 'Contact Ally VA | Hire a Microsoft Certified Virtual Assistant')
+@section('og_description', 'Get in touch for expert admin, CRM, and eCommerce support starting at $9/hr. Let’s discuss how Ally VA can simplify your business operations.')
+@section('og_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('og_type', 'website')
+
+@section('twitter_card', 'summary_large_image')
+@section('twitter_title', 'Contact Ally VA | Hire a Microsoft Certified Virtual Assistant')
+@section('twitter_description', 'Get in touch for expert admin, CRM, and eCommerce support starting at $9/hr. Let’s discuss how Ally VA can simplify your business operations.')
+@section('twitter_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+
+
+
 
 @section('meta_description', 'Reach out to Ally VA for reliable virtual assistant support. Connect with us easily to streamline tasks, boost productivity, and grow your business.')
 
 @section('meta_keywords', 'Contact Ally VA, hire a Virtual Assistant, book a VA discovery call, admin support inquiry, business help contact')
+
+@section('schema')
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Ally VA",
+  "description": "Get in touch with Arup Seth at Ally VA. Reach out via email or phone to discuss how we can support your business growth.",
+  "url": "https://allyva.com/contact",
+  "mainEntity": {
+    "@type": "LocalBusiness",
+    "name": "Ally VA",
+    "image": "https://allyva.com/Ally-Virtual-Assistant.png",
+    "logo": "https://allyva.com/Ally-VA.png",
+    "telephone": "+91-9163329207",
+    "email": "arup@allyva.com",
+    "url": "https://allyva.com",
+    "areaServed": ["US", "AU", "GB", "CA", "NZ", "SG", "DE", "NL", "AE", "Worldwide"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9163329207",
+      "contactType": "customer service",
+      "areaServed": ["US", "AU", "GB", "CA", "NZ", "SG", "DE", "NL", "AE", "Worldwide"],
+      "availableLanguage": "English"
+    }
+  }
+}
+</script>
+
+@endsection
+
+
 @section('content')
   <section class="top-banner">
     <div class="inner-page-header">
