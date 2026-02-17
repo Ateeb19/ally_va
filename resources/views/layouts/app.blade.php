@@ -16,7 +16,7 @@
         content="@yield('meta_keywords', 'Virtual Assistant services, Executive VA, professional admin support, business productivity, outsource tasks')">
 
 
-    <meta property="canonical" content="@yield('canonical', url()->current())">
+    <link rel="canonical" href="@yield('canonical', url()->current())">
 
     {{-- Open Graph --}}
     <meta property="og:url" content="@yield('og_url', url()->current())">

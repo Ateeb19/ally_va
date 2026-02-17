@@ -9,13 +9,13 @@
 @section('og_url', 'https://allyva.com/services')
 @section('og_title', 'Professional Virtual Assistant Services | Ally VA')
 @section('og_description', 'Expert admin support, eCommerce management, and CRM solutions for $9/hr. Microsoft Certified with 15+ years of experience helping businesses grow.')
-@section('og_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('og_image', 'https://allyva.com/Ally-Virtual-Assistant.png')
 @section('og_type', 'website')
 
 @section('twitter_card', 'summary_large_image')
 @section('twitter_title', 'Professional Virtual Assistant Services | Ally VA')
 @section('twitter_description', 'Expert admin support, eCommerce management, and CRM solutions for $9/hr. Microsoft Certified with 15+ years of experience helping businesses grow.')
-@section('twitter_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('twitter_image', 'https://allyva.com/Ally-Virtual-Assistant.png')
 @section('schema')
   <script type="application/ld+json">
 {

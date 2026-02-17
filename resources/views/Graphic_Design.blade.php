@@ -9,13 +9,13 @@
 @section('og_url', 'https://allyva.com/graphic-design')
 @section('og_title', 'Expert Graphic Design Services | Ally VA')
 @section('og_description', 'Professional graphic design support for just $9/hr. Microsoft Certified expertise in creating impactful visuals for your brand and business marketing.')
-@section('og_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('og_image', 'https://allyva.com/Ally-Virtual-Assistant.png')
 @section('og_type', 'website')
 
 @section('twitter_card', 'summary_large_image')
 @section('twitter_title', 'Expert Graphic Design Services | Ally VA')
 @section('twitter_description', 'Professional graphic design support for just $9/hr. Microsoft Certified expertise in creating impactful visuals for your brand and business marketing.')
-@section('twitter_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('twitter_image', 'https://allyva.com/Ally-Virtual-Assistant.png')
 @section('schema')
   <script type="application/ld+json">
 {

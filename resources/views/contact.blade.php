@@ -5,13 +5,13 @@
 @section('og_url', 'https://allyva.com/contact')
 @section('og_title', 'Contact Ally VA | Hire a Microsoft Certified Virtual Assistant')
 @section('og_description', 'Get in touch for expert admin, CRM, and eCommerce support starting at $9/hr. Let’s discuss how Ally VA can simplify your business operations.')
-@section('og_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('og_image', 'https://allyva.com/Ally-Virtual-Assistant.png')
 @section('og_type', 'website')
 
 @section('twitter_card', 'summary_large_image')
 @section('twitter_title', 'Contact Ally VA | Hire a Microsoft Certified Virtual Assistant')
 @section('twitter_description', 'Get in touch for expert admin, CRM, and eCommerce support starting at $9/hr. Let’s discuss how Ally VA can simplify your business operations.')
-@section('twitter_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('twitter_image', 'https://allyva.com/Ally-Virtual-Assistant.png')
 
 
 

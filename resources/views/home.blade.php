@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Ally VA')
 @section('content')
-
+  
   <!-- //Admin data only show here -->
   @if(!isset($adminView) && auth()->user()->hasRole('super_admin'))
     <section class="admin-table-wrapper my-5">

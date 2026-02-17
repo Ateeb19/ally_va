@@ -10,13 +10,13 @@
 @section('og_url', 'https://allyva.com/about')
 @section('og_title', 'About Ally VA | Expert Microsoft Certified Virtual Assistant')
 @section('og_description', 'Meet Arup Seth, founder of Ally VA. Microsoft Certified with 15+ years of experience providing smart, dependable admin support for $9/hr.')
-@section('og_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('og_image', 'https://allyva.com/Ally-Virtual-Assistant.png')
 @section('og_type', 'profile')
 
 @section('twitter_card', 'summary_large_image')
 @section('twitter_title', 'About Ally VA | Expert Microsoft Certified Virtual Assistant')
 @section('twitter_description', 'Meet Arup Seth, founder of Ally VA. Microsoft Certified with 15+ years of experience providing smart, dependable admin support for $9/hr.')
-@section('twitter_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('twitter_image', 'https://allyva.com/Ally-Virtual-Assistant.png')
 
 @section('schema')
   <script type="application/ld+json">

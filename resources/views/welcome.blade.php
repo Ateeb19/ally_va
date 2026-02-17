@@ -1,15 +1,15 @@
 @extends('layouts.app')
 @section('canonical', 'https://allyva.com/')
-@section('og_url', 'https://www.allyva.com/')
+@section('og_url', 'https://allyva.com/')
 @section('og_title', 'Ally VA | Your Remote Business Partner')
 @section('og_description', 'Microsoft Certified Virtual Assistant with 15+ years of experience. Simplify your life with expert admin support for just $9/hr.')
-@section('og_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('og_image', 'https://allyva.com/Ally-Virtual-Assistant.png')
 @section('og_type', 'website')
 
 @section('twitter_card', 'summary_large_image')
 @section('twitter_title', 'Ally VA | Your Remote Business Partner')
 @section('twitter_description', 'Microsoft Certified Virtual Assistant with 15+ years of experience. Simplify your life with expert admin support for just $9/hr.')
-@section('twitter_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('twitter_image', 'https://allyva.com/Ally-Virtual-Assistant.png')
 
 @section('schema')
   <script type="application/ld+json">
@@ -21,10 +21,10 @@
   "provider": {
     "@type": "LocalBusiness",
     "name": "Ally VA",
-    "logo": "https://www.allyva.com/Ally-VA.png",
-    "image": "https://www.allyva.com/Ally-Virtual-Assistant.png",
+    "logo": "https://allyva.com/Ally-VA.png",
+    "image": "https://allyva.com/Ally-Virtual-Assistant.png",
     "telephone": "+91-9163329207",
-    "url": "https://www.allyva.com",
+    "url": "https://allyva.com",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "IN"

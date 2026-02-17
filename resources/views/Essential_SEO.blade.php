@@ -9,13 +9,13 @@
 @section('og_url', 'https://allyva.com/essential-seo')
 @section('og_title', 'Essential SEO Services | Ally VA')
 @section('og_description', 'Optimize your online presence with professional SEO support for $9/hr. Microsoft Certified expertise in keywords, visibility, and search ranking.')
-@section('og_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('og_image', 'https://allyva.com/Ally-Virtual-Assistant.png')
 @section('og_type', 'website')
 
 @section('twitter_card', 'summary_large_image')
 @section('twitter_title', 'Essential SEO Services | Ally VA')
 @section('twitter_description', 'Optimize your online presence with professional SEO support for $9/hr. Microsoft Certified expertise in keywords, visibility, and search ranking.')
-@section('twitter_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('twitter_image', 'https://allyva.com/Ally-Virtual-Assistant.png')
 @section('schema')
   <script type="application/ld+json">
 {

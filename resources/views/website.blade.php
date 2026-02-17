@@ -9,13 +9,13 @@
 @section('og_url', 'https://allyva.com/website-development')
 @section('og_title', 'Expert Website Development Services | Ally VA')
 @section('og_description', 'Professional web development and maintenance for $9/hr. Microsoft Certified expertise in building and optimizing functional, responsive business websites.')
-@section('og_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('og_image', 'https://allyva.com/Ally-Virtual-Assistant.png')
 @section('og_type', 'website')
 
 @section('twitter_card', 'summary_large_image')
 @section('twitter_title', 'Expert Website Development Services | Ally VA')
 @section('twitter_description', 'Professional web development and maintenance for $9/hr. Microsoft Certified expertise in building and optimizing functional, responsive business websites.')
-@section('twitter_image', 'https://www.allyva.com/Ally-Virtual-Assistant.png')
+@section('twitter_image', 'https://allyva.com/Ally-Virtual-Assistant.png')
 @section('schema')
   <script type="application/ld+json">
 {
