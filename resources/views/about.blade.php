@@ -172,7 +172,7 @@
               <div class="about-box shadow p-4 h-100">
                 <div class="d-flex align-items-center gap-3 mb-2">
                   <div class="icon-box">
-                    <img src="images/aboutimages/fluent_cube-quick-16-filled.svg" alt="" />
+                    <img src="images/aboutimages/va-fast-delivery.svg" alt="Quick turnaround VA services" />
                   </div>
                   <h5 class="mb-0">Quick Turnaround</h5>
                 </div>
@@ -187,7 +187,7 @@
               <div class="about-box shadow p-4 h-100">
                 <div class="d-flex align-items-center jus gap-3 mb-2">
                   <div class="icon-box">
-                    <img src="images/aboutimages/qlementine-icons_executable-16.svg" alt="" />
+                    <img src="images/aboutimages/va-flawless-execution.svg" alt="Quality service execution" />
                   </div>
                   <h5 class="mb-0">Flawless Execution</h5>
                 </div>
@@ -202,7 +202,7 @@
               <div class="about-box shadow p-4 h-100">
                 <div class="d-flex align-items-center gap-3 mb-2">
                   <div class="icon-box">
-                    <img src="images/aboutimages/Group.svg" alt="" />
+                    <img src="images/aboutimages/va-anytime-access.svg" alt="24/7 support access." />
                   </div>
                   <h5 class="mb-0">Anytime Access</h5>
                 </div>
@@ -217,7 +217,7 @@
               <div class="about-box shadow p-4 h-100">
                 <div class="d-flex align-items-center gap-3 mb-2">
                   <div class="icon-box">
-                    <img src="images/aboutimages/Vector.svg" alt="" />
+                    <img src="images/aboutimages/va-personalized-support.svg" alt="Tailored client assistance" />
                   </div>
                   <h5 class="mb-0">Proactive Support</h5>
                 </div>

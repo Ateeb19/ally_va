@@ -160,7 +160,7 @@
                                 <div class="d-flex gap-2 align-items-center justify-content-center">
                                     <div class="services-box-img-bg">
 
-                                        <img src="images/serviceimg/clarity_administrator-solid.png" alt="" width="35px">
+                                        <img src="images/serviceimg/va-admin-support.png" alt="Executive administrative tasks" width="35px">
                                     </div>
 
 
@@ -187,7 +187,7 @@
                                 <div class="d-flex gap-2 align-items-center justify-content-center">
                                     <div class="services-box-img-bg">
 
-                                        <img src="images/serviceimg/icon-park-solid_reverse-operation-out.png" alt="">
+                                        <img src="images/serviceimg/va-tech-support.png" alt="VA technical troubleshooting">
                                     </div>
 
                                     <h5>Operations Oversight</h5>
@@ -213,7 +213,7 @@
                                 <div class="d-flex gap-2 align-items-center justify-content-center">
                                     <div class="services-box-img-bg">
 
-                                        <img src="images/serviceimg/Vector.png" alt="">
+                                        <img src="images/serviceimg/va-ecommerce-admin.png" alt="Online store management">
                                     </div>
 
                                     <h5>eCommerce Services</h5>
@@ -241,8 +241,8 @@
                                 <div class="d-flex gap-2 align-items-center justify-content-center">
                                     <div class="services-box-img-bg">
 
-                                        <img src="images/serviceimg/streamline-ultimate_customer-relationship-management-lead-management-1-bold.png"
-                                            alt="">
+                                        <img src="images/serviceimg/va-lead-management.png"
+                                            alt="CRM and lead tracking">
                                     </div>
 
                                     <h5>CRM & Bookkeeping</h5>
@@ -269,7 +269,7 @@
                                 <div class="d-flex gap-2 align-items-center justify-content-center">
                                     <div class="services-box-img-bg">
 
-                                        <img src="images/serviceimg/Vector (1).png" alt="">
+                                        <img src="images/serviceimg/va-creative-solutions.png" alt="Business strategy and ideas">
                                     </div>
 
                                     <h5>Social Media Management</h5>
@@ -296,7 +296,7 @@
                                 <div class="d-flex gap-2 align-items-center justify-content-center">
                                     <div class="services-box-img-bg">
 
-                                        <img src="images/serviceimg/icon-park-solid_graphic-design.png" alt="">
+                                        <img src="images/serviceimg/va-design-services.png" alt="Visual and graphic design">
                                     </div>
 
                                     <h5>Graphic Design</h5>
@@ -325,7 +325,7 @@
                                 <div class="d-flex gap-2 align-items-center justify-content-center">
                                     <div class="services-box-img-bg">
 
-                                        <img src="images/serviceimg/ri_seo-fill.png" alt="" width="35px">
+                                        <img src="images/serviceimg/va-seo-services.png" alt="SEO and web optimization" width="35px">
                                     </div>
 
                                     <h5>Essential SEO</h5>
@@ -352,7 +352,7 @@
                                 <div class="d-flex gap-2 align-items-center justify-content-center">
                                     <div class="services-box-img-bg">
 
-                                        <img src="images/serviceimg/Vector (2).png" alt="">
+                                        <img src="images/serviceimg/va-app-integration.png" alt="Software and app management">
                                     </div>
 
                                     <h5>Website Development</h5>
@@ -379,8 +379,8 @@
                                 <div class="d-flex gap-2 align-items-center justify-content-center">
                                     <div class="services-box-img-bg">
 
-                                        <img src="images/serviceimg/streamline-ultimate_headphones-customer-support-question-bold.png"
-                                            alt="">
+                                        <img src="images/serviceimg/va-customer-support.png"
+                                            alt="Customer service assistance">
                                     </div>
 
                                     <h5>IT Solutions</h5>

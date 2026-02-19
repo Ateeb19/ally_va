@@ -204,7 +204,7 @@
                     <p>Find the best trending tags to increase your content's reach and attract a wider target audience.</p>
                 </div>
                 <div class="new-feature-icons">
-                    <i class="ri-hashta"></i>
+                    <i class="ri-hashtag"></i>
                 </div>
             </div>
 
