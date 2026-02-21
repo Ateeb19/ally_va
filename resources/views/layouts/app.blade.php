@@ -9,32 +9,37 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Ally Virtual Assistant | Your Remote Business Partner')</title>
 
-    <meta name="description"
-        content="@yield('meta_description', 'Ally VA is your dedicated virtual assistant, streamlining administrative tasks to boost productivity and improve business efficiency.')">
 
-    <meta name="keywords"
-        content="@yield('meta_keywords', 'Virtual Assistant services, Executive VA, professional admin support, business productivity, outsource tasks')">
+    @if(!auth()->check() && !request()->is('password/*'))
+        <meta name="description"
+            content="@yield('meta_description', 'Ally VA is your dedicated virtual assistant, streamlining administrative tasks to boost productivity and improve business efficiency.')">
+
+        <meta name="keywords"
+            content="@yield('meta_keywords', 'Virtual Assistant services, Executive VA, professional admin support, business productivity, outsource tasks')">
 
 
-    <link rel="canonical" href="@yield('canonical', url()->current())">
+        <link rel="canonical" href="@yield('canonical', url()->current())">
 
-    {{-- Open Graph --}}
-    <meta property="og:url" content="@yield('og_url', url()->current())">
-    <meta property="og:title" content="@yield('og_title', config('app.name'))">
-    <meta property="og:description" content="@yield('og_description', 'Default description')">
-    <meta property="og:image" content="@yield('og_image', asset('default-og.png'))">
-    <meta property="og:type" content="@yield('og_type', 'website')">
+        {{-- Open Graph --}}
+        <meta property="og:url" content="@yield('og_url', url()->current())">
+        <meta property="og:title" content="@yield('og_title', config('app.name'))">
+        <meta property="og:description" content="@yield('og_description', 'Default description')">
+        <meta property="og:image" content="@yield('og_image', asset('default-og.png'))">
+        <meta property="og:type" content="@yield('og_type', 'website')">
 
-    {{-- Twitter --}}
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="@yield('og_title', config('app.name'))">
-    <meta name="twitter:description" content="@yield('og_description', 'Default description')">
-    <meta name="twitter:image" content="@yield('og_image', asset('default-og.png'))">
-    <!-- <title>Ally Virtual Assistant | Your Remote Business Partner</title> -->
-    <!-- <link rel="icon" type="image/png" href="images/ally-va-favicon.png" /> -->
+        {{-- Twitter --}}
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="@yield('og_title', config('app.name'))">
+        <meta name="twitter:description" content="@yield('og_description', 'Default description')">
+        <meta name="twitter:image" content="@yield('og_image', asset('default-og.png'))">
+        <!-- <title>Ally Virtual Assistant | Your Remote Business Partner</title> -->
+        <!-- <link rel="icon" type="image/png" href="images/ally-va-favicon.png" /> -->
 
-    {{-- Schema --}}
-    @yield('schema')
+        {{-- Schema --}}
+        @yield('schema')
+    @endif
+
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -55,6 +60,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     @stack('styles')
+
     <script>
         let inactivityTime = 0;
         const maxInactivityMinutes = 20;
@@ -80,63 +86,68 @@
             }
         }, 60000); // every minute
     </script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JB7QMCDMDR"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
 
-        gtag("config", "G-JB7QMCDMDR");
-    </script>
-    <!--End of  Google tag-->
+    
+    @if(!auth()->check() && !request()->is('password/*'))
 
-    <!--Start of  Microsoft Clarity-->
-    <script type="text/javascript">
-        (function (c, l, a, r, i, t, y) {
-            c[a] =
-                c[a] ||
-                function () {
-                    (c[a].q = c[a].q || []).push(arguments);
-                };
-            t = l.createElement(r);
-            t.async = 1;
-            t.src = "https://www.clarity.ms/tag/" + i;
-            y = l.getElementsByTagName(r)[0];
-            y.parentNode.insertBefore(t, y);
-        })(window, document, "clarity", "script", "ux829rzmaq");
-    </script>
-    <!--End of  Microsoft Clarity-->
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JB7QMCDMDR"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
 
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-        var Tawk_API = Tawk_API || {},
-            Tawk_LoadStart = new Date();
-        (function () {
-            var s1 = document.createElement("script"),
-                s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = "https://embed.tawk.to/695d0bc31b9b1e197b60fefd/1je9nbtr1";
-            s1.charset = "UTF-8";
-            s1.setAttribute("crossorigin", "*");
-            s0.parentNode.insertBefore(s1, s0);
-        })();
-    </script>
-    <!--End of Tawk.to Script-->
+            gtag("config", "G-JB7QMCDMDR");
+        </script>
+        <!--End of  Google tag-->
 
-    <!--Start of  Agile CRM-->
-    <script id="_agile_min_js" async type="text/javascript"
-        src="https://callarup.agilecrm.com/stats/min/agile-min.js"> </script>
-    <script type="text/javascript">
-        var Agile_API = Agile_API || {}; Agile_API.on_after_load = function () {
-            _agile.set_account('q7vjc8ot4legj09a43un6m2fhi', 'callarup', false);
-            _agile.track_page_view();
-            _agile_execute_web_rules();
-        };
-    </script>
-    <!--End of  Agile CRM-->
+        <!--Start of  Microsoft Clarity-->
+        <script type="text/javascript">
+            (function (c, l, a, r, i, t, y) {
+                c[a] =
+                    c[a] ||
+                    function () {
+                        (c[a].q = c[a].q || []).push(arguments);
+                    };
+                t = l.createElement(r);
+                t.async = 1;
+                t.src = "https://www.clarity.ms/tag/" + i;
+                y = l.getElementsByTagName(r)[0];
+                y.parentNode.insertBefore(t, y);
+            })(window, document, "clarity", "script", "ux829rzmaq");
+        </script>
+        <!--End of  Microsoft Clarity-->
+
+        <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {},
+                Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"),
+                    s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = "https://embed.tawk.to/695d0bc31b9b1e197b60fefd/1je9nbtr1";
+                s1.charset = "UTF-8";
+                s1.setAttribute("crossorigin", "*");
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+        <!--End of Tawk.to Script-->
+
+        <!--Start of  Agile CRM-->
+        <script id="_agile_min_js" async type="text/javascript"
+            src="https://callarup.agilecrm.com/stats/min/agile-min.js"> </script>
+        <script type="text/javascript">
+            var Agile_API = Agile_API || {}; Agile_API.on_after_load = function () {
+                _agile.set_account('q7vjc8ot4legj09a43un6m2fhi', 'callarup', false);
+                _agile.track_page_view();
+                _agile_execute_web_rules();
+            };
+        </script>
+        <!--End of  Agile CRM-->
+    @endif
 
 
 </head>
