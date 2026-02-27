@@ -165,7 +165,6 @@
         @endphp
         @if(
                 request()->is('/') ||
-                request()->is('home') ||
                 request()->is('about') ||
                 request()->is('services') ||
                 request()->is('pricing') ||

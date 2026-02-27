@@ -7,18 +7,18 @@
         <img src="{{ asset('images/Ally-VA.png') }}" alt="Ally VA - Virtual Assistant Services logo" class="me-2" />
       </a> -->
 
-      @if(Auth::check())
-        {{-- Logged in: open the public home page in new tab --}}
-        <a href="{{ route('public.home') }}" target="_blank" rel="noopener noreferrer">
-          <img src="{{ asset('images/Ally-VA.png') }}" alt="Ally VA - Virtual Assistant Services logo">
-        </a>
-      @else
-        {{-- Not logged in: open home page in same tab --}}
-        <a href="{{ route('public.home') }}">
-          <img src="{{ asset('images/Ally-VA.png') }}" alt="Ally VA - Virtual Assistant Services logo">
-        </a>
-      @endif
-
+   
+@if(Auth::check())
+    {{-- Logged in: open the public home page in new tab --}}
+    <a href="{{ url('/') }}" target="_blank" rel="noopener noreferrer">
+        <img src="{{ asset('images/Ally-VA.png') }}" alt="Ally VA - Virtual Assistant Services logo">
+    </a>
+@else
+    {{-- Not logged in: open home page in same tab --}}
+    <a href="{{ url('/') }}">
+        <img src="{{ asset('images/Ally-VA.png') }}" alt="Ally VA - Virtual Assistant Services logo">
+    </a>
+@endif
 
       <div id="" class="d-block d-lg-none">
 
@@ -503,7 +503,7 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
               )
               )
             <li class="nav-item text-primary">
-              <a class="nav-link" href="{{ url('/home') }}">Home</a>
+              <a class="nav-link" href="{{ url('/') }}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url('/about') }}">About</a>
@@ -686,7 +686,7 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
 
 @php
   $publicPages = [
-    '', 'home', 'about', 'services', 'pricing',
+    '/', 'about', 'services', 'pricing',
     'insights', 'contact', 'login', 'inquerySave'
   ];
 
@@ -703,7 +703,7 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
   @else
     @php
       // Define the routes where the section should be hidden
-      $hiddenRoutes = ['home', 'about', 'services', 'pricing', 'insights', 'contact', 'inquerySave', 'administrative-support'];
+      $hiddenRoutes = ['/', 'about', 'services', 'pricing', 'insights', 'contact', 'inquerySave', 'administrative-support'];
     @endphp
 
     {{-- Show this section only if the current route is NOT in the hidden list --}}

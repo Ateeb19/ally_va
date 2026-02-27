@@ -36,19 +36,28 @@ use App\Http\Controllers\BlogController;
 //     // If not logged in, show the regular website homepage view
 //     return view('welcome'); // or 'home', or whatever your homepage view is
 // });
+// Route::get('/', function () {
+//     if (Auth::check()) {
+//         return redirect()->route('dashboard');
+//     }
+//     return view('welcome');
+// });
+
+// // Route::get('/home-page', function () {
+// //     return view('welcome');
+// // })->name('public.home');
+// Route::get('/home', function () {
+//     return view('welcome');
+// })->name('public.home');
+
 Route::get('/', function () {
-    if (Auth::check()) {
-        return redirect()->route('dashboard');
-    }
     return view('welcome');
 });
 
-// Route::get('/home-page', function () {
-//     return view('welcome');
-// })->name('public.home');
-Route::get('/home', function () {
-    return view('welcome');
-})->name('public.home');
+// Keep your dashboard route as it is
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 // ... the rest of your routes
 Route::get('/about', function () {
