@@ -8,9 +8,20 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Ally Virtual Assistant | Your Remote Business Partner')</title>
+    @php
+        $hideSeoRoutes = request()->is(
+            'dashboard',
+            'admin/*',
+            'user/*/edit',
+            'user/taskhistory/*',
+            'password/reset',
+            'password/*'
+        );
+    @endphp
+
+    @if(!$hideSeoRoutes)
 
 
-    @if(!auth()->check() && !request()->is('password/*'))
         <meta name="description"
             content="@yield('meta_description', 'Ally VA is your dedicated virtual assistant, streamlining administrative tasks to boost productivity and improve business efficiency.')">
 
@@ -87,8 +98,8 @@
         }, 60000); // every minute
     </script>
 
-    
-    @if(!auth()->check() && !request()->is('password/*'))
+
+    @if(!$hideSeoRoutes)
 
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-JB7QMCDMDR"></script>
