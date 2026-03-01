@@ -74,7 +74,7 @@
         <div class="col-lg-8 col-md-12">
 
           <form method="POST" action="{{ route('inquerySave') }}" class="contact-form p-4 contact-form-left h-100"
-            id="contactForm">
+            id="contactForm" onsubmit="showLoader()">
             @csrf
             <div class="row g-4 mb-3">
               <div class="col-md-6">
@@ -118,6 +118,7 @@
               grecaptcha.execute("{{ config('recaptcha.site_key') }}", { action: 'contact' })
                 .then(function (token) {
                   document.getElementById("contact-recaptcha").value = token;
+                  showLoader();
                   e.target.submit();
                 });
             });

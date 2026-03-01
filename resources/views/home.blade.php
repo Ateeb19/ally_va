@@ -234,7 +234,7 @@
             </script>
 
             <!-- Price + Button -->
-            <form action="{{ route('paypal.payment') }}" method="GET" id="paypalForm">
+            <form action="{{ route('paypal.payment') }}" method="GET" id="paypalForm" onsubmit="showLoader()">
               <div class="d-flex flex-row justify-content-between align-items-center mt-4 gap-3">
                 <div class="text-white text-center py-2 price-btn">
                   <p class="fw-bold mb-0">

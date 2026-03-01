@@ -108,8 +108,17 @@
             <div class="tab-content">
               <!-- Login Form -->
               <div class="tab-pane fade show active" id="loginTab">
-                <form method="POST" action="{{ route('login') }}" class="vstack gap-3" id="loginForm">
+                <form method="POST" action="{{ route('login') }}" class="vstack gap-3" id="loginForm" onsubmit="showLoader()">
                   @csrf
+                  @if ($errors->any() && old('form_type') == 'login')
+    <div class="alert alert-danger">
+        <ul class="mb-0" >
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
                   <div class="input-group">
                     <span class="input-group-text">
                       <i class="ri-user-fill"></i>
@@ -117,11 +126,11 @@
                     <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
                       value="{{ old('email') }}" placeholder="Username" required autocomplete="email" autofocus>
 
-                    @error('email')
+                    <!-- @error('email')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                       </span>
-                    @enderror
+                    @enderror -->
                   </div>
                   <div class="input-group">
                     <span class="input-group-text">
@@ -131,11 +140,11 @@
                       name="password" required autocomplete="current-password" placeholder="Password">
                     <input type="hidden" name="form_type" value="login">
 
-                    @error('password')
+                    <!-- @error('password')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                       </span>
-                    @enderror
+                    @enderror -->
                     <span class="input-group-text" onclick="togglePassword('password', this)" style="cursor: pointer">
                       <i class="ri-eye-off-fill"></i>
                     </span>
@@ -171,6 +180,7 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
     grecaptcha.execute("{{ config('recaptcha.site_key') }}", { action: 'login' })
         .then(function(token) {
             document.getElementById("login-recaptcha").value = token;
+            showLoader();
             e.target.submit();
         });
 });
@@ -178,8 +188,17 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
               </div>
 
               <div class="tab-pane fade" id="signupTab">
-                <form method="POST" action="{{ route('register') }}" class="vstack gap-3" id="signupForm" novalidate>
+                <form method="POST" action="{{ route('register') }}" class="vstack gap-3" id="signupForm" novalidate onsubmit="showLoader()">
                   @csrf
+                  @if ($errors->any() && old('form_type') == 'signup')
+    <div class="alert alert-danger">
+        <ul class="mb-0">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
                   <!-- Full Name -->
                   <div class="input-group">
                     <span class="input-group-text">
@@ -188,11 +207,11 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"
                       value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Full Name">
 
-                    @error('name')
+                    <!-- @error('name')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                       </span>
-                    @enderror
+                    @enderror -->
                   </div>
                   <!-- Email -->
                   <div class="input-group">
@@ -202,11 +221,11 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
                       name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="E-mail">
 
-                    @error('email')
+                    <!-- @error('email')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                       </span>
-                    @enderror
+                    @enderror -->
                   </div>
                   <!-- Phone -->
                   <div class="input-group">
@@ -215,11 +234,11 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
                     </span>
                     <input type="number" class="form-control @error('phone') is-invalid @enderror" placeholder="Phone"
                       name="phone" required />
-                    @error('phone')
+                    <!-- @error('phone')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                       </span>
-                    @enderror
+                    @enderror -->
                   </div>
 
                   <!-- Password -->
@@ -231,11 +250,11 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
                       class="form-control @error('password') is-invalid @enderror" name="password" required
                       autocomplete="new-password" placeholder="Password">
 
-                    @error('password')
+                    <!-- @error('password')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                       </span>
-                    @enderror
+                    @enderror -->
                     <span class="input-group-text" onclick="togglePassword('signupPassword', this)"
                       style="cursor: pointer">
                       <i class="ri-eye-off-fill"></i>
@@ -274,6 +293,17 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
           </div>
         </div>
       </div>
+      @if ($errors->any())
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var formType = "{{ old('form_type') }}";
+        if (formType === "signup") {
+            var signupTab = new bootstrap.Tab(document.querySelector('#signup-tab'));
+            signupTab.show();
+        }
+    });
+</script>
+@endif
 
       <!-- Mobile toggle -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
