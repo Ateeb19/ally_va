@@ -3,7 +3,7 @@
 
 @section('content')
   <!-- Add Task Listing Table -->
-  <section class="admin-table-wrapper mt-5">
+  <section class="admin-table-wrapper my-4">
     <div class="container">
       @if(session()->has('message'))
         <div class="alert alert-success">
@@ -11,7 +11,7 @@
         </div>
       @endif
       <div class="table-info-wrap">
-        <div class="row">
+        <div class="row gy-4">
           <div class="col-xl-6">
             <form action="{{ url()->current() }}" method="GET">
               <div class="form-group">
@@ -184,7 +184,7 @@
 
               <label class="form-label">Task Type</label>
               <div class="input-group ">
-                <span class="input-group-text"><i class="ri-user-fill"></i></span>
+                <span class="input-group-text"><i class="ri-suitcase-fill"></i></span>
                 <input type="text" id="task_type" class="form-control" name="task_type">
               </div>
             </div>
@@ -192,7 +192,7 @@
             <div class=" mb-3">
               <label class="form-label">Task Date</label>
               <div class="input-group">
-                <span class="input-group-text"><i class="ri-mail-fill"></i></span>
+                <span class="input-group-text"><i class="ri-calendar-fill"></i></span>
                 <input type="date" id="task_date" name="date" class="form-control">
               </div>
             </div>
@@ -200,7 +200,7 @@
             <div class=" mb-3">
               <label class="form-label">Task Point</label>
               <div class="input-group">
-                <span class="input-group-text"><i class="ri-phone-fill"></i></span>
+                <span class="input-group-text"><i class="ri-draft-fill"></i></span>
                 <input type="text" id="task_point" name="task_point" class="form-control">
               </div>
             </div>

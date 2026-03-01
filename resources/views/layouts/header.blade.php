@@ -62,7 +62,7 @@
         (request()->is('blogs*') && !request()->is('blogs/show-detail/*'))
     )
 )
-    <button type="button" class="btn btn-primary px-4">
+    <button type="button" class="btn btn-primary px-4 login-logout-btn-lougout">
         <a class="text-white px-6" style="text-decoration: none" href="{{ route('logout') }}"
            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
             Log Out
@@ -74,7 +74,7 @@
     </form>
 
 @elseif(!Auth::check())
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#authModal">
+    <button type="button" class="btn btn-primary login-logout-btn" data-bs-toggle="modal" data-bs-target="#authModal">
         Login
     </button>
 @endif

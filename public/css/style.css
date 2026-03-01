@@ -363,8 +363,9 @@ a {
 }
 
 .faq-wrapper .accordion-header {
-  margin-bottom: 10px !important;
+  /* margin-bottom: 10px !important; */
   /* border: 1px solid #9b9b9b; */
+  border: 1px solid #fff;
   border-radius: 8px;
 }
 
@@ -2122,10 +2123,15 @@ input[type="range"]::-ms-thumb {
   visibility: hidden !important;
 }
 
+.alert.alert-success {
+  text-align: center;
+}
+
 /* Responsive starts from here */
 
 @media (max-width: 1999px) {
-  .hor-line {
+  .hor-line ::after {
+    display: none;
     position: absolute;
     top: 21%;
     left: 188px;
@@ -2134,7 +2140,8 @@ input[type="range"]::-ms-thumb {
 }
 
 @media(max-width: 1650px) {
-  .hor-line {
+  .hor-line ::after {
+    display: none;
     position: absolute;
     top: 21%;
     left: 243px;
@@ -2167,7 +2174,8 @@ input[type="range"]::-ms-thumb {
     width: 70%;
   }
 
-  .hor-line {
+  .hor-line ::after {
+    display: none;
     left: 198px;
     width: 254px;
   }
@@ -2446,16 +2454,16 @@ input[type="range"]::-ms-thumb {
   }
 
   .label-wrapper .hours {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .label-wrapper .hours-right {
-    font-size: 13px;
+    font-size: 12px;
     text-align: right;
   }
 
   .label-wrapper .hourly-plan {
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
   }
 
@@ -2551,5 +2559,27 @@ input[type="range"]::-ms-thumb {
 
   .privacy-wrapper {
     margin-top: 25px;
+  }
+
+  .login-logout-btn {
+    margin-right: -72px;
+  }
+
+  .login-logout-btn-lougout {
+    margin-right: -30px;
+  }
+
+  .price-btn {
+
+    padding: 8px 10px;
+    font-size: 14px;
+
+  }
+
+  .buy-btn {
+
+    padding: 8px 10px;
+    font-size: 14px;
+
   }
 }

@@ -4,7 +4,7 @@
   
   <!-- //Admin data only show here -->
   @if(!isset($adminView) && auth()->user()->hasRole('super_admin'))
-    <section class="admin-table-wrapper my-5">
+    <section class="admin-table-wrapper my-4">
       <div class="container">
         @if(session()->has('message'))
           <div class="alert alert-success">
@@ -235,7 +235,7 @@
 
             <!-- Price + Button -->
             <form action="{{ route('paypal.payment') }}" method="GET" id="paypalForm">
-              <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mt-4 gap-3">
+              <div class="d-flex flex-row justify-content-between align-items-center mt-4 gap-3">
                 <div class="text-white text-center py-2 price-btn">
                   <p class="fw-bold mb-0">
                     Total Price: <span id="totalPrice">$180</span>
@@ -329,7 +329,7 @@
         <div class="user-table-wrap shadow">
           <div class="table-info-wrap">
             <div class="trans-boxes">
-              <h2>Transaction Details <span>(Please allow time for updates)</span> </h2>
+              <h2>Transaction Details  </h2>
               @if(isset($adminView) && auth()->user()->hasRole('super_admin'))
                 <div class="trans-btn">
                   <form id="deleteMultipleForm" action="{{ route('admin.users.transaction.destroyMultiple') }}" method="POST"
