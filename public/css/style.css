@@ -2566,11 +2566,11 @@ input[type="range"]::-ms-thumb {
   }
 
   .login-logout-btn {
-    margin-right: -40px;
+    margin-right: -20px;
   }
 
   .login-logout-btn-lougout {
-    margin-right: -30px;
+    margin-right: -15px;
   }
 
   .price-btn {

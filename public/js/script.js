@@ -16,25 +16,16 @@ function togglePassword(inputId, el) {
 
 
 // Form Validation
-document.getElementById("signupForm").addEventListener("submit", function(e) {
+// document.getElementById("signupForm").addEventListener("submit", function(e) {
 
 
-    const pass = document.getElementById("signupPassword").value;
-    const confirmPass = document.getElementById("password-confirm").value;
-    // const recaptcha = grecaptcha.getResponse();
+//     const pass = document.getElementById("signupPassword").value;
+//     const confirmPass = document.getElementById("password-confirm").value;
+//     // const recaptcha = grecaptcha.getResponse();
 
-    if (pass !== confirmPass) {
-        e.preventDefault();
-        alert("Passwords do not match!");
-        return; 
-    }
-
-    // if (!recaptcha) {
-    //     alert("❌ Please verify that you are not a robot.");
-    //     return;
-    // }
-
-    // alert("✅ Account Created Successfully!");
-    // yaha par aap backend ko form data bhejoge
-    return true;
-});
+//     if (pass !== confirmPass) {
+//         e.preventDefault();
+//         return; 
+//     }
+//     return true;
+// });

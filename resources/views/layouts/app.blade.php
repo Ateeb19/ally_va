@@ -337,17 +337,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (pass !== confirmPass) {
                     e.preventDefault();
-                    alert("Passwords do not match!");
                     return;
-                }
-
-                //   if (!recaptcha) {
-                //     alert("❌ Please verify that you are not a robot.");
-                //     return;
-                //   }
-
-                //   alert("✅ Account Created Successfully!");
-                // yaha par aap backend ko form data bhejoge
+                }            
                 return true;
             });
     </script>
