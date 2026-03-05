@@ -22,35 +22,35 @@
 
 @section('schema')
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  "name": "Contact Ally VA",
-  "description": "Get in touch with Arup Seth at Ally VA. Reach out via email or phone to discuss how we can support your business growth.",
-  "url": "https://allyva.com/contact",
-  "mainEntity": {
-    "@type": "LocalBusiness",
-    "name": "Ally VA",
-    "image": "https://allyva.com/Ally-Virtual-Assistant.png",
-    "logo": "https://allyva.com/Ally-VA.png",
-    "telephone": "+91-9163329207",
-    "email": "arup@allyva.com",
-    "url": "https://allyva.com",
-    "areaServed": ["US", "AU", "GB", "CA", "NZ", "SG", "DE", "NL", "AE", "Worldwide"],
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "IN"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+91-9163329207",
-      "contactType": "customer service",
-      "areaServed": ["US", "AU", "GB", "CA", "NZ", "SG", "DE", "NL", "AE", "Worldwide"],
-      "availableLanguage": "English"
-    }
-  }
-}
-</script>
+      {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact Ally VA",
+        "description": "Get in touch with Arup Seth at Ally VA. Reach out via email or phone to discuss how we can support your business growth.",
+        "url": "https://allyva.com/contact",
+        "mainEntity": {
+          "@type": "LocalBusiness",
+          "name": "Ally VA",
+          "image": "https://allyva.com/Ally-Virtual-Assistant.png",
+          "logo": "https://allyva.com/Ally-VA.png",
+          "telephone": "+91-9163329207",
+          "email": "arup@allyva.com",
+          "url": "https://allyva.com",
+          "areaServed": ["US", "AU", "GB", "CA", "NZ", "SG", "DE", "NL", "AE", "Worldwide"],
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "IN"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-9163329207",
+            "contactType": "customer service",
+            "areaServed": ["US", "AU", "GB", "CA", "NZ", "SG", "DE", "NL", "AE", "Worldwide"],
+            "availableLanguage": "English"
+          }
+        }
+      }
+      </script>
 
 @endsection
 
@@ -74,7 +74,7 @@
         <div class="col-lg-8 col-md-12">
 
           <form method="POST" action="{{ route('inquerySave') }}" class="contact-form p-4 contact-form-left h-100"
-            id="contactForm" onsubmit="showLoader()">
+            id="contactForm">
             @csrf
             <div class="row g-4 mb-3">
               <div class="col-md-6">
@@ -102,7 +102,12 @@
               </div>
               <input type="hidden" name="g-recaptcha-response" id="contact-recaptcha">
               <div class="col-12">
-                <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                <!-- <button type="submit" class="btn btn-primary w-100">Send Message</button> -->
+                <button type="submit" class="btn btn-primary w-100" id="contactBtn">
+                  <span class="btn-text">Send Message</span>
+                  <img src="{{ asset('images/ally-loader_yellow.gif') }}" id="contactLoader" width="50"
+                    style="display:none;">
+                </button>
               </div>
             </div>
             @if(session()->has('message'))
@@ -111,16 +116,42 @@
               </div>
             @endif
           </form>
-          <script>
-            document.getElementById("contactForm").addEventListener("submit", function (e) {
-              e.preventDefault();
+          <!-- <script>
+                document.getElementById("contactForm").addEventListener("submit", function (e) {
+                  e.preventDefault();
 
-              grecaptcha.execute("{{ config('recaptcha.site_key') }}", { action: 'contact' })
-                .then(function (token) {
-                  document.getElementById("contact-recaptcha").value = token;
-                  showLoader();
-                  e.target.submit();
+                  grecaptcha.execute("{{ config('recaptcha.site_key') }}", { action: 'contact' })
+                    .then(function (token) {
+                      document.getElementById("contact-recaptcha").value = token;
+                      showLoader();
+                      e.target.submit();
+                    });
                 });
+              </script> -->
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+
+              const form = document.getElementById("contactForm");
+              const loader = document.getElementById("contactLoader");
+              const text = document.querySelector("#contactBtn .btn-text");
+
+              form.addEventListener("submit", function (e) {
+
+                e.preventDefault(); // stop default submit
+
+                grecaptcha.execute("{{ config('recaptcha.site_key') }}", { action: 'contact' })
+                  .then(function (token) {
+
+                    document.getElementById("contact-recaptcha").value = token;
+
+                    text.style.display = "none";
+                    loader.style.display = "inline";
+
+                    form.submit();
+                  });
+
+              });
+
             });
           </script>
         </div>

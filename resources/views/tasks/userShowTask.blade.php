@@ -3,7 +3,7 @@
 
 @section('content')
   <!-- Add Task Listing Table -->
-  <section class="admin-table-wrapper mt-5">
+  <section class="admin-table-wrapper my-4">
     <div class="container">
       @if(session()->has('message'))
         <div class="alert alert-success">
@@ -39,7 +39,7 @@
               <tr>
                 <th scope="col">Task Type</th>
                 <th scope="col">Task Date</th>
-                <th scope="col">Points Charged</th>
+                <th scope="col">Point Charge</th>
               </tr>
             </thead>
             <tbody class="superadmin-icons">

@@ -385,7 +385,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     <script src="https://www.google.com/recaptcha/api.js?render={{ config('recaptcha.site_key') }}"></script>
     <!-- Global Loader -->
-    <div id="globalLoader" style="
+    <!-- <div id="globalLoader" style="
     display: none;
     position: fixed;
     inset: 0;
@@ -396,16 +396,13 @@ document.addEventListener("DOMContentLoaded", function () {
 ">
         <div class="text-center">
             <img src="{{ asset('images/ally-loader.gif') }}" width="150">
-            <!-- <div class="spinner-border text-dark" role="status" style="width: 3rem; height: 3rem;">
-                <span class="visually-hidden">Loading...</span>
-            </div> -->
         </div>
     </div>
     <script>
         function showLoader() {
             document.getElementById("globalLoader").style.display = "flex";
         }
-    </script>
+    </script> -->
 </body>
 
 </html>

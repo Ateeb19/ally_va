@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Ally VA')
 @section('content')
-  
+
   <!-- //Admin data only show here -->
   @if(!isset($adminView) && auth()->user()->hasRole('super_admin'))
     <section class="admin-table-wrapper my-4">
@@ -36,8 +36,8 @@
         </div>
 
         <!-- <div class="d-flex justify-content-center">
-                                                                                  {{ $users->links() }}
-                                                                                </div> -->
+                                                                                                  {{ $users->links() }}
+                                                                                                </div> -->
         <div class="w-100">
           <div class="admin-table-wrap">
             <table>
@@ -80,21 +80,21 @@
             <div class="d-flex flex-wrap justify-content-between align-items-center mt-4 pagination-wrap">
               {{ $users->links('vendor.pagination.bootstrap-5') }}
               <!-- <p class="mb-0">Page: 1 of 2</p>
-                                                                                      <div class="d-flex align-items-center gap-2">
-                                                                                        <span>Page Size:</span>
-                                                                                        <select class="form-select form-select-sm w-auto py-2">
-                                                                                          <option>10</option>
-                                                                                          <option>25</option>
-                                                                                          <option>50</option>
-                                                                                        </select>
-                                                                                      </div>
-                                                                                      <div class="d-flex gap-2 last-point-view">
-                                                                                        <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-double-line"></i></button>
-                                                                                        <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-s-line"></i></button>
-                                                                                        <button class="btn btn-sm btn-outline-secondary active">1</button>
-                                                                                        <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-s-line"></i></button>
-                                                                                        <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-double-line"></i></button>
-                                                                                      </div> -->
+                                                                                                      <div class="d-flex align-items-center gap-2">
+                                                                                                        <span>Page Size:</span>
+                                                                                                        <select class="form-select form-select-sm w-auto py-2">
+                                                                                                          <option>10</option>
+                                                                                                          <option>25</option>
+                                                                                                          <option>50</option>
+                                                                                                        </select>
+                                                                                                      </div>
+                                                                                                      <div class="d-flex gap-2 last-point-view">
+                                                                                                        <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-double-line"></i></button>
+                                                                                                        <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-s-line"></i></button>
+                                                                                                        <button class="btn btn-sm btn-outline-secondary active">1</button>
+                                                                                                        <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-s-line"></i></button>
+                                                                                                        <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-double-line"></i></button>
+                                                                                                      </div> -->
             </div>
           </div>
         </div>
@@ -133,20 +133,20 @@
                 <input id="user_name" type="text" class="form-control @error('user_name') is-invalid @enderror"
                   name="user_name" value="{{ old('user_name') }}" required placeholder="Full Name">
                 <!-- @error('user_name')
-                          <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
-                        @enderror -->
+                                          <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                                        @enderror -->
               </div>
 
               <!-- Email -->
               <div class="input-group">
                 <span class="input-group-text"><i class="ri-mail-fill"></i></span>
                 <!-- <input id="user_email" type="user_email" class="form-control @error('user_email') is-invalid @enderror"
-                                                                                                                      name="user_email" value="{{ old('user_email') }}" required placeholder="E-mail"> -->
+                                                                                                                                      name="user_email" value="{{ old('user_email') }}" required placeholder="E-mail"> -->
                 <input id="user_email" type="email" class="form-control @error('user_email') is-invalid @enderror"
                   name="user_email" value="{{ old('user_email') }}" required placeholder="E-mail">
                 <!-- @error('user_email')
-                          <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
-                        @enderror -->
+                                          <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                                        @enderror -->
               </div>
 
               <!-- Phone -->
@@ -155,8 +155,8 @@
                 <input type="text" class="form-control @error('user_phone') is-invalid @enderror" placeholder="Phone Number"
                   name="user_phone" required />
                 <!-- @error('user_phone')
-                          <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
-                        @enderror -->
+                                          <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                                        @enderror -->
               </div>
 
               <!-- Password -->
@@ -168,8 +168,8 @@
                   <i class="ri-eye-off-fill"></i>
                 </span>
                 <!-- @error('user_Password')
-                          <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
-                        @enderror -->
+                                          <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                                        @enderror -->
               </div>
 
               <!-- Confirm Password -->
@@ -234,7 +234,7 @@
             </script>
 
             <!-- Price + Button -->
-            <form action="{{ route('paypal.payment') }}" method="GET" id="paypalForm" onsubmit="showLoader()">
+            <form action="{{ route('paypal.payment') }}" method="GET" id="paypalForm">
               <div class="d-flex flex-row justify-content-between align-items-center mt-4 gap-3">
                 <div class="text-white text-center py-2 price-btn">
                   <p class="fw-bold mb-0">
@@ -247,11 +247,52 @@
                 @if(isset($adminView) && auth()->user()->hasRole('super_admin'))
                   <input type="hidden" name="managed_user_id" value="{{ $userId }}">
                 @endif
-                <button type="submit" class="text-white fw-semibold shadow py-2 buy-btn">
-                  Buy Now
+                <!-- <button type="submit" class="text-white fw-semibold shadow py-2 buy-btn">
+                                  Buy Now
+                                </button> -->
+                <button type="submit" class="text-white fw-semibold shadow py-2 buy-btn" id="buyBtn">
+                  <span class="btn-text">Buy Now</span>
+                  <img src="{{ asset('images/ally-loader_yellow.gif') }}" id="buyLoader" width="30" style="display:none;">
                 </button>
               </div>
             </form>
+            <script>
+              document.addEventListener("DOMContentLoaded", function () {
+                const form = document.getElementById("paypalForm");
+                const loader = document.getElementById("buyLoader");
+                const text = document.querySelector("#buyBtn .btn-text");
+                const button = document.getElementById("buyBtn");
+                form.addEventListener("submit", function () {
+                  text.style.display = "none";
+                  loader.style.display = "inline";
+                  button.disabled = true;
+                });
+
+              });
+            </script>
+            <script>
+              document.addEventListener("DOMContentLoaded", function () {
+                const form = document.getElementById("paypalForm");
+                const loader = document.getElementById("buyLoader");
+                const text = document.querySelector("#buyBtn .btn-text");
+                const button = document.getElementById("buyBtn");
+                form.addEventListener("submit", function () {
+                  text.style.display = "none";
+                  loader.style.display = "inline";
+                  button.disabled = true;
+                });
+              });
+              window.addEventListener("pageshow", function () {
+                const loader = document.getElementById("buyLoader");
+                const text = document.querySelector("#buyBtn .btn-text");
+                const button = document.getElementById("buyBtn");
+                if (loader && text && button) {
+                  loader.style.display = "none";
+                  text.style.display = "inline";
+                  button.disabled = false;
+                }
+              });
+            </script>
           </div>
         </div>
       </div>
@@ -329,7 +370,7 @@
         <div class="user-table-wrap shadow">
           <div class="table-info-wrap">
             <div class="trans-boxes">
-              <h2>Transaction Details  </h2>
+              <h2>Transaction Details </h2>
               @if(isset($adminView) && auth()->user()->hasRole('super_admin'))
                 <div class="trans-btn">
                   <form id="deleteMultipleForm" action="{{ route('admin.users.transaction.destroyMultiple') }}" method="POST"
@@ -361,7 +402,7 @@
                         Transaction ID
                       </th>
                       <th scope="col">Transaction Date</th>
-                      <th scope="col" class="text-end">Amount (USD)</th>
+                      <th scope="col">Amount (USD)</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -391,7 +432,7 @@
                             @endif
                           </td>
                           <td>{{ date('m-d-Y', strtotime($transaction->date)) }}</td>
-                          <td class="text-end">{{ $transaction->amount }}</td>
+                          <td>{{ $transaction->amount }}</td>
                         </tr>
                       @endforeach
                     @endif
@@ -406,31 +447,31 @@
               <div class="d-flex flex-wrap justify-content-between align-items-center mt-2 pagination-wrap">
                 {{ $transactions->links('vendor.pagination.bootstrap-5') }}
                 <!-- <p class="mb-0">Page: 1 of 2</p>
-                                                        <div class="d-flex align-items-center gap-2">
-                                                          <span>Page Size:</span>
-                                                          <select class="form-select form-select-sm w-auto py-2">
-                                                            <option>10</option>
-                                                            <option>25</option>
-                                                            <option>50</option>
-                                                          </select>
-                                                        </div>
-                                                        <div class="d-flex gap-2 last-point-view">
-                                                          <button class="btn btn-sm btn-outline-secondary">
-                                                            <i class="ri-arrow-left-double-line"></i>
-                                                          </button>
-                                                          <button class="btn btn-sm btn-outline-secondary">
-                                                            <i class="ri-arrow-left-s-line"></i>
-                                                          </button>
-                                                          <button class="btn btn-sm btn-outline-secondary active">
-                                                            1
-                                                          </button>
-                                                          <button class="btn btn-sm btn-outline-secondary">
-                                                            <i class="ri-arrow-right-s-line"></i>
-                                                          </button>
-                                                          <button class="btn btn-sm btn-outline-secondary">
-                                                            <i class="ri-arrow-right-double-line"></i>
-                                                          </button>
-                                                        </div> -->
+                                                                        <div class="d-flex align-items-center gap-2">
+                                                                          <span>Page Size:</span>
+                                                                          <select class="form-select form-select-sm w-auto py-2">
+                                                                            <option>10</option>
+                                                                            <option>25</option>
+                                                                            <option>50</option>
+                                                                          </select>
+                                                                        </div>
+                                                                        <div class="d-flex gap-2 last-point-view">
+                                                                          <button class="btn btn-sm btn-outline-secondary">
+                                                                            <i class="ri-arrow-left-double-line"></i>
+                                                                          </button>
+                                                                          <button class="btn btn-sm btn-outline-secondary">
+                                                                            <i class="ri-arrow-left-s-line"></i>
+                                                                          </button>
+                                                                          <button class="btn btn-sm btn-outline-secondary active">
+                                                                            1
+                                                                          </button>
+                                                                          <button class="btn btn-sm btn-outline-secondary">
+                                                                            <i class="ri-arrow-right-s-line"></i>
+                                                                          </button>
+                                                                          <button class="btn btn-sm btn-outline-secondary">
+                                                                            <i class="ri-arrow-right-double-line"></i>
+                                                                          </button>
+                                                                        </div> -->
               </div>
             </div>
           </div>

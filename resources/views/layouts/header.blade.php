@@ -49,7 +49,7 @@
         @endif -->
   {{-- if user/admin logged in AND current page is home, hide button completely --}}
   
-@if(Auth::check() && request()->is('home'))
+<!-- @if(Auth::check() && request()->is('home'))
     
 @elseif(
     Auth::check() &&
@@ -77,7 +77,7 @@
     <button type="button" class="btn btn-primary login-logout-btn" data-bs-toggle="modal" data-bs-target="#authModal">
         Login
     </button>
-@endif
+@endif -->
       </div>
 
 
@@ -168,12 +168,49 @@
                     <input type="hidden" name="g-recaptcha-response" id="login-recaptcha">
 
                   </div>
-                  <button type="submit" class="btn btn-dark w-100">
+                  <!-- <button type="submit" class="btn btn-dark w-100">
+                        <div id="globalLoader" style="
+    display: none;
+    gba(255,255,255,0.8);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+">
+        <div class="text-center">
+            <img src="{{ asset('images/ally-loader_yellow.gif') }}" width="100">
+        </div>
+    </div>
+    <script>
+        function showLoader() {
+            document.getElementById("globalLoader").style.display = "flex";
+        }
+    </script>
                     Sign In
-                  </button>
+                  </button> -->
+             <button type="submit" class="btn btn-dark w-100" id="loginBtn">
+    <span class="btn-text">Sign In</span>
+    <img src="{{ asset('images/ally-loader_yellow.gif') }}"
+         id="loginLoader"
+         width="25"
+         style="display:none;">
+</button>
                 </form>
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-                <script>
+    grecaptcha.execute("{{ config('recaptcha.site_key') }}", { action: 'login' })
+        .then(function(token) {
+
+            document.getElementById("login-recaptcha").value = token;
+
+            document.querySelector("#loginBtn .btn-text").style.display = "none";
+            document.getElementById("loginLoader").style.display = "inline";             
+            e.target.submit();
+        });
+});
+</script>
+                <!-- <script>
 document.getElementById("loginForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
@@ -184,11 +221,11 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
             e.target.submit();
         });
 });
-</script>
+</script> -->
               </div>
 
               <div class="tab-pane fade" id="signupTab">
-                <form method="POST" action="{{ route('register') }}" class="vstack gap-3" id="signupForm" novalidate onsubmit="showLoader()">
+                <form method="POST" action="{{ route('register') }}" class="vstack gap-3" id="signupForm" novalidate>
                   @csrf
                   @if ($errors->any() && old('form_type') == 'signup')
     <div class="alert alert-danger">
@@ -284,9 +321,32 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
                   </div> --}}
 
                   <!-- Button -->
-                  <button type="submit" class="btn btn-dark w-100">
+                  <!-- <button type="submit" class="btn btn-dark w-100">
+                    <div id="globalLoader" style="
+    display: none;
+    gba(255,255,255,0.8);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+">
+        <div class="text-center">
+            <img src="{{ asset('images/ally-loader_yellow.gif') }}" width="100">
+        </div>
+    </div>
+    <script>
+        function showLoader() {
+            document.getElementById("globalLoader").style.display = "flex";
+        }
+    </script>
                     Create Account
-                  </button>
+                  </button> -->
+                  <button type="submit" class="btn btn-dark w-100" id="signupBtn">
+    <span class="btn-text">Create Account</span>
+    <img src="{{ asset('images/ally-loader_yellow.gif') }}"
+         id="signupLoader"
+         width="25"
+         style="display:none;">
+</button>
                 </form>
               </div>
             </div>
@@ -294,7 +354,7 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
         </div>
       </div>
       @if ($errors->any())
-<script>
+<!-- <script>
     document.addEventListener("DOMContentLoaded", function () {
         var formType = "{{ old('form_type') }}";
         if (formType === "signup") {
@@ -302,10 +362,65 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
             signupTab.show();
         }
     });
-</script>
+</script> -->
 @endif
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const form = document.getElementById("signupForm");
+    const loader = document.getElementById("signupLoader");
+    const text = document.querySelector("#signupBtn .btn-text");
+
+    form.addEventListener("submit", function (e) {
+
+        const password = document.getElementById("signupPassword").value;
+        const confirmPassword = document.getElementById("password-confirm").value;
+
+        if (password !== confirmPassword) {
+            e.preventDefault();
+            return; // nothing happens
+        }
+
+        text.style.display = "none";
+        loader.style.display = "inline";
+
+    });
+
+});
+</script>
 
       <!-- Mobile toggle -->
+       <div id="" class="d-block d-lg-none"> 
+@if(Auth::check() && request()->is('home'))
+    
+@elseif(
+    Auth::check() &&
+    !request()->is('admin/users/*/dashboard') &&
+    !isset($adminView) && (
+        request()->is('dashboard') ||
+        request()->is('user/*') ||
+        request()->is('admin') ||
+        request()->is('admin/*') ||
+        (request()->is('blogs*') && !request()->is('blogs/show-detail/*'))
+    )
+)
+    <button type="button" class="btn btn-primary px-4 login-logout-btn-lougout">
+        <a class="text-white px-6" style="text-decoration: none" href="{{ route('logout') }}"
+           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            Log Out
+        </a>
+    </button>
+
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+        @csrf
+    </form>
+
+@elseif(!Auth::check())
+    <button type="button" class="btn btn-primary login-logout-btn" data-bs-toggle="modal" data-bs-target="#authModal">
+        Login
+    </button>
+@endif
+      </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
