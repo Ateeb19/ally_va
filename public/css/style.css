@@ -2127,6 +2127,17 @@ input[type="range"]::-ms-thumb {
   visibility: hidden !important;
 }
 
+.loader-gif{
+  height: 28px !important;
+}
+
+.blog-form .input-group{
+  height: auto;
+}
+
+.blog-form .form-control{
+  line-height: 2.1 !important;
+}
 /* .alert.alert-success {
   text-align: center;
 } */
@@ -2608,7 +2619,7 @@ input[type="range"]::-ms-thumb {
 
   th:nth-child(1),
   td:nth-child(1) {
-    width: 15%;
+    width: 25%;
   }
 
   th:nth-child(2),

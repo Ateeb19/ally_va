@@ -105,8 +105,8 @@
                 <!-- <button type="submit" class="btn btn-primary w-100">Send Message</button> -->
                 <button type="submit" class="btn btn-primary w-100" id="contactBtn">
                   <span class="btn-text">Send Message</span>
-                  <img src="{{ asset('images/ally-loader_yellow.gif') }}" id="contactLoader" width="50"
-                    style="display:none;">
+                  <img src="{{ asset('images/ally-loader_yellow.gif') }}" id="contactLoader" class="loader-gif"
+                    style="display:none;" alt="Processing your request">
                 </button>
               </div>
             </div>

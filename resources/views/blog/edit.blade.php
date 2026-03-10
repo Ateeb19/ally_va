@@ -8,7 +8,7 @@
 	<div class="container">
 		<div class="table-info-wrap">
 		    <div class="row">
-		        <form method="POST" action="{{ route('blogs.update', $blog->id) }}" class="vstack gap-3 mb-3" id="AddBlogForm" enctype="multipart/form-data">
+		        <form method="POST" action="{{ route('blogs.update', $blog->id) }}" class="vstack gap-3 mb-3 blog-form" id="AddBlogForm" enctype="multipart/form-data">
 		            @csrf
 		            @method('PUT')
 		            <div class="input-group">

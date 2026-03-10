@@ -45,7 +45,7 @@
                 <tr>
                   <th scope="col">Name</th>
                   <th scope="col">Email</th>
-                  <th scope="col">Contact Number</th>
+                  <th scope="col">Mobile</th>
                   <th scope="col" class="action-col">Action</th>
                 </tr>
               </thead>
@@ -252,7 +252,7 @@
                                 </button> -->
                 <button type="submit" class="text-white fw-semibold shadow py-2 buy-btn" id="buyBtn">
                   <span class="btn-text">Buy Now</span>
-                  <img src="{{ asset('images/ally-loader_yellow.gif') }}" id="buyLoader" width="30" style="display:none;">
+                  <img src="{{ asset('images/ally-loader_yellow.gif') }}" id="buyLoader" class="loader-gif" style="display:none;" alt="Processing your request">
                 </button>
               </div>
             </form>
@@ -401,7 +401,7 @@
                         @endif
                         Transaction ID
                       </th>
-                      <th scope="col">Transaction Date</th>
+                      <th scope="col">Date</th>
                       <th scope="col">Amount (USD)</th>
                     </tr>
                   </thead>

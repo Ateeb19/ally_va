@@ -38,7 +38,7 @@
             <thead>
               <tr>
                 <th scope="col">Task Type</th>
-                <th scope="col">Task Date</th>
+                <th scope="col">Date</th>
                 <th scope="col">Point Charge</th>
               </tr>
             </thead>

@@ -191,8 +191,9 @@
     <span class="btn-text">Sign In</span>
     <img src="{{ asset('images/ally-loader_yellow.gif') }}"
          id="loginLoader"
-         width="25"
-         style="display:none;">
+         class="loader-gif"
+         style="display:none;"
+         alt="Processing your request">
 </button>
                 </form>
 <script>
@@ -342,10 +343,11 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
                   </button> -->
                   <button type="submit" class="btn btn-dark w-100" id="signupBtn">
     <span class="btn-text">Create Account</span>
-    <img src="{{ asset('images/ally-loader_yellow.gif') }}"
+    <img src="{{ asset('images/ally-loader_yellow.gif') }}" 
+    class="loader-gif"
          id="signupLoader"
-         width="25"
-         style="display:none;">
+         style="display:none;"
+         alt="Processing your request">
 </button>
                 </form>
               </div>
@@ -638,6 +640,7 @@ document.addEventListener("DOMContentLoaded", function () {
               request()->is('it-solutions') ||
               request()->is('privacy') ||
               request()->is('login') ||
+              request()->is('register') ||
               request()->is('inquerySave') ||
               request()->is('blogs/*') ||
               request()->is('password/reset') ||

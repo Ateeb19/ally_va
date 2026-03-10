@@ -192,6 +192,7 @@
                 request()->is('it-solutions') ||
                 request()->is('privacy') ||
                 request()->is('login') ||
+                request()->is('register') ||
                 request()->is('inquerySave') ||
                 request()->is('blogs/*') ||
                 request()->is('password/reset') ||
@@ -338,7 +339,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (pass !== confirmPass) {
                     e.preventDefault();
                     return;
-                }            
+                }
                 return true;
             });
     </script>

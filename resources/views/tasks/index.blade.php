@@ -53,7 +53,7 @@
                   <input type="checkbox" class="form-check-input me-2" id="selectAll" />
                   Task Type
                 </th>
-                <th scope="col">Task Date</th>
+                <th scope="col">Date</th>
                 <th scope="col">Point Charge</th>
                 <!-- <th scope="col" class="action-col">Action</th> -->
               </tr>

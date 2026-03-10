@@ -338,6 +338,7 @@ document.addEventListener('DOMContentLoaded', function () {
       '/essential-seo',
       '/graphic-design',
       '/it-solutions',
+      '/register',
       '/privacy'
     ];
 
