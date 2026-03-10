@@ -2145,8 +2145,7 @@ input[type="range"]::-ms-thumb {
 /* Responsive starts from here */
 
 @media (max-width: 1999px) {
-  .hor-line ::after {
-    display: flex;
+  .hor-line {
     position: absolute;
     top: 21%;
     left: 188px;
@@ -2155,8 +2154,7 @@ input[type="range"]::-ms-thumb {
 }
 
 @media(max-width: 1650px) {
-  .hor-line ::after {
-    display: flex;
+  .hor-line {
     position: absolute;
     top: 21%;
     left: 243px;
@@ -2189,8 +2187,7 @@ input[type="range"]::-ms-thumb {
     width: 70%;
   }
 
-  .hor-line ::after {
-    display: flex;
+  .hor-line {
     left: 198px;
     width: 254px;
   }
