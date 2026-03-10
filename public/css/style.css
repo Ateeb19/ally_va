@@ -2146,7 +2146,7 @@ input[type="range"]::-ms-thumb {
 
 @media (max-width: 1999px) {
   .hor-line ::after {
-    display: none;
+    display: flex;
     position: absolute;
     top: 21%;
     left: 188px;
@@ -2156,7 +2156,7 @@ input[type="range"]::-ms-thumb {
 
 @media(max-width: 1650px) {
   .hor-line ::after {
-    display: none;
+    display: flex;
     position: absolute;
     top: 21%;
     left: 243px;
@@ -2190,7 +2190,7 @@ input[type="range"]::-ms-thumb {
   }
 
   .hor-line ::after {
-    display: none;
+    display: flex;
     left: 198px;
     width: 254px;
   }
