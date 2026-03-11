@@ -2127,17 +2127,18 @@ input[type="range"]::-ms-thumb {
   visibility: hidden !important;
 }
 
-.loader-gif{
+.loader-gif {
   height: 28px !important;
 }
 
-.blog-form .input-group{
+.blog-form .input-group {
   height: auto;
 }
 
-.blog-form .form-control{
+.blog-form .form-control {
   line-height: 2.1 !important;
 }
+
 /* .alert.alert-success {
   text-align: center;
 } */
@@ -2146,19 +2147,27 @@ input[type="range"]::-ms-thumb {
 
 @media (max-width: 1999px) {
   .hor-line {
-    position: absolute;
+    /* position: absolute;
     top: 21%;
     left: 188px;
-    width: 290px;
+    width: 290px; */
+    position: absolute;
+    top: 21%;
+    left: 200px;
+    width: 257px;
   }
 }
 
 @media(max-width: 1650px) {
   .hor-line {
-    position: absolute;
+    /* position: absolute;
     top: 21%;
     left: 243px;
-    width: 280px;
+    width: 280px; */
+    position: absolute;
+    top: 21%;
+    left: 201px;
+    width: 255px;
   }
 }
 
@@ -2188,8 +2197,8 @@ input[type="range"]::-ms-thumb {
   }
 
   .hor-line {
-    left: 198px;
-    width: 254px;
+    left: 179px;
+    width: 210px;
   }
 
   .hero-buttons {
@@ -2640,7 +2649,7 @@ input[type="range"]::-ms-thumb {
     font-size: 13px !important;
   }
 
-    table td {
+  table td {
     padding: 8px !important;
     font-size: 12px !important;
   }
