@@ -46,7 +46,7 @@
                   <th scope="col">Name</th>
                   <th scope="col">Email</th>
                   <th scope="col">Mobile</th>
-                  <th scope="col" class="action-col">Action</th>
+                  <th scope="col" class="action-col">Cmd</th>
                 </tr>
               </thead>
 
@@ -402,7 +402,7 @@
                         Transaction ID
                       </th>
                       <th scope="col">Date</th>
-                      <th scope="col">Amount (USD)</th>
+                      <th scope="col">USD</th>
                     </tr>
                   </thead>
                   <tbody>
