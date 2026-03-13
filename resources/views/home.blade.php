@@ -4,7 +4,7 @@
 
   <!-- //Admin data only show here -->
   @if(!isset($adminView) && auth()->user()->hasRole('super_admin'))
-    <section class="admin-table-wrapper my-4">
+    <section class="admin-table-wrapper mt-3 mb-5">
       <div class="container">
         @if(session()->has('message'))
           <div class="alert alert-success">

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Ally VA')
 @section('content')
-  <section class="admin-profile-wrapper mt-4 mb-5">
+  <section class="admin-profile-wrapper mt-3 mb-5">
     <div class="container">
       @if(session()->has('message'))
         <div class="alert alert-success">

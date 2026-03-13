@@ -3,7 +3,7 @@
 
 @section('content')
   <!-- Add Task Listing Table -->
-  <section class="admin-table-wrapper mt-5">
+  <section class="admin-table-wrapper mt-3">
     <div class="container">
       @if(session()->has('message'))
         <div class="alert alert-success">

@@ -4,7 +4,7 @@
 @push('styles')
 	<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 @endpush
-<section class="admin-table-wrapper mt-5">
+<section class="admin-table-wrapper mt-3">
 	<div class="container">
 		<div class="table-info-wrap">
 		    <div class="row">
