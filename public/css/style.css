@@ -551,6 +551,7 @@ a {
 .inner-page-header {
   padding: 28px 0px 45px 0px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .inner-page-header h1 {
