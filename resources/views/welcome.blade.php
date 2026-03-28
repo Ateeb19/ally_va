@@ -96,7 +96,7 @@
             <!-- <p class="text-uppercase text-primary fw-bold mb-2">Fully Managed</p> -->
             <h1>
               Simplify Your Life with a Virtual Assistant
-              <span>- Flat $9/hr</span>
+              <span>- Flat <span class = "doller-icon">$</span>9/hr</span>
             </h1>
             <h2>No Subscriptions or Hidden Fees</h2>
             <p>

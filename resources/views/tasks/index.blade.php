@@ -153,8 +153,12 @@
             </div>
 
             <!-- Submit -->
-            <button type="submit" class="btn btn-primary w-100 task-add-btn">
+            <!-- <button type="submit" class="btn btn-primary w-100 task-add-btn">
               Save
+            </button> -->
+            <button type="submit" class="btn btn-primary w-100 task-add-btn" id="addTaskBtn">
+              <span class="btn-text">Save</span>
+              <img src="{{ asset('images/ally-loader_yellow.gif') }}" id="addTaskLoader" width="20" style="display:none;">
             </button>
           </form>
         </div>
@@ -215,13 +219,63 @@
             </div>
 
             <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
-            <button type="submit" class="btn btn-primary w-100 btn-task-update">Update Changes</button>
+            <!-- <button type="submit" class="btn btn-primary w-100 btn-task-update">Update Changes</button> -->
+            <button type="submit" class="btn btn-primary w-100 btn-task-update" id="editTaskBtn">
+              <span class="btn-text">Update Changes</span>
+              <img src="{{ asset('images/ally-loader_yellow.gif') }}" id="editTaskLoader" width="20"
+                style="display:none;">
+            </button>
           </div>
         </form>
 
       </div>
     </div>
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const addForm = document.getElementById("AddTaskForm");
+      const addLoader = document.getElementById("addTaskLoader");
+      const addText = document.querySelector("#addTaskBtn .btn-text");
+
+      if (addForm) {
+        addForm.addEventListener("submit", function () {
+          addText.style.display = "none";
+          addLoader.style.display = "inline";
+        });
+      }
+
+      const editForm = document.getElementById("editTaskForm");
+      const editLoader = document.getElementById("editTaskLoader");
+      const editText = document.querySelector("#editTaskBtn .btn-text");
+
+      if (editForm) {
+        editForm.addEventListener("submit", function () {
+          editText.style.display = "none";
+          editLoader.style.display = "inline";
+        });
+      }
+
+      const createModal = document.getElementById("taskCreateModal");
+      const editModal = document.getElementById("taskEditModal");
+
+      if (createModal) {
+        createModal.addEventListener("show.bs.modal", function () {
+          addText.style.display = "inline";
+          addLoader.style.display = "none";
+        });
+      }
+
+      if (editModal) {
+        editModal.addEventListener("show.bs.modal", function () {
+          editText.style.display = "inline";
+          editLoader.style.display = "none";
+        });
+      }
+
+    });
+  </script>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {

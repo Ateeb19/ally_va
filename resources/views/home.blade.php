@@ -36,8 +36,8 @@
         </div>
 
         <!-- <div class="d-flex justify-content-center">
-                                                                                                          {{ $users->links() }}
-                                                                                                        </div> -->
+                                                                                                                  {{ $users->links() }}
+                                                                                                                </div> -->
         <div class="w-100">
           <div class="admin-table-wrap">
             <table>
@@ -80,21 +80,21 @@
             <div class="d-flex flex-wrap justify-content-between align-items-center mt-4 pagination-wrap">
               {{ $users->links('vendor.pagination.bootstrap-5') }}
               <!-- <p class="mb-0">Page: 1 of 2</p>
-                                                                                                              <div class="d-flex align-items-center gap-2">
-                                                                                                                <span>Page Size:</span>
-                                                                                                                <select class="form-select form-select-sm w-auto py-2">
-                                                                                                                  <option>10</option>
-                                                                                                                  <option>25</option>
-                                                                                                                  <option>50</option>
-                                                                                                                </select>
-                                                                                                              </div>
-                                                                                                              <div class="d-flex gap-2 last-point-view">
-                                                                                                                <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-double-line"></i></button>
-                                                                                                                <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-s-line"></i></button>
-                                                                                                                <button class="btn btn-sm btn-outline-secondary active">1</button>
-                                                                                                                <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-s-line"></i></button>
-                                                                                                                <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-double-line"></i></button>
-                                                                                                              </div> -->
+                                                                                                                      <div class="d-flex align-items-center gap-2">
+                                                                                                                        <span>Page Size:</span>
+                                                                                                                        <select class="form-select form-select-sm w-auto py-2">
+                                                                                                                          <option>10</option>
+                                                                                                                          <option>25</option>
+                                                                                                                          <option>50</option>
+                                                                                                                        </select>
+                                                                                                                      </div>
+                                                                                                                      <div class="d-flex gap-2 last-point-view">
+                                                                                                                        <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-double-line"></i></button>
+                                                                                                                        <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-left-s-line"></i></button>
+                                                                                                                        <button class="btn btn-sm btn-outline-secondary active">1</button>
+                                                                                                                        <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-s-line"></i></button>
+                                                                                                                        <button class="btn btn-sm btn-outline-secondary"><i class="ri-arrow-right-double-line"></i></button>
+                                                                                                                      </div> -->
             </div>
           </div>
         </div>
@@ -133,20 +133,20 @@
                 <input id="user_name" type="text" class="form-control @error('user_name') is-invalid @enderror"
                   name="user_name" value="{{ old('user_name') }}" required placeholder="Full Name">
                 <!-- @error('user_name')
-                                                  <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
-                                                @enderror -->
+                                                          <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                                                        @enderror -->
               </div>
 
               <!-- Email -->
               <div class="input-group">
                 <span class="input-group-text"><i class="ri-mail-fill"></i></span>
                 <!-- <input id="user_email" type="user_email" class="form-control @error('user_email') is-invalid @enderror"
-                                                                                                                                              name="user_email" value="{{ old('user_email') }}" required placeholder="E-mail"> -->
+                                                                                                                                                      name="user_email" value="{{ old('user_email') }}" required placeholder="E-mail"> -->
                 <input id="user_email" type="email" class="form-control @error('user_email') is-invalid @enderror"
                   name="user_email" value="{{ old('user_email') }}" required placeholder="E-mail">
                 <!-- @error('user_email')
-                                                  <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
-                                                @enderror -->
+                                                          <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                                                        @enderror -->
               </div>
 
               <!-- Phone -->
@@ -155,8 +155,8 @@
                 <input type="text" class="form-control @error('user_phone') is-invalid @enderror" placeholder="Phone Number"
                   name="user_phone" required />
                 <!-- @error('user_phone')
-                                                  <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
-                                                @enderror -->
+                                                          <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                                                        @enderror -->
               </div>
 
               <!-- Password -->
@@ -168,8 +168,8 @@
                   <i class="ri-eye-off-fill"></i>
                 </span>
                 <!-- @error('user_Password')
-                                                  <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
-                                                @enderror -->
+                                                          <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                                                        @enderror -->
               </div>
 
               <!-- Confirm Password -->
@@ -185,8 +185,8 @@
 
               <!-- Submit -->
               <!-- <button type="submit" class="btn btn-primary w-100">
-                        Create Account
-                      </button> -->
+                                Create Account
+                              </button> -->
               <button type="submit" class="btn btn-primary w-100" id="addUserBtn">
                 <span class="btn-text">Create Account</span>
                 <img src="{{ asset('images/ally-loader_yellow.gif') }}" id="addUserLoader" class="loader-gif"
@@ -264,8 +264,8 @@
                   <input type="hidden" name="managed_user_id" value="{{ $userId }}">
                 @endif
                 <!-- <button type="submit" class="text-white fw-semibold shadow py-2 buy-btn">
-                                          Buy Now
-                                        </button> -->
+                                                  Buy Now
+                                                </button> -->
                 <button type="submit" class="text-white fw-semibold shadow py-2 buy-btn" id="buyBtn">
                   <span class="btn-text">Buy Now</span>
                   <img src="{{ asset('images/ally-loader_yellow.gif') }}" id="buyLoader" class="loader-gif"
@@ -464,31 +464,31 @@
               <div class="d-flex flex-wrap justify-content-between align-items-center mt-2 pagination-wrap">
                 {{ $transactions->links('vendor.pagination.bootstrap-5') }}
                 <!-- <p class="mb-0">Page: 1 of 2</p>
-                                                                                <div class="d-flex align-items-center gap-2">
-                                                                                  <span>Page Size:</span>
-                                                                                  <select class="form-select form-select-sm w-auto py-2">
-                                                                                    <option>10</option>
-                                                                                    <option>25</option>
-                                                                                    <option>50</option>
-                                                                                  </select>
-                                                                                </div>
-                                                                                <div class="d-flex gap-2 last-point-view">
-                                                                                  <button class="btn btn-sm btn-outline-secondary">
-                                                                                    <i class="ri-arrow-left-double-line"></i>
-                                                                                  </button>
-                                                                                  <button class="btn btn-sm btn-outline-secondary">
-                                                                                    <i class="ri-arrow-left-s-line"></i>
-                                                                                  </button>
-                                                                                  <button class="btn btn-sm btn-outline-secondary active">
-                                                                                    1
-                                                                                  </button>
-                                                                                  <button class="btn btn-sm btn-outline-secondary">
-                                                                                    <i class="ri-arrow-right-s-line"></i>
-                                                                                  </button>
-                                                                                  <button class="btn btn-sm btn-outline-secondary">
-                                                                                    <i class="ri-arrow-right-double-line"></i>
-                                                                                  </button>
-                                                                                </div> -->
+                                                                                        <div class="d-flex align-items-center gap-2">
+                                                                                          <span>Page Size:</span>
+                                                                                          <select class="form-select form-select-sm w-auto py-2">
+                                                                                            <option>10</option>
+                                                                                            <option>25</option>
+                                                                                            <option>50</option>
+                                                                                          </select>
+                                                                                        </div>
+                                                                                        <div class="d-flex gap-2 last-point-view">
+                                                                                          <button class="btn btn-sm btn-outline-secondary">
+                                                                                            <i class="ri-arrow-left-double-line"></i>
+                                                                                          </button>
+                                                                                          <button class="btn btn-sm btn-outline-secondary">
+                                                                                            <i class="ri-arrow-left-s-line"></i>
+                                                                                          </button>
+                                                                                          <button class="btn btn-sm btn-outline-secondary active">
+                                                                                            1
+                                                                                          </button>
+                                                                                          <button class="btn btn-sm btn-outline-secondary">
+                                                                                            <i class="ri-arrow-right-s-line"></i>
+                                                                                          </button>
+                                                                                          <button class="btn btn-sm btn-outline-secondary">
+                                                                                            <i class="ri-arrow-right-double-line"></i>
+                                                                                          </button>
+                                                                                        </div> -->
               </div>
             </div>
           </div>
@@ -534,12 +534,40 @@
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Save</button>
+                <!-- <button type="submit" class="btn btn-primary">Save</button> -->
+                <button type="submit" class="btn btn-primary" id="transactionBtn">
+                  <span class="btn-text">Save</span>
+                  <img src="{{ asset('images/ally-loader_yellow.gif') }}" id="transactionLoader" style="display:none;"
+                    width="20">
+                </button>
               </div>
             </form>
           </div>
         </div>
       </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+          const form = document.getElementById("transactionForm");
+          const loader = document.getElementById("transactionLoader");
+          const text = document.querySelector("#transactionBtn .btn-text");
+
+          form.addEventListener("submit", function () {
+
+            text.style.display = "none";
+            loader.style.display = "inline";
+
+          });
+
+          const modal = document.getElementById('transactionModal');
+
+          modal.addEventListener('show.bs.modal', function () {
+            text.style.display = "inline";
+            loader.style.display = "none";
+          });
+
+        });
+      </script>
       <script>
         const form = document.getElementById('transactionForm');
         const userId = "{{ $userId }}";

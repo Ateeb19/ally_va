@@ -13,7 +13,7 @@
           {{ session()->get('error') }}
         </div>
       @endif
-      <form method="POST" action="{{ route('user.update', $user->id)}}">
+      <form method="POST" action="{{ route('user.update', $user->id)}}" id="updateUserForm">
         @csrf
         @method('PUT')
         <div class="admin-prof-wrap">
@@ -63,8 +63,8 @@
                   <label class="form-label">City</label>
                   <div class="input-group">
                     <span class="input-group-text"><i class="ri-building-line"></i></span>
-                    <input type="text" name="city" class="form-control" placeholder="Enter City"
-                      value='{{ $user->city }}' maxlength="100" />
+                    <input type="text" name="city" class="form-control" placeholder="Enter City" value='{{ $user->city }}'
+                      maxlength="100" />
                   </div>
                 </div>
 
@@ -107,28 +107,28 @@
                 </div>
 
                 <!-- <div class="form-group">
-                      <label class="form-label">Password</label>
-                      <div class="input-group">
-                        <span class="input-group-text"><i class="ri-key-fill"></i></span>
-                        <input type="password" class="form-control" placeholder="Password" id="password" name="password" />
-                        <span class="input-group-text" onclick="togglePassword('password', this)" style="cursor: pointer">
-                          <i class="ri-eye-off-fill"></i>
-                        </span>
-                      </div>
-                    </div>
+                            <label class="form-label">Password</label>
+                            <div class="input-group">
+                              <span class="input-group-text"><i class="ri-key-fill"></i></span>
+                              <input type="password" class="form-control" placeholder="Password" id="password" name="password" />
+                              <span class="input-group-text" onclick="togglePassword('password', this)" style="cursor: pointer">
+                                <i class="ri-eye-off-fill"></i>
+                              </span>
+                            </div>
+                          </div>
 
-                    <div class="form-group">
-                      <label class="form-label">Confirm Password</label>
-                      <div class="input-group">
-                        <span class="input-group-text"><i class="ri-key-fill"></i></span>
-                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" />
+                          <div class="form-group">
+                            <label class="form-label">Confirm Password</label>
+                            <div class="input-group">
+                              <span class="input-group-text"><i class="ri-key-fill"></i></span>
+                              <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" />
 
-                        <span class="input-group-text" onclick="togglePassword('confirmPassword', this)"
-                          style="cursor: pointer">
-                          <i class="ri-eye-fill"></i>
-                        </span>
-                      </div>
-                    </div> -->
+                              <span class="input-group-text" onclick="togglePassword('confirmPassword', this)"
+                                style="cursor: pointer">
+                                <i class="ri-eye-fill"></i>
+                              </span>
+                            </div>
+                          </div> -->
 
                 @if(isset($adminView) && auth()->user()->hasRole('super_admin'))
                   <div class="form-group">
@@ -144,13 +144,42 @@
 
                 <!-- Save button yaha right side box ke andar niche -->
                 <div class="btn-wrapper">
-                  <button type="submit" class="btn btn-primary">Save Changes</button>
+                  <!-- <button type="submit" class="btn btn-primary">Save Changes</button> -->
+                  <button type="submit" class="btn btn-primary" id="updateUserBtn">
+                    <span class="btn-text">Save Changes</span>
+                    <img src="{{ asset('images/ally-loader_yellow.gif') }}" id="updateUserLoader" width="22"
+                      style="display:none;">
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </form>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+          const form = document.getElementById("updateUserForm");
+          const loader = document.getElementById("updateUserLoader");
+          const text = document.querySelector("#updateUserBtn .btn-text");
+
+          if (form) {
+            form.addEventListener("submit", function () {
+
+              text.style.display = "none";
+              loader.style.display = "inline";
+
+            });
+          }
+
+          // Fix back button issue
+          window.addEventListener("pageshow", function () {
+            text.style.display = "inline";
+            loader.style.display = "none";
+          });
+
+        });
+      </script>
     </div>
   </section>
 @endsection

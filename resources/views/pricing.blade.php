@@ -124,7 +124,7 @@
 
               <div class="pricing-card">
                 <p class="plan-title">THE ALLYVA PLAN</p>
-                <h2 class="price">$9 <span>/hour</span></h2>
+                <h2 class="price"><span class = "doller-icon">$</span>9 <span>/hour</span></h2>
 
                 <ul class="features">
                   <li>
