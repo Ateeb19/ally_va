@@ -123,8 +123,9 @@
               <div class="pricing-card-back"></div>
 
               <div class="pricing-card">
-                <p class="plan-title">THE ALLYVA PLAN</p>
-                <h2 class="price"><span class = "doller-icon">$</span>9 <span>/hour</span></h2>
+                <!-- <p class="plan-title">THE ALLYVA PLAN</p>
+                <h2 class="price"><span class = "doller-icon">$</span>9 <span>/hour</span></h2> -->
+                <img src="images/va-pricing.webp" class="pricing-image" alt="Virtual Assistant $9 per hour"/>
 
                 <ul class="features">
                   <li>
