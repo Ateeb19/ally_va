@@ -2141,12 +2141,13 @@ input[type="range"]::-ms-thumb {
 }
 
 .pricing-image {
-  width: 40% !important;
+  width: 45% !important;
   border-radius: 50%;
   /* box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0, 100, 80, 0.2) */
   /* border: 1px solid #fff; */
   border: none;
-  filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.37));
+  filter: drop-shadow(0px 2px 8px rgba(0, 100, 80, 0.30));
+  /* filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.37)); */
 }
 
 /* .alert.alert-success {
