@@ -63,11 +63,13 @@ a {
   /* padding: 8px 18px; */
   border-radius: 3px;
   font-size: 16px;
+  transition: all 0.3s ease !important;
 }
 
 .btn.btn-primary:hover {
   background-color: #288feb;
   border: 1px solid #288feb;
+  transform: translateY(-5px) !important;
 }
 
 .navbar-nav .nav-link.active,
@@ -2158,13 +2160,13 @@ input[type="range"]::-ms-thumb {
   transform: translateY(5px) !important;
 }
 
-button {
+/* button {
   transition: all 0.3s ease !important;
 }
 
 button:hover {
   transform: translateY(5px) !important;
-}
+} */
 
 /* .alert.alert-success {
   text-align: center;
