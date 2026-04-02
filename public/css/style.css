@@ -2155,7 +2155,7 @@ input[type="range"]::-ms-thumb {
 }
 
 .button-hover:hover {
-  transform: translateX(5px) !important;
+  transform: translateY(5px) !important;
 }
 
 button {
@@ -2163,7 +2163,7 @@ button {
 }
 
 button:hover {
-  transform: translateX(5px) !important;
+  transform: translateY(5px) !important;
 }
 
 /* .alert.alert-success {
