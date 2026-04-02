@@ -103,7 +103,7 @@
               Let us handle your daily administrative tasks so you can focus your time and energy on what matters most to
               you.
             </p>
-            <div class="hero-buttons d-flex flex-wrap gap-3 mt-4 justify-content-lg-start">
+            <div class="hero-buttons button-hover d-flex flex-wrap gap-3 mt-4 justify-content-lg-start">
               <a class="btn btn-primary px-4" href="#" data-bs-toggle="modal" data-bs-target="#authModal">Let’s Get
                 Started - Sign Up Now</a>
               <!-- <a href="#" class="btn btn-outline-primary">Plans & Pricing</a> -->
@@ -303,8 +303,8 @@
             business.
           </p>
         </div>
-        <div class="col-xl-3 col-12 justify-content-end">
-          <a href="/services">Explore All Services</a>
+        <div class="col-xl-3 col-12 justify-content-end button-hover" >
+          <a href="/services" >Explore All Services</a>
         </div>
       </div>
     </div>
