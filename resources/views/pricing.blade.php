@@ -103,7 +103,7 @@
     </section>
 
 
-    <section class="service-div pt-4 pt-md-5 mt-3 mt-md-5">
+    <section class="service-div pt-4 pt-md-5 mt-3">
       <div class="container">
         <div class="row align-items-center justify-content-center gy-5">
           <!-- Left Text -->
@@ -125,7 +125,7 @@
               <div class="pricing-card">
                 <!-- <p class="plan-title">THE ALLYVA PLAN</p>
                 <h2 class="price"><span class = "doller-icon">$</span>9 <span>/hour</span></h2> -->
-                <img src="images/va-pricing.webp" class="pricing-image mb-3" alt="Virtual Assistant $9 per hour" data-bs-toggle="modal" data-bs-target="#authModal"/>
+                <img src="images/va-pricing.webp"  class="pricing-image mb-3" alt="Virtual Assistant $9 per hour" data-bs-toggle="modal" data-bs-target="#authModal"/>
 
                 <ul class="features">
                   <li>
