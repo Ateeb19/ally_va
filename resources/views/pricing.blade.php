@@ -151,7 +151,7 @@
                   </li>
                 </ul>
 
-                <button class="btn-price w-100"  data-bs-toggle="modal" data-bs-target="#authModal">
+                <button class="btn-price w-100 "  data-bs-toggle="modal" data-bs-target="#authModal">
                   Let’s Get Started - Sign Up Now
                 </button>
               </div>

@@ -13,75 +13,75 @@
 
 @section('schema')
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Virtual Assistant Services",
-  "description": "Professional virtual assistant services by Arup Seth, a Microsoft Certified Professional with over 15 years of experience.",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Ally VA",
-    "logo": "https://allyva.com/Ally-VA.png",
-    "image": "https://allyva.com/Ally-Virtual-Assistant.png",
-    "telephone": "+91-9163329207",
-    "url": "https://allyva.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "IN"
-    }
-  },
-  "areaServed": [
-    { "@type": "Country", "name": "United States" },
-    { "@type": "Country", "name": "Australia" },
-        { "@type": "Country", "name": "United Kingdom" },
-    { "@type": "Country", "name": "Canada" },
-    { "@type": "Country", "name": "New Zealand" },
-    { "@type": "Country", "name": "Singapore" },
-    { "@type": "Country", "name": "Germany" },
-    { "@type": "Country", "name": "Netherlands" },
-    { "@type": "Country", "name": "United Arab Emirates" },
-    { "@type": "Place", "name": "Worldwide" }
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Ally VA Service Portfolio",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": { "@type": "Service", "name": "Email & Inbox Management" }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": { "@type": "Service", "name": "Calendar & Appointment Scheduling" }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": { "@type": "Service", "name": "eCommerce & Store Management" }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": { "@type": "Service", "name": "CRM Management & Data Entry" }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": { "@type": "Service", "name": "Day-to-Day Business Operations" }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": { "@type": "Service", "name": "Administrative Support" }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": { "@type": "Service", "name": "Social Media Scheduling & Management" }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": { "@type": "Service", "name": "Lead Generation & Internet Research" }
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Virtual Assistant Services",
+    "description": "Professional virtual assistant services by Arup Seth, a Microsoft Certified Professional with over 15 years of experience.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Ally VA",
+      "logo": "https://allyva.com/Ally-VA.png",
+      "image": "https://allyva.com/Ally-Virtual-Assistant.png",
+      "telephone": "+91-9163329207",
+      "url": "https://allyva.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
       }
-    ]
+    },
+    "areaServed": [
+      { "@type": "Country", "name": "United States" },
+      { "@type": "Country", "name": "Australia" },
+          { "@type": "Country", "name": "United Kingdom" },
+      { "@type": "Country", "name": "Canada" },
+      { "@type": "Country", "name": "New Zealand" },
+      { "@type": "Country", "name": "Singapore" },
+      { "@type": "Country", "name": "Germany" },
+      { "@type": "Country", "name": "Netherlands" },
+      { "@type": "Country", "name": "United Arab Emirates" },
+      { "@type": "Place", "name": "Worldwide" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Ally VA Service Portfolio",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "Email & Inbox Management" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "Calendar & Appointment Scheduling" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "eCommerce & Store Management" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "CRM Management & Data Entry" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "Day-to-Day Business Operations" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "Administrative Support" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "Social Media Scheduling & Management" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "Lead Generation & Internet Research" }
+        }
+      ]
+    }
   }
-}
-</script>
+  </script>
 @endsection
 
 @section('content')
@@ -96,7 +96,7 @@
             <!-- <p class="text-uppercase text-primary fw-bold mb-2">Fully Managed</p> -->
             <h1>
               Simplify Your Life with a Virtual Assistant
-              <span>- Flat <span class = "doller-icon">$</span>9/hr</span>
+              <span>- Flat <span class="doller-icon">$</span>9/hr</span>
             </h1>
             <h2>No Subscriptions or Hidden Fees</h2>
             <p>
@@ -189,14 +189,14 @@
             <div class="support-icon">
               <svg viewBox="0 0 24 24" fill="none">
                 <!-- <rect
-                      x="4"
-                      y="6"
-                      width="16"
-                      height="12"
-                      rx="2"
-                      stroke="#111"
-                      stroke-width="1.5"
-                    /> -->
+                        x="4"
+                        y="6"
+                        width="16"
+                        height="12"
+                        rx="2"
+                        stroke="#111"
+                        stroke-width="1.5"
+                      /> -->
                 <path d="M12 19l7-7 3 3-7 7-3-3zM18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5zM2 2l5 5" stroke="#111"
                   stroke-width="1.5" stroke-linecap="round" />
               </svg>
@@ -218,10 +218,10 @@
             <div class="support-icon">
               <svg viewBox="0 0 24 24" fill="none">
                 <!-- <path
-                      d="M9 2h6v2h3a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2z"
-                      stroke="#111"
-                      stroke-width="1.5"
-                    /> -->
+                        d="M9 2h6v2h3a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2z"
+                        stroke="#111"
+                        stroke-width="1.5"
+                      /> -->
                 <circle cx="12" cy="13" r="2" stroke="#111" stroke-width="1.5" />
                 <path d="M12 3a9 9 0 1 1 0 18 9 9 0 0 1 0-18M12 3v9l6 6M12 12h9" stroke="#111" stroke-width="1.5"
                   stroke-linecap="round" />
@@ -303,8 +303,8 @@
             business.
           </p>
         </div>
-        <div class="col-xl-3 col-12 justify-content-end button-hover" >
-          <a href="/services" >Explore All Services</a>
+        <div class="col-xl-3 col-12 justify-content-end button-hover">
+          <a href="/services">Explore All Services</a>
         </div>
       </div>
     </div>
@@ -322,10 +322,10 @@
             style="width: 56px; height: 56px">
             <!-- Replace with actual <img src="..." /> if needed -->
             <!-- <img
-                src="https://img.icons8.com/ios-filled/50/033D98/user.png"
-                width="26"
-                height="26"
-              /> -->
+                  src="https://img.icons8.com/ios-filled/50/033D98/user.png"
+                  width="26"
+                  height="26"
+                /> -->
             <i class="ri-user-2-fill" style="color: #288feb; font-size: 26px"></i>
           </div>
           <h3>Sign Up</h3>
@@ -335,9 +335,9 @@
 
           <!-- Horizontal line -->
           <div class="hor-line d-none d-lg-block" style="
-                height: 2px;
-                background: linear-gradient(to right, #e5eaf1, #2563eb);
-              "></div>
+                  height: 2px;
+                  background: linear-gradient(to right, #e5eaf1, #2563eb);
+                "></div>
         </div>
 
         <!-- Step 2 -->
@@ -345,10 +345,10 @@
           <div class="rounded-circle bg-opacity-10 d-flex align-items-center justify-content-center mb-3 icon-bg"
             style="width: 56px; height: 56px">
             <!-- <img
-                src="https://img.icons8.com/ios-filled/50/033D98/compass--v1.png"
-                width="26"
-                height="26"
-              /> -->
+                  src="https://img.icons8.com/ios-filled/50/033D98/compass--v1.png"
+                  width="26"
+                  height="26"
+                /> -->
             <i class="ri-compass-3-fill" style="color: #288feb; font-size: 26px"></i>
           </div>
           <h3>Let’s Talk</h3>
@@ -358,9 +358,9 @@
 
           <!-- Horizontal line -->
           <div class="hor-line d-none d-lg-block" style="
-                height: 2px;
-                background: linear-gradient(to left, #e5eaf1, #2563eb);
-              "></div>
+                  height: 2px;
+                  background: linear-gradient(to left, #e5eaf1, #2563eb);
+                "></div>
         </div>
 
         <!-- Step 3 -->
@@ -368,10 +368,10 @@
           <div class="rounded-circle bg-opacity-10 d-flex align-items-center justify-content-center mb-3 icon-bg"
             style="width: 56px; height: 56px">
             <!-- <img
-                src="https://img.icons8.com/ios-filled/50/033D98/box.png"
-                width="26"
-                height="26"
-              /> -->
+                  src="https://img.icons8.com/ios-filled/50/033D98/box.png"
+                  width="26"
+                  height="26"
+                /> -->
             <i class="ri-archive-fill" style="color: #288feb; font-size: 26px"></i>
           </div>
           <h3>Submit Your Task</h3>
@@ -395,7 +395,7 @@
         <!-- <button>More About Us →</button> -->
         <div class="d-flex align-items-center gap-2">
           <!-- Button -->
-          <a href="/about"><button class="">More About Us →</button></a>
+          <a href="/about "><button class="btn btn-primary">More About Us →</button></a>
 
           <!-- Customers Info -->
           <div class="d-flex text-black px-2 py-2 rounded-3 gap-3">

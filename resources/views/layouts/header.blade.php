@@ -187,7 +187,7 @@
     </script>
                     Sign In
                   </button> -->
-             <button type="submit" class="btn btn-dark w-100" id="loginBtn">
+             <button type="submit" class="btn btn-dark w-100 " id="loginBtn">
     <span class="btn-text">Sign In</span>
     <img src="{{ asset('images/ally-loader_yellow.gif') }}"
          id="loginLoader"
@@ -342,7 +342,7 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
                     Create Account
                   </button> -->
                   <button type="submit" class="btn btn-dark w-100" id="signupBtn">
-    <span class="btn-text">Create Account</span>
+    <span class="btn-text ">Create Account</span>
     <img src="{{ asset('images/ally-loader_yellow.gif') }}" 
     class="loader-gif"
          id="signupLoader"

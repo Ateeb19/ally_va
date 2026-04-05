@@ -21,7 +21,7 @@
                     <input type="search" class="email_search" name="task_type" value="{{ request('task_type') }}"
                       placeholder="Search by Task Type" />
                   </div>
-                  <button type="submit" class="btn-search">Search</button>
+                  <button type="submit" class="btn-search btn btn-primary">Search</button>
                 </div>
               </div>
             </form>

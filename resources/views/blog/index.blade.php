@@ -20,7 +20,7 @@
                     <input type="search" class="email_search" name="blog_search" placeholder="Search by blog title"
                       value="{{ request('blog_search') }}" />
                   </div>
-                  <button type="submit" class="btn-search">Search</button>
+                  <button type="submit" class="btn-search btn btn-primary">Search</button>
                 </div>
               </form>
             </div>
