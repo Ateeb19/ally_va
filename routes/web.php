@@ -8,7 +8,7 @@ use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserManageProfileController;
 use App\Http\Controllers\PayPalController;
 use App\Http\Controllers\BlogController;
-
+use App\Http\Controllers\Auth\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -155,6 +155,9 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('user', UserController::class);
 });
 
+
+Route::post('/auto-logout', [LoginController::class, 'autoLogout'])
+    ->name('auto.logout');
 
 // Route::get('/blogs/show-detail/{blog_id}', [BlogController::class, 'FrontBlogDetailShow'])
 //     ->name('blogs.blog-detail');

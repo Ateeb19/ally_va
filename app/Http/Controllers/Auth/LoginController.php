@@ -47,7 +47,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use App\Services\RecaptchaService;
-
+use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     use AuthenticatesUsers;
@@ -124,4 +124,18 @@ class LoginController extends Controller
 
         return redirect('/');
     }
+
+
+    public function autoLogout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return response()->json([
+            'success' => true
+        ]);
+    }
+
 }

@@ -395,6 +395,39 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("globalLoader").style.display = "flex";
         }
     </script> -->
+
+
+    <!-- YOUR ISSUE:
+`beforeunload` + click detection is unreliable because:
+1. Buttons trigger on many actions
+2. Browser may ignore sendBeacon timing
+3. Some Laravel CSRF/session setups reject request
+4. `auth()->check()` may not render where expected
+
+========================================================
+BEST WORKING VERSION FOR LARAVEL:
+Use sessionStorage to detect TAB close vs refresh
+======================================================== -->
+
+   
+    @if(auth()->check())
+        <script>
+            window.addEventListener("pagehide", function () {
+
+                fetch("{{ route('auto.logout') }}", {
+                    method: "POST",
+                    headers: {
+                        "X-CSRF-TOKEN": document
+                            .querySelector('meta[name="csrf-token"]')
+                            .getAttribute("content"),
+                        "Content-Type": "application/json"
+                    },
+                    keepalive: true
+                });
+
+            });
+        </script>
+    @endif
 </body>
 
 </html>
