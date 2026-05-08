@@ -10,14 +10,14 @@
    
 @if(Auth::check())
     {{-- Logged in: open the public home page in new tab --}}
-    <a href="{{ url('/') }}" target="_blank" rel="noopener noreferrer">
+    <!-- <a href="{{ url('') }}" target="_blank" rel="noopener noreferrer"> -->
         <img src="{{ asset('images/Ally-VA.png') }}" alt="Ally VA - Virtual Assistant Services logo">
-    </a>
+    <!-- </a> -->
 @else
     {{-- Not logged in: open home page in same tab --}}
-    <a href="{{ url('/') }}">
+    <!-- <a href="{{ url('') }}"> -->
         <img src="{{ asset('images/Ally-VA.png') }}" alt="Ally VA - Virtual Assistant Services logo">
-    </a>
+    <!-- </a> -->
 @endif
 
       <div id="" class="d-block d-lg-none">

@@ -51,6 +51,9 @@ use App\Http\Controllers\Auth\LoginController;
 // })->name('public.home');
 
 Route::get('/', function () {
+    if (Auth::check()) {
+        return redirect()->route('dashboard');
+    }
     return view('welcome');
 });
 
