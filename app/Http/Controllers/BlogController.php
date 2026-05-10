@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Blog;
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 class BlogController extends Controller
@@ -178,6 +180,9 @@ class BlogController extends Controller
 
     public function FrontBlogDetailShow(Blog $blog)
     {
+        if (Auth::check()) {
+            return redirect()->route('dashboard');
+        }
         return view('insights_detail', [
             'blogDetail' => $blog
         ]);

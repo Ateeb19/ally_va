@@ -64,62 +64,107 @@ Route::get('/dashboard', function () {
 
 // ... the rest of your routes
 Route::get('/about', function () {
+    if (Auth::check()) {
+        return redirect()->route('dashboard');
+    }
     return view('about');
 });
 
 Route::get('/services', function () {
+    if (Auth::check()) {
+        return redirect()->route('dashboard');
+    }
     return view('services');
 });
 
 Route::get('/pricing', function () {
+    if (Auth::check()) {
+        return redirect()->route('dashboard');
+    }
     return view('pricing');
 });
 
 Route::get('/website-development', function () {
+    if (Auth::check()) {
+        return redirect()->route('dashboard');
+    }
     return view('website');
 });
 
 Route::get('/administrative-support', function () {
+    if (Auth::check()) {
+        return redirect()->route('dashboard');
+    }
     return view('Administrative_Support');
 });
 
 Route::get('/operations-oversight', function () {
+    if (Auth::check()) {
+        return redirect()->route('dashboard');
+    }
     return view('Operations_Oversight');
 });
 
 Route::get('/ecommerce-services', function () {
+    if (Auth::check()) {
+        return redirect()->route('dashboard');
+    }
     return view('eCommerce_Services');
 });
 
 Route::get('/crm-bookkeeping', function () {
+    if (Auth::check()) {
+        return redirect()->route('dashboard');
+    }
     return view('CRM_Bookkeeping');
 });
 
 Route::get('/social-media-management', function () {
+    if (Auth::check()) {
+        return redirect()->route('dashboard');
+    }
     return view('Social_Media_Management');
 });
 
 Route::get('/essential-seo', function () {
+    if (Auth::check()) {
+        return redirect()->route('dashboard');
+    }
     return view('Essential_SEO');
 });
 
 Route::get('/graphic-design', function () {
+    if (Auth::check()) {
+        return redirect()->route('dashboard');
+    }
     return view('Graphic_Design');
 });
 
 Route::get('/it-solutions', function () {
+    if (Auth::check()) {
+        return redirect()->route('dashboard');
+    }
     return view('IT_Solutions');
 });
 
 Route::get('/privacy', function () {
+    if (Auth::check()) {
+        return redirect()->route('dashboard');
+    }
     return view('Privacy_policy');
 });
 
 Route::get('/insights', function () {
+    if (Auth::check()) {
+        return redirect()->route('dashboard');
+    }
     return view('insights');
 });
 
 Route::get('/contact', function () {
+    if (Auth::check()) {
+        return redirect()->route('dashboard');
+    }
     return view('contact');
 });
 
