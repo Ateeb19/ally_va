@@ -76,14 +76,14 @@ class PayPalController extends Controller
                 ->route('admin.users.dashboard', ['user' => $userId])
                 ->with('success', 'Payment successful!');
         }
-        return redirect()->route('home')->with('success', 'Payment successful!');
+        return redirect()->route('dashboard')->with('success', 'Payment successful!');
     } else {
         if ($userId) {
             return redirect()
                 ->route('admin.users.dashboard', ['user' => $userId])
                 ->with('error', 'Payment failed!');
         }
-        return redirect()->route('home')->with('error', 'Payment failed!');
+        return redirect()->route('dashboard')->with('error', 'Payment failed!');
     }
 }
 
