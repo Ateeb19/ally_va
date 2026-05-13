@@ -15,9 +15,9 @@
     <!-- </a> -->
 @else
     {{-- Not logged in: open home page in same tab --}}
-    <!-- <a href="{{ url('') }}"> -->
+    <a href="{{ url('') }}">
         <img src="{{ asset('images/Ally-VA.png') }}" alt="Ally VA - Virtual Assistant Services logo">
-    <!-- </a> -->
+    </a>
 @endif
 
       <div id="" class="d-block d-lg-none">
