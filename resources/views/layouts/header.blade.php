@@ -355,17 +355,7 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
           </div>
         </div>
       </div>
-      @if ($errors->any())
-<!-- <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var formType = "{{ old('form_type') }}";
-        if (formType === "signup") {
-            var signupTab = new bootstrap.Tab(document.querySelector('#signup-tab'));
-            signupTab.show();
-        }
-    });
-</script> -->
-@endif
+     
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 

@@ -558,8 +558,7 @@
                 <div id="flush-collapseeight" class="accordion-collapse collapse" aria-labelledby="flush-headingeight"
                   data-bs-parent="#accordionFlushExample">
                   <div class="accordion-body">
-                    You can easily track the hours charged through our portal,
-                    with 1 point representing up to 20 minutes of task time.
+                    Please note that there is a minimum charge of 1 hour per task.
                   </div>
                 </div>
               </div>
